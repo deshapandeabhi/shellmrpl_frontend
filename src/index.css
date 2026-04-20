@@ -17,6 +17,14 @@ html, body, #root {
 /* The scrollable main area needs overflow-y: auto */
 main {
   overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  max-width: 100%;
+}
+
+/* Global Image Reset to prevent overflow */
+img {
+  max-width: 100% !important;
+  height: auto;
 }
 
 /* ── Elementor full-width content ── */
