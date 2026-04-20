@@ -203,34 +203,3 @@ function FlyChild({ child, onSelect }) {
     </li>
   );
 }
-
-export default function Sidebar() {
-  return (
-    <aside
-      style={{
-        position: 'fixed',
-        top: '90px',
-        left: 0,
-        width: '248px',
-        bottom: 0,
-        backgroundColor: BG,
-        zIndex: 40,
-        /*
-         * overflow: visible is REQUIRED for the absolute-positioned flyouts
-         * to be visible outside the sidebar's 248px bounds.
-         * We DON'T set overflowY here because this aside doesn't need to scroll
-         * (the nav fits within the window height).
-         */
-        overflow: 'visible',
-      }}
-    >
-      <nav>
-        <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-          {NAV.map((item, i) => (
-            <NavItem key={i} item={item} />
-          ))}
-        </ul>
-      </nav>
-    </aside>
-  );
-}
