@@ -31,12 +31,12 @@ export default function Header({ onMenuClick }) {
     >
       {/* ── LEFT: White logo zone ── */}
       <div
-        className="w-[248px] lg:w-[248px] flex-shrink-0 bg-white flex items-center px-4 border-b border-gray-200"
+        className="w-auto lg:w-[248px] flex-shrink-0 bg-white flex items-center px-2 md:px-4 border-b border-gray-200 transition-all duration-300"
       >
         {/* Hamburger Menu (Mobile/Tablet only) */}
         <button
           onClick={onMenuClick}
-          className="lg:hidden mr-3 p-2 text-[#1f3d6e] hover:bg-gray-100 rounded"
+          className="lg:hidden mr-1 md:mr-3 p-2 text-[#1f3d6e] hover:bg-gray-100 rounded"
           aria-label="Toggle menu"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -46,18 +46,18 @@ export default function Header({ onMenuClick }) {
           </svg>
         </button>
 
-        <Link to="/" className="flex-1 lg:flex-none">
+        <Link to="/" className="flex-1 lg:flex-none py-2">
           <img
             src="/wp-content/uploads/2023/09/logo.jpg"
             alt="Shell MRPL Aviation"
-            className="h-[40px] md:h-[58px] w-auto block object-contain"
+            className="h-[34px] sm:h-[42px] md:h-[58px] w-auto block object-contain"
           />
         </Link>
       </div>
 
       {/* ── RIGHT: Navy nav zone ── */}
       <div
-        className="flex-1 bg-[#1f3d6e] flex items-center justify-between px-4 lg:px-8"
+        className="flex-1 bg-[#1f3d6e] flex items-center justify-end lg:justify-between px-3 md:px-4 lg:px-8"
       >
         {/* Navigation links (Hidden on mobile/tablet) */}
         <nav className="hidden lg:flex gap-10">
@@ -72,10 +72,10 @@ export default function Header({ onMenuClick }) {
 
         {/* Search bar (Adjustable width) */}
         <div
-          className={`flex items-center bg-white rounded-[3px] h-[36px] transition-all duration-300 overflow-hidden border ${searchFocused ? 'border-[#5bc0de]' : 'border-transparent'} w-[150px] md:w-[200px]`}
+          className={`flex items-center bg-white rounded-[3px] h-[32px] md:h-[36px] transition-all duration-300 overflow-hidden border ${searchFocused ? 'border-[#5bc0de]' : 'border-transparent'} w-[100px] sm:w-[150px] md:w-[200px]`}
         >
-          <span className="px-[10px] text-[#888] flex items-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <span className="px-[6px] md:px-[10px] text-[#888] flex items-center">
+            <svg width="12" height="12" md:width="14" md:height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
@@ -85,7 +85,7 @@ export default function Header({ onMenuClick }) {
             placeholder="Search..."
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
-            className="flex-1 border-none outline-none text-[13px] text-[#555] bg-white h-full font-roboto"
+            className="flex-1 border-none outline-none text-[12px] md:text-[13px] text-[#555] bg-white h-full font-roboto min-w-0"
           />
         </div>
       </div>
