@@ -60,30 +60,16 @@ export default function GalleryPage() {
   const next = () => setLightbox({ idx: (lightbox.idx + 1) % IMAGES.length });
 
   return (
-    <div style={{ width: '100%', background: '#ffffff', flex: 1 }}>
-
-      {/* ── Gallery heading (matches WordPress — no hero image on gallery page) ── */}
-      <div style={{ padding: '24px 24px 12px' }}>
-        <h2 style={{
-          fontSize: '22px',
-          fontWeight: 700,
-          color: '#333',
-          fontFamily: '"Roboto","Open Sans",sans-serif',
-          margin: 0,
-        }}>
+    <div className="w-full bg-white flex-1 transition-all duration-300">
+      {/* ── Gallery heading ── */}
+      <div className="p-6 md:p-8 pb-3">
+        <h2 className="text-xl md:text-2xl font-bold text-[#333] font-roboto">
           Gallery
         </h2>
       </div>
 
-      {/* ── 3-column CSS Grid (matches gallery-columns-3) ── */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '8px',
-          padding: '8px 24px 32px',
-        }}
-      >
+      {/* ── Responsive CSS Grid ── */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-6 md:px-8 pb-10">
         {IMAGES.map((img, idx) => (
           <GalleryItem
             key={idx}

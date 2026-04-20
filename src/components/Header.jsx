@@ -21,56 +21,46 @@ const NAV_LINKS = [
   { label: 'Contact Us', path: '/contact' },
 ];
 
-export default function Header() {
+export default function Header({ onMenuClick }) {
   const location = useLocation();
   const [searchFocused, setSearchFocused] = useState(false);
 
   return (
     <header
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: '90px',
-        display: 'flex',
-        zIndex: 50,
-      }}
+      className="flex fixed top-0 left-0 right-0 h-[90px] z-[50]"
     >
-      {/* ── LEFT: White logo zone, exactly 248px ── */}
+      {/* ── LEFT: White logo zone ── */}
       <div
-        style={{
-          width: '248px',
-          flexShrink: 0,
-          backgroundColor: WHITE,
-          display: 'flex',
-          alignItems: 'center',
-          padding: '0 16px',
-          borderBottom: '1px solid #e0e0e0',
-        }}
+        className="w-[248px] lg:w-[248px] flex-shrink-0 bg-white flex items-center px-4 border-b border-gray-200"
       >
-        <Link to="/">
+        {/* Hamburger Menu (Mobile/Tablet only) */}
+        <button
+          onClick={onMenuClick}
+          className="lg:hidden mr-3 p-2 text-[#1f3d6e] hover:bg-gray-100 rounded"
+          aria-label="Toggle menu"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <Link to="/" className="flex-1 lg:flex-none">
           <img
             src="/wp-content/uploads/2023/09/logo.jpg"
             alt="Shell MRPL Aviation"
-            style={{ height: '58px', width: 'auto', display: 'block', objectFit: 'contain' }}
+            className="h-[40px] md:h-[58px] w-auto block object-contain"
           />
         </Link>
       </div>
 
       {/* ── RIGHT: Navy nav zone ── */}
       <div
-        style={{
-          flex: 1,
-          backgroundColor: NAV_BLUE,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0 32px',
-        }}
+        className="flex-1 bg-[#1f3d6e] flex items-center justify-between px-4 lg:px-8"
       >
-        {/* Navigation links */}
-        <nav style={{ display: 'flex', gap: '40px' }}>
+        {/* Navigation links (Hidden on mobile/tablet) */}
+        <nav className="hidden lg:flex gap-10">
           {NAV_LINKS.map((link) => {
             const isActive = location.pathname === link.path ||
               (link.path === '/' && location.pathname === '/');
@@ -80,20 +70,11 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Search bar */}
+        {/* Search bar (Adjustable width) */}
         <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            backgroundColor: WHITE,
-            borderRadius: '3px',
-            height: '36px',
-            width: '200px',
-            overflow: 'hidden',
-            border: searchFocused ? '1px solid #5bc0de' : '1px solid transparent',
-          }}
+          className={`flex items-center bg-white rounded-[3px] h-[36px] transition-all duration-300 overflow-hidden border ${searchFocused ? 'border-[#5bc0de]' : 'border-transparent'} w-[150px] md:w-[200px]`}
         >
-          <span style={{ padding: '0 10px', color: '#888', display: 'flex', alignItems: 'center' }}>
+          <span className="px-[10px] text-[#888] flex items-center">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -104,16 +85,7 @@ export default function Header() {
             placeholder="Search..."
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
-            style={{
-              flex: 1,
-              border: 'none',
-              outline: 'none',
-              fontSize: '13px',
-              color: '#555',
-              backgroundColor: WHITE,
-              height: '100%',
-              fontFamily: '"Roboto", sans-serif',
-            }}
+            className="flex-1 border-none outline-none text-[13px] text-[#555] bg-white h-full font-roboto"
           />
         </div>
       </div>

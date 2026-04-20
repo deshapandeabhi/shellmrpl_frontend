@@ -71,9 +71,39 @@ const NAV = [
   { label: 'Employee Login',                   path: '/login' },
 ];
 
-function NavItem({ item }) {
+export default function Sidebar({ isOpen, onClose }) {
+  return (
+    <>
+      {/* ── Mobile Backdrop ── */}
+      {isOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/50 z-[45] transition-opacity"
+          onClick={onClose}
+        />
+      )}
+
+      {/* ── Sidebar Container ── */}
+      <aside
+        className={`fixed top-[90px] left-0 bottom-0 w-[248px] bg-[#1f3d6e] z-[48] transition-transform duration-300 ease-in-out lg:translate-x-0 ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        } overflow-y-auto lg:overflow-visible`}
+      >
+        <nav className="h-full">
+          <ul className="list-none m-0 p-0">
+            {NAV.map((item, i) => (
+              <NavItem key={i} item={item} onSelect={onClose} />
+            ))}
+          </ul>
+        </nav>
+      </aside>
+    </>
+  );
+}
+
+function NavItem({ item, onSelect }) {
   const location = useLocation();
   const [hov, setHov] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState(false);
   const isActive = location.pathname === item.path;
   const hasChildren = !!(item.children?.length);
 
@@ -81,60 +111,65 @@ function NavItem({ item }) {
     <li
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
-      style={{
-        position: 'relative',
-        borderBottom: `1px solid ${DIV_CLR}`,
-        listStyle: 'none',
-      }}
+      className="relative border-b border-[#2d5080]"
     >
       {/* Parent row */}
-      <Link
-        to={item.path}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '14px 20px',
-          fontSize: '14px',
-          color: (isActive || hov) ? TXT_HOV : TXT,
-          backgroundColor: (isActive || hov) ? BG_HOV : 'transparent',
-          textDecoration: 'none',
-          fontFamily: '"Roboto","Open Sans",sans-serif',
-          fontWeight: 400,
-          transition: 'background-color 0.12s, color 0.12s',
-        }}
-      >
-        <span style={{ flex: 1 }}>{item.label}</span>
+      <div className="flex items-center">
+        <Link
+          to={item.path}
+          onClick={() => !hasChildren && onSelect()}
+          className={`flex-1 flex items-center justify-between px-5 py-3.5 text-sm transition-all duration-120 ${
+            isActive || hov || mobileExpanded ? 'text-white bg-[#163157]' : 'text-[#ccd8eb] bg-transparent'
+          }`}
+          style={{ fontFamily: '"Roboto","Open Sans",sans-serif' }}
+        >
+          <span>{item.label}</span>
+        </Link>
+        
         {hasChildren && (
-          <svg width="8" height="12" viewBox="0 0 8 12" fill="none"
-            style={{ flexShrink: 0, marginLeft: 8, opacity: 0.65 }}>
-            <path d="M1 1l6 5-6 5" stroke="currentColor" strokeWidth="1.5"
-              strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <button
+            onClick={() => setMobileExpanded(!mobileExpanded)}
+            className="px-4 py-3.5 text-[#ccd8eb] hover:text-white lg:hidden border-l border-[#2d5080]"
+          >
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" className={`transition-transform duration-200 ${mobileExpanded ? 'rotate-180' : ''}`}>
+              <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         )}
-      </Link>
 
-      {/* Flyout — shown when this <li> is hovered */}
+        {hasChildren && (
+          <span className="hidden lg:flex px-2 text-[#ccd8eb]/60">
+            <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
+              <path d="M1 1l6 5-6 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+        )}
+      </div>
+
+      {/* Mobile/Tablet Accordion Children */}
+      {hasChildren && mobileExpanded && (
+        <ul className="lg:hidden bg-[#163157] list-none p-0 border-t border-[#2d5080]/30">
+          {item.children.map((child, j) => (
+            <li key={j}>
+              <Link
+                to={child.path}
+                onClick={onSelect}
+                className="block pl-10 pr-5 py-2.5 text-[13px] text-[#ccd8eb] hover:text-white hover:bg-[#1f3d6e] transition-colors"
+              >
+                {child.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* Desktop Flyout — shown when this <li> is hovered */}
       {hasChildren && hov && (
         <ul
-          onMouseEnter={() => setHov(true)}
-          onMouseLeave={() => setHov(false)}
-          style={{
-            /* Absolute to the <li> row */
-            position: 'absolute',
-            top: 0,
-            left: '100%',          /* right edge of the 248px sidebar */
-            minWidth: '220px',
-            backgroundColor: '#ffffff',
-            boxShadow: '2px 4px 16px rgba(0,0,0,0.2)',
-            listStyle: 'none',
-            margin: 0,
-            padding: '4px 0',
-            zIndex: 9999,
-          }}
+          className="hidden lg:block absolute top-0 left-full min-w-[220px] bg-white shadow-xl py-1 z-[9999] list-none"
         >
           {item.children.map((child, j) => (
-            <FlyChild key={j} child={child} onSelect={() => setHov(false)} />
+            <FlyChild key={j} child={child} onSelect={onSelect} />
           ))}
         </ul>
       )}

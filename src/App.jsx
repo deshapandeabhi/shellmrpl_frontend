@@ -46,23 +46,25 @@ import ContactPage       from './pages/ContactPage';
  *   - Content: margin-left 248px, margin-top 90px, height calc(100vh - 90px), overflow-y auto
  */
 function App() {
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
+
   return (
     <Router>
       {/* Fixed header spans the entire top */}
-      <Header />
+      <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
 
       {/* Fixed left sidebar (below header) */}
-      <Sidebar />
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       {/*
        * Scrollable content area
-       * margin-left: 248px (sidebar width)
-       * margin-top:  90px  (header height)
-       * height: calc(100vh - 90px) + overflow-y: auto → ONLY this scrolls
+       * margin-left: 248px (sidebar width) on large screens
+       * margin-left: 0 on smaller screens
        */}
       <main
+        className="transition-all duration-300 ease-in-out"
         style={{
-          marginLeft: '248px',
+          marginLeft: 'var(--sidebar-width, 0px)',
           marginTop: '90px',
           height: 'calc(100vh - 90px)',   /* EXACT height so scroll works */
           overflowY: 'auto',              /* ONLY this scrolls */
@@ -71,6 +73,16 @@ function App() {
           flexDirection: 'column',
         }}
       >
+        {/* Dynamic style tag to handle responsive margin-left without conflicting with inline styles */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (min-width: 1024px) {
+            main { --sidebar-width: 248px !important; }
+          }
+          @media (max-width: 1023px) {
+            main { --sidebar-width: 0px !important; }
+          }
+        `}} />
+        
         <Routes>
           <Route path="/"                          element={<ProfilePage />} />
           <Route path="/about"                     element={<ProfilePage />} />

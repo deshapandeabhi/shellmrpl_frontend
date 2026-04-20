@@ -76,3 +76,43 @@ main {
 .wp-content-column .e-sticky-up {
   position: static !important;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-[#333] bg-[#ffffff];
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+  }
+
+  /* Custom Scrollbar for the main content area */
+  main::-webkit-scrollbar {
+    width: 8px;
+  }
+  main::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  main::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  main::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+  }
+}
+
+@layer utilities {
+  .responsive-container {
+    @apply px-4 md:px-8 lg:px-12 max-w-[1200px] mx-auto w-full;
+  }
+  
+  .responsive-heading {
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold;
+  }
+}
