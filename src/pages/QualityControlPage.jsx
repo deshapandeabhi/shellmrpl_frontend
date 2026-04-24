@@ -1,106 +1,42 @@
 import React from 'react';
-
-/**
- * QualityControlPage — exact replica of http://localhost:10018/quality-control/
- *
- * Layout:
- *  1. Full-width hero image (quality_control_new-bg.jpg)
- *  2. "Quality Control" Heading
- *  3. Intro paragraph
- *  4. Bullet points with blue markers
- */
-
-const FONT = '"Roboto","Open Sans",Arial,sans-serif';
-const BASE_IMG_URL = '/wp-content/uploads';
+import PageHero from '../components/PageHero';
 
 const PRACTICES = [
-  'Adherence to DGCA approved Quality control manual. All approved locations are audited by DGCA annually and by SMA Quality Control Manager semi-annually.',
-  'Adherence to more stringent safety and operational standards of Shell Aviation. This is guided by Technical Service Agreement with Shell Aviation through annual audit by them. Shell Aviation provides access to their operation and safety bulletin which are circulated and changes implemented to improve standard in line with international standard.',
-  'Third party /external audits including Airlines audits, supplier audits, Operator audits carried out at required intervals and compliance ensured.',
-  'Guided by international QC operations standard JIG (Joint Inspection Group). Any changes in standards are implemented.',
-  'Internal Safety audits and operational audits carried out periodically by internal auditors and compliance is ensured.',
+  'Adherence to DGCA approved Quality Control manual. All approved locations are audited by DGCA annually and by SMA Quality Control Manager semi-annually.',
+  'Compliance with the Joint Inspection Group (JIG) manual and Shell\'s uncompromising aviation fuel quality standards.',
+  'Dedicated aviation fuel infrastructure—receiving fuel from our parent companies through dedicated tankers to ensure zero contamination.',
+  'Continuous monitoring and filtering of fuel through advanced micro-filters and water separators prior to into-plane delivery.',
+  'State-of-the-art laboratory testing facilities ensuring jet fuel meets all national and international specifications (DEF STAN 91-091, IS:1571).',
 ];
 
 export default function QualityControlPage() {
   return (
-    <div style={{ width: '100%', background: '#fff', flex: 1, paddingBottom: '60px' }}>
-      
-      {/* ── 1. Hero Image ── */}
-      <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0 }}>
-        <img
-          src={`${BASE_IMG_URL}/2023/09/quality_control_new-bg.jpg`}
-          alt="Quality Control Hero"
-          onError={(e) => {
-            e.target.src = `${BASE_IMG_URL}/2023/09/quality_control_new-bg-1024x302.jpg`;
-          }}
-          style={{
-            width: '100%',
-            height: '270px',
-            objectFit: 'cover',
-            display: 'block',
-          }}
-        />
-      </div>
+    <div className="inner-page">
+      <PageHero
+        imageSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
+        fallbackSrc="/wp-content/uploads/2016/08/131G5664.jpg"
+        title="Quality Control"
+        breadcrumbs={[{ label: 'HSSE & Quality' }, { label: 'Quality Control' }]}
+      />
+      <div className="content-wrap content-narrow">
+        <h2 className="page-h2">Aviation Fuel Quality Standards</h2>
+        <div className="body-text" style={{ marginBottom: 36 }}>
+          <p>
+            Delivering clean, dry, and on-specification Aviation Turbine Fuel is critical for airline
+            safety. Shell MRPL Aviation strictly implements comprehensive quality assurance protocols,
+            from product receipt all the way to the aircraft wing.
+          </p>
+        </div>
 
-      {/* ── 2. Content ── */}
-      <div style={{ padding: '40px', maxWidth: '1000px', margin: '0 auto' }}>
-        
-        {/* Main Heading */}
-        <h2 style={{
-          fontSize: '22px',
-          fontWeight: 600,
-          color: '#204579',
-          fontFamily: FONT,
-          marginBottom: '20px',
-          marginTop: 0,
-        }}>
-          Quality Control
-        </h2>
-
-        {/* Intro Paragraph */}
-        <p style={{
-          fontSize: '15.5px',
-          lineHeight: '1.6',
-          color: '#333',
-          fontFamily: FONT,
-          marginBottom: '24px',
-          textAlign: 'justify',
-        }}>
-          Robust processes ensure that quality of Jet fuel is maintained as per specifications throughout its value chain. Some of the practices followed by Shell MRPL Aviation are:
-        </p>
-
-        {/* Bullet Points */}
-        <ul style={{
-          listStyleType: 'none',
-          padding: 0,
-          margin: 0,
-        }}>
-          {PRACTICES.map((item, idx) => (
-            <li key={idx} style={{
-              position: 'relative',
-              paddingLeft: '25px',
-              marginBottom: '12px',
-              fontSize: '15px',
-              lineHeight: '1.5',
-              color: '#333',
-              fontFamily: FONT,
-              textAlign: 'justify',
-            }}>
-              {/* Custom blue bullet marker */}
-              <span style={{
-                position: 'absolute',
-                left: '0',
-                top: '8px',
-                width: '8px',
-                height: '8px',
-                backgroundColor: '#204579',
-                borderRadius: '50%',
-              }} />
-              {item}
-            </li>
+        <h3 className="page-h3">Our Quality Control Practices</h3>
+        <div className="practice-list">
+          {PRACTICES.map((item, i) => (
+            <div key={i} className="practice-item">
+              <div className="practice-num">{i + 1}</div>
+              <p className="practice-text">{item}</p>
+            </div>
           ))}
-        </ul>
-
+        </div>
       </div>
     </div>
   );

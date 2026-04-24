@@ -2,97 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="http://localhost:10018/wp-content/uploads/2023/10/cropped-favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="/wp-content/uploads/2023/10/cropped-favicon-32x32.png" sizes="32x32" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shell MRPL Aviation Fuels and Services Limited</title>
-
-    <!-- ── Elementor Core CSS ─────────────────────────────────────────── -->
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/plugins/elementor/assets/css/frontend.min.css" />
-    <!-- Pro elements sticky/nav -->
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/plugins/pro-elements/assets/css/modules/sticky.min.css" />
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/plugins/pro-elements/assets/css/widget-nav-menu.min.css" />
-    <!-- Image carousel -->
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css" />
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css" />
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/plugins/elementor/assets/css/widget-image-carousel.min.css" />
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css" />
-    <!-- Google Fonts matching WP site -->
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/uploads/elementor/google-fonts/css/roboto.css" />
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/uploads/elementor/google-fonts/css/robotoslab.css" />
-    <!-- Hello Elementor theme reset -->
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/themes/hello-elementor/assets/css/reset.css" />
-    <link rel="stylesheet" href="http://localhost:10018/wp-content/themes/hello-elementor/assets/css/theme.css" />
-
-    <style>
-      /* ── Global body reset (matches WordPress Hello Elementor theme) ── */
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      html, body { width: 100%; height: 100%; overflow: hidden; background: #fff; }
-      body { font-family: "Roboto", "Open Sans", Arial, sans-serif; }
-
-      /* ── Root React div fills the screen ── */
-      #root { width: 100%; height: 100%; overflow: hidden; }
-
-      /* ── Force ALL Elementor sections/columns to 100% width ── */
-      .wp-content-column,
-      .wp-content-column .elementor-section,
-      .wp-content-column .elementor-container,
-      .wp-content-column .elementor-row,
-      .wp-content-column .elementor-col-100,
-      .wp-content-column .elementor-col-50,
-      .wp-content-column .elementor-col-33,
-      .wp-content-column .elementor-column,
-      .wp-content-column .elementor-widget-wrap,
-      .wp-content-column .elementor-widget,
-      .wp-content-column .elementor-widget-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        flex: none !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
-
-      /* ── Carousel / Swiper full width ── */
-      .wp-content-column .elementor-image-carousel-wrapper,
-      .wp-content-column .swiper,
-      .wp-content-column .swiper-wrapper,
-      .wp-content-column .swiper-slide { width: 100% !important; }
-      .wp-content-column .swiper-slide-image,
-      .wp-content-column .swiper-slide img,
-      .wp-content-column img {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        display: block !important;
-        object-fit: cover;
-      }
-
-      /* ── Section padding reset ── */
-      .wp-content-column .elementor-section { padding: 0 !important; }
-
-      /* ── Typography ── */
-      .elementor-heading-title { font-family: "Roboto", sans-serif; font-weight: 700; color: #333; }
-      .elementor-text-editor { font-family: "Roboto", sans-serif; color: #555; font-size: 15px; line-height: 1.8; }
-      .elementor-text-editor p { margin-bottom: 1rem; }
-
-      /* ── Hides WP mobile sidebar that bleeds in ── */
-      .wp-content-column .elementor-hidden-desktop { display: none !important; }
-      .wp-content-column .e-sticky-up { position: static !important; }
-    </style>
   </head>
   <body>
     <div id="root"></div>
-
-    <!-- ── jQuery (Elementor depends on it for carousels) ────────────── -->
-    <script src="http://localhost:10018/wp-includes/js/jquery/jquery.min.js"></script>
-
-    <!-- ── Swiper v8 (controls image carousel autoplay) ─────────────── -->
-    <script src="http://localhost:10018/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js"></script>
-
-    <!-- ── Elementor Frontend JS (activates widgets after React mounts) -->
-    <script src="http://localhost:10018/wp-content/plugins/elementor/assets/js/frontend.min.js" defer></script>
-
-    <!-- ── Vite React entry ──────────────────────────────────────────── -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

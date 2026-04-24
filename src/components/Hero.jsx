@@ -4,7 +4,6 @@ const Hero = () => {
   return (
     <section className="w-full flex-grow bg-white">
       
-      {/* Hero Image Without Text Overlay */}
       <div className="w-full h-[400px] md:h-[450px] relative mt-1">
         <img 
           src="/wp-content/uploads/2016/08/profile-bg.jpg" 
@@ -13,7 +12,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Main Content Profile Heading */}
+
       <div className="text-left py-8 px-10 border-l border-r border-[#e0e0e0]">
         <h2 className="text-[#1a1a1a] text-[28px] font-bold mb-3 relative inline-block font-openSans">
           Profile

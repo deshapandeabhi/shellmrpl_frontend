@@ -1,179 +1,95 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import PageHero from '../components/PageHero';
 
-/**
- * CSRProjectsPage
- *
- * Auto-generated from http://localhost:10018/project-pics/
- * Content column only – sidebar is handled by the parent <Sidebar> component.
- * All internal links have been rewritten to React Router paths.
- */
-const CSRProjectsPage = () => {
-  const navigate = useNavigate();
+const DOWNLOADS = [
+  { label: 'CSR Projects 2024-25', url: '2024/09/CSR-Approved-Projects-for-FY-2024-25.pdf' },
+  { label: 'CSR Projects 2023-24', url: '2024/03/csr-projects-for-fy-2023-24.pdf' },
+  { label: 'CSR Projects 2022-23', url: '2022/10/CSR-project-details-2022-23.pdf' },
+  { label: 'CSR Projects 2021-22', url: '2022/01/CSR-Approved-Projects-for-FY-2021-22.pdf' },
+  { label: 'CSR Projects 2020-21', url: '2021/04/Projects-Approved.pdf' },
+  { label: 'CSR Projects 2019-20', url: '2021/04/Projects-Approved-by-the-Board.pdf' },
+];
 
-  useEffect(() => {
-    // Intercept data-react-link anchors and navigate client-side
-    const handler = (e) => {
-      const anchor = e.target.closest('a[data-react-link]');
-      if (anchor) {
-        e.preventDefault();
-        navigate(anchor.getAttribute('href'));
-      }
-    };
-    document.addEventListener('click', handler);
-    return () => document.removeEventListener('click', handler);
-  }, [navigate]);
+const IMAGES = [
+  { img: '/wp-content/uploads/2021/04/project1.jpeg', cat: 'Education', title: 'Mini Science Lab' },
+  { img: '/wp-content/uploads/2021/04/project2.jpeg', cat: 'Sanitation', title: 'Community Infrastructure' },
+  { img: '/wp-content/uploads/2021/04/2.jpg', cat: 'Health', title: 'Medical Support Facilities' },
+  { img: '/wp-content/uploads/2021/04/3.jpg', cat: 'Community', title: 'Local Engagement Programs' },
+];
 
+function PdfIcon() {
   return (
-    <div className="w-full h-full bg-white wp-content-column">
-      {/* Elementor CSS removed — styles inlined in React components */}
-      {/* Elementor content column – pixel-perfect replica */}
-      <div dangerouslySetInnerHTML={{ __html: `
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<section class="elementor-section elementor-inner-section elementor-element elementor-element-3bcc861 elementor-section-full_width elementor-section-height-default elementor-section-height-default wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no" data-id="3bcc861" data-element_type="section" data-e-type="section">
-						<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-525d6e3" data-id="525d6e3" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-3e247b7 elementor-widget elementor-widget-heading" data-id="3e247b7" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h6 class="elementor-heading-title elementor-size-default"><a href="/wp-content/uploads/2024/09/CSR-Approved-Projects-for-FY-2024-25.pdf" target="_blank">CSR PROJECTS 2024-25</a></h6>				</div>
-				</div>
-				<div class="elementor-element elementor-element-b5b8698 elementor-widget elementor-widget-heading" data-id="b5b8698" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h6 class="elementor-heading-title elementor-size-default"><a href="/wp-content/uploads/2024/03/csr-projects-23-24.png" target="_blank">CSR PROJECTS 2023-24</a></h6>				</div>
-				</div>
-				<div class="elementor-element elementor-element-2d6f58e elementor-widget elementor-widget-heading" data-id="2d6f58e" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h6 class="elementor-heading-title elementor-size-default"><a href="/wp-content/uploads/2023/12/CSR-Report-22-23.pdf" target="_blank">CSR PROJECTS 2022-23</a></h6>				</div>
-				</div>
-				<div class="elementor-element elementor-element-9fb6124 elementor-widget elementor-widget-heading" data-id="9fb6124" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h6 class="elementor-heading-title elementor-size-default"><a href="/wp-content/uploads/2022/06/CSR-PROJECTS-2021-22.pdf" target="_blank">CSR PROJECTS 2021-22</a></h6>				</div>
-				</div>
-				<div class="elementor-element elementor-element-8561351 elementor-widget elementor-widget-heading" data-id="8561351" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h6 class="elementor-heading-title elementor-size-default"><a href="/wp-content/uploads/2022/06/CSR-PROJECTS-2020-21.pdf" target="_blank">CSR PROJECTS 2020-21</a></h6>				</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-897bd0c" data-id="897bd0c" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-2c9963a elementor-widget elementor-widget-heading" data-id="2c9963a" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h6 class="elementor-heading-title elementor-size-default"><a href="/wp-content/uploads/2021/02/PROJECTS-2019-20.pdf" target="_blank">CSR PROJECTS 2019-20</a></h6>				</div>
-				</div>
-				<div class="elementor-element elementor-element-733a38d elementor-widget elementor-widget-heading" data-id="733a38d" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h6 class="elementor-heading-title elementor-size-default"><a href="/wp-content/uploads/2021/02/PROJECTS-2018-19.pdf" target="_blank">CSR PROJECTS 2018-19</a></h6>				</div>
-				</div>
-				<div class="elementor-element elementor-element-9ae9e5e elementor-widget elementor-widget-heading" data-id="9ae9e5e" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h6 class="elementor-heading-title elementor-size-default"><a href="/wp-content/uploads/2021/02/PROJECTS-2017-18.pdf" target="_blank">CSR PROJECTS 2017-18</a></h6>				</div>
-				</div>
-				<div class="elementor-element elementor-element-fa70c19 elementor-widget elementor-widget-heading" data-id="fa70c19" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h6 class="elementor-heading-title elementor-size-default"><a href="/wp-content/uploads/2021/02/PROJECTS-2016-17.pdf" target="_blank">CSR PROJECTS 2016-17</a></h6>				</div>
-				</div>
-				<div class="elementor-element elementor-element-c5e19e6 elementor-widget elementor-widget-heading" data-id="c5e19e6" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h6 class="elementor-heading-title elementor-size-default"><a href="/wp-content/uploads/2021/02/PROJECTS-2015-16.pdf" target="_blank">CSR PROJECTS 2015-16</a></h6>				</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<div class="elementor-element elementor-element-80d5d55 elementor-widget elementor-widget-spacer" data-id="80d5d55" data-element_type="widget" data-e-type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-1949870 elementor-widget elementor-widget-image-gallery" data-id="1949870" data-element_type="widget" data-e-type="widget" data-widget_type="image-gallery.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-image-gallery">
-			<div id="gallery-1" class="gallery galleryid-2405 gallery-columns-2 gallery-size-thumbnail"><figure class="gallery-item">
-			<div class="gallery-icon landscape">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1949870" data-elementor-lightbox-title="Shell MRPL Aviation is taking up the construction of the toilet block in partnership with MRPL at Govt PU College for Women, Balmatta, Mangalore." data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NDQ3LCJ1cmwiOiJodHRwOlwvXC9sb2NhbGhvc3Q6MTAwMThcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMTZcLzA4XC9EU0NfMTY0MS5qcGciLCJzbGlkZXNob3ciOiIxOTQ5ODcwIn0%3D"><img decoding="async" width="150" height="150" src="/wp-content/uploads/2016/08/DSC_1641-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" aria-describedby="gallery-1-447"></a>
-			</div>
-				<figcaption class="wp-caption-text gallery-caption" id="gallery-1-447">
-				Shell MRPL Aviation is taking up the construction of the toilet block in partnership with MRPL at Govt PU College for Women, Balmatta, Mangalore. 
-				</figcaption></figure><figure class="gallery-item">
-			<div class="gallery-icon landscape">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1949870" data-elementor-lightbox-title="Handing over of the LOI by CEO" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NDQ2LCJ1cmwiOiJodHRwOlwvXC9sb2NhbGhvc3Q6MTAwMThcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMTZcLzA4XC9EU0NfMTYzNi5qcGciLCJzbGlkZXNob3ciOiIxOTQ5ODcwIn0%3D"><img decoding="async" width="150" height="150" src="/wp-content/uploads/2016/08/DSC_1636-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" aria-describedby="gallery-1-446"></a>
-			</div>
-				<figcaption class="wp-caption-text gallery-caption" id="gallery-1-446">
-				Handing over of the LOI by CEO – Shell MRPL Aviation, Mr Konduri Lakshminarayana to Shri J R Lobo, Hon’ble MLA of Mangalore and Ms Mariette J Mascarenhas, Principal of Govt PU College for Women, Balmatta. Shell MRPL Aviation is taking up the construction of the toilet block in partnership with MRPL at Govt PU College for Women, Balmatta, Mangalore. 
-				</figcaption></figure><figure class="gallery-item">
-			<div class="gallery-icon landscape">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1949870" data-elementor-lightbox-title="Inauguration of Computer lab at Govt Primary School, Palace Guttahalli - Bangalore" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NDQ0LCJ1cmwiOiJodHRwOlwvXC9sb2NhbGhvc3Q6MTAwMThcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMTZcLzA4XC8yMDE3MDIwNF8xNjQxMzcuanBnIiwic2xpZGVzaG93IjoiMTk0OTg3MCJ9"><img loading="lazy" decoding="async" width="150" height="150" src="/wp-content/uploads/2016/08/20170204_164137-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" aria-describedby="gallery-1-444"></a>
-			</div>
-				<figcaption class="wp-caption-text gallery-caption" id="gallery-1-444">
-				Shell MRPL Aviation team with Dr. C N Ashwathnarayan, Hon’ble MLA of Malleshwaram, Bangalore during the completion ceremony of Green &amp; Safe School project and inauguration of Computer lab at Govt Primary School, Palace Guttahalli – Bangalore. As part of CSR initiative, Shell MRPL Aviation took up the school renovation and set-up of computer lab.
-				</figcaption></figure><figure class="gallery-item">
-			<div class="gallery-icon landscape">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1949870" data-elementor-lightbox-title="Inauguration of Computer lab at Govt Primary School, Palace Guttahalli - Bangalore" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NDQzLCJ1cmwiOiJodHRwOlwvXC9sb2NhbGhvc3Q6MTAwMThcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMTZcLzA4XC8yMDE3MDIwNF8xNjE1NDAuanBnIiwic2xpZGVzaG93IjoiMTk0OTg3MCJ9"><img loading="lazy" decoding="async" width="150" height="150" src="/wp-content/uploads/2016/08/20170204_161540-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-			</div></figure><figure class="gallery-item">
-			<div class="gallery-icon landscape">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1949870" data-elementor-lightbox-title="Inauguration of Computer lab at Govt Primary School, Palace Guttahalli - Bangalore" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NDQ1LCJ1cmwiOiJodHRwOlwvXC9sb2NhbGhvc3Q6MTAwMThcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMTZcLzA4XC8yMDE3MDIwNF8xNjQ5MDQuanBnIiwic2xpZGVzaG93IjoiMTk0OTg3MCJ9"><img loading="lazy" decoding="async" width="150" height="150" src="/wp-content/uploads/2016/08/20170204_164904-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-			</div></figure><figure class="gallery-item">
-			<div class="gallery-icon landscape">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1949870" data-elementor-lightbox-title="Inauguration of Computer lab at Govt Primary School, Palace Guttahalli - Bangalore" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NDQyLCJ1cmwiOiJodHRwOlwvXC9sb2NhbGhvc3Q6MTAwMThcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMTZcLzA4XC8yMDE3MDIwNF8xNTQ2NDMuanBnIiwic2xpZGVzaG93IjoiMTk0OTg3MCJ9"><img loading="lazy" decoding="async" width="150" height="150" src="/wp-content/uploads/2016/08/20170204_154643-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-			</div></figure><figure class="gallery-item">
-			<div class="gallery-icon landscape">
-				<a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="1949870" data-elementor-lightbox-title="Inauguration of Computer lab at Govt Primary School, Palace Guttahalli - Bangalore" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NDQxLCJ1cmwiOiJodHRwOlwvXC9sb2NhbGhvc3Q6MTAwMThcL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMTZcLzA4XC8yMDE3MDIwNF8xNTQzMDguanBnIiwic2xpZGVzaG93IjoiMTk0OTg3MCJ9"><img loading="lazy" decoding="async" width="150" height="150" src="/wp-content/uploads/2016/08/20170204_154308-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt=""></a>
-			</div></figure>
-		</div>
-		</div>
-						</div>
-				</div>
-				<section class="elementor-section elementor-inner-section elementor-element elementor-element-d7aeeba elementor-section-full_width elementor-section-height-default elementor-section-height-default wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no" data-id="d7aeeba" data-element_type="section" data-e-type="section">
-						<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-48ed433" data-id="48ed433" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-5d77463 elementor-widget elementor-widget-template" data-id="5d77463" data-element_type="widget" data-e-type="widget" data-widget_type="template.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-template">
-					
-				</div>
-						</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-inner-section elementor-element elementor-element-e1dd519 elementor-section-full_width elementor-section-height-default elementor-section-height-default wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no" data-id="e1dd519" data-element_type="section" data-e-type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-5a68e2f" data-id="5a68e2f" data-element_type="column" data-e-type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-12cd7f5 elementor-widget elementor-widget-template" data-id="12cd7f5" data-element_type="widget" data-e-type="widget" data-widget_type="template.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-template">
-					<div data-elementor-type="section" data-elementor-id="4066" class="elementor elementor-4066" data-elementor-post-type="elementor_library">
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-46e5c088 elementor-section-full_width elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default wpr-particle-no wpr-jarallax-no wpr-parallax-no wpr-sticky-section-no" data-id="46e5c088" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-144aea64" data-id="144aea64" data-element_type="column" data-e-type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-ea793a8 elementor-widget elementor-widget-heading" data-id="ea793a8" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h5 class="elementor-heading-title elementor-size-default">(c) 2025. Shell MRPL Aviation Fuels and Services Limited. All Rights Reserved</h5>				</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				</div>
-				</div>
-						</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-					</div>
-		` }} />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+      <line x1="16" y1="13" x2="8" y2="13" />
+      <line x1="16" y1="17" x2="8" y2="17" />
+      <polyline points="10 9 9 9 8 9" />
+    </svg>
+  );
+}
+
+export default function CSRProjectsPage() {
+  return (
+    <div className="inner-page">
+      <PageHero
+        imageSrc="/wp-content/uploads/2016/08/csr-bg.jpg"
+        fallbackSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
+        title="CSR Projects"
+        breadcrumbs={[
+          { label: 'Investors Information', to: '/investors-information' },
+          { label: 'CSR Policy', to: '/csr' },
+          { label: 'CSR Projects' }
+        ]}
+      />
+      <div className="content-wrap">
+        <h2 className="page-h2">Approved CSR Projects</h2>
+        <div className="body-text" style={{ maxWidth: 860, marginBottom: 36 }}>
+          <p>
+            Our Corporate Social Responsibility initiatives are focused on long-term sustainability
+            and creating value in the communities where we operate. We regularly review and approve
+            new projects that align with our CSR objectives.
+          </p>
+        </div>
+
+        <h3 className="page-h3">Project Details Archive</h3>
+        <div className="csr-dl-grid" style={{ maxWidth: 860 }}>
+          {DOWNLOADS.map((item, i) => (
+            <a
+              key={i}
+              href={`/wp-content/uploads/${item.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-download"
+            >
+              <PdfIcon />
+              <span>{item.label}</span>
+            </a>
+          ))}
+        </div>
+
+        <h3 className="page-h3" style={{ marginTop: 48, marginBottom: 24 }}>Project Highlights</h3>
+        <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          {IMAGES.map((item, i) => (
+            <div key={i} className="feature-card">
+              <div className="feature-card-img-wrap" style={{ height: 200 }}>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="feature-card-img"
+                  onError={e => { e.target.style.background = 'var(--gray-200)'; e.target.onerror = null; }}
+                />
+              </div>
+              <div className="feature-card-body" style={{ padding: 20 }}>
+                <span className="feature-card-cat">{item.cat}</span>
+                <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: 16 }}>
+                  {item.title}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
-};
-
-export default CSRProjectsPage;
+}

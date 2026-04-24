@@ -1,227 +1,98 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import PageHero from '../components/PageHero';
 
-/**
- * GalleryPage — 3-column image grid
- *
- * Exact replica of http://localhost:10018/gallery/
- * - 3-column CSS Grid layout matching WordPress gallery-columns-3
- * - Uniform card height with object-fit cover
- * - Click → lightbox modal overlay (like Elementor lightbox)
- * - Only shows images with valid dimensions (filters out 1×1 placeholders)
- */
-
-const BASE = '/wp-content/uploads';
-
-// All gallery images extracted from WordPress (filtered — removed 1×1 placeholders)
 const IMAGES = [
-  { thumb: `${BASE}/2023/09/Pic5-e1623674472624-300x138.jpg`,      full: `${BASE}/2023/09/Pic5-e1623674472624.jpg`,          caption: '' },
-  { thumb: `${BASE}/2023/09/Pic4-e1623674458152-300x139.jpg`,      full: `${BASE}/2023/09/Pic4-e1623674458152.jpg`,          caption: '' },
-  { thumb: `${BASE}/2023/09/Pic3-e1623674444251-300x139.png`,      full: `${BASE}/2023/09/Pic3-e1623674444251.png`,          caption: '' },
-  { thumb: `${BASE}/2023/09/Pic3-e1623674444251-1-300x139.png`,    full: `${BASE}/2023/09/Pic3-e1623674444251-1.png`,        caption: '' },
-  { thumb: `${BASE}/2022/08/OTUU3242-e1700211980252-300x127.jpg`,   full: `${BASE}/2022/08/OTUU3242-e1700211980252.jpg`,       caption: '' },
-  { thumb: `${BASE}/2022/08/LNTT4287-300x169.jpg`,                 full: `${BASE}/2022/08/LNTT4287.jpg`,                    caption: '' },
-  { thumb: `${BASE}/2022/08/FHML0461-300x169.jpg`,                 full: `${BASE}/2022/08/FHML0461.jpg`,                    caption: '' },
-  { thumb: `${BASE}/2021/06/Week-300x140.png`,                     full: `${BASE}/2021/06/Week.png`,                        caption: '' },
-  { thumb: `${BASE}/2020/11/202011021224_0001-300x212.jpg`,         full: `${BASE}/2020/11/202011021224_0001.jpg`,            caption: '' },
-  { thumb: `${BASE}/2016/08/20170204_164904-300x169.jpg`,           full: `${BASE}/2016/08/20170204_164904.jpg`,              caption: 'Inauguration of Computer lab at Govt Primary School, Palace Guttahalli - Bangalore' },
-  { thumb: `${BASE}/2016/08/20170204_161540-300x169.jpg`,           full: `${BASE}/2016/08/20170204_161540.jpg`,              caption: 'Inauguration of Computer lab at Govt Primary School, Palace Guttahalli - Bangalore' },
-  { thumb: `${BASE}/2016/08/20170204_154643-300x169.jpg`,           full: `${BASE}/2016/08/20170204_154643.jpg`,              caption: 'Inauguration of Computer lab at Govt Primary School, Palace Guttahalli - Bangalore' },
-  { thumb: `${BASE}/2016/08/20170204_154308-300x169.jpg`,           full: `${BASE}/2016/08/20170204_154308.jpg`,              caption: 'Inauguration of Computer lab at Govt Primary School, Palace Guttahalli - Bangalore' },
-  { thumb: `${BASE}/2016/08/14-300x125.jpg`,                        full: `${BASE}/2016/08/14.jpg`,                          caption: '' },
-  { thumb: `${BASE}/2016/08/9-300x180.jpg`,                         full: `${BASE}/2016/08/9.jpg`,                           caption: '' },
-  { thumb: `${BASE}/2016/08/8-300x180.jpg`,                         full: `${BASE}/2016/08/8.jpg`,                           caption: '' },
-  { thumb: `${BASE}/2016/08/7-2-300x180.jpg`,                       full: `${BASE}/2016/08/7-2.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/5-4-300x180.jpg`,                       full: `${BASE}/2016/08/5-4.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/4-4-300x180.jpg`,                       full: `${BASE}/2016/08/4-4.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/3-4-300x180.jpg`,                       full: `${BASE}/2016/08/3-4.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/2-5-300x180.jpg`,                       full: `${BASE}/2016/08/2-5.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/1-5-300x180.jpg`,                       full: `${BASE}/2016/08/1-5.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/5-3-300x225.jpg`,                       full: `${BASE}/2016/08/5-3.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/4-3-300x166.jpg`,                       full: `${BASE}/2016/08/4-3.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/3-3-300x169.jpg`,                       full: `${BASE}/2016/08/3-3.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/2-4-300x169.jpg`,                       full: `${BASE}/2016/08/2-4.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/1-4-300x169.jpg`,                       full: `${BASE}/2016/08/1-4.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2016/08/7-1-300x167.jpg`,                       full: `${BASE}/2016/08/7-1.jpg`,                         caption: 'Safety Day Celebrations at Mangalore-2015' },
-  { thumb: `${BASE}/2016/08/6-1-300x167.jpg`,                       full: `${BASE}/2016/08/6-1.jpg`,                         caption: 'Safety Day Celebrations at Mangalore-2015' },
-  { thumb: `${BASE}/2016/08/5-2-300x167.jpg`,                       full: `${BASE}/2016/08/5-2.jpg`,                         caption: 'Safety Day Celebrations at Mangalore-2015' },
-  { thumb: `${BASE}/2016/08/3-2-300x167.jpg`,                       full: `${BASE}/2016/08/3-2.jpg`,                         caption: '' },
-  { thumb: `${BASE}/2018/06/Slider-6-3-300x143.jpg`,                full: `${BASE}/2018/06/Slider-6-3.jpg`,                  caption: '' },
-  { thumb: `${BASE}/2016/08/DSC_1641-300x200.jpg`,                   full: `${BASE}/2016/08/DSC_1641.jpg`,                    caption: 'Shell MRPL Aviation is taking up the construction of the toilet block in partnership with MRPL at Govt PU College for Women, Balmatta, Mangalore.' },
-  { thumb: `${BASE}/2016/08/DSC_1636-300x200.jpg`,                   full: `${BASE}/2016/08/DSC_1636.jpg`,                    caption: 'Handing over of the LOI by CEO' },
-  { thumb: `${BASE}/2016/08/20170204_164137-300x169.jpg`,            full: `${BASE}/2016/08/20170204_164137.jpg`,             caption: 'Shell MRPL Aviation team with Dr. C N Ashwathnarayan, Hon\'ble MLA of Malleshwaram, Bangalore' },
+  { src: '/wp-content/uploads/2022/08/FHML0461.jpg',                caption: 'Aviation fuelling operations at a major Indian airport' },
+  { src: '/wp-content/uploads/2022/08/OTUU3242-e1700211980252.jpg', caption: 'Shell MRPL Aviation team conducting safety briefing' },
+  { src: '/wp-content/uploads/2022/08/LNTT4287.jpg',                caption: 'Into-plane fuelling service in progress' },
+  { src: '/wp-content/uploads/2023/09/Pic5-e1623674472624.jpg',     caption: 'Airport fuelling facility overview' },
+  { src: '/wp-content/uploads/2023/09/Pic4-e1623674458152.jpg',     caption: 'Fuel quality testing and safety audit' },
+  { src: '/wp-content/uploads/2023/09/Pic3-e1623674444251.png',     caption: 'Ground support equipment inspection' },
 ];
 
 export default function GalleryPage() {
-  const [lightbox, setLightbox] = useState(null); // { idx }
+  const [lightbox, setLightbox]   = useState(null);
+  const [loadErrors, setLoadErrors] = useState({});
 
-  const openLightbox = (idx) => setLightbox({ idx });
+  const openLightbox  = (i) => setLightbox(i);
   const closeLightbox = () => setLightbox(null);
-  const prev = () => setLightbox({ idx: (lightbox.idx - 1 + IMAGES.length) % IMAGES.length });
-  const next = () => setLightbox({ idx: (lightbox.idx + 1) % IMAGES.length });
+  const prevImg = useCallback(() => setLightbox((i) => (i > 0 ? i - 1 : IMAGES.length - 1)), []);
+  const nextImg = useCallback(() => setLightbox((i) => (i < IMAGES.length - 1 ? i + 1 : 0)), []);
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const handler = (e) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft')  prevImg();
+      if (e.key === 'ArrowRight') nextImg();
+    };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, [lightbox, prevImg, nextImg]);
 
   return (
-    <div className="w-full bg-white flex-1 transition-all duration-300">
-      {/* ── Gallery heading ── */}
-      <div className="p-6 md:p-8 pb-3">
-        <h2 className="text-xl md:text-2xl font-bold text-[#333] font-roboto">
-          Gallery
-        </h2>
-      </div>
-
-      {/* ── Responsive CSS Grid ── */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-6 md:px-8 pb-10">
-        {IMAGES.map((img, idx) => (
-          <GalleryItem
-            key={idx}
-            img={img}
-            onClick={() => openLightbox(idx)}
-          />
-        ))}
-      </div>
-
-      {/* ── Lightbox modal ── */}
-      {lightbox !== null && (
-        <Lightbox
-          img={IMAGES[lightbox.idx]}
-          onClose={closeLightbox}
-          onPrev={prev}
-          onNext={next}
-          current={lightbox.idx + 1}
-          total={IMAGES.length}
-        />
-      )}
-    </div>
-  );
-}
-
-function GalleryItem({ img, onClick }) {
-  const [hov, setHov] = useState(false);
-  return (
-    <div
-      onClick={onClick}
-      onMouseEnter={() => setHov(true)}
-      onMouseLeave={() => setHov(false)}
-      style={{
-        cursor: 'pointer',
-        overflow: 'hidden',
-        backgroundColor: '#f0f0f0',
-        position: 'relative',
-      }}
-    >
-      <img
-        src={img.thumb}
-        alt={img.caption || 'Gallery image'}
-        loading="lazy"
-        style={{
-          width: '100%',
-          height: '170px',
-          objectFit: 'cover',
-          display: 'block',
-          transition: 'transform 0.25s ease',
-          transform: hov ? 'scale(1.04)' : 'scale(1)',
-        }}
+    <div className="inner-page">
+      <PageHero
+        imageSrc="/wp-content/uploads/2023/09/slider2.jpg"
+        title="Gallery"
+        breadcrumbs={[{ label: 'Gallery' }]}
       />
-      {img.caption && (
-        <div style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          background: 'rgba(0,0,0,0.55)',
-          color: '#fff',
-          fontSize: '11px',
-          padding: '4px 8px',
-          fontFamily: '"Roboto",sans-serif',
-          lineHeight: 1.4,
-        }}>
-          {img.caption}
+      <div className="content-wrap">
+        <h2 className="page-h2">Photo Gallery</h2>
+        <div className="body-text" style={{ marginBottom: 36 }}>
+          <p>A glimpse into our operations, safety initiatives, and team activities.</p>
+        </div>
+
+        <div className="gallery-grid">
+          {IMAGES.map((img, i) => (
+            !loadErrors[i] && (
+              <button
+                key={i}
+                className="gallery-item"
+                onClick={() => openLightbox(i)}
+                aria-label={`View image: ${img.caption}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.caption}
+                  loading="lazy"
+                  onError={() => setLoadErrors((prev) => ({ ...prev, [i]: true }))}
+                />
+                <div className="gallery-overlay">
+                  <div className="gallery-caption">{img.caption}</div>
+                </div>
+              </button>
+            )
+          ))}
+        </div>
+      </div>
+
+      {lightbox !== null && (
+        <div
+          className="lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image lightbox"
+          onClick={closeLightbox}
+        >
+          <div className="lightbox-center" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={IMAGES[lightbox].src}
+              alt={IMAGES[lightbox].caption}
+              className="lightbox-img"
+            />
+            <div style={{ color: '#fff', textAlign: 'center', marginTop: 16, fontFamily: 'var(--font-body)', fontSize: 14 }}>
+              <p>{IMAGES[lightbox].caption}</p>
+              <p style={{ opacity: 0.6, fontSize: 12, marginTop: 4 }}>
+                {lightbox + 1} / {IMAGES.length}
+              </p>
+            </div>
+          </div>
+          <button className="lightbox-close" onClick={closeLightbox} aria-label="Close lightbox">×</button>
+          <button className="lightbox-nav lightbox-prev" onClick={(e) => { e.stopPropagation(); prevImg(); }} aria-label="Previous image">‹</button>
+          <button className="lightbox-nav lightbox-next" onClick={(e) => { e.stopPropagation(); nextImg(); }} aria-label="Next image">›</button>
         </div>
       )}
     </div>
   );
-}
-
-function Lightbox({ img, onClose, onPrev, onNext, current, total }) {
-  return (
-    <div
-      onClick={onClose}
-      style={{
-        position: 'fixed', inset: 0,
-        backgroundColor: 'rgba(0,0,0,0.88)',
-        zIndex: 9999,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      {/* Prev button */}
-      <button
-        onClick={(e) => { e.stopPropagation(); onPrev(); }}
-        style={arrowBtn('left')}
-      >&#8249;</button>
-
-      {/* Image */}
-      <div
-        onClick={(e) => e.stopPropagation()}
-        style={{ maxWidth: '80vw', maxHeight: '80vh', position: 'relative' }}
-      >
-        <img
-          src={img.full}
-          alt={img.caption || 'Gallery'}
-          style={{
-            maxWidth: '80vw',
-            maxHeight: '75vh',
-            objectFit: 'contain',
-            display: 'block',
-            boxShadow: '0 8px 40px rgba(0,0,0,0.5)',
-          }}
-        />
-        {img.caption && (
-          <p style={{
-            color: '#ddd', textAlign: 'center', marginTop: '8px',
-            fontSize: '13px', fontFamily: '"Roboto",sans-serif',
-          }}>
-            {img.caption}
-          </p>
-        )}
-        <p style={{ color: '#888', textAlign: 'center', fontSize: '12px', margin: '4px 0 0' }}>
-          {current} / {total}
-        </p>
-      </div>
-
-      {/* Next button */}
-      <button
-        onClick={(e) => { e.stopPropagation(); onNext(); }}
-        style={arrowBtn('right')}
-      >&#8250;</button>
-
-      {/* Close button */}
-      <button
-        onClick={onClose}
-        style={{
-          position: 'fixed', top: '20px', right: '24px',
-          background: 'none', border: 'none',
-          color: '#fff', fontSize: '36px', cursor: 'pointer',
-          lineHeight: 1,
-        }}
-      >×</button>
-    </div>
-  );
-}
-
-function arrowBtn(side) {
-  return {
-    position: 'fixed',
-    [side]: '20px',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    background: 'rgba(255,255,255,0.15)',
-    border: 'none',
-    color: '#fff',
-    fontSize: '48px',
-    lineHeight: 1,
-    cursor: 'pointer',
-    padding: '4px 16px',
-    borderRadius: '4px',
-  };
 }

@@ -3,7 +3,6 @@ import React from 'react';
 const Navbar = () => {
   return (
     <div className="h-[88px] flex-grow bg-[#21406d] flex flex-wrap lg:flex-nowrap items-center justify-between px-8 text-white">
-      {/* Navigation Links */}
       <nav className="flex space-x-6 lg:space-x-10 text-[16px] font-openSans font-light">
         <a href="/" className="text-[#008dcf] hover:text-[#008dcf] transition-colors">Home</a>
         <a href="/gallery" className="hover:text-[#008dcf] transition-colors">Gallery</a>
@@ -11,7 +10,6 @@ const Navbar = () => {
         <a href="/contact" className="hover:text-[#008dcf] transition-colors">Contact Us</a>
       </nav>
 
-      {/* Modern Search Input Container */}
       <div className="relative mt-2 lg:mt-0">
         <div className="flex bg-white/90 rounded-sm overflow-hidden h-[34px] w-[220px]">
           <span className="text-gray-500 bg-[#e8e8e8] flex items-center justify-center w-10">

@@ -1,17 +1,7 @@
 import React from 'react';
+import PageHero from '../components/PageHero';
 
-/**
- * VisionPage — exact replica of http://localhost:10018/our-vision/
- *
- * Layout:
- *  1. Full-width hero image
- *  2. "Our Vision" main heading & paragraph
- *  3. Sub-sections: headings in greyish color with simple bullet points
- */
-
-const FONT = '"Roboto","Open Sans",Arial,sans-serif';
-
-const SECTIONS = [
+const VALUES = [
   {
     title: 'Honesty, Integrity and Respect',
     bullets: [
@@ -26,9 +16,9 @@ const SECTIONS = [
     bullets: [
       'We take pride in our people',
       'To us, our people matter',
+      "We ensure everybody's contribution counts",
+      "We recognise our people's contribution",
       'We invest in our people',
-      'We ensure everybody’s contribution counts',
-      'We recognise our people’s contribution',
     ],
   },
   {
@@ -37,14 +27,14 @@ const SECTIONS = [
       'Customers are central to our business',
       'We are proactive in understanding customer needs',
       'We are prompt in our response to customer needs',
-      'We seek to continuously align our systems processes to meet customer needs',
+      'We seek to continuously align our systems to meet customer needs',
     ],
   },
   {
     title: 'Excellence in All We Do',
     bullets: [
       'We are passionate in everything we do',
-      'We will get it right the first time, everytime',
+      'We will get it right the first time, every time',
       'We strive to exceed expectations all the time',
       'We seek innovative solutions',
     ],
@@ -52,7 +42,7 @@ const SECTIONS = [
   {
     title: 'Demonstrate Accountability',
     bullets: [
-      'We act and deliver on our commitments every-time',
+      'We act and deliver on our commitments every time',
       'We own up to our actions; the buck stops with me',
       'We pursue profitable growth',
     ],
@@ -77,7 +67,7 @@ const SECTIONS = [
     title: 'Work as One Team',
     bullets: [
       'We place the organization before ourselves',
-      'We respect diversity in everything (view points, people, gender etc)',
+      'We respect diversity in everything',
       'We collaborate across functions',
       'We continuously raise the bar for each other',
     ],
@@ -86,80 +76,40 @@ const SECTIONS = [
 
 export default function VisionPage() {
   return (
-    <div style={{ width: '100%', background: '#fff', flex: 1 }}>
-      
-      {/* ── 1. Hero Image ── */}
-      <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0 }}>
-        <img
-          src="/wp-content/uploads/2016/08/profile-bg.jpg"
-          alt="Shell MRPL Aviation — Vision"
-          style={{
-            width: '100%',
-            height: '270px',
-            objectFit: 'cover',
-            objectPosition: 'center 60%',
-            display: 'block',
-          }}
-        />
-      </div>
-
-      {/* ── 2. Content ── */}
-      <div style={{ padding: '32px 40px 48px', maxWidth: '800px' }}>
-        
-        {/* Main Vision */}
-        <h2 style={{
-          fontSize: '22px',
-          fontWeight: 700,
-          color: '#1f3d6e', // Matches WP primary blue headings
-          fontFamily: FONT,
-          marginBottom: '16px',
-          marginTop: 0,
-        }}>
-          Our Vision
-        </h2>
-        <p style={{
-          fontSize: '15px',
-          lineHeight: '1.8',
-          color: '#555',
-          fontFamily: FONT,
-          marginBottom: '32px',
-        }}>
-          To be the safest, most innovative and preferred partner for aviation fuels and services
-          across India, where people make a difference.
-        </p>
-
-        {/* Sub-sections */}
-        {SECTIONS.map((section, idx) => (
-          <div key={idx} style={{ marginBottom: '24px' }}>
-            <h5 style={{
-              fontSize: '17px',
-              fontWeight: 600,
-              color: '#666', // Greyish color in WP for these subheadings
-              fontFamily: FONT,
-              marginBottom: '12px',
-              marginTop: 0,
-            }}>
-              {section.title}
-            </h5>
-            <ul style={{
-              margin: 0,
-              paddingLeft: '20px',
-              listStyleType: 'disc',
-            }}>
-              {section.bullets.map((bullet, bIdx) => (
-                <li key={bIdx} style={{
-                  fontSize: '14.5px',
-                  color: '#666',
-                  fontFamily: FONT,
-                  lineHeight: '1.7',
-                  marginBottom: '6px',
-                }}>
-                  {bullet}
-                </li>
-              ))}
-            </ul>
+    <div className="inner-page">
+      <PageHero
+        imageSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
+        title="Vision &amp; Values"
+        breadcrumbs={[{ label: 'About', to: '/about' }, { label: 'Vision and Values' }]}
+      />
+      <div className="content-wrap">
+        <div className="content-narrow">
+          <h2 className="page-h2">Our Vision</h2>
+          <div className="vision-box">
+            <p className="vision-text">
+              To be the safest, most innovative and preferred partner for aviation fuels
+              and services across India — where people make a difference.
+            </p>
           </div>
-        ))}
+
+          <h2 className="page-h2">Our Values</h2>
+        </div>
+
+        <div className="value-grid">
+          {VALUES.map((section, i) => (
+            <div key={i} className="value-card">
+              <div className="value-title">{section.title}</div>
+              <ul>
+                {section.bullets.map((b, j) => (
+                  <li key={j} className="value-bullet">
+                    <span className="value-dot" aria-hidden="true" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
