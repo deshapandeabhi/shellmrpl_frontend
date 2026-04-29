@@ -1,13 +1,44 @@
 import React from 'react';
 import PageHero from '../components/PageHero';
 
+const BASE_IMG_URL = '/wp-content/uploads';
+
 const DIRECTORS = [
-  { name: 'Mr. M. Iyer',             role: 'Chairman',               image: '/wp-content/uploads/2016/08/board1.jpg' },
-  { name: 'Mr. Devendra Nath Soral', role: 'CEO & Director',         image: '/wp-content/uploads/2024/09/Dev-Soral-Picture.jpg' },
-  { name: 'Mr. Sanjay Kumar',        role: 'Director (Shell Nominee)',image: '/wp-content/uploads/2016/08/board4.jpg' },
-  { name: 'Mr. Seshasayee',          role: 'Director (MRPL Nominee)', image: '/wp-content/uploads/2016/08/board6-e1472713879820.jpg' },
-  { name: 'Mr. B. R. Gupta',         role: 'Director (MRPL Nominee)', image: '/wp-content/uploads/2016/08/board5.jpg' },
-  { name: 'Mr. Vincent Stuer',       role: 'Director (Shell Nominee)',image: '/wp-content/uploads/2016/08/board3.jpg' },
+  {
+    name: 'Mr. Mundkur Shyamprasad Kamath',
+    role: 'Chairman, Shell MRPL Aviation & Director, MRPL',
+    image: `${BASE_IMG_URL}/2024/08/ShyamPrasad-Kamath-MRPL.jpg`,
+  },
+  {
+    name: 'Mr. Sanjay Samuel Varkey',
+    role: 'Director, Shell MRPL Aviation & Shell India Markets Private Limited',
+    image: `${BASE_IMG_URL}/2024/05/sanjay-verkey.png`,
+  },
+  {
+    name: 'Mr. BH Vasudev Prasad',
+    role: 'Director, Shell MRPL Aviation & ED-Projects in MRPL',
+    image: `${BASE_IMG_URL}/2024/05/8.png`,
+  },
+  {
+    name: 'Mr. Ziad Victor Soussou',
+    role: 'Director, Shell MRPL Aviation',
+    image: `${BASE_IMG_URL}/2025/06/Photo_Zia-Victor.jpg`,
+  },
+  {
+    name: 'Mr. B N Bankapur',
+    role: 'Independent Director, Shell MRPL Aviation & Chairman, BEC Pvt Ltd',
+    image: `${BASE_IMG_URL}/2024/05/9.png`,
+  },
+  {
+    name: 'Mr. Saikumar Rajagopal',
+    role: 'Independent Director, Shell MRPL Aviation',
+    image: `${BASE_IMG_URL}/2024/05/2.png`,
+  },
+  {
+    name: 'Ms. Sangeeta Sumesh',
+    role: 'Independent Director, Shell MRPL Aviation',
+    image: `${BASE_IMG_URL}/2025/04/IMG-20250407-WA0033.jpg`,
+  },
 ];
 
 export default function BoardPage() {
@@ -27,7 +58,7 @@ export default function BoardPage() {
                 src={p.image}
                 alt={p.name}
                 className="person-photo"
-                onError={e => { 
+                onError={e => {
                   e.target.onerror = null;
                   e.target.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
                   e.target.style.background = 'var(--gray-200)';

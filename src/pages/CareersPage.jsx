@@ -20,8 +20,13 @@ export default function CareersPage() {
   const [form,    setForm]    = useState(EMPTY_FORM);
   const [success, setSuccess] = useState(false);
   const [errors,  setErrors]  = useState({});
-
-  const update = (field) => (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
+  const [isLoading, setIsLoading] = useState(false);
+  
+  const update = (field) => (e) => {
+    setForm((f) => ({ ...f, [field]: e.target.value }));
+    // Clear error for this field dynamically when typing
+    if (errors[field]) setErrors((errs) => ({ ...errs, [field]: null }));
+  };
 
   const validate = () => {
     const e = {};
@@ -32,13 +37,39 @@ export default function CareersPage() {
     return e;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
-    setSuccess(true);
-    setForm(EMPTY_FORM);
-    setErrors({});
+    
+    setIsLoading(true);
+    try {
+      const response = await fetch('http://localhost:8080/api/v1/careers/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        // Validation Errors (400) mapped dynamically from Spring Boot
+        if (response.status === 400 && data) {
+          setErrors(data);
+        } else {
+          setErrors({ form: data.error || 'Failed to submit application. Please try again.' });
+        }
+      } else {
+        setSuccess(true);
+        setForm(EMPTY_FORM);
+        setErrors({});
+      }
+    } catch (err) {
+      console.error('Submission failed', err);
+      setErrors({ form: 'Network error. Please ensure the backend server is running.' });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -58,15 +89,25 @@ export default function CareersPage() {
           </p>
         </div>
 
-        {success && (
+        {success ? (
           <div className="alert-success">
-            <strong>Application Submitted!</strong> Thank you for your application. We will review
-            your details and get back to you shortly.
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+              <strong style={{ display: 'block', fontSize: 16 }}>Application Submitted Successfully!</strong>
+              Thank you for your interest in joining Shell MRPL Aviation. Our HR team will carefully review your details and contact you securely if your profile matches our requirements.
+            </div>
           </div>
-        )}
-
-        <form onSubmit={handleSubmit} noValidate className="careers-form">
-          <h3 className="form-section-title">Personal Details</h3>
+        ) : (
+          <form className="career-form" onSubmit={handleSubmit}>
+            {errors.form && (
+               <div className="alert-error" style={{ color: 'var(--shell-red)', marginBottom: '20px', padding: '10px', background: '#ffebee', borderLeft: '4px solid var(--shell-red)' }}>
+                 {errors.form}
+               </div>
+            )}
+            
+            <h3 className="form-section-title">Personal Information</h3>
           <div className="form-grid-2">
             <div className="form-group">
               <label className="form-label" htmlFor="c-name">Full Name *</label>
@@ -147,11 +188,15 @@ export default function CareersPage() {
             <textarea id="c-exp" className="form-textarea" value={form.workExperience} onChange={update('workExperience')} />
           </div>
 
-          <div style={{ marginTop: 32 }}>
-            <button type="submit" className="btn-yellow">Submit Application</button>
+          {/* Submit */}
+          <div style={{ marginTop: 40, textAlign: 'right' }}>
+            <button type="submit" className="btn-cta-yellow" style={{ minWidth: 160 }} disabled={isLoading}>
+              {isLoading ? 'Submitting...' : 'Submit Application'}
+            </button>
           </div>
         </form>
-      </div>
+      )}</div>
+
     </div>
   );
 }
