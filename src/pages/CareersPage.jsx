@@ -24,14 +24,13 @@ export default function CareersPage() {
   
   const update = (field) => (e) => {
     setForm((f) => ({ ...f, [field]: e.target.value }));
-    // Clear error for this field dynamically when typing
     if (errors[field]) setErrors((errs) => ({ ...errs, [field]: null }));
   };
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim())    e.name    = 'Name is required';
-    if (!form.email.trim())   e.email   = 'Email is required';
+    if (!form.name.trim())    e.name    = 'Full name is required';
+    if (!form.email.trim())   e.email   = 'Valid email is required';
     if (!form.mobile.trim())  e.mobile  = 'Mobile number is required';
     if (!form.position)       e.position = 'Please select a position';
     return e;
@@ -53,11 +52,10 @@ export default function CareersPage() {
       const data = await response.json();
       
       if (!response.ok) {
-        // Validation Errors (400) mapped dynamically from Spring Boot
         if (response.status === 400 && data) {
           setErrors(data);
         } else {
-          setErrors({ form: data.error || 'Failed to submit application. Please try again.' });
+          setErrors({ form: data.error || 'Submission failed. Please try again later.' });
         }
       } else {
         setSuccess(true);
@@ -65,138 +63,122 @@ export default function CareersPage() {
         setErrors({});
       }
     } catch (err) {
-      console.error('Submission failed', err);
-      setErrors({ form: 'Network error. Please ensure the backend server is running.' });
+      setErrors({ form: 'Network error. Please check your connection.' });
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="inner-page">
+    <div className="site-page">
       <PageHero
         imageSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
-        title="Working with Shell MRPL Aviation"
+        title="Fuel Your Career"
         breadcrumbs={[{ label: 'Careers' }]}
       />
-      <div className="content-wrap content-narrow">
-        <h2 className="page-h2">Join Our Team</h2>
-        <div className="body-text" style={{ marginBottom: 36 }}>
-          <p>
-            Shell MRPL Aviation Fuels &amp; Services Limited offers rewarding career opportunities in
-            aviation fuelling, safety, quality control, and customer service. Submit your application
-            below and our HR team will be in touch.
+      
+      <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
+        <div className="section-header">
+          <span className="section-eyebrow">Join the Leadership</span>
+          <h2 className="section-h2">Opportunities at Shell MRPL</h2>
+          <p className="section-intro">
+            Be part of a world-class team that powers the future of Indian aviation. 
+            We look for excellence, integrity, and a passion for safety.
           </p>
         </div>
 
-        {success ? (
-          <div className="alert-success">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <div>
-              <strong style={{ display: 'block', fontSize: 16 }}>Application Submitted Successfully!</strong>
-              Thank you for your interest in joining Shell MRPL Aviation. Our HR team will carefully review your details and contact you securely if your profile matches our requirements.
+        <div className="content-narrow reveal" style={{ 
+          padding: 'clamp(24px, 8vw, 64px)', 
+          borderRadius: 'var(--radius-xl)', 
+          margin: '0 auto', 
+          background: '#fff', 
+          border: '1px solid var(--gray-100)', 
+          boxShadow: 'var(--shadow-premium)' 
+        }}>
+          {success ? (
+            <div className="success-message" style={{ textAlign: 'center', padding: '40px 0' }}>
+              <div className="success-icon" style={{ fontSize: '64px', marginBottom: '24px' }}>✨</div>
+              <h3 className="section-h2" style={{ fontSize: '32px' }}>Application Received</h3>
+              <p className="section-intro">
+                Thank you for applying. Our talent acquisition team will review your 
+                profile and contact you if there is a match.
+              </p>
+              <button className="btn-impact" style={{ marginTop: '32px' }} onClick={() => setSuccess(false)}>
+                Submit Another Application
+              </button>
             </div>
-          </div>
-        ) : (
-          <form className="career-form" onSubmit={handleSubmit}>
-            {errors.form && (
-               <div className="alert-error" style={{ color: 'var(--shell-red)', marginBottom: '20px', padding: '10px', background: '#ffebee', borderLeft: '4px solid var(--shell-red)' }}>
-                 {errors.form}
-               </div>
-            )}
-            
-            <h3 className="form-section-title">Personal Information</h3>
-          <div className="form-grid-2">
-            <div className="form-group">
-              <label className="form-label" htmlFor="c-name">Full Name *</label>
-              <input id="c-name" className="form-input" type="text" value={form.name} onChange={update('name')} required />
-              {errors.name && <p style={{ color: 'var(--shell-red)', fontSize: 12, marginTop: 4 }}>{errors.name}</p>}
-            </div>
-            <div className="form-group">
-              <label className="form-label" htmlFor="c-gender">Gender</label>
-              <select id="c-gender" className="form-select" value={form.gender} onChange={update('gender')}>
-                <option value="">Select gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label className="form-label" htmlFor="c-dob">Date of Birth</label>
-              <input id="c-dob" className="form-input" type="date" value={form.dob} onChange={update('dob')} />
-            </div>
-            <div className="form-group">
-              <label className="form-label" htmlFor="c-father">Father's Name</label>
-              <input id="c-father" className="form-input" type="text" value={form.fatherName} onChange={update('fatherName')} />
-            </div>
-          </div>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              {errors.form && (
+                 <div className="form-error-banner" style={{ color: 'var(--shell-red)', padding: '16px', background: 'rgba(217,34,25,0.05)', borderRadius: '8px', marginBottom: '32px', borderLeft: '4px solid var(--shell-red)' }}>
+                   {errors.form}
+                 </div>
+              )}
+              
+              <div className="form-section">
+                <h3 className="footer-h" style={{ color: 'var(--shell-blue)', marginBottom: '32px' }}>Personal Profile</h3>
+                <div className="form-grid-2">
+                  <div className="form-group">
+                    <label className="form-label">Full Name *</label>
+                    <input className="form-input" type="text" value={form.name} onChange={update('name')} placeholder="John Doe" />
+                    {errors.name && <p className="error-text">{errors.name}</p>}
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">Gender</label>
+                    <select className="form-select" value={form.gender} onChange={update('gender')}>
+                      <option value="">Select gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
 
-          <div className="form-group">
-            <label className="form-label" htmlFor="c-address">Address</label>
-            <textarea id="c-address" className="form-textarea" value={form.address} onChange={update('address')} />
-          </div>
+                <div className="form-grid-2">
+                  <div className="form-group">
+                    <label className="form-label">Email Address *</label>
+                    <input className="form-input" type="email" value={form.email} onChange={update('email')} placeholder="john@example.com" />
+                    {errors.email && <p className="error-text">{errors.email}</p>}
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">Mobile Number *</label>
+                    <input className="form-input" type="tel" value={form.mobile} onChange={update('mobile')} placeholder="+91 98765 43210" />
+                    {errors.mobile && <p className="error-text">{errors.mobile}</p>}
+                  </div>
+                </div>
 
-          <div className="form-grid-2">
-            <div className="form-group">
-              <label className="form-label" htmlFor="c-city">City</label>
-              <input id="c-city" className="form-input" type="text" value={form.city} onChange={update('city')} />
-            </div>
-            <div className="form-group">
-              <label className="form-label" htmlFor="c-state">State</label>
-              <input id="c-state" className="form-input" type="text" value={form.state} onChange={update('state')} />
-            </div>
-            <div className="form-group">
-              <label className="form-label" htmlFor="c-email">Email Address *</label>
-              <input id="c-email" className="form-input" type="email" value={form.email} onChange={update('email')} required />
-              {errors.email && <p style={{ color: 'var(--shell-red)', fontSize: 12, marginTop: 4 }}>{errors.email}</p>}
-            </div>
-            <div className="form-group">
-              <label className="form-label" htmlFor="c-mobile">Mobile Number *</label>
-              <input id="c-mobile" className="form-input" type="tel" value={form.mobile} onChange={update('mobile')} required />
-              {errors.mobile && <p style={{ color: 'var(--shell-red)', fontSize: 12, marginTop: 4 }}>{errors.mobile}</p>}
-            </div>
-          </div>
+                <div className="form-group">
+                  <label className="form-label">Target Position *</label>
+                  <select className="form-select" value={form.position} onChange={update('position')}>
+                    <option value="">Select a position</option>
+                    {POSITIONS.map((p) => <option key={p} value={p}>{p}</option>)}
+                  </select>
+                  {errors.position && <p className="error-text">{errors.position}</p>}
+                </div>
+              </div>
 
-          <div className="form-group">
-            <label className="form-label" htmlFor="c-position">Position Applied For *</label>
-            <select id="c-position" className="form-select" value={form.position} onChange={update('position')} required>
-              <option value="">Select a position</option>
-              {POSITIONS.map((p) => <option key={p} value={p}>{p}</option>)}
-            </select>
-            {errors.position && <p style={{ color: 'var(--shell-red)', fontSize: 12, marginTop: 4 }}>{errors.position}</p>}
-          </div>
+              <div className="form-section" style={{ marginTop: '48px' }}>
+                <h3 className="footer-h" style={{ color: 'var(--shell-blue)', marginBottom: '32px' }}>Academic & Professional</h3>
+                <div className="form-group">
+                  <label className="form-label">Brief Experience Summary</label>
+                  <textarea className="form-textarea" value={form.workExperience} onChange={update('workExperience')} placeholder="Tell us about your previous roles and key achievements..." rows={4} />
+                </div>
+              </div>
 
-          <h3 className="form-section-title">Qualification Details</h3>
-          {[
-            { id: 'q10', label: 'Class X — Board & Percentage / Grade' },
-            { id: 'q11', label: 'Class XII — Board & Percentage / Grade' },
-            { id: 'q12', label: 'Graduation — Degree, University & Percentage' },
-            { id: 'q13', label: 'Post-Graduation (if applicable)' },
-            { id: 'q14', label: 'Professional Certifications / Licenses' },
-          ].map(({ id, label }) => (
-            <div key={id} className="form-group">
-              <label className="form-label" htmlFor={`c-${id}`}>{label}</label>
-              <input id={`c-${id}`} className="form-input" type="text" value={form[id]} onChange={update(id)} />
-            </div>
-          ))}
-
-          <h3 className="form-section-title">Work Experience</h3>
-          <div className="form-group">
-            <label className="form-label" htmlFor="c-exp">Work Experience (Company, Role, Duration)</label>
-            <textarea id="c-exp" className="form-textarea" value={form.workExperience} onChange={update('workExperience')} />
-          </div>
-
-          {/* Submit */}
-          <div style={{ marginTop: 40, textAlign: 'right' }}>
-            <button type="submit" className="btn-cta-yellow" style={{ minWidth: 160 }} disabled={isLoading}>
-              {isLoading ? 'Submitting...' : 'Submit Application'}
-            </button>
-          </div>
-        </form>
-      )}</div>
-
+              <div style={{ marginTop: '60px', textAlign: 'center' }}>
+                <button 
+                  type="submit" 
+                  className="btn-impact" 
+                  style={{ width: '100%', maxWidth: '360px', height: '64px', fontSize: '18px', justifyContent: 'center' }} 
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Processing...' : 'Submit Application'}
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

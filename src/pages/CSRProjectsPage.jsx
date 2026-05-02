@@ -19,75 +19,73 @@ const IMAGES = [
 
 function PdfIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
       <polyline points="14 2 14 8 20 8" />
       <line x1="16" y1="13" x2="8" y2="13" />
       <line x1="16" y1="17" x2="8" y2="17" />
-      <polyline points="10 9 9 9 8 9" />
     </svg>
   );
 }
 
 export default function CSRProjectsPage() {
   return (
-    <div className="inner-page">
+    <div className="site-page">
       <PageHero
         imageSrc="/wp-content/uploads/2016/08/csr-bg.jpg"
-        fallbackSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
-        title="CSR Projects"
-        breadcrumbs={[
-          { label: 'Investors Information', to: '/investors-information' },
-          { label: 'CSR Policy', to: '/csr' },
-          { label: 'CSR Projects' }
-        ]}
+        title="Social Impact"
+        breadcrumbs={[{ label: 'CSR Projects' }]}
       />
-      <div className="content-wrap">
-        <h2 className="page-h2">Approved CSR Projects</h2>
-        <div className="body-text" style={{ maxWidth: 860, marginBottom: 36 }}>
-          <p>
-            Our Corporate Social Responsibility initiatives are focused on long-term sustainability
-            and creating value in the communities where we operate. We regularly review and approve
-            new projects that align with our CSR objectives.
+      
+      <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
+        <div className="section-header">
+          <span className="section-eyebrow">CSR Initiatives</span>
+          <h2 className="section-h2">Empowering Local Communities</h2>
+          <p className="section-intro">
+            Through targeted interventions in education, health, and infrastructure, 
+            we aim to create a lasting positive legacy in the regions we serve.
           </p>
         </div>
 
-        <h3 className="page-h3">Project Details Archive</h3>
-        <div className="csr-dl-grid" style={{ maxWidth: 860 }}>
-          {DOWNLOADS.map((item, i) => (
-            <a
-              key={i}
-              href={`/wp-content/uploads/${item.url}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-download"
-            >
-              <PdfIcon />
-              <span>{item.label}</span>
-            </a>
-          ))}
-        </div>
-
-        <h3 className="page-h3" style={{ marginTop: 48, marginBottom: 24 }}>Project Highlights</h3>
-        <div className="feature-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+        <div className="project-highlight-grid">
           {IMAGES.map((item, i) => (
-            <div key={i} className="feature-card">
-              <div className="feature-card-img-wrap" style={{ height: 200 }}>
+            <div key={i} className="project-card glass">
+              <div className="project-img-wrap">
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="feature-card-img"
-                  onError={e => { e.target.style.background = 'var(--gray-200)'; e.target.onerror = null; }}
+                  className="project-photo"
+                  onError={e => { e.target.style.background = 'var(--gray-200)'; }}
                 />
+                <span className="project-badge">{item.cat}</span>
               </div>
-              <div className="feature-card-body" style={{ padding: 20 }}>
-                <span className="feature-card-cat">{item.cat}</span>
-                <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: 16 }}>
-                  {item.title}
-                </span>
+              <div className="project-body">
+                <h3 className="project-title">{item.title}</h3>
+                <p className="project-desc">Investing in the next generation and building resilient community assets.</p>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="csr-archive-section glass" style={{ marginTop: '80px', padding: '60px', borderRadius: 'var(--radius-xl)' }}>
+          <h3 className="footer-h" style={{ color: 'var(--shell-blue)', marginBottom: '40px' }}>Approved Project Archives</h3>
+          <div className="csr-dl-grid">
+            {DOWNLOADS.map((item, i) => (
+              <a
+                key={i}
+                href={`/wp-content/uploads/${item.url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="csr-dl-item"
+              >
+                <div className="dl-icon-c"><PdfIcon /></div>
+                <div className="dl-info">
+                  <span className="dl-label">{item.label}</span>
+                  <span className="dl-type">PDF Document • Approved</span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>

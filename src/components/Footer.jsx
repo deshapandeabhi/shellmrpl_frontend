@@ -1,84 +1,63 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function FL({ to, href, children }) {
-  if (to)
-    return <Link to={to} className="footer-link">{children}</Link>;
-  return (
-    <a href={href || '#'} className="footer-link"
-      target={href?.startsWith('http') ? '_blank' : undefined}
-      rel="noopener noreferrer">
-      {children}
-    </a>
-  );
+function FL({ to, children }) {
+  return <Link to={to} className="footer-link">{children}</Link>;
 }
 
 export default function Footer() {
   return (
-    <footer className="site-footer" role="contentinfo">
-      <div className="footer-top">
-        <div className="container">
-          <div className="footer-top-inner">
-            {/* Brand */}
-            <div className="footer-brand-col">
-              <img
-                src="/wp-content/uploads/2023/09/logo.jpg"
-                alt="Shell MRPL Aviation"
-                className="footer-logo"
-                onError={e => { e.target.style.display = 'none'; }}
-              />
-              <p>
-                Shell MRPL Aviation Fuels &amp; Services Limited — a 50:50 joint venture 
-                delivering world-class aviation fuel services at 14 airports across India.
-              </p>
-            </div>
+    <footer className="site-footer">
+      <div className="container">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <img src="/wp-content/uploads/2023/09/logo.jpg" alt="Logo" className="footer-logo" />
+            <p className="footer-desc">
+              A strategic partnership between Shell and MRPL, delivering world-class aviation fuel services 
+              across India. Excellence in energy, precision in service.
+            </p>
+          </div>
 
-            {/* Quick Links */}
-            <div>
-              <div className="footer-heading">About</div>
-              <FL to="/about">Company Profile</FL>
-              <FL to="/vision-and-values">Vision &amp; Values</FL>
-              <FL to="/board-of-directors">Board of Directors</FL>
-              <FL to="/management-team">Management Team</FL>
-              <FL to="/shell-mrpl-aviation-network">Our Network</FL>
-            </div>
+          <div className="footer-links-col">
+            <h4 className="footer-h">Company</h4>
+            <FL to="/about">About Us</FL>
+            <FL to="/vision-and-values">Vision & Values</FL>
+            <FL to="/board-of-directors">Leadership</FL>
+            <FL to="/shell-mrpl-aviation-network">Network Map</FL>
+          </div>
 
-            {/* Services */}
-            <div>
-              <div className="footer-heading">Services</div>
-              <FL to="/products-services">Products &amp; Services</FL>
-              <FL to="/posted-airfield-prices">Airfield Prices</FL>
-              <FL to="/hsse">HSSE</FL>
-              <FL to="/quality-control">Quality Control</FL>
-              <FL to="/gallery">Gallery</FL>
-            </div>
+          <div className="footer-links-col">
+            <h4 className="footer-h">Operations</h4>
+            <FL to="/products-services">Products</FL>
+            <FL to="/posted-airfield-prices">Airfield Prices</FL>
+            <FL to="/hsse">Safety Protocols</FL>
+            <FL to="/quality-control">Quality Control</FL>
+          </div>
 
-            {/* Investors + Contact */}
-            <div>
-              <div className="footer-heading">Investors</div>
-              <FL to="/vigilance-mechanism">Vigilance</FL>
-              <FL to="/annual-return">Annual Return</FL>
-              <FL to="/csr">CSR Policy</FL>
-              <FL to="/csr/projects">CSR Projects</FL>
-              <FL to="/working-with-shell-mrpl-aviation-2">Careers</FL>
-              <FL to="/contact">Contact Us</FL>
+          <div className="footer-links-col">
+            <h4 className="footer-h">Quick Links</h4>
+            <FL to="/careers">Careers</FL>
+            <FL to="/contact">Contact Us</FL>
+            <FL to="/csr/projects">CSR Projects</FL>
+            <FL to="/gallery">Gallery</FL>
+          </div>
+
+          <div className="footer-newsletter">
+            <h4 className="footer-h">Stay Updated</h4>
+            <p className="footer-desc" style={{ fontSize: '13px' }}>Subscribe to get the latest updates on airfield prices and network expansions.</p>
+            <div className="newsletter-form">
+              <input type="email" placeholder="Email Address" className="newsletter-input" />
+              <button className="newsletter-btn">Join</button>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="footer-bottom">
-        <div className="container">
-          <div className="footer-bottom-inner">
-            <p className="footer-copy">
-              © 2025 Shell MRPL Aviation Fuels and Services Limited. All Rights Reserved.
-            </p>
-            <div className="footer-legal-links">
-              <a href="#" className="footer-legal-link">Disclaimer</a>
-              <a href="#" className="footer-legal-link">Privacy Policy</a>
-              <a href="#" className="footer-legal-link">Terms of Use</a>
-              <a href="#" className="footer-legal-link">Site Map</a>
-            </div>
+        <div className="footer-bottom">
+          <p>© 2026 Shell MRPL Aviation Fuels & Services Limited. All Rights Reserved.</p>
+          <div className="footer-legal">
+            <Link to="/about">Privacy</Link>
+            <Link to="/about">Terms</Link>
+            <Link to="/contact">Support</Link>
           </div>
         </div>
       </div>

@@ -21,34 +21,35 @@ const AIRPORTS = [
 
 function PinIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
     </svg>
   );
 }
 
 export default function NetworkPage() {
   return (
-    <div className="inner-page">
+    <div className="site-page">
       <PageHero
         imageSrc="/wp-content/uploads/2023/09/slider2.jpg"
-        title="Shell MRPL Aviation Network"
-        breadcrumbs={[{ label: 'Products & Services', to: '/products-services' }, { label: 'Aviation Network' }]}
+        title="Our Strategic Network"
+        breadcrumbs={[{ label: 'Aviation Network' }]}
       />
-      <div className="content-wrap">
-        <h2 className="page-h2">Our Airport Network</h2>
-        <div className="body-text" style={{ marginBottom: 36 }}>
-          <p>
-            Shell MRPL Aviation currently operates aviation fuelling at{' '}
-            <strong>14 airports</strong> across India, ensuring safe and reliable delivery
-            of Aviation Turbine Fuel to our airline customers.
+      
+      <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
+        <div className="section-header">
+          <span className="section-eyebrow">Strategic Reach</span>
+          <h2 className="section-h2">14 Major Hubs Across India</h2>
+          <p className="section-intro">
+            We operate at the core of India&apos;s aviation infrastructure, ensuring 
+            uninterrupted fuel supply and operational excellence at every major touchpoint.
           </p>
         </div>
 
-        {/* Interactive Map Section */}
-        <div className="network-map-section">
+        <div className="network-map-section reveal">
           <div className="map-container">
-            <img src={indiaMap} alt="Shell MRPL India Network" className="map-image" />
+            <img src={indiaMap} alt="India Network Map" className="map-image" />
             {AIRPORTS.map((apt, i) => (
               <div key={i} className="map-point-wrapper" style={{ left: `${apt.x}%`, top: `${apt.y}%` }}>
                 <div className="map-point"></div>
@@ -61,12 +62,11 @@ export default function NetworkPage() {
           </div>
         </div>
 
-        <h3 className="page-h3">Airport Locations</h3>
-        <div className="airport-grid">
+        <div className="airport-grid" style={{ marginTop: '80px' }}>
           {AIRPORTS.map((apt, i) => (
-            <div key={i} className="airport-card">
+            <div key={i} className="airport-card reveal">
               <div className="airport-icon-c"><PinIcon /></div>
-              <div>
+              <div className="airport-info">
                 <div className="airport-name-text">{apt.name}</div>
                 <div className="airport-code-text">{apt.code}</div>
               </div>
