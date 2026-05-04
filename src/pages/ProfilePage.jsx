@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import flightPng from '../assets/flight.png';
 
 const STATS = [
   { value: '14+', label: 'Strategic Airports' },
@@ -10,7 +11,7 @@ const STATS = [
 
 const CARDS = [
   {
-    img: '/wp-content/uploads/2023/09/slider2.jpg',
+    img: '/wp-content/uploads/2023/09/quality_control_new-bg.jpg',
     title: 'Superior Aviation Fuel Services',
     desc: 'Supply of high-specification Jet A-1 fuel across 14 major Indian airports, ensuring uncompromising quality at every point of delivery.',
     link: '/products-services',
@@ -28,6 +29,29 @@ const CARDS = [
     link: '/csr',
   },
 ];
+
+function Counter({ value, duration = 2000 }) {
+  const [count, setCount] = React.useState(0);
+  const target = parseInt(value);
+  const suffix = value.replace(/[0-9]/g, '');
+
+  React.useEffect(() => {
+    let start = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+    return () => clearInterval(timer);
+  }, [target, duration]);
+
+  return <span>{count}{suffix}</span>;
+}
 
 function ArrowRight({ size = 18 }) {
   return (
@@ -50,18 +74,20 @@ export default function ProfilePage() {
     );
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      const parallaxEl = document.querySelector('.parallax-target');
-      if (parallaxEl) {
-        parallaxEl.style.transform = `scale(1.1) translateY(${scrolled * 0.15}px)`;
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const x = (clientX / window.innerWidth - 0.5) * 20;
+      const y = (clientY / window.innerHeight - 0.5) * 20;
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        heroContent.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
       }
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
@@ -75,8 +101,56 @@ export default function ProfilePage() {
             src="/wp-content/uploads/2023/09/slider2.jpg"
             className="hero-video-bg parallax-target"
             alt="Aviation Background"
-            style={{ transform: 'scale(1.1)' }}
           />
+        </div>
+
+        {/* ── ENERGY PARTICLES ── */}
+        <div className="energy-particles">
+          {[...Array(12)].map((_, i) => (
+            <div key={i} className={`particle particle-${i + 1}`} />
+          ))}
+        </div>
+
+        {/* ── CINEMATIC FLIGHT ANIMATION ── */}
+        <div className="hero-flight-path">
+          <svg width="100%" height="100%" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0 }}>
+            <path 
+              id="airplanePath"
+              d="M-200 650 C 300 500, 700 800, 1100 200 S 1400 -100, 1800 100" 
+              stroke="rgba(255, 255, 255, 0.4)" 
+              strokeWidth="2.5" 
+              strokeDasharray="15 20"
+              style={{ animation: 'vaporTrail 20s linear infinite' }}
+            />
+          </svg>
+          
+          {/* Main Airplane */}
+          <img 
+            src={flightPng} 
+            alt="Airplane" 
+            className="animated-airplane"
+            style={{ 
+              offsetPath: "path('M-150 650 C 300 500, 700 800, 1100 200 S 1400 -100, 1600 100')",
+              animation: 'airplaneFly 12s cubic-bezier(0.4, 0, 0.2, 1) infinite'
+            }}
+          />
+
+          {/* Distant Airplane */}
+          <img 
+            src={flightPng} 
+            alt="Airplane Distant" 
+            className="animated-airplane distant"
+            style={{ 
+              offsetPath: "path('M1500 400 C 1200 300, 800 500, 400 100 S -100 300, -200 200')",
+              animation: 'airplaneFlyDistant 16s linear infinite 4s'
+            }}
+          />
+        </div>
+
+        {/* ── CINEMATIC CLOUDS ── */}
+        <div className="hero-clouds">
+          <div className="cloud cloud-1" />
+          <div className="cloud cloud-2" />
         </div>
 
         <div className="container">
@@ -90,7 +164,7 @@ export default function ProfilePage() {
               aviation energy solutions with uncompromising safety and reliability.
             </p>
             <div className="hero-actions reveal">
-              <Link to="/shell-mrpl-aviation-network" className="btn-impact">
+              <Link to="/shell-mrpl-aviation-network" className="btn-cta-yellow">
                 Explore Network <ArrowRight />
               </Link>
               <Link to="/about" className="btn-impact btn-impact-ghost">
@@ -108,15 +182,53 @@ export default function ProfilePage() {
         </div>
       </section>
 
-      {/* ── BOLD STATISTICS ── */}
+      {/* ── BRAND CAPABILITIES STRIP ── */}
       <div className="stats-strip glass-dark">
         <div className="container stats-inner">
-          {STATS.map((s, i) => (
-            <div key={i} className="stat-block reveal">
-              <div className="stat-value" style={{ color: 'var(--shell-yellow)' }}>{s.value}</div>
-              <div className="stat-label" style={{ color: 'rgba(255,255,255,0.6)' }}>{s.label}</div>
+          <div className="capability-item reveal">
+            <div className="cap-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
             </div>
-          ))}
+            <div className="cap-text">
+              <div className="cap-val">14+ Strategic Airports</div>
+              <div className="cap-lab">Pan-India Presence</div>
+            </div>
+          </div>
+          <div className="capability-item reveal reveal-delay-1">
+            <div className="cap-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div className="cap-text">
+              <div className="cap-val">Since 2008</div>
+              <div className="cap-lab">Legacy of Trust</div>
+            </div>
+          </div>
+          <div className="capability-item reveal reveal-delay-2">
+            <div className="cap-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div className="cap-text">
+              <div className="cap-val">50:50 Joint Venture</div>
+              <div className="cap-lab">Shell & MRPL Partnership</div>
+            </div>
+          </div>
+          <div className="capability-item reveal reveal-delay-3">
+            <div className="cap-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+              </svg>
+            </div>
+            <div className="cap-text">
+              <div className="cap-val">Jet A-1 Global Standard</div>
+              <div className="cap-lab">High-Performance Fuel</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -154,20 +266,26 @@ export default function ProfilePage() {
       </section>
 
       {/* ── EDITORIAL SPLIT SECTION ── */}
-      <section className="section section-gray">
-        <div className="container">
+      <section className="section section-gray" style={{ position: 'relative', overflow: 'hidden' }}>
+        {/* Floating Brand Background Elements */}
+        <div className="brand-float-wrap" style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
+          <div className="floating-logo-bg shell" style={{ position: 'absolute', top: '10%', left: '5%', fontSize: '120px', fontWeight: 900, color: 'var(--shell-red)', animation: 'floatBrand 15s infinite ease-in-out' }}>SHELL</div>
+          <div className="floating-logo-bg mrpl" style={{ position: 'absolute', bottom: '15%', right: '10%', fontSize: '100px', fontWeight: 900, color: 'var(--shell-blue)', animation: 'floatBrand 18s infinite reverse ease-in-out' }}>MRPL</div>
+        </div>
+
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="split-section reveal">
             <div className="split-text">
               <span className="section-eyebrow">The Partnership</span>
               <h2 className="section-h2">World Class Standards. Local Expertise.</h2>
               <div className="split-body-content">
                 <p className="split-lead">
-                  Founded in 2008, Shell MRPL Aviation is a 50:50 joint venture between 
+                  Founded in 2008, Shell MRPL Aviation is a 50:50 joint venture between
                   Shell — the global leader in aviation — and MRPL, India’s top refinery subsidiary of ONGC.
                 </p>
                 <p className="split-body">
-                  We combine the technical rigour of global standards with a deep understanding 
-                  of the Indian aviation landscape, serving domestic and international airlines 
+                  We combine the technical rigour of global standards with a deep understanding
+                  of the Indian aviation landscape, serving domestic and international airlines
                   with precision and integrity.
                 </p>
               </div>
@@ -199,7 +317,7 @@ export default function ProfilePage() {
           <div className="cta-content">
             <h2 className="cta-title">Ready to Take Flight?</h2>
             <p className="cta-subtitle">
-              Discover our extensive network of 14 major Indian airports and explore how 
+              Discover our extensive network of 14 major Indian airports and explore how
               our fuelling solutions can empower your operations.
             </p>
             <div className="cta-actions">

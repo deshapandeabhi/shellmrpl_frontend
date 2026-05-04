@@ -22,6 +22,7 @@ import CSRProjectsPage    from './pages/CSRProjectsPage';
 import GalleryPage        from './pages/GalleryPage';
 import CareersPage        from './pages/CareersPage';
 import ContactPage        from './pages/ContactPage';
+import LegalPage          from './pages/LegalPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -82,6 +83,10 @@ function AppShell() {
           <Route path="/careers"                              element={<CareersPage />} />
           <Route path="/contact"                              element={<ContactPage />} />
           <Route path="/login"                                element={<ContactPage />} />
+          
+          <Route path="/privacy-policy"                       element={<LegalPage title="Privacy Policy" />} />
+          <Route path="/terms-of-use"                         element={<LegalPage title="Terms of Use" />} />
+          
           <Route path="*"                                     element={<ProfilePage />} />
         </Routes>
         <Footer />

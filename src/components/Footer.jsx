@@ -55,8 +55,8 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>© 2026 Shell MRPL Aviation Fuels & Services Limited. All Rights Reserved.</p>
           <div className="footer-legal">
-            <Link to="/about">Privacy</Link>
-            <Link to="/about">Terms</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-of-use">Terms of Use</Link>
             <Link to="/contact">Support</Link>
           </div>
         </div>

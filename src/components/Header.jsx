@@ -136,43 +136,32 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           position: fixed;
           top: 0; left: 0;
           width: 100vw;
-          height: var(--header-height);
+          height: auto;
+          min-height: var(--header-height);
           z-index: 2000;
           transition: var(--t-nav);
           display: flex;
           align-items: center;
-          padding: 0 var(--header-padding);
+          padding: 15px var(--header-padding);
+          background: #FFFFFF;
         }
 
-        /* Glass state for inner pages by default */
-        .inner-glass {
-          background: rgba(255, 255, 255, 0.15);
-          backdrop-filter: blur(20px) saturate(160%);
-          -webkit-backdrop-filter: blur(20px) saturate(160%);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .site-header.on-hero:not(.is-scrolled) {
+          background: transparent;
         }
 
-        .inner-glass .nav-link, .inner-glass .header-actions-link {
-          color: #fff !important;
-          text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        /* Scrolled State - Floating Effect */
+        /* Scrolled State - Premium Floating Effect */
         .site-header.is-scrolled {
           height: var(--header-height-compact);
           margin: 12px var(--header-padding);
           padding: 0 24px;
-          background: rgba(255, 255, 255, 0.85);
+          background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(24px) saturate(180%);
           -webkit-backdrop-filter: blur(24px) saturate(180%);
           border-radius: 100px;
           border: 1px solid rgba(255, 255, 255, 0.4);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
           width: calc(100vw - (var(--header-padding) * 2));
-        }
-
-        .on-hero .nav-link, .on-hero .header-actions-link {
-          color: rgba(255, 255, 255, 0.95);
         }
 
         .header-inner {
@@ -185,113 +174,132 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         }
 
         .site-logo {
-          height: clamp(40px, 8vw, 64px);
-          width: auto;
+          max-width: 360px; /* High-impact size that doesn't break layout */
+          min-width: 200px;
+          width: 100%;
+          height: auto;
           transition: var(--t-nav);
           flex-shrink: 0;
+        }
+
+        .is-scrolled .site-logo {
+          max-width: 180px;
+          min-width: 140px;
         }
 
         /* Desktop Nav */
         .desktop-nav {
           display: flex;
-          gap: clamp(16px, 2vw, 32px);
+          gap: clamp(10px, 1.5vw, 24px); /* Optimized spacing to prevent overflow */
           align-items: center;
-          margin: 0 20px;
-        }
-
-        .nav-item {
-          position: relative;
-          padding: 10px 0;
+          margin: 0 10px;
         }
 
         .nav-link {
-          font-size: clamp(11px, 0.9vw, 13px);
-          font-weight: 800;
-          color: var(--dark-900);
-          text-transform: uppercase;
-          letter-spacing: 0.12em;
+          font-family: 'Roboto', sans-serif;
+          font-size: 16px; /* Slightly reduced for better fit with large logo */
+          font-weight: 700;
+          color: #2E2E2E;
+          transition: var(--t-nav);
+          opacity: 1;
+          white-space: nowrap;
           display: flex;
           align-items: center;
-          gap: 6px;
-          transition: var(--t-nav);
-          opacity: 0.8;
+          gap: 4px;
+        }
+
+        .is-scrolled .nav-link {
+          color: #014579;
+        }
+
+        .on-hero:not(.is-scrolled) .nav-link {
+          color: #fff;
         }
 
         .nav-link:hover, .nav-link.active {
           opacity: 1;
-          color: var(--shell-blue);
-          transform: translateY(-1px);
+          color: #014579;
         }
 
         .on-hero:not(.is-scrolled) .nav-link:hover {
-          color: var(--shell-yellow);
+          color: #FBCE07;
         }
 
-        /* Dropdown Animation */
+        /* Dropdown Alignment - Aligned to parent start */
+        .nav-item {
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
+
         .nav-dropdown {
           position: absolute;
           top: 100%;
-          left: 50%;
-          transform: translateX(-50%) translateY(15px);
-          background: rgba(255, 255, 255, 0.98);
-          backdrop-filter: blur(20px);
-          min-width: 260px;
-          border-radius: 20px;
-          padding: 14px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          border: 1px solid rgba(0, 0, 0, 0.05);
+          left: 0;
+          background: #FFFFFF;
+          min-width: 240px;
+          border-radius: 8px;
+          padding: 10px 0;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+          border: 1px solid #E1E1E1;
           opacity: 0;
           visibility: hidden;
-          transition: var(--t-nav);
+          transition: all 0.3s ease;
+          transform: translateY(10px);
+          z-index: 3000;
         }
 
         .nav-item:hover .nav-dropdown {
           opacity: 1;
           visibility: visible;
-          transform: translateX(-50%) translateY(4px);
+          transform: translateY(0);
         }
 
         .nav-dropdown-link {
           display: block;
           padding: 12px 20px;
+          font-family: 'Open Sans', sans-serif;
           font-size: 14px;
-          font-weight: 600;
-          color: var(--dark-700);
-          border-radius: 12px;
-          transition: var(--t-nav);
+          font-weight: 400;
+          color: #6F6F6F;
+          transition: 0.3s ease;
         }
 
         .nav-dropdown-link:hover {
-          background: rgba(251, 206, 7, 0.12);
-          color: var(--shell-blue);
-          padding-left: 24px;
+          background: #F5F5F5;
+          color: #D92219;
         }
 
         .nav-dropdown-link.active {
-          background: var(--shell-yellow);
-          color: var(--dark-900);
+          background: #014579;
+          color: #FFFFFF;
         }
 
         /* Header Actions */
         .header-actions {
           display: flex;
           align-items: center;
-          gap: clamp(12px, 1.5vw, 24px);
+          gap: 20px;
           flex-shrink: 0;
         }
 
         .header-actions-link {
-          font-size: clamp(11px, 0.9vw, 13px);
+          font-size: 13px;
           font-weight: 800;
           text-transform: uppercase;
-          letter-spacing: 0.12em;
+          letter-spacing: 0.1em;
           transition: var(--t-nav);
-          opacity: 0.8;
+          color: #2E2E2E;
+          white-space: nowrap;
+        }
+
+        .on-hero:not(.is-scrolled) .header-actions-link {
+          color: #fff;
         }
 
         .header-actions-link:hover {
-          opacity: 1;
-          color: var(--shell-blue);
+          color: #014579;
         }
 
         /* Hamburger */
@@ -333,26 +341,28 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         }
 
         /* Responsive Breakpoints */
-        @media (max-width: 1366px) {
-          .desktop-nav { gap: 16px; }
+        @media (max-width: 1280px) {
+          .desktop-nav { gap: 30px; }
+          .site-logo { max-width: 300px; }
         }
 
         @media (max-width: 1100px) {
+          .desktop-nav { gap: 15px; }
+          .nav-link { font-size: 16px; }
+        }
+
+        @media (max-width: 991px) {
           .desktop-nav, .header-actions-link, .header-actions .btn-impact { display: none; }
           .hamburger-btn { display: flex; }
+          .site-logo { max-width: 220px; }
         }
 
         @media (max-width: 768px) {
           .site-header {
-            height: 72px;
+            padding: 10px 20px;
+            min-height: 70px;
           }
-          .site-header.is-scrolled {
-            height: 64px;
-            margin: 8px 16px;
-            width: calc(100% - 32px);
-            padding: 0 20px;
-          }
-          :root { --header-padding: 20px; }
+          .site-logo { max-width: 180px; }
         }
 
         /* Mobile Drawer Overhaul */
