@@ -6,17 +6,17 @@ const BASE_IMG_URL = '/wp-content/uploads';
 const DIRECTORS = [
   {
     name: 'Mr. Mundkur Shyamprasad Kamath',
-    role: 'Chairman, Shell MRPL Aviation & Director, MRPL',
+    role: 'Chairman, Shell MRPL Aviation and Director, MRPL',
     image: `${BASE_IMG_URL}/2024/08/ShyamPrasad-Kamath-MRPL.jpg`,
   },
   {
     name: 'Mr. Sanjay Samuel Varkey',
-    role: 'Director, Shell MRPL Aviation & Shell India Markets Private Limited',
+    role: 'Director, Shell MRPL Aviation and Shell India Markets Private Limited',
     image: `${BASE_IMG_URL}/2024/05/sanjay-verkey.png`,
   },
   {
     name: 'Mr. BH Vasudev Prasad',
-    role: 'Director, Shell MRPL Aviation & ED-Projects in MRPL',
+    role: 'Director, Shell MRPL Aviation and ED-Projects in MRPL',
     image: `${BASE_IMG_URL}/2024/05/8.png`,
   },
   {
@@ -26,7 +26,7 @@ const DIRECTORS = [
   },
   {
     name: 'Mr. B N Bankapur',
-    role: 'Independent Director, Shell MRPL Aviation & Chairman, BEC Pvt Ltd',
+    role: 'Independent Director, Shell MRPL Aviation and Chairman, BEC Pvt Ltd',
     image: `${BASE_IMG_URL}/2024/05/9.png`,
   },
   {

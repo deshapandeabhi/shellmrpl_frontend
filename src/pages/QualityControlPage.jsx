@@ -22,15 +22,19 @@ export default function QualityControlPage() {
         <h2 className="page-h2">Aviation Fuel Quality Standards</h2>
         <div className="body-text" style={{ marginBottom: 36 }}>
           <p>
-            Delivering clean, dry, and on-specification Aviation Turbine Fuel is critical for airline
-            safety. Shell MRPL Aviation strictly implements comprehensive quality assurance protocols,
-            from product receipt all the way to the aircraft wing.
+            Robust processes ensure that quality of Jet fuel is maintained as per specifications throughout its value chain. Some of the practices followed by Shell MRPL Aviation are:
           </p>
         </div>
 
         <h3 className="page-h3">Our Quality Control Practices</h3>
         <div className="practice-list">
-          {PRACTICES.map((item, i) => (
+          {[
+            'Adherence to DGCA approved Quality control manual. All approved locations are audited by DGCA annually and by SMA Quality Control Manager semi-annually.',
+            'Adherence to more stringent safety and operational standards of Shell Aviation. This is guided by Technical Service Agreement with Shell Aviation through annual audit by them. Shell Aviation provides access to their operation and safety bulletin which are circulated and changes implemented to improve standard in line with international standard.',
+            'Third party /external audits including Airlines audits, supplier audits, Operator audits carried out at required intervals and compliance ensured.',
+            'Guided by international QC operations standard JIG (Joint Inspection Group). Any changes in standards are implemented.',
+            'Internal Safety audits and operational audits carried out periodically by internal auditors and compliance is ensured.',
+          ].map((item, i) => (
             <div key={i} className="practice-item">
               <div className="practice-num">{i + 1}</div>
               <p className="practice-text">{item}</p>

@@ -16,9 +16,9 @@ const VALUES = [
     bullets: [
       'We take pride in our people',
       'To us, our people matter',
+      'We invest in our people',
       "We ensure everybody's contribution counts",
       "We recognise our people's contribution",
-      'We invest in our people',
     ],
   },
   {
@@ -67,7 +67,7 @@ const VALUES = [
     title: 'Work as One Team',
     bullets: [
       'We place the organization before ourselves',
-      'We respect diversity in everything',
+      'We respect diversity in everything (viewpoints, people, gender etc)',
       'We collaborate across functions',
       'We continuously raise the bar for each other',
     ],
@@ -87,8 +87,7 @@ export default function VisionPage() {
           <h2 className="page-h2">Our Vision</h2>
           <div className="vision-box">
             <p className="vision-text">
-              To be the safest, most innovative and preferred partner for aviation fuels
-              and services across India — where people make a difference.
+              To be the safest, most innovative and preferred partner for aviation fuels and services across India, where people make a difference.
             </p>
           </div>
 

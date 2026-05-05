@@ -7,16 +7,16 @@ const NAV = [
     path: '/about',
     children: [
       { label: 'Company Profile',    path: '/' },
-      { label: 'Vision & Values',    path: '/vision-and-values' },
+      { label: 'Vision and Values',    path: '/vision-and-values' },
       { label: 'Board of Directors', path: '/board-of-directors' },
       { label: 'Management Team',    path: '/management-team' },
     ],
   },
   {
-    label: 'Products & Services',
+    label: 'Products and Services',
     path: '/products-services',
     children: [
-      { label: 'Products & Services',              path: '/products-services' },
+      { label: 'Products and Services',              path: '/products-services' },
       { label: 'Our Airport Network',              path: '/shell-mrpl-aviation-network' },
       { label: 'Posted Airfield Prices',           path: '/posted-airfield-prices' },
       { label: "Shell Aviation's Global Network",  path: '/shell-aviations-global-network' },
@@ -31,7 +31,7 @@ const NAV = [
     ],
   },
   {
-    label: 'HSSE & Quality',
+    label: 'HSSE and Quality',
     path: '/hsse',
     children: [
       { label: 'HSSE',            path: '/hsse' },

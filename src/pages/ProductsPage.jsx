@@ -15,20 +15,27 @@ export default function ProductsPage() {
       <PageHero
         imageSrc="/wp-content/uploads/2023/09/slider2.jpg"
         title="Products &amp; Services"
-        breadcrumbs={[{ label: 'Products & Services' }]}
+        breadcrumbs={[{ label: 'Products and Services' }]}
       />
       <div className="content-wrap content-narrow">
-        <h2 className="page-h2">Products &amp; Services</h2>
+        <h2 className="page-h2">Products and Services</h2>
         <div className="body-text" style={{ marginBottom: 32 }}>
           <p>
-            Shell MRPL Aviation Fuels &amp; Services Limited provides safe, reliable, and superior
-            quality Aviation Turbine Fuel (ATF) to airline customers at airports across India,
-            backed by Shell Aviation&apos;s world-class operational standards.
+            Shell MRPL Aviation provides solutions for Aviation Turbine Fuel requirements to its customers and offers an integrated end to end partnership with Shell Aviation, the only multi-national oil company with a government license to market aviation fuels in India. Shell MRPL Aviation adds value to our partners through:
+          </p>
+          <p style={{ marginTop: '16px' }}>
+            Shell MRPL Aviation adds value to our partners through:
           </p>
         </div>
-        <h3 className="page-h3">Our Core Services</h3>
+
         <div className="service-list">
-          {SERVICES.map((item, i) => (
+          {[
+            'International best practices and global standards of safety, quality & operations in supplying Jet fuel',
+            'Pricing transparency',
+            'Shell Aviation’s global network of around 900 airports in about 36 countries',
+            'Acceptance of Shell Carnet and Shell Fuel & Fly Cards',
+            'Shell’s comprehensive portfolio which offers a range of innovative products and services, including aviation lubricants & risk marketing',
+          ].map((item, i) => (
             <div key={i} className="service-item">
               <span className="service-num">0{i + 1}</span>
               <p className="service-text">{item}</p>

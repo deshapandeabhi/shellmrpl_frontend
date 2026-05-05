@@ -6,19 +6,19 @@ const NAV = [
     label: 'About Shell MRPL Aviation',
     path: '/about',
     children: [
-      { label: 'Profile',            path: '/' },
-      { label: 'Vision and Values',  path: '/vision-and-values' },
+      { label: 'Profile', path: '/' },
+      { label: 'Vision and Values', path: '/vision-and-values' },
       { label: 'Board of Directors', path: '/board-of-directors' },
-      { label: 'Management Team',    path: '/management-team' },
+      { label: 'Management Team', path: '/management-team' },
     ],
   },
   {
     label: 'Product, Services & Networks',
     path: '/products-services',
     children: [
-      { label: 'Products & Services',            path: '/products-services' },
-      { label: 'Shell MRPL Aviation Network',    path: '/shell-mrpl-aviation-network' },
-      { label: 'Posted Airfield Prices',         path: '/posted-airfield-prices' },
+      { label: 'Products and Services', path: '/products-services' },
+      { label: 'Shell MRPL Aviation Network', path: '/shell-mrpl-aviation-network' },
+      { label: 'Posted Airfield Prices', path: '/posted-airfield-prices' },
       { label: "Shell Aviation's Global Network", path: '/shell-aviations-global-network' },
     ],
   },
@@ -27,14 +27,14 @@ const NAV = [
     path: '/company-parentage',
     children: [
       { label: 'Shell', path: '/shell' },
-      { label: 'MRPL',  path: '/mrpl' },
+      { label: 'MRPL', path: '/mrpl' },
     ],
   },
   {
     label: 'HSSE & Quality Control',
     path: '/hsse',
     children: [
-      { label: 'HSSE',            path: '/hsse' },
+      { label: 'HSSE', path: '/hsse' },
       { label: 'Quality Control', path: '/quality-control' },
     ],
   },
@@ -43,14 +43,14 @@ const NAV = [
     path: '/investors-information',
     children: [
       { label: 'Vigilance Mechanism', path: '/vigilance-mechanism' },
-      { label: 'Annual Return',       path: '/annual-return' },
-      { label: 'CSR Policy',          path: '/csr' },
-      { label: 'Committee Members',   path: '/csr/committee-members' },
-      { label: 'CSR Projects',        path: '/csr/projects' },
+      { label: 'Annual Return', path: '/annual-return' },
+      { label: 'CSR Policy', path: '/csr' },
+      { label: 'Committee Members', path: '/csr/committee-members' },
+      { label: 'CSR Projects', path: '/csr/projects' },
     ],
   },
   { label: 'Working with Shell MRPL Aviation', path: '/working-with-shell-mrpl-aviation-2' },
-  { label: 'Employee Login',                   path: '/login' },
+  { label: 'Employee Login', path: '/login' },
 ];
 
 export default function Sidebar({ isOpen, isScrolled, onClose }) {
@@ -75,11 +75,11 @@ export default function Sidebar({ isOpen, isScrolled, onClose }) {
 }
 
 function NavItem({ item, onClose }) {
-  const location    = useLocation();
+  const location = useLocation();
   const [expanded, setExpanded] = useState(false);
 
   const hasChildren = Boolean(item.children?.length);
-  const isActive    = hasChildren
+  const isActive = hasChildren
     ? item.children.some((c) => c.path === location.pathname) || location.pathname === item.path
     : location.pathname === item.path;
 

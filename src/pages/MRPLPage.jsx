@@ -13,26 +13,16 @@ export default function MRPLPage() {
         <h2 className="page-h2">Mangalore Refinery and Petrochemicals Limited</h2>
         <div className="body-text">
           <p>
-            Mangalore Refinery and Petrochemicals Limited (MRPL) is an oil refining company operating
-            in India. It was established in 1988. At present, MRPL is a subsidiary of Oil and Natural
-            Gas Corporation Limited (ONGC), which holds 71.63% of the equity shares. ONGC is India&apos;s
-            largest exploration and production company.
+            Mangalore Refinery and Petrochemicals Limited (MRPL) is a 15 MMTPA state of art refinery and is a subsidiary of ONGC (Oil and Natural Gas Corporation), India’s largest national oil company.
           </p>
           <p>
-            MRPL is strategically located in a beautiful hilly terrain, north of Mangaluru city, in
-            Dakshina Kannada District of Karnataka State (India). The 15.0 MMTPA (Million Metric Tonne
-            Per Annum) Refinery has got a versatile design with high flexibility to process Crudes
-            of various API, delivering a variety of quality products.
+            MRPL is the first refinery in India to be awarded with the prestigious ‘Platinum’ award by FICCI for its environmental initiatives. MRPL produces high quality Jet A-1 fuel at its refinery in Mangalore.
           </p>
           <p>
-            MRPL&apos;s refinery is designed to process light to heavy and sour to sweet Crudes. Its
-            process configuration guarantees high conversion of heavier crudes and maximum distillate
-            yield, enabling it to produce high value products like Aviation Turbine Fuel (ATF) of
-            the finest quality.
+            The Refinery has got a versatile design with high flexibility to process Crudes of various API, delivering a variety of quality products. Its process configuration guarantees high conversion of heavier crudes and maximum distillate yield, enabling it to produce high value products like Aviation Turbine Fuel (ATF) of the finest quality.
           </p>
           <p>
-            With its rich heritage and operational excellence, MRPL brings immense local knowledge
-            and refining capability to the Shell MRPL Aviation joint venture.
+            With its rich heritage and operational excellence, MRPL brings immense local knowledge and refining capability to the Shell MRPL Aviation joint venture.
           </p>
 
           <div style={{ marginTop: 32 }}>

@@ -2,13 +2,13 @@ import React from 'react';
 import PageHero from '../components/PageHero';
 
 const PRICES = [
-  { airport: 'Chennai',   price: '18,151' },
+  { airport: 'Chennai', price: '18,151' },
   { airport: 'Bangalore', price: '18,618' },
   { airport: 'Hyderabad', price: '20,316' },
-  { airport: 'Goa',       price: '20,769' },
-  { airport: 'Calicut',   price: '18,806' },
+  { airport: 'Goa', price: '20,769' },
+  { airport: 'Calicut', price: '18,806' },
   { airport: 'Mangalore', price: '15,958' },
-  { airport: 'Madurai',   price: '21,665' },
+  { airport: 'Madurai', price: '21,665' },
 ];
 
 export default function PricesPage() {
@@ -18,7 +18,7 @@ export default function PricesPage() {
         imageSrc="/wp-content/uploads/2023/09/posted_airfield_prices-bg.jpg"
         fallbackSrc="/wp-content/uploads/2023/09/posted_airfield_prices-bg-1024x302.jpg"
         title="Posted Airfield Prices"
-        breadcrumbs={[{ label: 'Products & Services', to: '/products-services' }, { label: 'Airfield Prices' }]}
+        breadcrumbs={[{ label: 'Products and Services', to: '/products-services' }, { label: 'Airfield Prices' }]}
       />
       <div className="content-wrap content-narrow">
         <h2 className="page-h2">Our Posted Airfield Prices</h2>

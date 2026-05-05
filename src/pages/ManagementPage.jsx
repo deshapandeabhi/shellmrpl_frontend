@@ -5,7 +5,7 @@ const MANAGERS = [
   { name: 'Mr. Devendra Nath Soral', role: 'CEO',                          image: '/wp-content/uploads/2024/09/Dev-Soral-Picture.jpg' },
   { name: 'Mr. S Chockalingam',      role: 'CFO and Company Secretary',     image: '/wp-content/uploads/2016/08/c001.jpg' },
   { name: 'Mr. G Srinivas Rao',      role: 'Head of Sales',                 image: '/wp-content/uploads/2016/08/3-1.jpg' },
-  { name: 'Mr. K Tirumal Rao',       role: 'HoD Operations, QC & ERP',      image: '/wp-content/uploads/2016/08/Thirumala-sir-3.jpg' },
+  { name: 'Mr. K Tirumal Rao',       role: 'HoD Operations, QC and ERP',      image: '/wp-content/uploads/2016/08/Thirumala-sir-3.jpg' },
 ];
 
 export default function ManagementPage() {

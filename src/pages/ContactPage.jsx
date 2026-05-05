@@ -3,35 +3,29 @@ import PageHero from '../components/PageHero';
 
 const CONTACTS = [
   {
-    dept: 'CEO & Director',
-    name: 'Mr. Devendra Nath Soral',
-    role: 'Chief Executive Officer',
-    email: 'devendranath.soral@shell-mrpl-aviation.com',
-  },
-  {
     dept: 'Finance',
-    name: 'Mr. S Chockalingam',
+    name: 'Chockalingam Subbiah',
     role: 'CFO and Company Secretary',
-    email: 'chockalingam.s@shell-mrpl-aviation.com',
+    email: 'chockalingam.subbiah@shellmrpl.com',
   },
   {
-    dept: 'Sales',
-    name: 'Mr. G Srinivas Rao',
-    role: 'Head of Department — Sales',
-    email: 'srinivas.rao@shell-mrpl-aviation.com',
+    dept: 'Fuel Sales',
+    name: 'G.Srinivas Rao',
+    role: 'HoD Sales',
+    email: 'srinivas.rao@shellmrpl.com',
   },
   {
     dept: 'Operations',
-    name: 'Mr. K Tirumal Rao',
-    role: 'Head of Department — Operations, QC & ERP',
-    email: 'tirumal.rao@shell-mrpl-aviation.com',
+    name: 'Tirumal Rao',
+    role: 'I/c HoD (S&D), Head- (Projects & ERP)',
+    email: 'tirumal.rao@shellmrpl.com',
   },
-  {
-    dept: 'Business Enquiries',
-    name: 'General Enquiries',
-    role: 'For all business-related enquiries',
-    email: 'info@shell-mrpl-aviation.com',
-  },
+  // {
+  //   dept: 'Registered Corporate Office',
+  //   name: 'General Administration',
+  //   role: 'Corporate Enquiries',
+  //   email: 'smrpl-admin@shellmrpl.com',
+  // },
 ];
 
 export default function ContactPage() {
@@ -71,13 +65,15 @@ export default function ContactPage() {
         <div className="office-card">
           <p>
             <strong>Shell MRPL Aviation Fuels and Services Limited</strong><br />
-            Plot No. 5, Yesvantpur Industrial Area,<br />
-            Tumkur Road, Bangalore — 560 022,<br />
-            Karnataka, India
+            #102 Prestige Sigma, Vittal Mallya Road,<br />
+            Bangalore, Karnataka – 560001 India.
           </p>
           <p style={{ marginTop: 20 }}>
-            <strong>CIN:</strong> U11200KA2007PLC044481<br />
-            <strong>Website:</strong>{' '}
+            <strong>Landline:</strong> 080-42526900<br />
+            <strong>Email:</strong> smrpl-admin@shellmrpl.com<br />
+            <strong>Fax:</strong> 080-42526999<br />
+            <strong>CIN:</strong> U51909KA2008PLC045558<br />
+            {/* <strong>Website:</strong>{' '}
             <a
               href="https://www.shellmrplaviation.com"
               target="_blank"
@@ -86,7 +82,7 @@ export default function ContactPage() {
               style={{ paddingBottom: 0 }}
             >
               www.shellmrplaviation.com
-            </a>
+            </a> */}
           </p>
         </div>
       </div>

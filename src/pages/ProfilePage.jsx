@@ -155,13 +155,12 @@ export default function ProfilePage() {
 
         <div className="container">
           <div className="hero-content">
-            <span className="hero-eyebrow reveal">Shell MRPL Aviation Fuels</span>
+            <span className="hero-eyebrow reveal">Shell MRPL Aviation Fuels and Services Limited</span>
             <h1 className="hero-title reveal">
               Fuelling India&apos;s Global Ambitions
             </h1>
             <p className="hero-subtitle reveal">
-              A premium partnership between Shell and MRPL, delivering world-class
-              aviation energy solutions with uncompromising safety and reliability.
+              Shell MRPL Aviation Fuels and Services Limited is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel and operating airport fueling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India’s largest national oil company.
             </p>
             <div className="hero-actions reveal">
               <Link to="/shell-mrpl-aviation-network" className="btn-cta-yellow">
@@ -268,10 +267,7 @@ export default function ProfilePage() {
       {/* ── EDITORIAL SPLIT SECTION ── */}
       <section className="section section-gray" style={{ position: 'relative', overflow: 'hidden' }}>
         {/* Floating Brand Background Elements */}
-        <div className="brand-float-wrap" style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
-          <div className="floating-logo-bg shell" style={{ position: 'absolute', top: '10%', left: '5%', fontSize: '120px', fontWeight: 900, color: 'var(--shell-red)', animation: 'floatBrand 15s infinite ease-in-out' }}>SHELL</div>
-          <div className="floating-logo-bg mrpl" style={{ position: 'absolute', bottom: '15%', right: '10%', fontSize: '100px', fontWeight: 900, color: 'var(--shell-blue)', animation: 'floatBrand 18s infinite reverse ease-in-out' }}>MRPL</div>
-        </div>
+        {/* Floating Brand Background Elements Removed */}
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="split-section reveal">
@@ -280,13 +276,10 @@ export default function ProfilePage() {
               <h2 className="section-h2">World Class Standards. Local Expertise.</h2>
               <div className="split-body-content">
                 <p className="split-lead">
-                  Founded in 2008, Shell MRPL Aviation is a 50:50 joint venture between
-                  Shell — the global leader in aviation — and MRPL, India’s top refinery subsidiary of ONGC.
+                  We supply Aviation Turbine Fuel (Jet A-1) to our airline customers and ensure services as per Shell Aviation’s world class operational standards.
                 </p>
                 <p className="split-body">
-                  We combine the technical rigour of global standards with a deep understanding
-                  of the Indian aviation landscape, serving domestic and international airlines
-                  with precision and integrity.
+                  Our customers also get benefits of Shell’s extensive experience in working with airport authorities & stakeholders to improve overall airport safety standards including into-plane fueling, fuel hydrant designs, airport network planning and fuel farm systems.
                 </p>
               </div>
               <div className="split-actions">
