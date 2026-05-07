@@ -1,4 +1,3 @@
-import React from 'react';
 import PageHero from '../components/PageHero';
 
 export default function MRPLPage() {
@@ -13,20 +12,14 @@ export default function MRPLPage() {
         <h2 className="page-h2">Mangalore Refinery and Petrochemicals Limited</h2>
         <div className="body-text">
           <p>
-            Mangalore Refinery and Petrochemicals Limited (MRPL) is a 15 MMTPA state of art refinery and is a subsidiary of ONGC (Oil and Natural Gas Corporation), India’s largest national oil company.
+            MRPL is a schedule ‘A’ CPSE and a subsidiary of ONGC is a State of Art Grassroot Refinery located in a beautiful hilly terrain, north of Mangalore city, in Dakshin Kannada region. The Refinery has got a versatile design with high flexibility to process Crudes of various API and with high degree of Automation. MRPL has a design capacity to process 15 million metric tons per annum and have 2 Hydrocrackers producing Premium Diesel (High Cetane). It also has 2 CCRs producing Unleaded Petrol of High Octane.
           </p>
           <p>
-            MRPL is the first refinery in India to be awarded with the prestigious ‘Platinum’ award by FICCI for its environmental initiatives. MRPL produces high quality Jet A-1 fuel at its refinery in Mangalore.
-          </p>
-          <p>
-            The Refinery has got a versatile design with high flexibility to process Crudes of various API, delivering a variety of quality products. Its process configuration guarantees high conversion of heavier crudes and maximum distillate yield, enabling it to produce high value products like Aviation Turbine Fuel (ATF) of the finest quality.
-          </p>
-          <p>
-            With its rich heritage and operational excellence, MRPL brings immense local knowledge and refining capability to the Shell MRPL Aviation joint venture.
+            MRPL has high standards in refining and environment protection matched by its commitments to society. MRPL has also developed a Green Belt around the entire Refinery with plant species specially selected to blend with the local flora.
           </p>
 
           <div style={{ marginTop: 32 }}>
-            <a href="https://www.mrpl.co.in" target="_blank" rel="noopener noreferrer" className="btn-outline">
+            <a href="https://www.mrpl.co.in" target="_blank" rel="noopener noreferrer" className="btn-blue">
               Visit MRPL Website
             </a>
           </div>
