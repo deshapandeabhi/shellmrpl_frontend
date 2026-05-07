@@ -21,7 +21,7 @@ const Hero = () => {
         
         <div className="text-[#666666] space-y-5 text-[15px] font-openSans leading-[1.8] mt-6">
           <p>
-            Shell MRPL Aviation Fuels & Services Limited is a 50:50 Joint Venture Company formed in 2008 between 
+            Shell MRPL Aviation Fuels and Services Limited is a 50:50 Joint Venture Company formed in 2008 between 
             Shell, a global leader in marketing aviation fuel and operating airport fueling facilities and Mangalore 
             Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, 
             India’s largest national oil company.

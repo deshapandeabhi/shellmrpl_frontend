@@ -2,19 +2,23 @@ import React from 'react';
 import PageHero from '../components/PageHero';
 
 const DOWNLOADS = [
-  { label: 'CSR Projects 2024-25', url: '2024/09/CSR-Approved-Projects-for-FY-2024-25.pdf' },
-  { label: 'CSR Projects 2023-24', url: '2024/03/csr-projects-for-fy-2023-24.pdf' },
-  { label: 'CSR Projects 2022-23', url: '2022/10/CSR-project-details-2022-23.pdf' },
-  { label: 'CSR Projects 2021-22', url: '2022/01/CSR-Approved-Projects-for-FY-2021-22.pdf' },
-  { label: 'CSR Projects 2020-21', url: '2021/04/Projects-Approved.pdf' },
-  { label: 'CSR Projects 2019-20', url: '2021/04/Projects-Approved-by-the-Board.pdf' },
+  { label: 'CSR Projects 2024-25', url: '/assets/docs/csr/CSR-Approved-Projects-for-FY-2024-25.pdf' },
+  { label: 'CSR Projects 2023-24', url: '/assets/docs/csr/CSR-Approved-Projects-23-24.docx' },
+  { label: 'CSR Projects 2022-23', url: '/assets/docs/csr/CSR-Report-22-23.pdf' },
+  { label: 'CSR Projects 2021-22', url: '/assets/docs/csr/CSR-PROJECTS-2021-22.pdf' },
+  { label: 'CSR Projects 2020-21', url: '/assets/docs/csr/CSR-PROJECTS-2020-21.pdf' },
+  { label: 'CSR Projects 2019-20', url: '/assets/docs/csr/PROJECTS-2019-20.pdf' },
+  { label: 'CSR Projects 2018-19', url: '/assets/docs/csr/PROJECTS-2018-19.pdf' },
+  { label: 'CSR Projects 2017-18', url: '/assets/docs/csr/PROJECTS-2017-18.pdf' },
+  { label: 'CSR Projects 2016-17', url: '/assets/docs/csr/PROJECTS-2016-17.pdf' },
+  { label: 'CSR Projects 2015-16', url: '/assets/docs/csr/PROJECTS-2015-16.pdf' },
 ];
 
 const IMAGES = [
-  { img: '/wp-content/uploads/2021/04/project1.jpeg', cat: 'Education', title: 'Mini Science Lab' },
-  { img: '/wp-content/uploads/2021/04/project2.jpeg', cat: 'Sanitation', title: 'Community Infrastructure' },
-  { img: '/wp-content/uploads/2021/04/2.jpg', cat: 'Health', title: 'Medical Support Facilities' },
-  { img: '/wp-content/uploads/2021/04/3.jpg', cat: 'Community', title: 'Local Engagement Programs' },
+  { img: '/wp-content/uploads/2016/08/3-3.jpg', cat: 'Education', title: 'Mini Science Lab' },
+  { img: '/wp-content/uploads/2016/08/5-3.jpg', cat: 'Sanitation', title: 'Community Infrastructure' },
+  { img: '/wp-content/uploads/2016/08/7-1.jpg', cat: 'Health', title: 'Medical Support Facilities' },
+  { img: '/wp-content/uploads/2016/08/8.jpg', cat: 'Community', title: 'Local Engagement Programs' },
 ];
 
 function PdfIcon() {
@@ -73,7 +77,7 @@ export default function CSRProjectsPage() {
             {DOWNLOADS.map((item, i) => (
               <a
                 key={i}
-                href={`/wp-content/uploads/${item.url}`}
+                href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="csr-dl-item"
@@ -81,7 +85,7 @@ export default function CSRProjectsPage() {
                 <div className="dl-icon-c"><PdfIcon /></div>
                 <div className="dl-info">
                   <span className="dl-label">{item.label}</span>
-                  <span className="dl-type">PDF Document • Approved</span>
+                  <span className="dl-type">{item.url.endsWith('.docx') ? 'Word Document' : 'PDF Document'} • Approved</span>
                 </div>
               </a>
             ))}

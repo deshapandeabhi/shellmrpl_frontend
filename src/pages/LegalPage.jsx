@@ -13,7 +13,7 @@ export default function LegalPage({ title }) {
         <div className="content-narrow">
           <h2 className="page-h2">{title}</h2>
           <p className="page-intro" style={{ marginBottom: '40px' }}>
-            Official statement regarding Shell MRPL Aviation Fuels & Services Limited's {title.toLowerCase()}.
+            Official statement regarding Shell MRPL Aviation Fuels and Services Limited's {title.toLowerCase()}.
           </p>
           <div className="legal-body glass-dark" style={{ padding: '40px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.05)', background: 'var(--dark-900)', color: 'rgba(255,255,255,0.7)', lineHeight: '1.8' }}>
             <p style={{ marginBottom: '24px' }}>

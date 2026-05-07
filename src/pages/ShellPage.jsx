@@ -14,7 +14,7 @@ export default function ShellPage() {
         <div className="body-text">
           {/* <h3 className="page-h3">Shell Aviation</h3> */}
           <p>
-            Shell MRPL Aviation Fuels & Services Limited is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel and operating airport fueling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India’s largest national oil company
+            Shell MRPL Aviation Fuels and Services Limited is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel and operating airport fueling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India’s largest national oil company
           </p>
           <p>
             We supply Aviation Turbine Fuel (Jet A-1) to our airline customers and ensure services as per Shell Aviation’s world class operational standards. Our customers also get benefits of Shell’s extensive experience in working with airport authorities & stakeholders to improve overall airport safety standards including into-plane fueling, fuel hydrant designs, airport network planning and fuel farm systems.

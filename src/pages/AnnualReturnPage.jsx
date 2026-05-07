@@ -2,10 +2,10 @@ import React from 'react';
 import PageHero from '../components/PageHero';
 
 const RETURNS = [
-  { label: 'Annual Return — FY 2023-24', url: '2024/09/Annual-Return-2023-24.pdf' },
-  { label: 'Annual Return — FY 2022-23', url: '2023/11/Form_MGT_7_Annual_return_2022-2023.pdf' },
-  { label: 'Annual Return — FY 2021-22', url: '2022/10/Annual-Return-FY-2021-22.pdf' },
-  { label: 'Annual Return — FY 2020-21', url: '2021/11/SMA-MGT-7-FY-2020-21.pdf' },
+  { label: 'Annual Return — FY 2023-24', url: '/assets/docs/annual-returns/Annual-Return-2023-24.pdf' },
+  { label: 'Annual Return — FY 2022-23', url: '/assets/docs/annual-returns/Annual-Return-2022-23.pdf' },
+  { label: 'Annual Return — FY 2021-22', url: '/assets/docs/annual-returns/Annual-Return-2021-22.pdf' },
+  { label: 'Annual Return — FY 2020-21', url: '/assets/docs/annual-returns/Annual-Return-FY-2020-21.pdf' },
 ];
 
 function PdfIcon() {
@@ -41,7 +41,7 @@ export default function AnnualReturnPage() {
           {RETURNS.map((item, i) => (
             <a
               key={i}
-              href={`/wp-content/uploads/${item.url}`}
+              href={item.url}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-download"

@@ -2,9 +2,9 @@ import React from 'react';
 import PageHero from '../components/PageHero';
 
 const COMMITTEE = [
-  { name: 'Mr. M. Iyer',             role: 'Chairman, CSR Committee — (Shell Nominee Director)' },
-  { name: 'Mr. B. R. Gupta',         role: 'Member — (MRPL Nominee Director)' },
-  { name: 'Mr. Devendra Nath Soral', role: 'Member — (Chief Executive Officer)' },
+  { name: 'Mr. Sanjay Varkey',                         role: 'Chairman' },
+  { name: 'Mr. Bappanadu Hoigegudde Vasudeva Prasad',  role: 'Member'   },
+  { name: 'Dr. RaviKumar Rentala',                     role: 'Member'   },
 ];
 
 export default function CSRCommitteePage() {

@@ -30,7 +30,7 @@ export default function VigilancePage() {
         <h3 className="page-h3">About Vigilance</h3>
         <div className="body-text">
           <p>
-            Shell MRPL Aviation Fuels & Services Limited is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel and operating airport fuelling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India’s largest national oil company.
+            Shell MRPL Aviation Fuels and Services Limited is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel & operating airport fuelling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India’s largest national oil company.
           </p>
           <p>
             Board of Shell MRPL Aviation Fuels and Services Limited has decided to adopt vigilance administration in the organization as per the guidelines of Central Vigilance Commission as prevalent in parent company MRPL. The Vigilance system in Shell MRPL Aviation Fuels and Services Limited will be administered by CVO, MRPL.
@@ -57,10 +57,13 @@ export default function VigilancePage() {
         </div>
 
         <div className="office-card" style={{ marginTop: 32, background: 'var(--gray-50)' }}>
-          <h4 style={{ fontWeight: 800, marginBottom: 12 }}>Lodge a Complaint</h4>
-          <p><strong>Email:</strong> <a href="mailto:cvo@mrpl.co.in" className="btn-text-link">cvo@mrpl.co.in</a></p>
+          <h4 style={{ fontWeight: 800, marginBottom: 12 }}>Lodge Complaint</h4>
+          <p>
+            <strong>Send email complaint to:</strong>{' '}
+            <a href="mailto:cvo@mrpl.co.in" className="btn-text-link">cvo@mrpl.co.in</a>
+          </p>
           <p style={{ marginTop: 8 }}>
-            <strong>Postal Address:</strong><br />
+            <strong>Dak / Courier Complaint to the following address:</strong><br />
             Chief Vigilance Officer (CVO)<br />
             MRPL, Via Katipalla, Kuthethoor Post<br />
             Mangalore – 575030

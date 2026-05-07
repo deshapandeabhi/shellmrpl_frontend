@@ -3,29 +3,23 @@ import PageHero from '../components/PageHero';
 
 const CONTACTS = [
   {
-    dept: 'Finance',
+    dept: 'Chief Finance Officer and Company Secretary',
     name: 'Chockalingam Subbiah',
-    role: 'CFO and Company Secretary',
+    role: 'CFO and CS',
     email: 'chockalingam.subbiah@shellmrpl.com',
   },
   {
     dept: 'Fuel Sales',
-    name: 'G.Srinivas Rao',
+    name: 'G. Srinivas Rao',
     role: 'HoD Sales',
     email: 'srinivas.rao@shellmrpl.com',
   },
   {
-    dept: 'Operations',
+    dept: 'HSSE and Operations Head',
     name: 'Tirumal Rao',
-    role: 'I/c HoD (S&D), Head- (Projects & ERP)',
+    role: 'I/c HoD (S&D), Head- (Projects and ERP)',
     email: 'tirumal.rao@shellmrpl.com',
   },
-  // {
-  //   dept: 'Registered Corporate Office',
-  //   name: 'General Administration',
-  //   role: 'Corporate Enquiries',
-  //   email: 'smrpl-admin@shellmrpl.com',
-  // },
 ];
 
 export default function ContactPage() {
@@ -61,28 +55,22 @@ export default function ContactPage() {
           ))}
         </div>
 
-        <h3 className="page-h3" style={{ marginTop: 52 }}>Registered &amp; Corporate Office</h3>
+        <h3 className="page-h3" style={{ marginTop: 52 }}>Registered Corporate Office</h3>
         <div className="office-card">
           <p>
-            <strong>Shell MRPL Aviation Fuels and Services Limited</strong><br />
+            Shell MRPL Aviation Fuels and Services Limited<br />
             #102 Prestige Sigma, Vittal Mallya Road,<br />
             Bangalore, Karnataka – 560001 India.
           </p>
           <p style={{ marginTop: 20 }}>
             <strong>Landline:</strong> 080-42526900<br />
-            <strong>Email:</strong> smrpl-admin@shellmrpl.com<br />
             <strong>Fax:</strong> 080-42526999<br />
-            <strong>CIN:</strong> U51909KA2008PLC045558<br />
-            {/* <strong>Website:</strong>{' '}
-            <a
-              href="https://www.shellmrplaviation.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-text-link"
-              style={{ paddingBottom: 0 }}
-            >
-              www.shellmrplaviation.com
-            </a> */}
+            <strong>Email:</strong>{' '}
+            <a href="mailto:smrpl-admin@shellmrpl.com" className="contact-email">
+              smrpl-admin@shellmrpl.com
+            </a><br />
+            <strong>Contact Person:</strong> –<br />
+            <strong>CIN:</strong> U51909KA2008PLC045558
           </p>
         </div>
       </div>
