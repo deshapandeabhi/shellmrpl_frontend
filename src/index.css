@@ -2331,7 +2331,7 @@
 }
 
 .contact-email {
-  color: var(--shell-red);
+  color: var(--shell-blue);
   font-family: var(--font-body);
   font-size: 13px;
   transition: var(--t-fast);
