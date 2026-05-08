@@ -15,8 +15,6 @@ export default function PricesPage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2023/09/posted_airfield_prices-bg.jpg"
-        fallbackSrc="/wp-content/uploads/2023/09/posted_airfield_prices-bg-1024x302.jpg"
         title="Posted Airfield Prices"
         breadcrumbs={[{ label: 'Products and Services', to: '/products-services' }, { label: 'Airfield Prices' }]}
       />

@@ -1,43 +1,42 @@
-import React from 'react';
 import PageHero from '../components/PageHero';
 
-const BASE_IMG_URL = '/wp-content/uploads';
+const BASE_IMG_URL = '/assets/team';
 
 const DIRECTORS = [
   {
     name: 'Mr. Mundkur Shyamprasad Kamath',
     role: 'Chairman, Shell MRPL Aviation and Director, MRPL',
-    image: `${BASE_IMG_URL}/2024/08/ShyamPrasad-Kamath-MRPL.jpg`,
+    image: `${BASE_IMG_URL}/Mundkur_Shyamprasad_Kamath.png`,
   },
   {
     name: 'Mr. Sanjay Samuel Varkey',
     role: 'Director, Shell MRPL Aviation and Shell India Markets Private Limited',
-    image: `${BASE_IMG_URL}/2024/05/sanjay-verkey.png`,
+    image: `${BASE_IMG_URL}/Sanjay_Samuel_Varkey.png`,
   },
   {
     name: 'Mr. BH Vasudev Prasad',
     role: 'Director, Shell MRPL Aviation and ED-Projects in MRPL',
-    image: `${BASE_IMG_URL}/2024/05/8.png`,
+    image: `${BASE_IMG_URL}/BH_Vasudev_Prasad.png`,
   },
   {
     name: 'Mr. Ziad Victor Soussou',
     role: 'Director, Shell MRPL Aviation',
-    image: `${BASE_IMG_URL}/2025/06/Photo_Zia-Victor.jpg`,
+    image: `${BASE_IMG_URL}/Ziad_Victor_Soussou.jpg`,
   },
   {
     name: 'Mr. B N Bankapur',
     role: 'Independent Director, Shell MRPL Aviation and Chairman, BEC Pvt Ltd',
-    image: `${BASE_IMG_URL}/2024/05/9.png`,
+    image: `${BASE_IMG_URL}/B_N_Bankapur.png`,
   },
   {
     name: 'Mr. Saikumar Rajagopal',
     role: 'Independent Director, Shell MRPL Aviation',
-    image: `${BASE_IMG_URL}/2024/05/2.png`,
+    image: `${BASE_IMG_URL}/Saikumar_Rajagopal.png`,
   },
   {
     name: 'Ms. Sangeeta Sumesh',
     role: 'Independent Director, Shell MRPL Aviation',
-    image: `${BASE_IMG_URL}/2025/04/IMG-20250407-WA0033.jpg`,
+    image: `${BASE_IMG_URL}/Sangeeta_Sumesh.jpg`,
   },
 ];
 

@@ -2,12 +2,45 @@ import React, { useState, useEffect, useCallback } from 'react';
 import PageHero from '../components/PageHero';
 
 const IMAGES = [
-  { src: '/wp-content/uploads/2022/08/FHML0461.jpg',                caption: 'Precision Fuelling Operations' },
-  { src: '/wp-content/uploads/2022/08/OTUU3242-e1700211980252.jpg', caption: 'Expert Safety Protocol Briefing' },
-  { src: '/wp-content/uploads/2022/08/LNTT4287.jpg',                caption: 'Into-Plane Excellence' },
-  { src: '/wp-content/uploads/2023/09/Pic5-e1623674472624.jpg',     caption: 'Strategic Airport Infrastructure' },
-  { src: '/wp-content/uploads/2023/09/Pic4-e1623674458152.jpg',     caption: 'Rigorous Quality Standards' },
-  { src: '/wp-content/uploads/2023/09/Pic3-e1623674444251.png',     caption: 'Ground Support Innovation' },
+  { src: '/assets/docs/gallery/1.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/12.png', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/13.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/14.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/18.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/2.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/21.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/23.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/24.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/26.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/27.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/28.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/29.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/3.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/31.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/32.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/35.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/36.JPG', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/38.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/39.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/40.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/41.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/44.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/45.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/47.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/50.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/6.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/7.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/Sanjay%20Varkey.jpg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.24.53%20AM.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.29.41%20AM%20(1).jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.29.41%20AM.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.29.42%20AM.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.37.44%20AM.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.37.45%20AM%20(1).jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.37.45%20AM.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.42.31%20AM.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.43.09%20AM.jpeg', caption: 'Gallery Image' },
+  { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.44.38%20AM.jpeg', caption: 'Gallery Image' }
 ];
 
 export default function GalleryPage() {
@@ -40,7 +73,6 @@ export default function GalleryPage() {
   return (
     <div className="site-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2023/09/slider2.jpg"
         title="Visual Showcase"
         breadcrumbs={[{ label: 'Gallery' }]}
       />

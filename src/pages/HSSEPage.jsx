@@ -16,8 +16,6 @@ export default function HSSEPage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/HSSE-bg.jpg"
-        fallbackSrc="/wp-content/uploads/2016/08/131G5664.jpg"
         title="HSSE"
         breadcrumbs={[{ label: 'HSSE & Quality' }, { label: 'HSSE' }]}
       />

@@ -77,8 +77,6 @@ export default function CSRPolicyPage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/CSR-bg-e1473238634842.jpg"
-        fallbackSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
         title="Corporate Social Responsibility"
         breadcrumbs={[{ label: 'Investors Information', to: '/investors-information' }, { label: 'CSR Policy' }]}
       />

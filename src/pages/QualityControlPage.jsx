@@ -13,8 +13,6 @@ export default function QualityControlPage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
-        fallbackSrc="/wp-content/uploads/2016/08/131G5664.jpg"
         title="Quality Control"
         breadcrumbs={[{ label: 'HSSE and Quality' }, { label: 'Quality Control' }]}
       />

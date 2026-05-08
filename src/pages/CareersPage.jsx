@@ -72,7 +72,6 @@ export default function CareersPage() {
   return (
     <div className="site-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
         title="Fuel Your Career"
         breadcrumbs={[{ label: 'Careers' }]}
       />

@@ -15,8 +15,6 @@ export default function VigilancePage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2023/12/vigilance-image-1.png"
-        fallbackSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
         title="Vigilance Mechanism"
         breadcrumbs={[
           { label: 'Investors Information', to: '/investors-information' },

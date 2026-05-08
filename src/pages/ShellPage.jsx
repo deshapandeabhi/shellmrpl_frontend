@@ -4,7 +4,6 @@ export default function ShellPage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
         title="Shell"
         breadcrumbs={[{ label: 'Company Parentage' }, { label: 'Shell' }]}
       />

@@ -36,7 +36,6 @@ export default function CSRProjectsPage() {
   return (
     <div className="site-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/csr-bg.jpg"
         title="Social Impact"
         breadcrumbs={[{ label: 'CSR Projects' }]}
       />

@@ -5,7 +5,6 @@ export default function LegalPage({ title }) {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
         title={title}
         breadcrumbs={[{ label: 'Home', to: '/' }, { label: title }]}
       />

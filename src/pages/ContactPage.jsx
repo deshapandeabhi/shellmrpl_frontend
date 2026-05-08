@@ -26,8 +26,6 @@ export default function ContactPage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/business_enquiries-bg.jpg"
-        fallbackSrc="/wp-content/uploads/2023/09/slider2.jpg"
         title="Contact Us"
         breadcrumbs={[{ label: 'Contact Us' }]}
       />

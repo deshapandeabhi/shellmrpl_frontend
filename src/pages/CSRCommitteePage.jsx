@@ -11,8 +11,6 @@ export default function CSRCommitteePage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/csr-bg.jpg"
-        fallbackSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
         title="CSR Committee Members"
         breadcrumbs={[
           { label: 'Investors Information', to: '/investors-information' },

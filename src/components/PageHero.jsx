@@ -4,15 +4,17 @@ import { Link } from 'react-router-dom';
 export default function PageHero({ imageSrc, title, breadcrumbs = [] }) {
   return (
     <div className="page-hero">
-      <div className="page-hero-overlay" />
-      <img
-        src={imageSrc}
-        alt=""
-        className="page-hero-bg"
-        onError={e => {
-          e.target.style.display = 'none';
-        }}
-      />
+      {imageSrc && <div className="page-hero-overlay" />}
+      {imageSrc && (
+        <img
+          src={imageSrc}
+          alt=""
+          className="page-hero-bg"
+          onError={e => {
+            e.target.style.display = 'none';
+          }}
+        />
+      )}
 
       <div className="container">
         <div className="page-hero-content">

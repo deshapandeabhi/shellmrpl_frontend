@@ -13,7 +13,6 @@ export default function ProductsPage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2023/09/slider2.jpg"
         title="Products &amp; Services"
         breadcrumbs={[{ label: 'Products and Services' }]}
       />

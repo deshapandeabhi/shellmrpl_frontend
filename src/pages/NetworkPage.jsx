@@ -29,7 +29,6 @@ export default function NetworkPage() {
   return (
     <div className="site-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2023/09/slider2.jpg"
         title="Our Strategic Network"
         breadcrumbs={[{ label: 'Aviation Network' }]}
       />
@@ -52,7 +51,7 @@ export default function NetworkPage() {
                 <div className="map-point"></div>
                 <div className="map-tooltip">
                   <div className="airport-name-tip">{apt.name.split(',')[0]}</div>
-                  <div style={{ opacity: 0.85, fontSize: '11px', color: 'var(--color-shell-blue)', fontWeight: 600, letterSpacing: '0.08em' }}>{apt.code}</div>
+                  <div style={{ opacity: 0.85, fontSize: '11px', color: 'white', fontWeight: 600, letterSpacing: '0.08em' }}>{apt.code}</div>
                 </div>
               </div>
             ))}

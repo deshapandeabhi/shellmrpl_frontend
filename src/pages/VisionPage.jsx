@@ -78,7 +78,7 @@ export default function VisionPage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
+        imageSrc="/assets/docs/gallery/36.JPG"
         title="Vision &amp; Values"
         breadcrumbs={[{ label: 'About', to: '/about' }, { label: 'Vision and Values' }]}
       />

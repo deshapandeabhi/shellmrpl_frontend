@@ -24,7 +24,6 @@ export default function AnnualReturnPage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/profile-bg.jpg"
         title="Annual Return"
         breadcrumbs={[{ label: 'Investors Information', to: '/investors-information' }, { label: 'Annual Return' }]}
       />
