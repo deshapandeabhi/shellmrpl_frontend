@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import flightPng from '../assets/flight.png';
 
 const STATS = [
-  { value: '14+', label: 'Strategic Airports' },
+  { value: '11+', label: 'Strategic Airports' },
   { value: '2008', label: 'Legacy of Trust' },
   { value: '50:50', label: 'Joint Venture' },
   { value: 'Jet A-1', label: 'Global Standard' },
@@ -13,7 +13,7 @@ const CARDS = [
   {
     img: '/assets/super_aviation_fuel_services.jpg',
     title: 'Superior Aviation Fuel Services',
-    desc: 'Supply of high-specification Jet A-1 fuel across 14 major Indian airports, ensuring uncompromising quality at every point of delivery.',
+    desc: 'Supply of high-specification Jet A-1 fuel across 11 major Indian airports, ensuring uncompromising quality at every point of delivery.',
     link: '/products-services',
   },
   {
@@ -155,7 +155,7 @@ export default function ProfilePage() {
 
         <div className="container">
           <div className="hero-content">
-            <span className="hero-eyebrow reveal">Shell MRPL Aviation Fuels and Services Limited</span>
+            <span className="hero-eyebrow reveal" style={{ fontSize: 'clamp(20px, 2vw, 32px)', fontWeight: '900', marginBottom: '16px', display: 'block' }}>Shell MRPL Aviation Fuels and Services Limited</span>
             <h1 className="hero-title reveal">
               Fuelling India&apos;s Global Ambitions
             </h1>
@@ -191,7 +191,7 @@ export default function ProfilePage() {
               </svg>
             </div>
             <div className="cap-text">
-              <div className="cap-val">14+ Strategic Airports</div>
+              <div className="cap-val">11+ Strategic Airports</div>
               <div className="cap-lab">Pan-India Presence</div>
             </div>
           </div>
@@ -310,7 +310,7 @@ export default function ProfilePage() {
           <div className="cta-content">
             <h2 className="cta-title">Ready to Take Flight?</h2>
             <p className="cta-subtitle">
-              Discover our extensive network of 14 major Indian airports and explore how
+              Discover our extensive network of 11 major Indian airports and explore how
               our fuelling solutions can empower your operations.
             </p>
             <div className="cta-actions">

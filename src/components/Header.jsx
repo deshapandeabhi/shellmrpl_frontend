@@ -120,7 +120,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
     return location.pathname === item.path;
   };
 
-  const headerClass = `site-header ${isScrolled ? 'is-scrolled' : ''} ${isHome && !isScrolled ? 'on-hero' : ''} ${!isHome && !isScrolled ? 'inner-glass' : ''}`;
+  const headerClass = `site-header ${isScrolled ? 'is-scrolled' : ''}`;
 
   return (
     <>
@@ -146,9 +146,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           background: #FFFFFF;
         }
 
-        .site-header.on-hero:not(.is-scrolled) {
-          background: transparent;
-        }
+        /* Removed transparent background for on-hero */
 
         /* Scrolled State - Premium Floating Effect */
         .site-header.is-scrolled {
@@ -184,7 +182,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
         .is-scrolled .site-logo {
           max-width: 180px;
-          min-width: 140px;
+          min-width: 120px;
         }
 
         /* Desktop Nav */
@@ -208,22 +206,12 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           gap: 4px;
         }
 
-        .is-scrolled .nav-link {
-          color: #014579;
-        }
-
-        .on-hero:not(.is-scrolled) .nav-link {
-          color: #fff;
-        }
-
         .nav-link:hover, .nav-link.active {
           opacity: 1;
           color: #014579;
         }
 
-        .on-hero:not(.is-scrolled) .nav-link:hover {
-          color: #FBCE07;
-        }
+        /* Removed special hover for on-hero */
 
         /* Dropdown Alignment - Aligned to parent start */
         .nav-item {
@@ -287,8 +275,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         .header-actions-link {
           font-size: 13px;
           font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
+          letter-spacing: 0.04em;
           transition: var(--t-nav);
           color: #2E2E2E;
           white-space: nowrap;
@@ -362,7 +349,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
             padding: 10px 20px;
             min-height: 70px;
           }
-          .site-logo { max-width: 180px; }
+          .site-logo { max-width: 180px; min-width: 100px; }
         }
 
         /* Mobile Drawer Overhaul */
@@ -405,8 +392,9 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         .mobile-drawer::before {
           content: '';
           position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at top right, rgba(251, 206, 7, 0.15), transparent 60%);
+          top: 0; left: 0; right: 0;
+          height: 4px;
+          background: #FFC600;
           pointer-events: none;
         }
 
@@ -597,7 +585,9 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
       
       <div className={`mobile-drawer ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-drawer-header">
-          <img src="/wp-content/uploads/2023/09/logo.jpg" alt="Logo" className="mobile-logo" />
+          <div style={{ background: '#fff', borderRadius: '8px', padding: '6px 10px', display: 'inline-flex' }}>
+            <img src="/wp-content/uploads/2023/09/logo.jpg" alt="Logo" className="mobile-logo" />
+          </div>
           <button className="mobile-close-btn" onClick={onMobileClose} aria-label="Close menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>

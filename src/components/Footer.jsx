@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 function FL({ to, children }) {
@@ -52,7 +51,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="footer-bottom">
+      </div>
+
+      <div className="footer-bottom-wrapper">
+        <div className="container footer-bottom">
           <p>© 2026 Shell MRPL Aviation Fuels and Services Limited. All Rights Reserved.</p>
           <div className="footer-legal">
             <Link to="/privacy-policy">Privacy Policy</Link>
