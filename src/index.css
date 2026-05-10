@@ -3778,3 +3778,70 @@
   color: var(--shell-white) !important;
   font-weight: 500;
 }
+/* ══════════════════════════════════════════════════
+   SHELL BRAND IDENTITY — SHAPE & FORM (2026)
+   Policy Sections 106 (Border/Shadow) & 206 (Radius)
+   ══════════════════════════════════════════════════ */
+
+/* 1. Interactive Elements: Buttons, Inputs, Tags (8px Radius) */
+button,
+input,
+textarea,
+select,
+.btn-impact,
+.btn-red,
+.btn-blue,
+.btn-cta-yellow,
+.newsletter-btn,
+.form-input,
+.form-select,
+.form-textarea,
+.newsletter-input,
+.project-badge,
+.gallery-tag,
+.capability-item {
+  border-radius: 8px !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+/* 2. Information Containers: Cards, Boxes, Modals (24px Radius) */
+.editorial-card,
+.value-card,
+.airport-card,
+.project-card,
+.vision-box,
+.legal-body,
+.map-tooltip,
+.nav-dropdown,
+.mobile-drawer,
+.csr-archive-section,
+.gallery-item-wrap,
+.glass,
+.glass-dark {
+  border-radius: 24px !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: var(--grey-100) !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+/* 3. Specialized Containers (48px Radius allowed for XL) */
+.site-header.is-scrolled {
+  border-radius: 48px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 4. Elevation (Flat Rule Compliance) */
+.editorial-card:hover,
+.project-card:hover,
+.value-card:hover,
+.airport-card:hover,
+.newsletter-btn:hover,
+.btn-impact:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
