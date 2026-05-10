@@ -114,33 +114,33 @@ export default function ProfilePage() {
         {/* ── CINEMATIC FLIGHT ANIMATION ── */}
         <div className="hero-flight-path">
           <svg width="100%" height="100%" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0 }}>
-            <path 
+            <path
               id="airplanePath"
-              d="M-200 650 C 300 500, 700 800, 1100 200 S 1400 -100, 1800 100" 
-              stroke="rgba(255, 255, 255, 0.4)" 
-              strokeWidth="2.5" 
+              d="M-200 650 C 300 500, 700 800, 1100 200 S 1400 -100, 1800 100"
+              stroke="rgba(var(--shell-white-rgb), 0.4)"
+              strokeWidth="2.5"
               strokeDasharray="15 20"
               style={{ animation: 'vaporTrail 20s linear infinite' }}
             />
           </svg>
-          
+
           {/* Main Airplane */}
-          <img 
-            src={flightPng} 
-            alt="Airplane" 
+          <img
+            src={flightPng}
+            alt="Airplane"
             className="animated-airplane"
-            style={{ 
+            style={{
               offsetPath: "path('M-150 650 C 300 500, 700 800, 1100 200 S 1400 -100, 1600 100')",
               animation: 'airplaneFly 12s cubic-bezier(0.4, 0, 0.2, 1) infinite'
             }}
           />
 
           {/* Distant Airplane */}
-          <img 
-            src={flightPng} 
-            alt="Airplane Distant" 
+          <img
+            src={flightPng}
+            alt="Airplane Distant"
             className="animated-airplane distant"
-            style={{ 
+            style={{
               offsetPath: "path('M1500 400 C 1200 300, 800 500, 400 100 S -100 300, -200 200')",
               animation: 'airplaneFlyDistant 16s linear infinite 4s'
             }}
@@ -155,7 +155,7 @@ export default function ProfilePage() {
 
         <div className="container">
           <div className="hero-content">
-            <span className="hero-eyebrow reveal" style={{ fontSize: 'clamp(20px, 2vw, 32px)', fontWeight: '900', marginBottom: '16px', display: 'block' }}>Shell MRPL Aviation Fuels and Services Limited</span>
+            {/* <span className="hero-eyebrow reveal" style={{ fontSize: 'clamp(20px, 2vw, 32px)', fontWeight: '900', marginBottom: '16px', display: 'block' }}>Shell MRPL Aviation Fuels and Services Limited</span> */}
             <h1 className="hero-title reveal">
               Fuelling India&apos;s Global Ambitions
             </h1>
@@ -181,13 +181,16 @@ export default function ProfilePage() {
         </div>
       </section>
 
+      {/* ── SHELL YELLOW BRAND ACCENT BAR (satisfies ≥5% Yellow focal-point rule) ── */}
+      <div style={{ background: 'var(--shell-yellow)', height: '6px', width: '100%' }} aria-hidden="true" />
+
       {/* ── BRAND CAPABILITIES STRIP ── */}
       <div className="stats-strip glass-dark">
         <div className="container stats-inner">
           <div className="capability-item reveal">
             <div className="cap-icon-box">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
               </svg>
             </div>
             <div className="cap-text">
@@ -198,7 +201,7 @@ export default function ProfilePage() {
           <div className="capability-item reveal reveal-delay-1">
             <div className="cap-icon-box">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" />
               </svg>
             </div>
             <div className="cap-text">
@@ -209,7 +212,7 @@ export default function ProfilePage() {
           <div className="capability-item reveal reveal-delay-2">
             <div className="cap-icon-box">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
             </div>
             <div className="cap-text">
@@ -220,7 +223,7 @@ export default function ProfilePage() {
           <div className="capability-item reveal reveal-delay-3">
             <div className="cap-icon-box">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+                <circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" />
               </svg>
             </div>
             <div className="cap-text">
@@ -283,7 +286,7 @@ export default function ProfilePage() {
                 </p>
               </div>
               <div className="split-actions">
-                <Link to="/about" className="btn-impact">
+                <Link to="/about" className="btn-red">
                   Learn More
                 </Link>
                 <Link to="/board-of-directors" className="feature-card-link" style={{ marginLeft: '24px', fontWeight: 800 }}>

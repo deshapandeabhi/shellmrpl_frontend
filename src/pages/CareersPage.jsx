@@ -90,7 +90,7 @@ export default function CareersPage() {
           padding: 'clamp(24px, 8vw, 64px)', 
           borderRadius: 'var(--radius-xl)', 
           margin: '0 auto', 
-          background: '#fff', 
+          background: 'var(--shell-white)', 
           border: '1px solid var(--gray-100)', 
           boxShadow: 'var(--shadow-premium)' 
         }}>
@@ -109,7 +109,7 @@ export default function CareersPage() {
           ) : (
             <form onSubmit={handleSubmit}>
               {errors.form && (
-                 <div className="form-error-banner" style={{ color: 'var(--shell-red)', padding: '16px', background: 'rgba(217,34,25,0.05)', borderRadius: '8px', marginBottom: '32px', borderLeft: '4px solid var(--shell-red)' }}>
+                 <div className="form-error-banner" style={{ color: 'var(--shell-red)', padding: '16px', background: 'rgba(var(--shell-red-rgb),0.05)', borderRadius: '8px', marginBottom: '32px', borderLeft: '4px solid var(--shell-red)' }}>
                    {errors.form}
                  </div>
               )}

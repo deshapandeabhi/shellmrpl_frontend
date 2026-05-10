@@ -77,7 +77,7 @@ export default function VigilancePage() {
           <p className="vision-text" style={{ fontSize: '16px', fontWeight: 400, opacity: 0.9 }}>
             I realise that every citizen should be vigilant and commit to highest standards of honesty and integrity at all times and support the fight against corruption.
           </p>
-          <div style={{ marginTop: 24, color: '#fff' }}>
+          <div style={{ marginTop: 24, color: 'var(--shell-white)' }}>
             <p><strong>I, therefore, Pledge:</strong></p>
             <ul style={{ marginTop: 12, listStyle: 'disc', paddingLeft: 20 }}>
               <li>To follow probity and rule of law in all walks of life;</li>

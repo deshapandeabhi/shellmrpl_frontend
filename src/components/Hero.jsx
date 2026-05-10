@@ -13,13 +13,13 @@ const Hero = () => {
       </div>
 
 
-      <div className="text-left py-8 px-10 border-l border-r border-[#e0e0e0]">
-        <h2 className="text-[#1a1a1a] text-[28px] font-bold mb-3 relative inline-block font-openSans">
-          Profile
-          <span className="block h-[3px] w-full bg-[#dd1d21] mt-1"></span>
+      <div className="text-left py-8 px-10 border-l border-r border-[var(--grey-300)]">
+        <h2 className="text-[var(--grey-700)] text-[28px] font-bold mb-3 relative inline-block font-openSans">
+          Overview
+          <span className="block h-[3px] w-full bg-[var(--shell-red)] mt-1"></span>
         </h2>
         
-        <div className="text-[#666666] space-y-5 text-[15px] font-openSans leading-[1.8] mt-6">
+        <div className="text-[var(--grey-700)] space-y-5 text-[15px] font-openSans leading-[1.8] mt-6">
           <p>
             Shell MRPL Aviation Fuels and Services Limited is a 50:50 Joint Venture Company formed in 2008 between 
             Shell, a global leader in marketing aviation fuel and operating airport fueling facilities and Mangalore 

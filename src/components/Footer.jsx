@@ -10,7 +10,6 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <img src="/wp-content/uploads/2023/09/logo.jpg" alt="Logo" className="footer-logo" />
             <p className="footer-desc">
               A strategic partnership between Shell and MRPL, delivering world-class aviation fuel services 
               across India. Excellence in energy, precision in service.

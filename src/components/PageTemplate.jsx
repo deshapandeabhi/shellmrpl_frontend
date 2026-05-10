@@ -11,13 +11,13 @@ const PageTemplate = ({ title, bgImage, content }) => {
         />
       </div>
 
-      <div className="text-left py-10 px-10 border-l border-r border-[#e0e0e0] min-h-[400px]">
-        <h2 className="text-[#1a1a1a] text-[28px] font-bold mb-6 relative inline-block font-openSans">
+      <div className="text-left py-10 px-10 border-l border-r border-[var(--grey-300)] min-h-[400px]">
+        <h2 className="text-[var(--grey-700)] text-[28px] font-bold mb-6 relative inline-block font-openSans">
           {title}
-          <span className="block h-[3px] w-1/2 bg-[#dd1d21] mt-2"></span>
+          <span className="block h-[3px] w-1/2 bg-[var(--shell-red)] mt-2"></span>
         </h2>
         
-        <div className="text-[#444] space-y-5 text-[15px] font-openSans leading-[1.8]">
+        <div className="text-[var(--grey-700)] space-y-5 text-[15px] font-openSans leading-[1.8]">
              {content || <p>This page content is currently being migrated from WordPress...</p>}
         </div>
       </div>

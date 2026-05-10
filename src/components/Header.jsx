@@ -143,22 +143,22 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           display: flex;
           align-items: center;
           padding: 15px var(--header-padding);
-          background: #FFFFFF;
+          background: var(--shell-white);
+          /* Shell Yellow top accent — satisfies ≥5% Yellow focal-point rule */
+          border-top: 4px solid var(--shell-yellow);
         }
 
-        /* Removed transparent background for on-hero */
 
-        /* Scrolled State - Premium Floating Effect */
         .site-header.is-scrolled {
           height: var(--header-height-compact);
           margin: 12px var(--header-padding);
           padding: 0 24px;
-          background: rgba(255, 255, 255, 0.95);
+          background: rgba(var(--shell-white-rgb), 0.95);
           backdrop-filter: blur(24px) saturate(180%);
           -webkit-backdrop-filter: blur(24px) saturate(180%);
-          border-radius: 100px;
-          border: 1px solid rgba(255, 255, 255, 0.4);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+          border-radius: 48px;
+          border: 1px solid rgba(var(--shell-white-rgb), 0.4);
+          box-shadow: 0 20px 40px rgba(var(--grey-700-rgb), 0.1);
           width: calc(100vw - (var(--header-padding) * 2));
         }
 
@@ -171,19 +171,19 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           margin: 0 auto;
         }
 
+        .site-logo-link {
+          flex-shrink: 0;
+        }
+
         .site-logo {
-          max-width: 360px; /* High-impact size that doesn't break layout */
-          min-width: 200px;
-          width: 100%;
+          width: 300px; /* Firm width for desktop */
+          max-width: 100%;
           height: auto;
           transition: var(--t-nav);
           flex-shrink: 0;
         }
 
-        .is-scrolled .site-logo {
-          max-width: 180px;
-          min-width: 120px;
-        }
+        /* Logo remains full size on scroll */
 
         /* Desktop Nav */
         .desktop-nav {
@@ -195,9 +195,9 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
         .nav-link {
           font-family: 'Roboto', sans-serif;
-          font-size: 16px; /* Slightly reduced for better fit with large logo */
+          font-size: 16px;
           font-weight: 700;
-          color: #2E2E2E;
+          color: var(--grey-700); /* Shell Grey 700 */
           transition: var(--t-nav);
           opacity: 1;
           white-space: nowrap;
@@ -208,7 +208,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
         .nav-link:hover, .nav-link.active {
           opacity: 1;
-          color: #014579;
+          color: var(--ocean-400); /* Ocean 400 */
         }
 
         /* Removed special hover for on-hero */
@@ -225,12 +225,12 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           position: absolute;
           top: 100%;
           left: 0;
-          background: #FFFFFF;
+          background: var(--shell-white);
           min-width: 240px;
           border-radius: 8px;
           padding: 10px 0;
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-          border: 1px solid #E1E1E1;
+          box-shadow: 0 15px 35px rgba(var(--grey-700-rgb), 0.1);
+          border: 1px solid var(--grey-300); /* Shell Grey 300 */
           opacity: 0;
           visibility: hidden;
           transition: all 0.3s ease;
@@ -250,18 +250,18 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           font-family: 'Open Sans', sans-serif;
           font-size: 14px;
           font-weight: 400;
-          color: #6F6F6F;
+          color: var(--grey-700); /* Shell Grey 700 */
           transition: 0.3s ease;
         }
 
         .nav-dropdown-link:hover {
-          background: #F5F5F5;
-          color: #D92219;
+          background: var(--grey-50); /* Shell Grey 50 */
+          color: var(--shell-red); /* Shell Red */
         }
 
         .nav-dropdown-link.active {
-          background: #014579;
-          color: #FFFFFF;
+          background: var(--night-600); /* Night 600 */
+          color: var(--shell-white);
         }
 
         /* Header Actions */
@@ -277,16 +277,16 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           font-weight: 800;
           letter-spacing: 0.04em;
           transition: var(--t-nav);
-          color: #2E2E2E;
+          color: var(--grey-700); /* Shell Grey 700 */
           white-space: nowrap;
         }
 
         .on-hero:not(.is-scrolled) .header-actions-link {
-          color: #fff;
+          color: var(--shell-white);
         }
 
         .header-actions-link:hover {
-          color: #014579;
+          color: var(--ocean-400); /* Ocean 400 */
         }
 
         /* Hamburger */
@@ -297,8 +297,8 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           cursor: pointer;
           padding: 10px;
           z-index: 2100;
-          background: rgba(255, 255, 255, 0.15);
-          border-radius: 50%;
+          background: rgba(var(--shell-white-rgb), 0.15);
+          border-radius: 10%;
           width: 44px;
           height: 44px;
           align-items: center;
@@ -308,7 +308,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         }
 
         .hamburger-btn:hover {
-          background: rgba(255, 255, 255, 0.25);
+          background: rgba(var(--shell-white-rgb), 0.25);
         }
 
         .ham-line {
@@ -324,24 +324,28 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         }
 
         .on-hero:not(.is-scrolled) .hamburger-btn {
-          background: rgba(255, 255, 255, 0.15);
+          background: rgba(var(--shell-white-rgb), 0.15);
         }
 
         /* Responsive Breakpoints */
-        @media (max-width: 1280px) {
-          .desktop-nav { gap: 30px; }
-          .site-logo { max-width: 300px; }
+        @media (max-width: 1360px) {
+          .desktop-nav { gap: 12px; }
+          .nav-link { font-size: 14px; }
+          .site-logo { width: 240px; }
         }
 
-        @media (max-width: 1100px) {
-          .desktop-nav { gap: 15px; }
-          .nav-link { font-size: 16px; }
+        @media (max-width: 1180px) {
+          .desktop-nav { gap: 6px; }
+          .nav-link { font-size: 13px; }
+          .site-logo { width: 200px; }
+          .header-actions .btn-impact { padding: 8px 16px; font-size: 13px; }
         }
 
         @media (max-width: 991px) {
+          /* Trigger hamburger menu for tablet and mobile only */
           .desktop-nav, .header-actions-link, .header-actions .btn-impact { display: none; }
           .hamburger-btn { display: flex; }
-          .site-logo { max-width: 220px; }
+          .site-logo { width: 220px; }
         }
 
         @media (max-width: 768px) {
@@ -349,14 +353,14 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
             padding: 10px 20px;
             min-height: 70px;
           }
-          .site-logo { max-width: 180px; min-width: 100px; }
+          .site-logo { width: 180px; }
         }
 
         /* Mobile Drawer Overhaul */
         .mobile-drawer-overlay {
           position: fixed;
           inset: 0;
-          background: rgba(5, 17, 32, 0.4);
+          background: rgba(var(--night-600-rgb), 0.4);
           backdrop-filter: blur(8px);
           opacity: 0;
           visibility: hidden;
@@ -374,15 +378,15 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           top: 0; right: 0; bottom: 0;
           width: 100%;
           max-width: 440px;
-          background: var(--dark-900);
+          background: var(--night-600); /* Night 600 — Shell palette compliant */
           z-index: 2600;
           transform: translateX(100%);
           transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
           padding: 40px 24px;
           display: flex;
           flex-direction: column;
-          color: #fff;
-          box-shadow: -20px 0 60px rgba(0, 0, 0, 0.3);
+          color: var(--shell-white);
+          box-shadow: -20px 0 60px rgba(var(--grey-700-rgb), 0.3);
         }
 
         .mobile-drawer.open {
@@ -394,7 +398,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           position: absolute;
           top: 0; left: 0; right: 0;
           height: 4px;
-          background: #FFC600;
+          background: var(--shell-yellow);
           pointer-events: none;
         }
 
@@ -415,13 +419,13 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         .mobile-close-btn {
           width: 52px; height: 52px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(var(--shell-white-rgb), 0.1);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #fff;
+          color: var(--shell-white);
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(var(--shell-white-rgb), 0.1);
         }
 
         .mobile-close-btn:hover {
@@ -440,7 +444,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         /* Mobile Scrollbar */
         .mobile-nav-list::-webkit-scrollbar { width: 4px; }
         .mobile-nav-list::-webkit-scrollbar-track { background: transparent; }
-        .mobile-nav-list::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        .mobile-nav-list::-webkit-scrollbar-thumb { background: rgba(var(--shell-white-rgb), 0.1); border-radius: 10px; }
 
         @keyframes mobileFadeIn {
           from { opacity: 0; transform: translateX(20px); }
@@ -448,7 +452,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         }
 
         .mobile-nav-item {
-          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+          border-bottom: 1px solid rgba(var(--shell-white-rgb), 0.06);
           animation: mobileFadeIn 0.6s ease both;
         }
 
@@ -460,7 +464,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           padding: 24px 0;
           font-size: 22px;
           font-weight: 800;
-          color: #fff;
+          color: var(--shell-white);
           transition: var(--t-nav);
           letter-spacing: -0.02em;
         }
@@ -486,7 +490,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
         .mobile-submenu {
           padding: 8px 0 32px 24px;
-          border-left: 2px solid rgba(251, 206, 7, 0.2);
+          border-left: 2px solid rgba(var(--shell-yellow-rgb), 0.2);
           margin-left: 4px;
         }
 
@@ -495,19 +499,19 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           padding: 12px 0;
           font-size: 16px;
           font-weight: 600;
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(var(--shell-white-rgb), 0.5);
           transition: var(--t-nav);
         }
 
         .mobile-sublink:hover, .mobile-sublink.active {
-          color: #fff;
+          color: var(--shell-white);
           transform: translateX(8px);
         }
 
         .mobile-footer {
           margin-top: 40px;
           padding-top: 40px;
-          border-top: 1px solid rgba(255, 255, 255, 0.06);
+          border-top: 1px solid rgba(var(--shell-white-rgb), 0.06);
           display: flex;
           flex-direction: column;
           gap: 16px;
@@ -585,7 +589,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
       
       <div className={`mobile-drawer ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-drawer-header">
-          <div style={{ background: '#fff', borderRadius: '8px', padding: '6px 10px', display: 'inline-flex' }}>
+          <div style={{ background: 'var(--shell-white)', borderRadius: '8px', padding: '6px 10px', display: 'inline-flex' }}>
             <img src="/wp-content/uploads/2023/09/logo.jpg" alt="Logo" className="mobile-logo" />
           </div>
           <button className="mobile-close-btn" onClick={onMobileClose} aria-label="Close menu">
