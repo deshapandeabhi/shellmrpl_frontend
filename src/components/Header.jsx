@@ -314,7 +314,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         .ham-line {
           width: 22px;
           height: 2.5px;
-          background: var(--dark-900);
+          background: var(--grey-900);
           border-radius: 4px;
           transition: var(--t-nav);
         }
@@ -345,7 +345,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           /* Trigger hamburger menu for tablet and mobile only */
           .desktop-nav, .header-actions-link, .header-actions .btn-impact { display: none; }
           .hamburger-btn { display: flex; }
-          .site-logo { width: 220px; }
+          .site-logo { width: 180px; }
         }
 
         @media (max-width: 768px) {
