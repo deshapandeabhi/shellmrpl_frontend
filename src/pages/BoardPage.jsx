@@ -11,7 +11,7 @@ const DIRECTORS = [
   {
     name: 'Mr. Sanjay Samuel Varkey',
     role: 'Director, Shell MRPL Aviation and Shell India Markets Private Limited',
-    image: `${BASE_IMG_URL}/Sanjay_Samuel_Varkey.png`,
+    image: '/assets/docs/gallery/Sanjay%20Varkey.jpg',
   },
   {
     name: 'Mr. BH Vasudev Prasad',

@@ -30,7 +30,6 @@ const IMAGES = [
   { src: '/assets/docs/gallery/50.jpg', caption: 'Gallery Image' },
   { src: '/assets/docs/gallery/6.jpg', caption: 'Gallery Image' },
   { src: '/assets/docs/gallery/7.jpg', caption: 'Gallery Image' },
-  { src: '/assets/docs/gallery/Sanjay%20Varkey.jpg', caption: 'Gallery Image' },
   { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.24.53%20AM.jpeg', caption: 'Gallery Image' },
   { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.29.41%20AM%20(1).jpeg', caption: 'Gallery Image' },
   { src: '/assets/docs/gallery/WhatsApp%20Image%202026-05-07%20at%2010.29.41%20AM.jpeg', caption: 'Gallery Image' },
