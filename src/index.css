@@ -1,6 +1,81 @@
-/* ── Google Fonts ── */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900');
+/* ── Shell Brand Typography ── */
+@font-face {
+  font-family: 'Shell';
+  src: url('./assets/fonts/ShellLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shell';
+  src: url('./assets/fonts/ShellLightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Shell';
+  src: url('./assets/fonts/ShellBook.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shell';
+  src: url('./assets/fonts/ShellBookItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Shell';
+  src: url('./assets/fonts/ShellMedium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shell';
+  src: url('./assets/fonts/ShellMediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Shell';
+  src: url('./assets/fonts/ShellBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shell';
+  src: url('./assets/fonts/ShellHeavy.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Condensed variants */
+@font-face {
+  font-family: 'Shell Condensed';
+  src: url('./assets/fonts/ShellCondensedLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shell Condensed';
+  src: url('./assets/fonts/ShellCondensedMedium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shell Condensed';
+  src: url('./assets/fonts/ShellCondensedBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
 
 @tailwind base;
 @tailwind components;
@@ -15,45 +90,55 @@
   /* ── PRIMARY PALETTE (First Impressions) ── */
   --shell-yellow: #FFC600;
   --shell-yellow-rgb: 255, 198, 0;
-  /* Shell Yellow  — focal-point accent, min 5% of layout */
   --shell-red: #DD1D21;
   --shell-red-rgb: 221, 29, 33;
-  /* Shell Red     — primary brand strength */
   --shell-white: #FFFFFF;
   --shell-white-rgb: 255, 255, 255;
-  /* Shell White   — dominant surface */
 
-  /* ── FUNCTIONAL GREYS (Supporting) ── */
-  --grey-700: #4A4A4A;
-  --grey-700-rgb: 74, 74, 74;
-  /* Primary body text — WCAG AA compliant on white */
-  --grey-300: #AAAAAA;
-  --grey-300-rgb: 170, 170, 170;
-  /* Secondary / muted text */
+  /* ── SHELL GREY — FUNCTIONAL PALETTE ── */
   --grey-50: #F5F5F5;
   --grey-50-rgb: 245, 245, 245;
-  /* Page-interior background tint */
+  /* Lightest background, zebra rows */
+  --grey-100: #E0E0E0;
+  --grey-100-rgb: 224, 224, 224;
+  /* Borders, dividers */
+  --grey-200: #C0C0C0;
+  --grey-200-rgb: 192, 192, 192;
+  /* Secondary borders */
+  --grey-300: #AAAAAA;
+  --grey-300-rgb: 170, 170, 170;
+  /* Placeholder text */
+  --grey-400: #919191;
+  --grey-400-rgb: 145, 145, 145;
+  /* Large text only (accessibility limit) */
+  --grey-500: #757575;
+  --grey-500-rgb: 117, 117, 117;
+  /* Alternative standard text on white */
+  --grey-600: #616161;
+  --grey-600-rgb: 97, 97, 97;
+  /* Supporting text */
+  --grey-700: #404040;
+  --grey-700-rgb: 64, 64, 64;
+  /* Default text colour (Pantone 425C) */
+  --grey-800: #343434;
+  --grey-800-rgb: 52, 52, 52;
+  /* Strong secondary text */
+  --grey-900: #1A1A1A;
+  --grey-900-rgb: 26, 26, 26;
+  /* Small text only — maximum contrast */
 
   /* ── NATURE-INSPIRED SECONDARY PALETTE ── */
   --sunrise-300: #ED8A00;
-  /* Warm accent — use inside pages only */
   --sunset-500: #D54410;
-  /* Deep warm accent */
   --seaweed-300: #A8B11A;
-  /* Nature green accent */
   --forest-500: #008557;
-  /* Forest green */
   --ocean-400: #0097A9;
-  /* Ocean teal — replaces legacy shell-blue */
   --night-600: #336094;
   --night-600-rgb: 51, 96, 148;
-  /* Deep night blue */
   --stone-300: #B6B099;
-  /* Warm stone */
 
   /* ── ALIASES (backward-compat) ── */
   --color-shell-blue: var(--night-600);
-  /* Ocean 400 teal */
   --color-shell-red: var(--shell-red);
   --shell-blue: var(--ocean-400);
   --color-sky-blue: var(--night-600);
@@ -61,27 +146,22 @@
   --color-lighter-gray: var(--grey-50);
   --color-dark-gray: var(--grey-300);
   --color-charcoal: var(--grey-700);
-  --gray-900: var(--grey-700);
+  --gray-900: var(--grey-900);
+  --gray-800: var(--grey-800);
   --gray-700: var(--grey-700);
-  --gray-50: var(--grey-50);
+  --gray-600: var(--grey-600);
+  --gray-500: var(--grey-500);
+  --gray-400: var(--grey-400);
   --gray-300: var(--grey-300);
-  --gray-400: var(--grey-300);
-  --gray-100: var(--grey-50);
-  --gray-200: var(--grey-300);
-  --gray-25: var(--grey-50);
+  --gray-200: var(--grey-200);
+  --gray-100: var(--grey-100);
+  --gray-50: var(--grey-50);
   --white: var(--shell-white);
 
-  /* ── DARK SURFACES (non-primary, inner pages / dark overlays only) ── */
-  --dark-900: var(--night-600);
-  --dark-800: var(--night-600);
-  --dark-700: var(--night-600);
-  --dark-950: var(--night-600);
-  --glass-bg: rgba(var(--shell-white-rgb), 0.75);
-  --glass-border: rgba(var(--shell-white-rgb), 0.2);
-
   /* ── TYPOGRAPHY ── */
-  --font-primary: 'Open Sans', sans-serif;
-  --font-secondary: 'Roboto', sans-serif;
+  --font-primary: 'Shell', sans-serif;
+  --font-secondary: 'Shell', sans-serif;
+  --font-condensed: 'Shell Condensed', sans-serif;
   --font-body: var(--font-primary);
   --font-heading: var(--font-secondary);
   --font-main: var(--font-primary);
@@ -108,10 +188,11 @@
 
   /* ── TEXT COLORS ── */
   --color-text-primary: var(--grey-700);
-  /* var(--grey-700) — WCAG AA on white */
   --text-primary: var(--grey-700);
-  --text-secondary: var(--grey-700);
-  --text-muted: var(--grey-300);
+  --text-secondary: var(--grey-800);
+  --text-muted: var(--grey-500);
+  --text-small: var(--grey-900);
+  --text-large: var(--grey-400);
 
   /* ── SHADOWS (flat-UI compliant — no color glows) ── */
   --shadow-premium: 0 20px 50px rgba(var(--grey-700-rgb), 0.10);
@@ -162,16 +243,81 @@
   h5,
   h6 {
     font-family: var(--font-secondary);
-    font-weight: 700;
+    font-weight: 900;
+    /* Shell Heavy — Mandatory for all headlines */
+    line-height: 1.2;
+    color: var(--grey-900) !important;
   }
 
   body {
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    color: var(--grey-700);
-    /* Shell Grey 700 — WCAG AA body text */
+    font-weight: 500;
+    /* Shell Medium — Mandatory for all body copy */
+    color: var(--grey-700) !important;
+    /* Shell Grey 700 — Default text colour */
     background: var(--shell-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  small,
+  .text-small,
+  .text-sm {
+    color: var(--grey-900) !important;
+    /* Grey 900 — Small text only (highest contrast) */
+  }
+
+  .text-large,
+  .text-lg,
+  .text-xl,
+  .text-2xl {
+    color: var(--grey-400);
+    /* Grey 400 — Large text only (reduced contrast) */
+  }
+
+  .text-standard-light {
+    color: var(--grey-500);
+    /* Grey 500 — Lightest grey usable for standard text (AA) */
+  }
+
+  p,
+  li,
+  span {
+    color: var(--grey-700) !important;
+  }
+
+  /* Inverted Text Rule — Mandatory for all dark/blue/red backgrounds */
+  .text-white,
+  .text-inverted,
+  .dark *,
+  .bg-red *,
+  .bg-blue *,
+  .editorial-card-content *,
+  .page-hero-content *,
+  .site-footer *,
+  .mobile-drawer *,
+  .btn-impact,
+  .btn-impact *,
+  .btn-red,
+  .btn-red *,
+  .stats-strip,
+  .stats-strip *,
+  .cta-section,
+  .cta-section *,
+  .glass-dark *,
+  .project-badge,
+  .nav-dropdown-link.active,
+  .vision-box,
+  .vision-box *,
+  .map-tooltip,
+  .map-tooltip *,
+  .btn-blue,
+  .btn-blue *,
+  .legal-body,
+  .legal-body * {
+    color: var(--shell-white) !important;
   }
 
   img {
@@ -181,7 +327,14 @@
   }
 
   a {
-    color: inherit;
+    color: var(--grey-900) !important;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: var(--t-fast);
+  }
+
+  a:hover {
+    color: var(--grey-700) !important;
     text-decoration: none;
   }
 
@@ -479,6 +632,44 @@
   color: var(--shell-white);
 }
 
+/* ── OFFICIAL SHELL DIGITAL GRID ── */
+.brand-grid {
+  display: grid;
+  gap: clamp(16px, 3vw, 32px);
+  /* Desktop: 12-column grid */
+  grid-template-columns: repeat(12, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .brand-grid {
+    /* Tablet: 6-column grid */
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-grid {
+    /* Mobile: 4-column grid */
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.col-span-12 {
+  grid-column: span 12;
+}
+
+.col-span-6 {
+  grid-column: span 6;
+}
+
+.col-span-4 {
+  grid-column: span 4;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
 /* ── EDITORIAL CARDS ── */
 .editorial-grid {
   display: grid;
@@ -539,7 +730,7 @@
 .editorial-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 30%, rgba(var(--grey-700-rgb), 0.85) 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(var(--grey-900-rgb), 0.4) 40%, rgba(var(--grey-900-rgb), 0.95) 100%);
   z-index: 1;
 }
 
@@ -553,11 +744,17 @@
   color: var(--shell-white);
 }
 
+.editorial-card-content h3,
+.editorial-card-content p,
+.editorial-card-content span {
+  color: var(--shell-white) !important;
+}
+
 .editorial-card-eyebrow {
   display: block;
   font-size: 12px;
   font-weight: 800;
-  color: var(--shell-yellow);
+  color: var(--grey-900) !important;
   letter-spacing: 0.05em;
   margin-bottom: 16px;
   transform: translateY(20px);
@@ -573,14 +770,18 @@
 .editorial-card-title {
   font-size: 32px;
   font-weight: 900;
+  /* Shell Heavy */
   line-height: 1.25;
   margin-bottom: 20px;
   letter-spacing: -0.02em;
+  color: var(--shell-white) !important;
+  text-shadow: 0 2px 10px rgba(var(--grey-900-rgb), 0.5);
 }
 
 .editorial-card-text {
   font-size: 16px;
-  color: rgba(var(--shell-white-rgb), 0.7);
+  color: var(--shell-white) !important;
+  text-shadow: 0 1px 5px rgba(var(--grey-900-rgb), 0.5);
   line-height: 1.6;
   margin-bottom: 32px;
   max-width: 320px;
@@ -601,7 +802,8 @@
   color: var(--shell-white);
   border-radius: var(--button-radius);
   font-family: var(--font-secondary);
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
   font-size: 14px;
   transition: var(--t-smooth);
   position: relative;
@@ -640,7 +842,8 @@
   padding: 0 16px;
   border-radius: var(--button-radius);
   font-family: var(--font-secondary);
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
   font-size: 14px;
   transition: var(--t-fast);
 }
@@ -704,8 +907,9 @@
 
 .mgmt-role {
   font-size: 13px;
-  font-weight: 800;
-  color: var(--shell-blue);
+  font-weight: 500;
+  /* Shell Medium */
+  color: var(--grey-900) !important;
   letter-spacing: 0.05em;
   display: block;
 }
@@ -739,22 +943,22 @@
 .section-eyebrow {
   display: block;
   font-size: 13px;
-  font-weight: 700;
-  color: var(--shell-blue);
+  font-weight: 900;
+  /* Shell Heavy — Mandatory for all highlights */
+  color: var(--grey-900) !important;
   letter-spacing: 0.05em;
   margin-bottom: 16px;
 }
 
 .section-h2 {
   font-family: var(--font-secondary);
-  font-size: var(--font-size-h2);
-  font-weight: 600;
-  color: var(--color-text-primary);
-  line-height: 1.3;
-  margin-bottom: 15px;
-  position: relative;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--grey-700);
+  font-size: var(--font-size-h1);
+  /* Standardize to H1 size for major sections */
+  font-weight: 900;
+  /* Shell Heavy */
+  color: var(--grey-900);
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
 .section-intro {
@@ -826,6 +1030,14 @@
   position: relative;
   z-index: 10;
   max-width: 900px;
+  color: var(--shell-white);
+}
+
+.hero-content h1,
+.hero-content p,
+.hero-content span {
+  color: var(--shell-white) !important;
+  text-shadow: 0 4px 12px rgba(var(--grey-900-rgb), 0.5);
 }
 
 .hero-eyebrow {
@@ -844,8 +1056,9 @@
 .hero-title {
   font-family: var(--font-secondary);
   font-size: var(--font-size-h1);
-  font-weight: 700;
-  line-height: 1.2;
+  font-weight: 900;
+  /* Shell Heavy */
+  line-height: 1.1;
   color: var(--shell-white);
   margin: 0 0 4px 0;
   animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) both 0.4s;
@@ -882,7 +1095,8 @@
   border-radius: var(--radius-sm);
   font-family: var(--font-heading);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
   color: var(--gray-900);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
@@ -917,7 +1131,8 @@
   border-radius: var(--button-radius);
   font-family: var(--font-secondary);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
@@ -947,7 +1162,8 @@
   border-radius: var(--radius-sm);
   font-family: var(--font-heading);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
   color: var(--shell-white);
   transition: var(--t-fast);
   white-space: nowrap;
@@ -971,7 +1187,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: rgba(var(--shell-white-rgb), 0.55);
+  color: var(--shell-white) !important;
   animation: fadeIn 1s 1s ease both;
 }
 
@@ -1022,7 +1238,7 @@
 .stat-value {
   font-size: 64px;
   font-weight: 900;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   line-height: 1;
   margin-bottom: 12px;
   letter-spacing: -0.04em;
@@ -1031,7 +1247,7 @@
 .stat-label {
   font-size: 12px;
   font-weight: 800;
-  color: var(--gray-400);
+  color: var(--grey-700) !important;
   letter-spacing: 0.05em;
 }
 
@@ -1062,7 +1278,7 @@
 .section-eyebrow {
   font-size: 13px;
   font-weight: 800;
-  color: var(--ocean-400);
+  color: var(--grey-900) !important;
   /* Ocean 400 for inside-page eyebrows */
   letter-spacing: 0.1em;
   margin-bottom: 16px;
@@ -1086,7 +1302,7 @@
 }
 
 .section-intro.white {
-  color: rgba(var(--shell-white-rgb), 0.75);
+  color: var(--shell-white) !important;
 }
 
 /* ══════════════════════════════════
@@ -1156,7 +1372,7 @@
 .feature-card-link {
   font-size: 13px;
   font-weight: 800;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   letter-spacing: 0.05em;
   display: flex;
   align-items: center;
@@ -1230,7 +1446,8 @@
 .badge-text {
   font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
   color: var(--gray-700);
   letter-spacing: 0.25px;
   margin-top: 4px;
@@ -1285,13 +1502,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   flex-shrink: 0;
 }
 
 .hsse-title {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   font-size: 22px;
   color: var(--text-primary);
   margin-bottom: 10px;
@@ -1336,7 +1554,8 @@
 
 .csr-card-title {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   font-size: 18px;
   color: var(--text-primary);
   margin-bottom: 12px;
@@ -1361,15 +1580,17 @@
   border-radius: var(--button-radius);
   font-family: var(--font-secondary);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
   color: var(--shell-white);
   transition: var(--t-fast);
   white-space: nowrap;
 }
 
 .btn-blue:hover {
-  opacity: 0.7;
-  transform: translateY(-1px);
+  background: var(--ocean-400);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(var(--grey-700-rgb), 0.15);
 }
 
 .btn-red {
@@ -1383,7 +1604,8 @@
   border-radius: var(--button-radius);
   font-family: var(--font-secondary);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
   color: var(--shell-white);
   transition: var(--t-fast);
 }
@@ -1421,8 +1643,9 @@
   gap: 6px;
   font-family: var(--font-body);
   font-size: 14px;
-  font-weight: 700;
-  color: var(--shell-blue);
+  font-weight: 500;
+  /* Shell Medium */
+  color: var(--grey-900) !important;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s, gap 0.2s;
   padding-bottom: 2px;
@@ -1454,13 +1677,13 @@
   background: var(--grey-50);
   /* Shell Grey 50 — no off-palette tints */
   border-left-color: var(--shell-yellow);
-  color: var(--ocean-400);
+  color: var(--grey-900) !important;
   transform: translateX(3px);
 }
 
 .btn-download svg {
   flex-shrink: 0;
-  color: var(--shell-red);
+  color: var(--grey-900) !important;
 }
 
 /* ══════════════════════════════════
@@ -1554,9 +1777,10 @@
 
 .page-h2 {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   font-size: 28px;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   margin: 0 0 28px;
   padding-bottom: 14px;
   border-bottom: 2px solid var(--gray-100);
@@ -1575,9 +1799,10 @@
 
 .page-h3 {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   font-size: 20px;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   margin: 36px 0 14px;
 }
 
@@ -1601,7 +1826,8 @@
 }
 
 .body-text strong {
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   color: var(--text-primary);
 }
 
@@ -1648,7 +1874,8 @@
 
 .person-name {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   font-size: 16px;
   color: var(--text-primary);
   margin-bottom: 6px;
@@ -1739,7 +1966,7 @@
   font-family: var(--font-heading);
   font-weight: 900;
   font-size: 28px;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   min-width: 36px;
   line-height: 1.2;
   opacity: 0.35;
@@ -1781,7 +2008,7 @@
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 15px;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   margin-bottom: 12px;
 }
 
@@ -1879,14 +2106,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
 }
 
 .airport-name-text {
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 14px;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   margin-bottom: 2px;
 }
 
@@ -1913,7 +2140,8 @@
   background: var(--shell-blue);
   color: var(--shell-white);
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   padding: 16px 20px;
   text-align: left;
 }
@@ -1935,7 +2163,7 @@
 
 .brand-table tr:hover td {
   background: var(--grey-50);
-  color: var(--ocean-400);
+  color: var(--grey-900) !important;
 }
 
 .brand-table td.center {
@@ -2001,7 +2229,7 @@
 .project-title {
   font-size: 18px;
   font-weight: 800;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   margin-bottom: 8px;
 }
 
@@ -2038,7 +2266,7 @@
   width: 48px;
   height: 48px;
   background: rgba(var(--shell-red-rgb), 0.05);
-  color: var(--shell-red);
+  color: var(--grey-900) !important;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -2047,7 +2275,8 @@
 
 .dl-label {
   display: block;
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   font-size: 15px;
   color: var(--gray-900);
   /* Neutral grey for high contrast */
@@ -2132,7 +2361,7 @@
   display: inline-block;
   font-size: 11px;
   font-weight: 800;
-  color: var(--shell-yellow);
+  color: var(--grey-900) !important;
   letter-spacing: 0.05em;
   margin-bottom: 8px;
 }
@@ -2187,7 +2416,7 @@
 
 .lightbox-counter {
   font-size: 14px;
-  color: var(--gray-400);
+  color: var(--grey-700) !important;
   font-weight: 600;
 }
 
@@ -2265,9 +2494,10 @@
 
 .form-section-title {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   font-size: 18px;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   margin: 36px 0 18px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--gray-100);
@@ -2285,7 +2515,8 @@
   display: block;
   font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
   color: var(--text-secondary);
   margin-bottom: 7px;
   letter-spacing: 0.25px;
@@ -2363,7 +2594,8 @@
 
 .contact-card-dept {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   font-size: 13px;
   color: var(--shell-white);
   letter-spacing: 0.5px;
@@ -2375,7 +2607,8 @@
 
 .contact-name {
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 900;
+  /* Shell Heavy */
   font-size: 16px;
   color: var(--text-primary);
   margin-bottom: 2px;
@@ -2389,7 +2622,7 @@
 }
 
 .contact-email {
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   font-family: var(--font-body);
   font-size: 13px;
   transition: var(--t-fast);
@@ -2541,7 +2774,8 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--night-600); /* Matched to profile page hero */
+  background: var(--night-600);
+  /* Matched to profile page hero */
 }
 
 .page-hero-bg {
@@ -2578,7 +2812,7 @@
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: var(--shell-yellow);
+  color: var(--grey-900) !important;
   opacity: 0.8;
 }
 
@@ -2604,7 +2838,7 @@
 
 /* ── FOOTER ── */
 .site-footer {
-  background: var(--dark-950);
+  background: var(--night-600);
   color: var(--shell-white);
   padding: 40px 0 0;
 }
@@ -2624,14 +2858,14 @@
 
 .footer-desc {
   font-size: 16px;
-  color: var(--gray-400);
+  color: var(--grey-700) !important;
   line-height: 1.7;
   max-width: 320px;
 }
 
 .footer-h {
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--white);
   letter-spacing: 0.05em;
   margin-bottom: 32px;
@@ -2640,13 +2874,13 @@
 .footer-link {
   display: block;
   font-size: 15px;
-  color: var(--gray-400);
+  color: var(--grey-700) !important;
   margin-bottom: 16px;
   transition: var(--t-fast);
 }
 
 .footer-link:hover {
-  color: var(--shell-yellow);
+  color: var(--grey-900) !important;
   padding-left: 8px;
 }
 
@@ -2662,7 +2896,7 @@
   align-items: center;
   font-size: 14px;
   color: var(--grey-700);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .footer-legal {
@@ -2672,12 +2906,12 @@
 
 .footer-legal a {
   color: var(--grey-700);
-  font-weight: 700;
+  font-weight: 500;
   transition: color 0.2s;
 }
 
 .footer-legal a:hover {
-  color: var(--night-600);
+  color: var(--grey-900) !important;
   text-decoration: underline;
 }
 
@@ -2744,9 +2978,9 @@
 
 .policy-block h4 {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 900;
   font-size: 16px;
-  color: var(--shell-blue);
+  color: var(--grey-900) !important;
   margin-bottom: 10px;
 }
 
@@ -2789,7 +3023,7 @@
   border-radius: var(--radius);
   font-family: var(--font-body);
   font-size: 15px;
-  color: var(--forest-500);
+  color: var(--grey-900) !important;
   margin-bottom: 28px;
 }
 
@@ -2824,15 +3058,16 @@
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.8;
-  color: rgba(var(--shell-white-rgb), 0.5);
+  color: var(--shell-white) !important;
   max-width: 280px;
 }
 
 .footer-heading {
   font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 700;
-  color: var(--shell-yellow);
+  font-weight: 900;
+  /* Shell Heavy */
+  color: var(--grey-900) !important;
   letter-spacing: 1px;
   margin-bottom: 20px;
   padding-bottom: 12px;
@@ -2843,13 +3078,13 @@
   display: block;
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: rgba(var(--shell-white-rgb), 0.55);
+  color: var(--shell-white) !important;
   padding: 5px 0;
   transition: color 0.18s, padding-left 0.18s;
 }
 
 .footer-link:hover {
-  color: var(--shell-yellow);
+  color: var(--grey-900) !important;
   padding-left: 6px;
 }
 
@@ -2871,7 +3106,8 @@
   font-family: var(--font-body);
   font-size: 13px;
   color: var(--grey-700);
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
 }
 
 .footer-legal-links {
@@ -2884,12 +3120,13 @@
   font-family: var(--font-body);
   font-size: 12px;
   color: var(--grey-700);
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
   transition: color 0.15s;
 }
 
 .footer-legal-link:hover {
-  color: var(--night-600);
+  color: var(--grey-900) !important;
   text-decoration: underline;
 }
 
@@ -2978,6 +3215,8 @@
 
   .hero-h1 {
     font-size: 38px;
+    font-weight: 900;
+    /* Shell Heavy */
   }
 
   .hero-tagline {
@@ -3103,7 +3342,8 @@
 .map-points-layer {
   position: absolute;
   inset: 0;
-  transform: translateX(0%); /* Change this to move all points together */
+  transform: translateX(0%);
+  /* Change this to move all points together */
 }
 
 .map-image {
@@ -3196,7 +3436,7 @@
 }
 
 .airport-name-tip {
-  color: var(--shell-yellow);
+  color: var(--shell-white) !important;
   font-weight: 900;
   margin-bottom: 4px;
   font-size: 14px;
@@ -3260,14 +3500,16 @@
 
 .person-name {
   font-size: 18px;
-  font-weight: 800;
-  color: var(--dark-900);
+  font-weight: 900;
+  /* Shell Heavy */
+  color: var(--grey-900) !important;
   margin-bottom: 8px;
 }
 
 .person-role {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
+  /* Shell Medium */
   color: var(--text-muted);
   line-height: 1.4;
 }
@@ -3301,7 +3543,7 @@
 }
 
 .footer-desc {
-  color: rgba(var(--shell-white-rgb), 0.6);
+  color: var(--shell-white) !important;
   line-height: 1.8;
   font-size: 15px;
   max-width: 320px;
@@ -3310,14 +3552,15 @@
 .footer-h {
   color: var(--shell-white);
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 900;
+  /* Shell Heavy */
   letter-spacing: 0.05em;
   margin-bottom: 32px;
 }
 
 .footer-link {
   display: block;
-  color: rgba(var(--shell-white-rgb), 0.6);
+  color: var(--shell-white) !important;
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 16px;
@@ -3325,7 +3568,7 @@
 }
 
 .footer-link:hover {
-  color: var(--shell-yellow);
+  color: var(--grey-900) !important;
   transform: translateX(4px);
 }
 
@@ -3351,12 +3594,13 @@
 
 .newsletter-btn {
   background: var(--shell-yellow);
-  color: var(--gray-900);
+  color: var(--grey-900) !important;
   padding: 0 24px;
   height: 48px;
   border-radius: var(--button-radius);
   font-family: var(--font-secondary);
-  font-weight: 800;
+  font-weight: 900;
+  /* Shell Heavy */
   font-size: 14px;
   letter-spacing: 0.04em;
   transition: var(--t-fast);
@@ -3364,9 +3608,9 @@
 
 .newsletter-btn:hover {
   background: var(--shell-white);
+  color: var(--grey-900) !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(var(--grey-700-rgb), 0.15);
-  /* flat — no colour glow */
 }
 
 .footer-bottom-wrapper {
@@ -3381,7 +3625,8 @@
   align-items: center;
   font-size: 13px;
   color: var(--grey-700);
-  font-weight: 700;
+  font-weight: 500;
+  /* Shell Medium */
 }
 
 .footer-legal {
@@ -3390,7 +3635,7 @@
 }
 
 .footer-legal a:hover {
-  color: var(--night-600);
+  color: var(--grey-900) !important;
 }
 
 @media (max-width: 1200px) {
@@ -3415,7 +3660,7 @@
 
 /* ── CTA SECTION ── */
 .cta-section {
-  padding: 120px 0;
+  padding: 80px 0;
   background: var(--night-600);
   /* Night 600 — Shell palette compliant dark */
   color: var(--shell-white);
@@ -3441,15 +3686,16 @@
 
 .cta-title {
   font-size: clamp(32px, 5vw, 48px);
-  font-weight: 800;
+  font-weight: 900;
+  /* Shell Heavy */
   line-height: 1.2;
   margin-bottom: 24px;
 }
 
 .cta-subtitle {
   font-size: 18px;
-  color: rgba(var(--shell-white-rgb), 0.7);
-  margin-bottom: 48px;
+  color: var(--shell-white) !important;
+  margin-bottom: 32px;
   line-height: 1.6;
 }
 
@@ -3507,27 +3753,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--shell-yellow);
+  color: var(--grey-900) !important;
   transition: all 0.4s;
   box-shadow: 0 4px 12px rgba(var(--grey-700-rgb), 0.1);
 }
 
 .capability-item:hover .cap-icon-box {
   background: var(--shell-yellow);
-  color: var(--shell-red);
-  /* Shell Red on Yellow — primary palette on hover */
+  color: var(--grey-900) !important;
+  /* Grey on Yellow — compliant focal point */
   transform: rotate(10deg) scale(1.1);
 }
 
 .cap-val {
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 900;
+  /* Shell Heavy */
   color: var(--shell-white);
   margin-bottom: 4px;
 }
 
 .cap-lab {
   font-size: 14px;
-  color: rgba(var(--shell-white-rgb), 0.5);
+  color: var(--shell-white) !important;
   font-weight: 500;
 }

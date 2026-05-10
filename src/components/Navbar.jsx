@@ -3,7 +3,7 @@ import React from 'react';
 const Navbar = () => {
   return (
     <div className="h-[88px] flex-grow bg-[var(--night-600)] flex flex-wrap lg:flex-nowrap items-center justify-between px-8 text-white">
-      <nav className="flex items-center space-x-6 text-[15px] font-medium font-roboto">
+      <nav className="flex items-center space-x-6 text-[15px] font-medium" style={{ fontFamily: 'var(--font-primary)' }}>
         <a href="/" className="text-[var(--ocean-400)] hover:text-[var(--ocean-400)] transition-colors">Home</a>
         <a href="/gallery" className="hover:text-[var(--ocean-400)] transition-colors">Gallery</a>
         <a href="/working-with-shell-mrpl-aviation-2" className="hover:text-[var(--ocean-400)] transition-colors">Careers</a>

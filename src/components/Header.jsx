@@ -6,20 +6,20 @@ const NAV = [
     label: 'About',
     path: '/about',
     children: [
-      { label: 'Company Profile',    path: '/' },
-      { label: 'Vision and Values',    path: '/vision-and-values' },
+      { label: 'Company Profile', path: '/' },
+      { label: 'Vision and Values', path: '/vision-and-values' },
       { label: 'Board of Directors', path: '/board-of-directors' },
-      { label: 'Management Team',    path: '/management-team' },
+      { label: 'Management Team', path: '/management-team' },
     ],
   },
   {
     label: 'Products and Services',
     path: '/products-services',
     children: [
-      { label: 'Products and Services',              path: '/products-services' },
-      { label: 'Our Airport Network',              path: '/shell-mrpl-aviation-network' },
+      { label: 'Products and Services', path: '/products-services' },
+      { label: 'Our Airport Network', path: '/shell-mrpl-aviation-network' },
       // { label: 'Posted Airfield Prices',           path: '/posted-airfield-prices' },
-      { label: "Shell Aviation's Global Network",  path: '/shell-aviations-global-network' },
+      // { label: "Shell Aviation's Global Network",  path: '/shell-aviations-global-network' },
     ],
   },
   {
@@ -27,14 +27,14 @@ const NAV = [
     path: '/company-parentage',
     children: [
       { label: 'Shell', path: '/shell' },
-      { label: 'MRPL',  path: '/mrpl' },
+      { label: 'MRPL', path: '/mrpl' },
     ],
   },
   {
     label: 'HSSE and Quality',
     path: '/hsse',
     children: [
-      { label: 'HSSE',            path: '/hsse' },
+      { label: 'HSSE', path: '/hsse' },
       { label: 'Quality Control', path: '/quality-control' },
     ],
   },
@@ -43,19 +43,19 @@ const NAV = [
     path: '/investors-information',
     children: [
       { label: 'Vigilance Mechanism', path: '/vigilance-mechanism' },
-      { label: 'Annual Return',       path: '/annual-return' },
-      { label: 'CSR Policy',          path: '/csr' },
-      { label: 'Committee Members',   path: '/csr/committee-members' },
-      { label: 'CSR Projects',        path: '/csr/projects' },
+      { label: 'Annual Return', path: '/annual-return' },
+      { label: 'CSR Policy', path: '/csr' },
+      { label: 'Committee Members', path: '/csr/committee-members' },
+      { label: 'CSR Projects', path: '/csr/projects' },
     ],
   },
   { label: 'Gallery', path: '/gallery' },
 ];
 
 const ChevronDown = ({ className }) => (
-  <svg 
-    className={className} 
-    width="10" height="10" viewBox="0 0 24 24" fill="none" 
+  <svg
+    className={className}
+    width="10" height="10" viewBox="0 0 24 24" fill="none"
     stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
   >
     <path d="M6 9l6 6 6-6" />
@@ -72,9 +72,9 @@ const MobileItem = ({ item, onClose }) => {
   if (!item.children) {
     return (
       <li className="mobile-nav-item">
-        <Link 
-          to={item.path} 
-          className={`mobile-nav-link ${isActive ? 'active' : ''}`} 
+        <Link
+          to={item.path}
+          className={`mobile-nav-link ${isActive ? 'active' : ''}`}
           onClick={onClose}
         >
           {item.label}
@@ -85,8 +85,8 @@ const MobileItem = ({ item, onClose }) => {
 
   return (
     <li className="mobile-nav-item">
-      <button 
-        className={`mobile-nav-link ${isActive ? 'active' : ''} trigger`} 
+      <button
+        className={`mobile-nav-link ${isActive ? 'active' : ''} trigger`}
         onClick={() => setOpen(!open)}
       >
         <span>{item.label}</span>
@@ -96,8 +96,8 @@ const MobileItem = ({ item, onClose }) => {
         <ul className="mobile-submenu">
           {item.children.map((child, idx) => (
             <li key={child.path} style={{ animationDelay: `${idx * 0.05}s` }}>
-              <Link 
-                to={child.path} 
+              <Link
+                to={child.path}
                 className={`mobile-sublink ${location.pathname === child.path ? 'active' : ''}`}
                 onClick={onClose}
               >
@@ -194,9 +194,9 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         }
 
         .nav-link {
-          font-family: 'Roboto', sans-serif;
+          font-family: var(--font-secondary);
           font-size: 16px;
-          font-weight: 700;
+          font-weight: 500; /* Shell Medium */
           color: var(--grey-700); /* Shell Grey 700 */
           transition: var(--t-nav);
           opacity: 1;
@@ -208,7 +208,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
         .nav-link:hover, .nav-link.active {
           opacity: 1;
-          color: var(--ocean-400); /* Ocean 400 */
+          color: var(--grey-900) !important;
         }
 
         /* Removed special hover for on-hero */
@@ -247,21 +247,21 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         .nav-dropdown-link {
           display: block;
           padding: 12px 20px;
-          font-family: 'Open Sans', sans-serif;
+          font-family: var(--font-primary);
           font-size: 14px;
-          font-weight: 400;
+          font-weight: 500; /* Shell Medium */
           color: var(--grey-700); /* Shell Grey 700 */
           transition: 0.3s ease;
         }
 
         .nav-dropdown-link:hover {
           background: var(--grey-50); /* Shell Grey 50 */
-          color: var(--shell-red); /* Shell Red */
+          color: var(--grey-900) !important;
         }
 
         .nav-dropdown-link.active {
           background: var(--night-600); /* Night 600 */
-          color: var(--shell-white);
+          color: var(--shell-white) !important;
         }
 
         /* Header Actions */
@@ -286,7 +286,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         }
 
         .header-actions-link:hover {
-          color: var(--ocean-400); /* Ocean 400 */
+          color: var(--grey-900) !important;
         }
 
         /* Hamburger */
@@ -470,7 +470,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         }
 
         .mobile-nav-link.active {
-          color: var(--shell-yellow);
+          color: var(--shell-white) !important;
         }
 
         .mobile-chevron {
@@ -499,7 +499,8 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           padding: 12px 0;
           font-size: 16px;
           font-weight: 600;
-          color: rgba(var(--shell-white-rgb), 0.5);
+          color: var(--shell-white) !important;
+          opacity: 0.8;
           transition: var(--t-nav);
         }
 
@@ -546,9 +547,9 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
                 {item.children && (
                   <div className="nav-dropdown">
                     {item.children.map(child => (
-                      <Link 
-                        key={child.path} 
-                        to={child.path} 
+                      <Link
+                        key={child.path}
+                        to={child.path}
                         className={`nav-dropdown-link ${location.pathname === child.path ? 'active' : ''}`}
                       >
                         {child.label}
@@ -569,8 +570,8 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
               </svg>
             </Link>
 
-            <button 
-              className="hamburger-btn" 
+            <button
+              className="hamburger-btn"
               onClick={onHamburgerClick}
               aria-label="Toggle menu"
             >
@@ -582,11 +583,11 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         </div>
       </header>
 
-      <div 
-        className={`mobile-drawer-overlay ${mobileOpen ? 'open' : ''}`} 
-        onClick={onMobileClose} 
+      <div
+        className={`mobile-drawer-overlay ${mobileOpen ? 'open' : ''}`}
+        onClick={onMobileClose}
       />
-      
+
       <div className={`mobile-drawer ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-drawer-header">
           <div style={{ background: 'var(--shell-white)', borderRadius: '8px', padding: '6px 10px', display: 'inline-flex' }}>
@@ -599,7 +600,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
             </svg>
           </button>
         </div>
-        
+
         <ul className="mobile-nav-list">
           {NAV.map((item, idx) => (
             <MobileItem key={item.label} item={item} onClose={onMobileClose} />

@@ -11,7 +11,7 @@ const STATS = [
 
 const CARDS = [
   {
-    img: '/assets/super_aviation_fuel_services.jpg',
+    img: '/assets/docs/gallery/13.jpg',
     title: 'Superior Aviation Fuel Services',
     desc: 'Supply of high-specification Jet A-1 fuel across 11 major Indian airports, ensuring uncompromising quality at every point of delivery.',
     link: '/products-services',
@@ -246,9 +246,9 @@ export default function ProfilePage() {
             </p>
           </div>
 
-          <div className="editorial-grid">
+          <div className="brand-grid">
             {CARDS.map((card, i) => (
-              <Link to={card.link} key={i} className={`editorial-card reveal reveal-delay-${i + 1}`}>
+              <Link to={card.link} key={i} className={`editorial-card col-span-4 reveal reveal-delay-${i + 1}`}>
                 <div className="editorial-card-bg">
                   <img src={card.img} alt={card.title} className="editorial-card-img" />
                 </div>
@@ -257,7 +257,7 @@ export default function ProfilePage() {
                   <span className="editorial-card-eyebrow">Excellence</span>
                   <h3 className="editorial-card-title">{card.title}</h3>
                   <p className="editorial-card-text">{card.desc}</p>
-                  <span className="feature-card-link" style={{ color: 'var(--shell-yellow)' }}>
+                  <span className="feature-card-link" style={{ color: 'var(--grey-900)', fontWeight: 900, textDecoration: 'underline' }}>
                     Explore More <ArrowRight size={14} />
                   </span>
                 </div>
@@ -286,10 +286,10 @@ export default function ProfilePage() {
                 </p>
               </div>
               <div className="split-actions">
-                <Link to="/about" className="btn-red">
+                {/* <Link to="/about" className="btn-red">
                   Learn More
-                </Link>
-                <Link to="/board-of-directors" className="feature-card-link" style={{ marginLeft: '24px', fontWeight: 800 }}>
+                </Link> */}
+                <Link to="/board-of-directors" className="feature-card-link" style={{ marginLeft: '24px', fontWeight: 900 }}>
                   Meet our Leadership <ArrowRight size={14} />
                 </Link>
               </div>

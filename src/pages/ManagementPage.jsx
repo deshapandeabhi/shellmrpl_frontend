@@ -26,9 +26,9 @@ export default function ManagementPage() {
           </p>
         </div>
 
-        <div className="management-grid">
+        <div className="brand-grid">
           {MANAGERS.map((p, i) => (
-            <div key={i} className="management-card reveal">
+            <div key={i} className="management-card col-span-3 reveal">
               <div className="mgmt-img-wrap">
                 <img
                   src={p.image}

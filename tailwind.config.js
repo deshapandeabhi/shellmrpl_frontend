@@ -12,9 +12,16 @@ export default {
         shellRed:     '#DD1D21',
         shellWhite:   '#FFFFFF',
         /* Functional Greys */
-        grey700:      '#4A4A4A',
-        grey300:      '#AAAAAA',
         grey50:       '#F5F5F5',
+        grey100:      '#E0E0E0',
+        grey200:      '#C0C0C0',
+        grey300:      '#AAAAAA',
+        grey400:      '#919191',
+        grey500:      '#757575',
+        grey600:      '#616161',
+        grey700:      '#4A4A4A',
+        grey800:      '#343434',
+        grey900:      '#292929',
         /* Nature-Inspired Secondary */
         sunrise300:   '#ED8A00',
         sunset500:    '#D54410',
@@ -25,8 +32,8 @@ export default {
         stone300:     '#B6B099',
       },
       fontFamily: {
-        openSans: ['"Open Sans"', 'sans-serif'],
-        roboto:   ['"Roboto"', 'sans-serif'],
+        shell: ['Shell', 'sans-serif'],
+        shellCondensed: ['"Shell Condensed"', 'sans-serif'],
       }
     },
   },

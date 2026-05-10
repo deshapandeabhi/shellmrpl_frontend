@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="footer-links-col">
             <h4 className="footer-h">Operations</h4>
             <FL to="/products-services">Products</FL>
-            <FL to="/posted-airfield-prices">Airfield Prices</FL>
+            {/* <FL to="/posted-airfield-prices">Airfield Prices</FL> */}
             <FL to="/hsse">Safety Protocols</FL>
             <FL to="/quality-control">Quality Control</FL>
           </div>

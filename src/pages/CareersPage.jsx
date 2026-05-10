@@ -17,11 +17,11 @@ const EMPTY_FORM = {
 };
 
 export default function CareersPage() {
-  const [form,    setForm]    = useState(EMPTY_FORM);
+  const [form, setForm] = useState(EMPTY_FORM);
   const [success, setSuccess] = useState(false);
-  const [errors,  setErrors]  = useState({});
+  const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const update = (field) => (e) => {
     setForm((f) => ({ ...f, [field]: e.target.value }));
     if (errors[field]) setErrors((errs) => ({ ...errs, [field]: null }));
@@ -29,10 +29,10 @@ export default function CareersPage() {
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim())    e.name    = 'Full name is required';
-    if (!form.email.trim())   e.email   = 'Valid email is required';
-    if (!form.mobile.trim())  e.mobile  = 'Mobile number is required';
-    if (!form.position)       e.position = 'Please select a position';
+    if (!form.name.trim()) e.name = 'Full name is required';
+    if (!form.email.trim()) e.email = 'Valid email is required';
+    if (!form.mobile.trim()) e.mobile = 'Mobile number is required';
+    if (!form.position) e.position = 'Please select a position';
     return e;
   };
 
@@ -40,7 +40,7 @@ export default function CareersPage() {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
-    
+
     setIsLoading(true);
     try {
       const response = await fetch('http://localhost:8080/api/v1/careers/apply', {
@@ -48,9 +48,9 @@ export default function CareersPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
       });
-      
+
       const data = await response.json();
-      
+
       if (!response.ok) {
         if (response.status === 400 && data) {
           setErrors(data);
@@ -75,31 +75,31 @@ export default function CareersPage() {
         title="Fuel Your Career"
         breadcrumbs={[{ label: 'Careers' }]}
       />
-      
+
       <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
         <div className="section-header">
           <span className="section-eyebrow">Join the Leadership</span>
           <h2 className="section-h2">Opportunities at Shell MRPL</h2>
           <p className="section-intro">
-            Be part of a world-class team that powers the future of Indian aviation. 
+            Be part of a world-class team that powers the future of Indian aviation.
             We look for excellence, integrity, and a passion for safety.
           </p>
         </div>
 
-        <div className="content-narrow reveal" style={{ 
-          padding: 'clamp(24px, 8vw, 64px)', 
-          borderRadius: 'var(--radius-xl)', 
-          margin: '0 auto', 
-          background: 'var(--shell-white)', 
-          border: '1px solid var(--gray-100)', 
-          boxShadow: 'var(--shadow-premium)' 
+        <div className="content-narrow reveal" style={{
+          padding: 'clamp(24px, 8vw, 64px)',
+          borderRadius: 'var(--radius-xl)',
+          margin: '0 auto',
+          background: 'var(--shell-white)',
+          border: '1px solid var(--gray-100)',
+          boxShadow: 'var(--shadow-premium)'
         }}>
           {success ? (
             <div className="success-message" style={{ textAlign: 'center', padding: '40px 0' }}>
               <div className="success-icon" style={{ fontSize: '64px', marginBottom: '24px' }}>✨</div>
               <h3 className="section-h2" style={{ fontSize: '32px' }}>Application Received</h3>
               <p className="section-intro">
-                Thank you for applying. Our talent acquisition team will review your 
+                Thank you for applying. Our talent acquisition team will review your
                 profile and contact you if there is a match.
               </p>
               <button className="btn-impact" style={{ marginTop: '32px' }} onClick={() => setSuccess(false)}>
@@ -109,17 +109,17 @@ export default function CareersPage() {
           ) : (
             <form onSubmit={handleSubmit}>
               {errors.form && (
-                 <div className="form-error-banner" style={{ color: 'var(--shell-red)', padding: '16px', background: 'rgba(var(--shell-red-rgb),0.05)', borderRadius: '8px', marginBottom: '32px', borderLeft: '4px solid var(--shell-red)' }}>
-                   {errors.form}
-                 </div>
+                <div className="form-error-banner" style={{ color: 'var(--grey-900)', padding: '16px', background: 'var(--grey-50)', borderRadius: '8px', marginBottom: '32px', borderLeft: '4px solid var(--shell-red)' }}>
+                  {errors.form}
+                </div>
               )}
-              
+
               <div className="form-section">
-                <h3 className="footer-h" style={{ color: 'var(--shell-blue)', marginBottom: '32px' }}>Personal Profile</h3>
+                <h3 className="footer-h" style={{ color: 'var(--grey-900)', marginBottom: '32px' }}>Personal Profile</h3>
                 <div className="form-grid-2">
                   <div className="form-group">
                     <label className="form-label">Full Name *</label>
-                    <input className="form-input" type="text" value={form.name} onChange={update('name')} placeholder="John Doe" />
+                    <input className="form-input" type="text" value={form.name} onChange={update('name')} placeholder="Your full name" />
                     {errors.name && <p className="error-text">{errors.name}</p>}
                   </div>
                   <div className="form-group">
@@ -136,12 +136,12 @@ export default function CareersPage() {
                 <div className="form-grid-2">
                   <div className="form-group">
                     <label className="form-label">Email Address *</label>
-                    <input className="form-input" type="email" value={form.email} onChange={update('email')} placeholder="john@example.com" />
+                    <input className="form-input" type="email" value={form.email} onChange={update('email')} placeholder="yourname@domain.com" />
                     {errors.email && <p className="error-text">{errors.email}</p>}
                   </div>
                   <div className="form-group">
                     <label className="form-label">Mobile Number *</label>
-                    <input className="form-input" type="tel" value={form.mobile} onChange={update('mobile')} placeholder="+91 98765 43210" />
+                    <input className="form-input" type="tel" value={form.mobile} onChange={update('mobile')} placeholder="10-digit mobile number" />
                     {errors.mobile && <p className="error-text">{errors.mobile}</p>}
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export default function CareersPage() {
               </div>
 
               <div className="form-section" style={{ marginTop: '48px' }}>
-                <h3 className="footer-h" style={{ color: 'var(--shell-blue)', marginBottom: '32px' }}>Academic & Professional</h3>
+                <h3 className="footer-h" style={{ color: 'var(--grey-900)', marginBottom: '32px' }}>Academic & Professional</h3>
                 <div className="form-group">
                   <label className="form-label">Brief Experience Summary</label>
                   <textarea className="form-textarea" value={form.workExperience} onChange={update('workExperience')} placeholder="Tell us about your previous roles and key achievements..." rows={4} />
@@ -165,10 +165,10 @@ export default function CareersPage() {
               </div>
 
               <div style={{ marginTop: '60px', textAlign: 'center' }}>
-                <button 
-                  type="submit" 
-                  className="btn-impact" 
-                  style={{ width: '100%', maxWidth: '360px', height: '64px', fontSize: '18px', justifyContent: 'center' }} 
+                <button
+                  type="submit"
+                  className="btn-impact"
+                  style={{ width: '100%', maxWidth: '360px', height: '64px', fontSize: '18px', justifyContent: 'center' }}
                   disabled={isLoading}
                 >
                   {isLoading ? 'Processing...' : 'Submit Application'}

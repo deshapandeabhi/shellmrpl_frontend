@@ -55,7 +55,7 @@ export default function VigilancePage() {
         </div>
 
         <div className="office-card" style={{ marginTop: 32, background: 'var(--gray-50)' }}>
-          <h4 style={{ fontWeight: 800, marginBottom: 12 }}>Lodge Complaint</h4>
+          <h4 style={{ fontWeight: 900, marginBottom: 12 }}>Lodge Complaint</h4>
           <p>
             <strong>Send email complaint to:</strong>{' '}
             <a href="mailto:cvo@mrpl.co.in" className="btn-text-link">cvo@mrpl.co.in</a>
@@ -70,11 +70,11 @@ export default function VigilancePage() {
 
         <h3 className="page-h3" style={{ marginTop: 60 }}>Integrity Pledge</h3>
         <div className="vision-box" style={{ background: 'var(--color-shell-blue)', padding: '40px' }}>
-          <p className="vision-text" style={{ fontSize: '16px', fontWeight: 400, opacity: 0.9 }}>
+          <p className="vision-text" style={{ fontSize: '16px', fontWeight: 500, opacity: 0.9 }}>
             I believe that corruption has been one of the major obstacles to economic, political and social progress of our country. I believe that all stakeholders such as Government, citizens and private sector need to work together to eradicate corruption.
           </p>
           <br />
-          <p className="vision-text" style={{ fontSize: '16px', fontWeight: 400, opacity: 0.9 }}>
+          <p className="vision-text" style={{ fontSize: '16px', fontWeight: 500, opacity: 0.9 }}>
             I realise that every citizen should be vigilant and commit to highest standards of honesty and integrity at all times and support the fight against corruption.
           </p>
           <div style={{ marginTop: 24, color: 'var(--shell-white)' }}>

@@ -39,13 +39,13 @@ export default function CSRProjectsPage() {
         title="Social Impact"
         breadcrumbs={[{ label: 'CSR Projects' }]}
       />
-      
+
       <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
         <div className="section-header">
           <span className="section-eyebrow">CSR Initiatives</span>
           <h2 className="section-h2">Empowering Local Communities</h2>
           <p className="section-intro">
-            Through targeted interventions in education, health, and infrastructure, 
+            Through targeted interventions in education, health, and infrastructure,
             we aim to create a lasting positive legacy in the regions we serve.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function CSRProjectsPage() {
         </div>
 
         <div className="csr-archive-section glass" style={{ marginTop: '80px', padding: '60px', borderRadius: 'var(--radius-xl)' }}>
-          <h3 className="footer-h" style={{ color: 'var(--shell-blue)', marginBottom: '40px' }}>Approved Project Archives</h3>
+          <h3 className="footer-h" style={{ color: 'var(--grey-900)', marginBottom: '40px' }}>Approved Project Archives</h3>
           <div className="csr-dl-grid">
             {DOWNLOADS.map((item, i) => (
               <a
