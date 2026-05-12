@@ -1,11 +1,13 @@
 import React from 'react';
 import PageHero from '../components/PageHero';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api/v1';
+
 const RETURNS = [
-  { label: 'Annual Return — FY 2023-24', url: '/assets/docs/annual-returns/Annual-Return-2023-24.pdf' },
-  { label: 'Annual Return — FY 2022-23', url: '/assets/docs/annual-returns/Annual-Return-2022-23.pdf' },
-  { label: 'Annual Return — FY 2021-22', url: '/assets/docs/annual-returns/Annual-Return-2021-22.pdf' },
-  { label: 'Annual Return — FY 2020-21', url: '/assets/docs/annual-returns/Annual-Return-FY-2020-21.pdf' },
+  { label: 'Annual Return — FY 2023-24', url: `${API_BASE}/documents/annual-returns/Annual-Return-2023-24.pdf` },
+  { label: 'Annual Return — FY 2022-23', url: `${API_BASE}/documents/annual-returns/Annual-Return-2022-23.pdf` },
+  { label: 'Annual Return — FY 2021-22', url: `${API_BASE}/documents/annual-returns/Annual-Return-2021-22.pdf` },
+  { label: 'Annual Return — FY 2020-21', url: `${API_BASE}/documents/annual-returns/Annual-Return-FY-2020-21.pdf` },
 ];
 
 function PdfIcon() {

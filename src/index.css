@@ -2845,7 +2845,7 @@
 
 .footer-desc {
   font-size: 16px;
-  color: var(--grey-700) !important;
+  color: var(--shell-white) !important;
   line-height: 1.7;
   max-width: 320px;
 }
@@ -2853,7 +2853,7 @@
 .footer-h {
   font-size: 14px;
   font-weight: 900;
-  color: var(--white);
+  color: var(--shell-white) !important;
   letter-spacing: 0.05em;
   margin-bottom: 32px;
 }
@@ -2861,13 +2861,13 @@
 .footer-link {
   display: block;
   font-size: 15px;
-  color: var(--grey-700) !important;
+  color: var(--shell-white) !important;
   margin-bottom: 16px;
   transition: var(--t-fast);
 }
 
 .footer-link:hover {
-  color: var(--grey-900) !important;
+  color: var(--shell-white) !important;
   padding-left: 8px;
 }
 
@@ -3065,7 +3065,7 @@
 }
 
 .footer-link:hover {
-  color: var(--grey-900) !important;
+  color: var(--shell-white) !important;
   padding-left: 6px;
 }
 
@@ -3547,7 +3547,7 @@
 }
 
 .footer-link:hover {
-  color: var(--grey-900) !important;
+  color: var(--shell-white) !important;
   transform: translateX(4px);
 }
 

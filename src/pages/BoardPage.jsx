@@ -11,7 +11,7 @@ const DIRECTORS = [
   {
     name: 'Mr. Sanjay Samuel Varkey',
     role: 'Director, Shell MRPL Aviation and Shell India Markets Private Limited',
-    image: '/assets/docs/gallery/Sanjay%20Varkey.jpg',
+    image: `${BASE_IMG_URL}/Sanjay Varkey.jpg`,
   },
   {
     name: 'Mr. BH Vasudev Prasad',
@@ -24,14 +24,14 @@ const DIRECTORS = [
     image: `${BASE_IMG_URL}/Ziad_Victor_Soussou.jpg`,
   },
   {
-    name: 'Mr. B N Bankapur',
+    name: 'Mr. Ravi Kumar Rentala',
     role: 'Independent Director, Shell MRPL Aviation and Chairman, BEC Pvt Ltd',
-    image: `${BASE_IMG_URL}/B_N_Bankapur.png`,
+    image: `${BASE_IMG_URL}/Ravi Kumar Rentala.jpg`,
   },
   {
-    name: 'Mr. Saikumar Rajagopal',
+    name: 'Mr. Niyant Maru',
     role: 'Independent Director, Shell MRPL Aviation',
-    image: `${BASE_IMG_URL}/Saikumar_Rajagopal.png`,
+    image: `${BASE_IMG_URL}/Niyant Maru.jpg`,
   },
   {
     name: 'Ms. Sangeeta Sumesh',

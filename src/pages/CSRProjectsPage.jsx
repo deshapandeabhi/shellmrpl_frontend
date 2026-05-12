@@ -1,17 +1,19 @@
 import React from 'react';
 import PageHero from '../components/PageHero';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api/v1';
+
 const DOWNLOADS = [
-  { label: 'CSR Projects 2024-25', url: '/assets/docs/csr/CSR-Approved-Projects-for-FY-2024-25.pdf' },
-  { label: 'CSR Projects 2023-24', url: '/assets/docs/csr/CSR-Approved-Projects-23-24.docx' },
-  { label: 'CSR Projects 2022-23', url: '/assets/docs/csr/CSR-Report-22-23.pdf' },
-  { label: 'CSR Projects 2021-22', url: '/assets/docs/csr/CSR-PROJECTS-2021-22.pdf' },
-  { label: 'CSR Projects 2020-21', url: '/assets/docs/csr/CSR-PROJECTS-2020-21.pdf' },
-  { label: 'CSR Projects 2019-20', url: '/assets/docs/csr/PROJECTS-2019-20.pdf' },
-  { label: 'CSR Projects 2018-19', url: '/assets/docs/csr/PROJECTS-2018-19.pdf' },
-  { label: 'CSR Projects 2017-18', url: '/assets/docs/csr/PROJECTS-2017-18.pdf' },
-  { label: 'CSR Projects 2016-17', url: '/assets/docs/csr/PROJECTS-2016-17.pdf' },
-  { label: 'CSR Projects 2015-16', url: '/assets/docs/csr/PROJECTS-2015-16.pdf' },
+  { label: 'CSR Projects 2024-25', url: `${API_BASE}/documents/csr/CSR-Approved-Projects-for-FY-2024-25.pdf` },
+  { label: 'CSR Projects 2023-24', url: `${API_BASE}/documents/csr/CSR-Approved-Projects-23-24.docx` },
+  { label: 'CSR Projects 2022-23', url: `${API_BASE}/documents/csr/CSR-Report-22-23.pdf` },
+  { label: 'CSR Projects 2021-22', url: `${API_BASE}/documents/csr/CSR-PROJECTS-2021-22.pdf` },
+  { label: 'CSR Projects 2020-21', url: `${API_BASE}/documents/csr/CSR-PROJECTS-2020-21.pdf` },
+  { label: 'CSR Projects 2019-20', url: `${API_BASE}/documents/csr/PROJECTS-2019-20.pdf` },
+  { label: 'CSR Projects 2018-19', url: `${API_BASE}/documents/csr/PROJECTS-2018-19.pdf` },
+  { label: 'CSR Projects 2017-18', url: `${API_BASE}/documents/csr/PROJECTS-2017-18.pdf` },
+  { label: 'CSR Projects 2016-17', url: `${API_BASE}/documents/csr/PROJECTS-2016-17.pdf` },
+  { label: 'CSR Projects 2015-16', url: `${API_BASE}/documents/csr/PROJECTS-2015-16.pdf` },
 ];
 
 const IMAGES = [

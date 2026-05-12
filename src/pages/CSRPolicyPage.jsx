@@ -102,7 +102,7 @@ export default function CSRPolicyPage() {
 
         <div style={{ marginTop: 40, textAlign: 'center' }}>
           <a
-            href="/wp-content/uploads/2021/04/SMA-CSR-Policy-Signed-copy.pdf"
+            href={`${import.meta.env.VITE_API_BASE_URL || '/api/v1'}/documents/wp-content/Annual-Return-2021-22.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-blue"
