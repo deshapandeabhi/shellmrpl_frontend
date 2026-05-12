@@ -11,7 +11,7 @@ const STATS = [
 
 const CARDS = [
   {
-    img: '/assets/docs/gallery/13.jpg',
+    img: '/assets/docs/gallery/fuel_sevice.jpg',
     title: 'Superior Aviation Fuel Services',
     desc: 'Supply of high-specification Jet A-1 fuel across 11 major Indian airports, ensuring uncompromising quality at every point of delivery.',
     link: '/products-services',
