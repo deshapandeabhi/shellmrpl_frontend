@@ -30,9 +30,10 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy built React app from Stage 1
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy custom Nginx config for SPA routing
-COPY nginx-spa.conf /etc/nginx/conf.d/default.conf
+# Copy custom Nginx config template for dynamic PORT and SPA routing
+COPY nginx-spa.conf.template /etc/nginx/templates/default.conf.template
 
-EXPOSE 80
+# Default port for local runs
+ENV PORT=80
 
 CMD ["nginx", "-g", "daemon off;"]
