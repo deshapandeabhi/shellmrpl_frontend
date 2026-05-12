@@ -13,11 +13,22 @@ server {
     gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript image/svg+xml;
     gzip_min_length 1024;
 
-    # Cache static assets aggressively
-    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+    # Static files with caching
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|pdf|docx|doc|xls|xlsx|zip)$ {
         expires 1y;
         add_header Cache-Control "public, immutable";
         try_files $uri =404;
+    }
+
+    # API Proxy — Pointing to the backend service
+    # In Railway, use the internal service name (e.g., http://backend:8080)
+    location /api {
+        proxy_pass http://${BACKEND_HOST:-backend}:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
     }
 
     # All other routes → index.html (React Router handles client-side routing)

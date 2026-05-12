@@ -30,6 +30,14 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy built React app from Stage 1
 COPY --from=builder /app/dist /usr/share/nginx/html
 
+# Create the "modern" document structure expected by the app and link legacy files
+# This ensures that /api/v1/documents/filename.pdf works regardless of legacy folder structure
+RUN mkdir -p /usr/share/nginx/html/api/v1/documents/csr && \
+    find /usr/share/nginx/html/wp-content/uploads -type f \( -name "*.pdf" -o -name "*.docx" -o -name "*.png" \) \
+    -exec cp {} /usr/share/nginx/html/api/v1/documents/ \; && \
+    find /usr/share/nginx/html/wp-content/uploads -type f \( -name "*.pdf" -o -name "*.docx" -o -name "*.png" \) \
+    -exec cp {} /usr/share/nginx/html/api/v1/documents/csr/ \;
+
 # Copy custom Nginx config template for dynamic PORT and SPA routing
 COPY nginx-spa.conf.template /etc/nginx/templates/default.conf.template
 
