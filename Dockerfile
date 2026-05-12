@@ -41,7 +41,8 @@ RUN mkdir -p /usr/share/nginx/html/api/v1/documents/csr && \
 # Copy custom Nginx config template for dynamic PORT and SPA routing
 COPY nginx-spa.conf.template /etc/nginx/templates/default.conf.template
 
-# Default port for local runs
+# Default values for runtime
 ENV PORT=80
+ENV BACKEND_HOST=backend
 
 CMD ["nginx", "-g", "daemon off;"]
