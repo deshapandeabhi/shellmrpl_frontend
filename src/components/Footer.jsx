@@ -63,7 +63,7 @@ export default function Footer() {
             <FL to="/careers">Careers</FL>
             <FL to="/contact">Contact Us</FL>
             <FL to="/csr/projects">CSR Projects</FL>
-            <FL to="/gallery">Gallery</FL>
+            {/* <FL to="/gallery">Gallery</FL> */}
           </div>
 
           <div className="footer-newsletter">

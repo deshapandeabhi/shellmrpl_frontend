@@ -1,4 +1,3 @@
-import React from 'react';
 import PageHero from '../components/PageHero';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api/v1';
@@ -17,10 +16,10 @@ const DOWNLOADS = [
 ];
 
 const IMAGES = [
-  { img: '/wp-content/uploads/2016/08/3-3.jpg', cat: 'Education', title: 'Mini Science Lab' },
-  { img: '/wp-content/uploads/2016/08/5-3.jpg', cat: 'Sanitation', title: 'Community Infrastructure' },
-  { img: '/wp-content/uploads/2016/08/7-1.jpg', cat: 'Health', title: 'Medical Support Facilities' },
-  { img: '/wp-content/uploads/2016/08/8.jpg', cat: 'Community', title: 'Local Engagement Programs' },
+  { img: '/assets/docs/gallery/science_lab.webp', cat: 'Education', title: 'Mini Science Lab' },
+  { img: '/assets/docs/gallery/infrastructure.jpg', cat: 'Sanitation', title: 'Community Infrastructure' },
+  { img: '/assets/docs/gallery/mrpl_medical.jpg', cat: 'Health', title: 'Medical Support Facilities' },
+  { img: '/assets/docs/gallery/local_engagement.avif', cat: 'Community', title: 'Local Engagement Programs' },
 ];
 
 function PdfIcon() {

@@ -49,7 +49,7 @@ const NAV = [
       { label: 'CSR Projects', path: '/csr/projects' },
     ],
   },
-  { label: 'Gallery', path: '/gallery' },
+  // { label: 'Gallery', path: '/gallery' },
 ];
 
 const ChevronDown = ({ className }) => (

@@ -11,19 +11,19 @@ const STATS = [
 
 const CARDS = [
   {
-    img: '/assets/docs/gallery/fuel_sevice.jpg',
+    img: '/assets/docs/gallery/superiour_aviation_fuel_service.jpeg',
     title: 'Superior Aviation Fuel Services',
     desc: 'Supply of high-specification Jet A-1 fuel across 11 major Indian airports, ensuring uncompromising quality at every point of delivery.',
     link: '/products-services',
   },
   {
-    img: '/assets/docs/gallery/14.jpg',
+    img: '/assets/docs/gallery/global_hsse.webp',
     title: 'Global HSSE Excellence',
     desc: 'Upholding Shell Aviation’s world-class safety protocols and DGCA regulations to ensure safe, reliable, and compliant operations.',
     link: '/hsse',
   },
   {
-    img: '/wp-content/uploads/2016/08/csr-bg.jpg',
+    img: '/assets/docs/gallery/HSSE.png',
     title: 'Sustainable Impact',
     desc: 'Investing in education, health, and environmental sustainability to build resilient communities across India.',
     link: '/csr',
