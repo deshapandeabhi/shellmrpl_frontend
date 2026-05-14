@@ -360,11 +360,11 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         .mobile-drawer-overlay {
           position: fixed;
           inset: 0;
-          background: rgba(var(--night-600-rgb), 0.4);
-          backdrop-filter: blur(8px);
+          background: rgba(13, 13, 13, 0.6);
+          backdrop-filter: blur(12px);
           opacity: 0;
           visibility: hidden;
-          transition: all 0.6s ease;
+          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
           z-index: 2500;
         }
 
@@ -375,154 +375,206 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
         .mobile-drawer {
           position: fixed;
-          top: 0; right: 0; bottom: 0;
-          width: 100%;
-          max-width: 440px;
-          background: var(--night-600); /* Night 600 — Shell palette compliant */
+          top: 12px; right: 12px; bottom: 12px;
+          width: calc(100% - 24px);
+          max-width: 400px;
+          background: var(--night-600);
           z-index: 2600;
-          transform: translateX(100%);
-          transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-          padding: 40px 24px;
+          transform: translateX(calc(100% + 20px));
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+          padding: 32px 24px;
           display: flex;
           flex-direction: column;
           color: var(--shell-white);
-          box-shadow: -20px 0 60px rgba(var(--grey-700-rgb), 0.3);
+          border-radius: 32px !important; /* Premium rounded look */
+          border: 1px solid rgba(var(--shell-white-rgb), 0.1) !important;
+          box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4) !important;
         }
 
         .mobile-drawer.open {
           transform: translateX(0);
         }
 
-        .mobile-drawer::before {
-          content: '';
-          position: absolute;
-          top: 0; left: 0; right: 0;
-          height: 4px;
-          background: var(--shell-yellow);
-          pointer-events: none;
-        }
-
         .mobile-drawer-header {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 32px;
-          position: relative;
+          margin-bottom: 40px;
+          padding-bottom: 24px;
+          border-bottom: 1px solid rgba(var(--shell-white-rgb), 0.1);
+        }
+
+        .mobile-logo-wrap {
+          background: var(--shell-white);
+          border-radius: 12px;
+          padding: 8px 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-logo {
-          height: 48px;
+          height: 36px;
           width: auto;
           object-fit: contain;
         }
 
         .mobile-close-btn {
-          width: 52px; height: 52px;
-          border-radius: 50%;
-          background: rgba(var(--shell-white-rgb), 0.1);
+          width: 48px; height: 48px;
+          border-radius: 50% !important;
+          background: rgba(var(--shell-white-rgb), 0.1) !important;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--shell-white);
-          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-          border: 1px solid rgba(var(--shell-white-rgb), 0.1);
+          color: var(--shell-white) !important;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          border: 1px solid rgba(var(--shell-white-rgb), 0.1) !important;
+          padding: 0 !important;
         }
 
         .mobile-close-btn:hover {
-          background: var(--shell-red);
-          transform: rotate(90deg) scale(1.1);
-          border-color: transparent;
+          background: var(--shell-red) !important;
+          transform: rotate(90deg) scale(1.1) !important;
+          border-color: transparent !important;
         }
 
         .mobile-nav-list {
           flex: 1;
           overflow-y: auto;
-          margin-right: -10px;
-          padding-right: 10px;
+          padding-right: 8px;
+          margin-bottom: 20px;
         }
 
         /* Mobile Scrollbar */
-        .mobile-nav-list::-webkit-scrollbar { width: 4px; }
+        .mobile-nav-list::-webkit-scrollbar { width: 3px; }
         .mobile-nav-list::-webkit-scrollbar-track { background: transparent; }
         .mobile-nav-list::-webkit-scrollbar-thumb { background: rgba(var(--shell-white-rgb), 0.1); border-radius: 10px; }
 
-        @keyframes mobileFadeIn {
-          from { opacity: 0; transform: translateX(20px); }
-          to { opacity: 1; transform: translateX(0); }
+        @keyframes mobileItemFadeIn {
+          from { opacity: 0; transform: translateY(15px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         .mobile-nav-item {
-          border-bottom: 1px solid rgba(var(--shell-white-rgb), 0.06);
-          animation: mobileFadeIn 0.6s ease both;
+          margin-bottom: 8px;
+          animation: mobileItemFadeIn 0.5s ease both;
+          border-bottom: none !important; /* Remove individual item borders */
         }
 
         .mobile-nav-link {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-          padding: 24px 0;
-          font-size: 22px;
-          font-weight: 800;
-          color: var(--shell-white);
-          transition: var(--t-nav);
-          letter-spacing: -0.02em;
+          display: flex !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          width: 100% !important;
+          padding: 16px 20px !important;
+          font-size: 19px !important;
+          font-weight: 700 !important;
+          color: var(--shell-white) !important;
+          background: transparent !important;
+          border: none !important;
+          border-radius: 16px !important;
+          transition: all 0.3s ease !important;
+          letter-spacing: -0.01em !important;
+          text-align: left !important;
         }
 
-        .mobile-nav-link.active {
-          color: var(--shell-white) !important;
+        .mobile-nav-link:hover, .mobile-nav-link.active {
+          background: rgba(var(--shell-white-rgb), 0.05) !important;
+          color: var(--shell-yellow) !important;
+        }
+
+        .mobile-nav-link.trigger {
+          cursor: pointer;
         }
 
         .mobile-chevron {
-          transition: transform 0.4s ease;
-          opacity: 0.4;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          opacity: 0.6;
+          width: 14px;
+          height: 14px;
         }
 
-        .mobile-chevron.rotated { transform: rotate(180deg); opacity: 1; }
+        .mobile-chevron.rotated { transform: rotate(180deg); opacity: 1; color: var(--shell-yellow); }
 
         .mobile-submenu-wrapper {
           max-height: 0;
           overflow: hidden;
-          transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .mobile-submenu-wrapper.open { max-height: 800px; }
+        .mobile-submenu-wrapper.open { 
+          max-height: 600px;
+        }
 
         .mobile-submenu {
-          padding: 8px 0 32px 24px;
-          border-left: 2px solid rgba(var(--shell-yellow-rgb), 0.2);
-          margin-left: 4px;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          padding: 8px 0 16px 40px;
+          position: relative;
+        }
+
+        .mobile-submenu::before {
+          content: '';
+          position: absolute;
+          left: 24px; top: 0; bottom: 16px;
+          width: 2px;
+          background: var(--shell-yellow);
+          opacity: 0.4;
         }
 
         .mobile-sublink {
-          display: block;
-          padding: 12px 0;
-          font-size: 16px;
-          font-weight: 600;
-          color: var(--shell-white) !important;
-          opacity: 0.8;
-          transition: var(--t-nav);
+          display: block !important;
+          padding: 12px 0 !important;
+          font-size: 16px !important;
+          font-weight: 500 !important;
+          color: rgba(var(--shell-white-rgb), 0.7) !important;
+          transition: all 0.3s ease !important;
+          border: none !important;
+          background: transparent !important;
+          text-decoration: none !important;
         }
 
         .mobile-sublink:hover, .mobile-sublink.active {
-          color: var(--shell-white);
-          transform: translateX(8px);
+          color: var(--shell-white) !important;
+          transform: translateX(6px);
         }
 
         .mobile-footer {
-          margin-top: 40px;
-          padding-top: 40px;
-          border-top: 1px solid rgba(var(--shell-white-rgb), 0.06);
+          padding-top: 24px;
+          border-top: 1px solid rgba(var(--shell-white-rgb), 0.1);
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          gap: 12px;
         }
 
         .mobile-connect-btn {
-          width: 100%;
-          justify-content: center;
-          height: 64px;
-          font-size: 16px;
+          width: 100% !important;
+          justify-content: center !important;
+          height: 56px !important;
+          font-size: 16px !important;
+          background: var(--shell-yellow) !important;
+          border: none !important;
+          color: var(--grey-900) !important;
+          font-weight: 800 !important;
+        }
+
+        .mobile-connect-btn *, 
+        .mobile-connect-btn span, 
+        .mobile-connect-btn svg {
+          color: var(--grey-900) !important;
+        }
+
+        .mobile-connect-btn:hover {
+          background: var(--shell-white) !important;
+          transform: translateY(-2px) !important;
+        }
+
+        .mobile-connect-btn:hover *,
+        .mobile-connect-btn:hover span,
+        .mobile-connect-btn:hover svg {
+          color: var(--grey-900) !important;
         }
       `}</style>
 
@@ -590,11 +642,11 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
       <div className={`mobile-drawer ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-drawer-header">
-          <div style={{ background: 'var(--shell-white)', borderRadius: '8px', padding: '6px 10px', display: 'inline-flex' }}>
+          <div className="mobile-logo-wrap">
             <img src="/wp-content/uploads/2023/09/logo.jpg" alt="Logo" className="mobile-logo" />
           </div>
           <button className="mobile-close-btn" onClick={onMobileClose} aria-label="Close menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>

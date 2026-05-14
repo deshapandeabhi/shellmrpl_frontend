@@ -67,11 +67,23 @@ export default function Footer() {
           </div>
 
           <div className="footer-newsletter">
-            <h4 className="footer-h">Stay Updated</h4>
-            <p className="footer-desc" style={{ fontSize: '13px' }}>Subscribe to get the latest updates on airfield prices and network expansions.</p>
-            <div className="newsletter-form">
-              <input type="email" placeholder="Email Address" className="newsletter-input" />
-              <button className="newsletter-btn">Join</button>
+            <h4 className="footer-h">Careers</h4>
+            <p className="footer-desc" style={{ fontSize: '13px' }}>Become a part of our world-class aviation network. Explore opportunities to grow with Shell MRPL.</p>
+            <div className="newsletter-form" style={{ marginTop: '20px' }}>
+              <Link 
+                to="/careers" 
+                className="newsletter-btn" 
+                style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  textDecoration: 'none',
+                  width: '100%',
+                  height: '52px'
+                }}
+              >
+                Join Us
+              </Link>
             </div>
           </div>
         </div>
