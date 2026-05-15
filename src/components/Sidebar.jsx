@@ -45,7 +45,7 @@ const NAV = [
       { label: 'Vigilance Mechanism', path: '/vigilance-mechanism' },
       { label: 'Annual Return', path: '/annual-return' },
       { label: 'CSR Policy', path: '/csr' },
-      { label: 'Committee Members', path: '/csr/committee-members' },
+      { label: 'CSR Committee', path: '/csr/committee-members' },
       { label: 'CSR Projects', path: '/csr/projects' },
     ],
   },

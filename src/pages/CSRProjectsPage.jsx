@@ -4,7 +4,7 @@ const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api/v1';
 
 const DOWNLOADS = [
   { label: 'CSR Projects 2024-25', url: `${API_BASE}/documents/csr/CSR-Approved-Projects-for-FY-2024-25.pdf` },
-  { label: 'CSR Projects 2023-24', url: `${API_BASE}/documents/csr/CSR-Approved-Projects-23-24.docx` },
+  { label: 'CSR Projects 2023-24', url: '/assets/docs/annual-returns/CSR-PROJECTS-2023-24.pdf' },
   { label: 'CSR Projects 2022-23', url: `${API_BASE}/documents/csr/CSR-Report-22-23.pdf` },
   { label: 'CSR Projects 2021-22', url: `${API_BASE}/documents/csr/CSR-PROJECTS-2021-22.pdf` },
   { label: 'CSR Projects 2020-21', url: `${API_BASE}/documents/csr/CSR-PROJECTS-2020-21.pdf` },

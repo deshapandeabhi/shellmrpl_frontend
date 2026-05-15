@@ -1,21 +1,20 @@
-import React from 'react';
 import PageHero from '../components/PageHero';
 
 const COMMITTEE = [
   { name: 'Mr. Sanjay Varkey',                         role: 'Chairman' },
   { name: 'Mr. Bappanadu Hoigegudde Vasudeva Prasad',  role: 'Member'   },
-  { name: 'Dr. RaviKumar Rentala',                     role: 'Member'   },
+  { name: 'Dr. Ravi Kumar Rentala',                     role: 'Member'   },
 ];
 
 export default function CSRCommitteePage() {
   return (
     <div className="inner-page">
       <PageHero
-        title="CSR Committee Members"
+        title="CSR Committee"
         breadcrumbs={[
           { label: 'Investors Information', to: '/investors-information' },
           { label: 'CSR Policy', to: '/csr' },
-          { label: 'Committee Members' }
+          { label: 'CSR Committee' }
         ]}
       />
       <div className="content-wrap content-narrow">
