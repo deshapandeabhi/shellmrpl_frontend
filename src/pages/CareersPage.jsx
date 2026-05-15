@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PageHero from '../components/PageHero';
 
 const POSITIONS = [
@@ -81,7 +81,7 @@ export default function CareersPage() {
       <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
         <div className="section-header">
           <span className="section-eyebrow">Join the Leadership</span>
-          <h2 className="section-h2">Opportunities at Shell MRPL</h2>
+          <h2 className="section-h2">Opportunities at Shell MRPL Aviation</h2>
           <p className="section-intro">
             Be part of a world-class team that powers the future of Indian aviation.
             We look for excellence, integrity, and a passion for safety.
@@ -180,7 +180,7 @@ export default function CareersPage() {
                     style={{ marginTop: '4px', width: '20px', height: '20px', accentColor: 'var(--shell-red)', flexShrink: 0 }}
                   />
                   <span style={{ fontSize: '14px', color: 'var(--grey-700)', lineHeight: '1.5' }}>
-                    I hereby declare that the information provided in this application is true and correct to the best of my knowledge. I understand that any false statements or misrepresentations may lead to the rejection of my application or termination of employment.
+                    I hereby declare that the information provided in this application is true and correct to the best of my knowledge. I understand that any false statements or misrepresentations may lead to the rejection of my application or termination of employment. I further consent to the collection, processing, storage, and use of my personal data for recruitment, verification, employment-related purposes, and compliance with applicable data protection laws.
                   </span>
                 </label>
                 {errors.termsAccepted && <p className="error-text" style={{ marginTop: '12px', marginBottom: 0 }}>{errors.termsAccepted}</p>}

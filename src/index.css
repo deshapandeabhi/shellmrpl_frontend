@@ -73,6 +73,10 @@
    Shell Group Brand Identity Standards V2.0 (2026)
    ══════════════════════════════════════════════════ */
 
+p {
+  text-align: justify;
+}
+
 :root {
   /* ── PRIMARY PALETTE (First Impressions) ── */
   --shell-yellow: #FFC600;
@@ -303,7 +307,7 @@
   .legal-body,
   .legal-body * {
     color: var(--shell-white) !important;
-    text-align: left;
+    text-align: justify;
   }
 
   /* Footer Text Rules — Dark Top vs Yellow Bottom */
@@ -1683,7 +1687,7 @@
 
 .body-text p {
   margin-bottom: 18px;
-  text-align: left;
+  text-align: justify;
 }
 
 .body-text ul {
@@ -1905,21 +1909,9 @@
   margin-bottom: 56px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(var(--grey-700-rgb), 0.2);
 }
 
-.vision-box::before {
-  content: '\"';
-  position: absolute;
-  top: -40px;
-  left: 20px;
-  font-size: 240px;
-  font-family: var(--font-secondary);
-  font-weight: 900;
-  color: rgba(var(--shell-white-rgb), 0.05);
-  line-height: 1.5;
-  pointer-events: none;
-}
+
 
 .vision-text {
   font-family: var(--font-secondary);
