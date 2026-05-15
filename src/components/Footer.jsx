@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <p className="footer-desc">
-              A strategic partnership between Shell and MRPL, delivering world-class aviation fuel services 
+              A strategic partnership between Shell and MRPL, delivering world-class aviation fuel services
               across India. Excellence in energy, precision in service.
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function Footer() {
           <div className="footer-links-col">
             <h4 className="footer-h">Company</h4>
             <FL to="/about">About Us</FL>
-            <FL to="/vision-and-values">Vision & Values</FL>
+            <FL to="/vision-and-values">Vision and Values</FL>
             <FL to="/board-of-directors">Leadership</FL>
             <FL to="/shell-mrpl-aviation-network">Network Map</FL>
           </div>
@@ -70,13 +70,13 @@ export default function Footer() {
             <h4 className="footer-h">Careers</h4>
             <p className="footer-desc" style={{ fontSize: '13px' }}>Become a part of our world-class aviation network. Explore opportunities to grow with Shell MRPL.</p>
             <div className="newsletter-form" style={{ marginTop: '20px' }}>
-              <Link 
-                to="/careers" 
-                className="newsletter-btn" 
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
+              <Link
+                to="/careers"
+                className="newsletter-btn"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   textDecoration: 'none',
                   width: '100%',
                   height: '52px'
@@ -92,8 +92,8 @@ export default function Footer() {
 
       <div className="footer-bottom-wrapper">
         <div className="container footer-bottom">
-          <p 
-            onClick={handleMetadataTrigger} 
+          <p
+            onClick={handleMetadataTrigger}
             style={{ cursor: 'default', userSelect: 'none' }}
           >
             © 2026 Shell MRPL Aviation Fuels and Services Limited. All Rights Reserved.
@@ -126,8 +126,8 @@ export default function Footer() {
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
             <span style={{ color: '#FFD500', fontWeight: 'bold', letterSpacing: '1px' }}>SYSTEM_MANIFEST</span>
-            <span 
-              onClick={() => setShowSysInfo(false)} 
+            <span
+              onClick={() => setShowSysInfo(false)}
               style={{ cursor: 'pointer', color: '#888' }}
             >
               [X]

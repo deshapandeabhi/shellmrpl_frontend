@@ -10,8 +10,6 @@ import ManagementPage     from './pages/ManagementPage';
 import ProductsPage       from './pages/ProductsPage';
 import NetworkPage        from './pages/NetworkPage';
 import PricesPage         from './pages/PricesPage';
-import ShellPage          from './pages/ShellPage';
-import MRPLPage           from './pages/MRPLPage';
 import HSSEPage           from './pages/HSSEPage';
 import QualityControlPage from './pages/QualityControlPage';
 import VigilancePage      from './pages/VigilancePage';
@@ -24,9 +22,40 @@ import CareersPage        from './pages/CareersPage';
 import ContactPage        from './pages/ContactPage';
 import LegalPage          from './pages/LegalPage';
 
-function ScrollToTop() {
+function RouteTracker() {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [pathname]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    const routes = {
+      '/': { title: 'Home', desc: 'World-class aviation turbine fuel (Jet A-1) and into-plane services.' },
+      '/about': { title: 'About Us', desc: 'Learn about our strategic partnership between Shell and MRPL.' },
+      '/vision-and-values': { title: 'Vision & Values', desc: 'Our core values, business principles, and commitment to integrity.' },
+      '/board-of-directors': { title: 'Board of Directors', desc: 'The leadership guiding Shell MRPL Aviation Fuels and Services Limited.' },
+      '/management-team': { title: 'Management Team', desc: 'The executive management team at Shell MRPL Aviation.' },
+      '/products-services': { title: 'Products & Services', desc: 'Aviation turbine fuel, technical services, and operational excellence.' },
+      '/shell-mrpl-aviation-network': { title: 'Our Network', desc: 'Discover our operational presence across major Indian airports.' },
+      '/posted-airfield-prices': { title: 'Airfield Prices', desc: 'Current posted prices for aviation fuel across our network.' },
+      '/hsse': { title: 'HSSE', desc: 'Health, Safety, Security and Environment standards at Shell MRPL.' },
+      '/quality-control': { title: 'Quality Control', desc: 'Industry-leading quality assurance and product integrity.' },
+      '/annual-return': { title: 'Annual Returns', desc: 'Financial and corporate compliance records and downloads.' },
+      '/csr': { title: 'CSR', desc: 'Corporate Social Responsibility initiatives and community impact.' },
+      '/careers': { title: 'Careers', desc: 'Explore career opportunities and join the Shell MRPL Aviation team.' },
+      '/contact-us': { title: 'Contact Us', desc: 'Get in touch with our departments for sales, media, or general queries.' },
+      '/legal': { title: 'Legal & Privacy', desc: 'Legal policies, terms of service, and privacy guidelines.' }
+    };
+
+    const current = routes[pathname] || { title: 'Aviation Services', desc: 'Shell MRPL Aviation Fuels and Services Limited' };
+    
+    document.title = `${current.title} | Shell MRPL Aviation`;
+    
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', current.desc);
+    }
+  }, [pathname]);
+
   return null;
 }
 
@@ -42,7 +71,7 @@ function AppShell() {
 
   return (
     <>
-      <ScrollToTop />
+      <RouteTracker />
 
       <Header
         mobileOpen={mobileOpen}
@@ -64,9 +93,6 @@ function AppShell() {
           <Route path="/posted-airfield-prices"               element={<PricesPage />} />
           <Route path="/shell-aviations-global-network"       element={<NetworkPage />} />
 
-          <Route path="/company-parentage"                    element={<ShellPage />} />
-          <Route path="/shell"                                element={<ShellPage />} />
-          <Route path="/mrpl"                                 element={<MRPLPage />} />
 
           <Route path="/hsse"                                 element={<HSSEPage />} />
           <Route path="/quality-control"                      element={<QualityControlPage />} />

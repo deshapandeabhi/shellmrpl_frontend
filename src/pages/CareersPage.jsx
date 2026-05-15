@@ -21,6 +21,7 @@ export default function CareersPage() {
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
 
   const update = (field) => (e) => {
     setForm((f) => ({ ...f, [field]: e.target.value }));
@@ -33,6 +34,7 @@ export default function CareersPage() {
     if (!form.email.trim()) e.email = 'Valid email is required';
     if (!form.mobile.trim()) e.mobile = 'Mobile number is required';
     if (!form.position) e.position = 'Please select a position';
+    if (!termsAccepted) e.termsAccepted = 'You must acknowledge the declaration before submitting.';
     return e;
   };
 
@@ -87,7 +89,7 @@ export default function CareersPage() {
         </div>
 
         <div className="content-narrow reveal" style={{
-          padding: 'clamp(24px, 8vw, 64px)',
+          padding: 'clamp(32px, 5vw, 64px) clamp(16px, 3vw, 64px)',
           borderRadius: 'var(--radius-xl)',
           margin: '0 auto',
           background: 'var(--shell-white)',
@@ -157,14 +159,34 @@ export default function CareersPage() {
               </div>
 
               <div className="form-section" style={{ marginTop: '48px' }}>
-                <h3 className="footer-h" style={{ color: 'var(--grey-900)', marginBottom: '32px' }}>Academic & Professional</h3>
+                <h3 className="footer-h" style={{ color: 'var(--grey-900)', marginBottom: '32px' }}>Academic and Professional</h3>
                 <div className="form-group">
                   <label className="form-label">Brief Experience Summary</label>
                   <textarea className="form-textarea" value={form.workExperience} onChange={update('workExperience')} placeholder="Tell us about your previous roles and key achievements..." rows={4} />
                 </div>
               </div>
 
-              <div style={{ marginTop: '60px', textAlign: 'center' }}>
+              <div style={{ marginTop: '40px', padding: '24px', background: 'var(--gray-50)', borderRadius: 'var(--radius-md)', border: errors.termsAccepted ? '1px solid var(--shell-red)' : '1px solid var(--gray-200)' }}>
+                <label style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', cursor: 'pointer', margin: 0 }}>
+                  <input
+                    type="checkbox"
+                    checked={termsAccepted}
+                    onChange={(e) => {
+                      setTermsAccepted(e.target.checked);
+                      if (e.target.checked && errors.termsAccepted) {
+                        setErrors(errs => ({ ...errs, termsAccepted: null }));
+                      }
+                    }}
+                    style={{ marginTop: '4px', width: '20px', height: '20px', accentColor: 'var(--shell-red)', flexShrink: 0 }}
+                  />
+                  <span style={{ fontSize: '14px', color: 'var(--grey-700)', lineHeight: '1.5' }}>
+                    I hereby declare that the information provided in this application is true and correct to the best of my knowledge. I understand that any false statements or misrepresentations may lead to the rejection of my application or termination of employment.
+                  </span>
+                </label>
+                {errors.termsAccepted && <p className="error-text" style={{ marginTop: '12px', marginBottom: 0 }}>{errors.termsAccepted}</p>}
+              </div>
+
+              <div style={{ marginTop: '40px', textAlign: 'center' }}>
                 <button
                   type="submit"
                   className="btn-impact"

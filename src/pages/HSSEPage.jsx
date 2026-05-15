@@ -1,4 +1,3 @@
-import React from 'react';
 import PageHero from '../components/PageHero';
 
 const PRACTICES = [
@@ -20,30 +19,40 @@ export default function HSSEPage() {
         breadcrumbs={[{ label: 'HSSE & Quality' }, { label: 'HSSE' }]}
       />
       <div className="content-wrap content-narrow">
-        <h2 className="page-h2">Health, Safety, Security &amp; Environment</h2>
+        <h2 className="page-h2">Health, Safety, Security and Environment (HSSE)</h2>
         <div className="body-text" style={{ marginBottom: 36 }}>
           <p>
-            Shell MRPL Aviation follows best in class operating standards of HSSE across its value chain. Some of the practices which ensures safe transportation of Jet fuel are:
+            Shell MRPL firmly believes in, promotes, and implements the principle of “Safety First”
+            across all areas of its operations. HSSE remains under constant focus throughout the
+            organization at all levels &amp; areas, covering all spheres of activity, with a continued
+            commitment to introducing new initiatives that contribute to the overall wellbeing of society.
           </p>
           <p>
-            Safety audit of transporters carried out as per Shell international standards – 4 pillar audits where Driver management, vehicle management, Journey management and HSSE management audits are carried out for ensuring safety during fuel transportation.
+            To strengthen safety culture, the company undertakes several proactive measures, including
+            dedicated management efforts, regular training programs for staff and drivers, eliciting active
+            third-party contribution and active participation in safety promotional initiatives involving
+            various stakeholders. Employees and contractors are encouraged to report incidents, near
+            misses, and potential hazards. Additionally, safety bulletins are published, learnings from the
+            shareholders disseminated to the relevant stakeholders and Learning from Incidents (LFI) is
+            shared across the organization &amp; other members to enhance awareness and prevent
+            recurrence.
           </p>
           <p>
-            Transportation is monitored and controlled by state of art GPS system, where any safety violations (Speed, Journey management, harsh braking, driver fatigue control are monitored on line).
+            Senior management actively participates through safety walks, while weekly HSSE reviews
+            are conducted at the leadership level. Regular safety audits of haulier operations, along with
+            monthly reviews of hauliers’ HSSE performance, form an integral part of the company’s
+            safety management system.
           </p>
           <p>
-            Night driving is not permitted and drivers mandatorily takes rest after 4 hrs of continuous driving. These are also monitored by GPS system.
+            Given that road transport operations involve higher risk due to third-party behaviour and
+            prevailing road transport practices in the country, special emphasis is placed on driver
+            training and behavioural improvement to strengthen &amp; upgrade safety standards in transport
+            operations.
           </p>
-          <p>Regular safety meeting carried out involving all stakeholders i.e. SMA staff, contractors, drivers etc. to incorporate, improve and inculcate safety behavior's.</p>
-          <p>Regular emergency response drills carried out to ensure timely and correct action in case of emergency.</p>
-          <p>Emergency Response Plan is revised in line with PNGRB guidelines and submitted to statutes after approval of SMA board.</p>
-          <p>Regular trainings, Tool box meeting, safety briefings, LFI (learning from incidents) are carried out to maintain and enhance safety / quality performance.</p>
-          <p>Near miss and Potential Incident reporting are encouraged for process improvements.</p>
-          <p>Shell MRPL Aviation follows best in class operating standards of HSSE across its value chain. Some of the practices which ensures safe transportation of Jet fuel are:</p>
         </div>
 
         {/* <h3 className="page-h3">Our Core Beliefs &amp; Practices</h3> */}
-        <div className="practice-list">
+        {/* <div className="practice-list">
           {[
             'Safety audit of transporters carried out as per Shell international standards – 4 pillar audits where Driver management, vehicle management, Journey management and HSSE management audits are carried out for ensuring safety during fuel transportation.',
             'Transportation is monitored and controlled by state of art GPS system, where any safety violations (Speed, Journey management, harsh braking, driver fatigue control are monitored on line).',
@@ -59,7 +68,7 @@ export default function HSSEPage() {
               <p className="practice-text">{item}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

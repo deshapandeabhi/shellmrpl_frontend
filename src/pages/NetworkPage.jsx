@@ -4,12 +4,12 @@ import PageHero from '../components/PageHero';
 const AIRPORTS = [
   { name: 'Kempegowda International Airport, Bengaluru', code: 'IATA: BLR | ICAO: VOBL', x: 39.5, y: 78.5 },
   { name: 'Mangaluru International Airport', code: 'IATA: IXE | ICAO: VOML', x: 36.1, y: 79.5 },
-  { name: 'Rashtrakavi Kuvempu Airport, Shivamogga', code: 'IATA: RQY | ICAO: ', x: 36.8, y: 75.5 },
+  { name: 'Rashtrakavi Kuvempu Airport, Shivamogga', code: 'IATA: RQY | ICAO: VOSH', x: 36.8, y: 75.5 },
   { name: 'Rajiv Gandhi Intl Airport, Hyderabad', code: 'IATA: HYD | ICAO: VOHS', x: 43.6, y: 64.1 },
   { name: 'Goa Dabolim International Airport', code: 'IATA: GOI | ICAO: VOGO', x: 33.9, y: 70.1 },
-  { name: 'Manohar International Airport - Goa', code: 'IATA: GOA | ICAO: ', x: 34.4, y: 71.5 },
-  { name: 'Calicut International Airport', code: 'IATA: CNN | ICAO: VOKN', x: 34.4, y: 70.5 },
-  { name: 'Kannur International Airport', code: 'IATA: CCJ | ICAO: VOCL', x: 37.5, y: 85.5 },
+  { name: 'Manohar International Airport - Goa', code: 'IATA: GOA | ICAO: VOGA', x: 34.4, y: 71.5 },
+  { name: 'Calicut International Airport', code: 'IATA: CCJ | ICAO: VOCL', x: 34.4, y: 70.5 },
+  { name: 'Kannur International Airport', code: 'IATA: CNN | ICAO: VOKN', x: 37.5, y: 85.5 },
   { name: 'Thiruvananthapuram International Airport', code: 'IATA: TRV | ICAO: VOTV', x: 39.0, y: 90.8 },
   { name: 'Indira Gandhi International Airport - Delhi', code: 'IATA: DEL | ICAO: VIDP', x: 40.1, y: 30.5 },
   { name: 'Chhatrapati Shivaji Maharaj International Airport Mumbai', code: 'IATA: BOM | ICAO: VABB', x: 33.4, y: 59.0 },
@@ -44,14 +44,14 @@ export default function NetworkPage() {
 
         <div className="network-map-section reveal">
           <div className="map-container">
-            <img src={indiaMap} alt="India Network Map" className="map-image" />
+            <img loading="lazy" src={indiaMap} alt="India Network Map" className="map-image" />
             <div className="map-points-layer">
               {AIRPORTS.map((apt, i) => (
                 <div key={i} className="map-point-wrapper" style={{ left: `${apt.x}%`, top: `${apt.y}%` }}>
                   <div className="map-point"></div>
                   <div className="map-tooltip">
                     <div className="airport-name-tip">{apt.name.split(',')[0]}</div>
-                    <div style={{ opacity: 0.85, fontSize: '11px', color: 'white', fontWeight: 500, letterSpacing: '0.08em' }}>{apt.code}</div>
+                    <div style={{ opacity: 0.85, fontSize: '11px', color: 'white', fontWeight: 500 }}>{apt.code}</div>
                   </div>
                 </div>
               ))}

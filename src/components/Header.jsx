@@ -24,10 +24,10 @@ const NAV = [
   },
   {
     label: 'Company Parentage',
-    path: '/company-parentage',
+    path: '#',
     children: [
-      { label: 'Shell', path: '/shell' },
-      { label: 'MRPL', path: '/mrpl' },
+      { label: 'Shell', path: 'https://www.shell.in' },
+      { label: 'MRPL', path: 'https://www.mrpl.co.in' },
     ],
   },
   {
@@ -96,13 +96,25 @@ const MobileItem = ({ item, onClose }) => {
         <ul className="mobile-submenu">
           {item.children.map((child, idx) => (
             <li key={child.path} style={{ animationDelay: `${idx * 0.05}s` }}>
-              <Link
-                to={child.path}
-                className={`mobile-sublink ${location.pathname === child.path ? 'active' : ''}`}
-                onClick={onClose}
-              >
-                {child.label}
-              </Link>
+              {child.path.startsWith('http') ? (
+                <a
+                  href={child.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mobile-sublink"
+                  onClick={onClose}
+                >
+                  {child.label}
+                </a>
+              ) : (
+                <Link
+                  to={child.path}
+                  className={`mobile-sublink ${location.pathname === child.path ? 'active' : ''}`}
+                  onClick={onClose}
+                >
+                  {child.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -142,7 +154,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           transition: var(--t-nav);
           display: flex;
           align-items: center;
-          padding: 15px var(--header-padding);
+          padding: 15px 0;
           background: var(--shell-white);
           /* Shell Yellow top accent — satisfies ≥5% Yellow focal-point rule */
           border-top: 4px solid var(--shell-yellow);
@@ -166,8 +178,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 100%;
-          max-width: 1600px;
+          width: min(var(--container-w), 100% - 40px);
           margin: 0 auto;
         }
 
@@ -298,7 +309,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           padding: 10px;
           z-index: 2100;
           background: rgba(var(--shell-white-rgb), 0.15);
-          border-radius: 10%;
+          border-radius: 8px;
           width: 44px;
           height: 44px;
           align-items: center;
@@ -315,7 +326,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           width: 22px;
           height: 2.5px;
           background: var(--grey-900);
-          border-radius: 4px;
+          border-radius: 8px;
           transition: var(--t-nav);
         }
 
@@ -583,8 +594,11 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           <Link to="/" className="site-logo-link">
             <img
               src="/wp-content/uploads/2023/09/logo.jpg"
-              alt="Shell MRPL Aviation"
+              alt="Shell MRPL Aviation Fuels and Services Limited"
               className="site-logo"
+              onContextMenu={(e) => e.preventDefault()}
+              draggable="false"
+              style={{ userSelect: 'none', WebkitUserSelect: 'none', pointerEvents: 'none' }}
             />
           </Link>
 
@@ -598,14 +612,26 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
                 {item.children && (
                   <div className="nav-dropdown">
-                    {item.children.map(child => (
-                      <Link
-                        key={child.path}
-                        to={child.path}
-                        className={`nav-dropdown-link ${location.pathname === child.path ? 'active' : ''}`}
-                      >
-                        {child.label}
-                      </Link>
+                    {item.children.map((child) => (
+                      child.path.startsWith('http') ? (
+                        <a
+                          key={child.path}
+                          href={child.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="nav-dropdown-link"
+                        >
+                          {child.label}
+                        </a>
+                      ) : (
+                        <Link
+                          key={child.path}
+                          to={child.path}
+                          className={`nav-dropdown-link ${location.pathname === child.path ? 'active' : ''}`}
+                        >
+                          {child.label}
+                        </Link>
+                      )
                     ))}
                   </div>
                 )}
@@ -616,7 +642,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           <div className="header-actions">
             <Link to="/careers" className="header-actions-link">Careers</Link>
             <Link to="/contact" className="btn-impact">
-              <span>Connect</span>
+              <span>Contact Us</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -664,7 +690,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
         <div className="mobile-footer">
           <Link to="/contact" className="btn-impact mobile-connect-btn" onClick={onMobileClose}>
-            <span>Get in Touch</span>
+            <span>Contact Us</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

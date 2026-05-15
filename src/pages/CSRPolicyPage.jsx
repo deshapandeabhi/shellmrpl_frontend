@@ -1,4 +1,3 @@
-import React from 'react';
 import PageHero from '../components/PageHero';
 
 const SECTIONS = [
@@ -7,8 +6,8 @@ const SECTIONS = [
     content: `Section 135 of the Companies Act, 2013 {in short “Act”}, read with the Companies {Corporate Social Responsibility Policy} Rules 2014 {In short “CSR Rules”}, mandates companies meeting specified net worth or turnover or net profit during any financial year to constitute a Corporate Social Responsibility Committee of the Board, formulate a Corporate Social Responsibility Policy {in short CSR Policy} including the activities specified in Schedule VII of the Act and ensure spending in each financial year, at least 2% {two per cent} of their average net profits made during the three immediately preceding financial years in pursuance of their CSR Policy.`,
   },
   {
-    title: 'Short Title & Applicability',
-    content: `This Policy, which encompasses the Company’s philosophy to delineate its responsibility as a corporate citizen and lays down the guidelines and mechanism for undertaking socially useful programmes for welfare & sustainable development of the community at large, is titled as “ SMA CSR Policy”. This shall apply to all CSR activities i.e. projects or programs, activities undertaken or to be undertaken by the Company in terms of Section 135 of the Act and CSR Rules {in short, “CSR activities”}. These activities shall exclude those undertaken or to be undertaken by the Company in pursuance of its normal course of business.`,
+    title: 'Short Title and Applicability',
+    content: `This Policy, which encompasses the Company’s philosophy to delineate its responsibility as a corporate citizen and lays down the guidelines and mechanism for undertaking socially useful programmes for welfare and sustainable development of the community at large, is titled as “ SMA CSR Policy”. This shall apply to all CSR activities i.e. projects or programs, activities undertaken or to be undertaken by the Company in terms of Section 135 of the Act and CSR Rules {in short, “CSR activities”}. These activities shall exclude those undertaken or to be undertaken by the Company in pursuance of its normal course of business.`,
   },
   {
     title: 'Compliance',
@@ -63,7 +62,7 @@ const SECTIONS = [
     ]
   },
   {
-    title: 'MONITORING & REPORTING FRAMEWORK',
+    title: 'MONITORING and REPORTING FRAMEWORK',
     content: 'There shall be three levels of monitoring and review to be undertaken for CSR activities:-',
     list: [
       'Level {1}:  Identified Local officers, at the project levels, who shall be responsible for implementation and shall give monthly reporting to Level {2}.',
@@ -81,7 +80,7 @@ export default function CSRPolicyPage() {
         breadcrumbs={[{ label: 'Investors Information', to: '/investors-information' }, { label: 'CSR Policy' }]}
       />
       <div className="content-wrap content-narrow">
-        <h2 className="page-h3">CSR POLICY – <span style={{ fontWeight: 500 }}>SHELL MRPL AVIATION FUELS AND SERVICES LIMITED</span></h2>
+        <h2 className="page-h3">CSR POLICY<span style={{ fontWeight: 500 }}></span></h2>
         <div className="body-text" style={{ marginBottom: 36 }}>
           <p>
             Shell MRPL Aviation Fuels and Services Limited (hereinafter referred as ‘the Company’) believes in the conduct of its affairs in a fair and transparent manner by adopting highest standards of professionalism, honesty, integrity and ethical behaviour and in complete compliance of laws, as amended from time to time.

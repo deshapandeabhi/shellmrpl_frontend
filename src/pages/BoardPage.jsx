@@ -10,12 +10,12 @@ const DIRECTORS = [
   },
   {
     name: 'Mr. Sanjay Samuel Varkey',
-    role: 'Director, Shell MRPL Aviation and Shell India Markets Private Limited',
+    role: 'Director, Shell MRPL Aviation Fuels and Services Limited and Shell India Markets Private Limited',
     image: `${BASE_IMG_URL}/Sanjay Varkey.jpg`,
   },
   {
     name: 'Mr. BH Vasudev Prasad',
-    role: 'Director, Shell MRPL Aviation and ED-Projects in MRPL',
+    role: 'Director, Shell MRPL Aviation Fuels and Services Limited and ED-Projects in MRPL',
     image: `${BASE_IMG_URL}/BH_Vasudev_Prasad.png`,
   },
   {
@@ -24,7 +24,12 @@ const DIRECTORS = [
     image: `${BASE_IMG_URL}/Ziad_Victor_Soussou.jpg`,
   },
   {
-    name: 'Mr. Ravi Kumar Rentala',
+    name: 'Dr. Sangeeta Sumesh',
+    role: 'Independent Director, Shell MRPL Aviation',
+    image: `${BASE_IMG_URL}/Sangeeta_Sumesh.jpg`,
+  },
+  {
+    name: 'Dr. Ravi Kumar Rentala',
     role: 'Independent Director, Shell MRPL Aviation and Chairman, BEC Pvt Ltd',
     image: `${BASE_IMG_URL}/Ravi Kumar Rentala.jpg`,
   },
@@ -32,11 +37,6 @@ const DIRECTORS = [
     name: 'Mr. Niyant Maru',
     role: 'Independent Director, Shell MRPL Aviation',
     image: `${BASE_IMG_URL}/Niyant Maru.jpg`,
-  },
-  {
-    name: 'Ms. Sangeeta Sumesh',
-    role: 'Independent Director, Shell MRPL Aviation',
-    image: `${BASE_IMG_URL}/Sangeeta_Sumesh.jpg`,
   },
 ];
 
@@ -48,34 +48,33 @@ export default function BoardPage() {
         title="Our Leadership"
         breadcrumbs={[{ label: 'Board of Directors' }]}
       />
-      
+
       <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
         <div className="section-header">
           <span className="section-eyebrow">The Board</span>
           <h2 className="section-h2">Guiding Visionary Excellence</h2>
           <p className="section-intro">
-            Our leadership team brings together decades of global aviation experience 
+            Our leadership team brings together decades of global aviation experience
             and local industrial expertise to drive sustainable growth.
           </p>
         </div>
 
-        <div className="people-grid">
+        <div className="brand-grid">
           {DIRECTORS.map((p, i) => (
-            <div key={i} className="person-card reveal">
-              <div className="person-img-wrap">
+            <div key={i} className="management-card col-span-3 reveal">
+              <div className="mgmt-img-wrap">
                 <img
                   src={p.image}
                   alt={p.name}
-                  className="person-photo"
+                  className="mgmt-photo"
                   onError={e => {
                     e.target.style.background = 'var(--gray-200)';
-                    e.target.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
                   }}
                 />
               </div>
-              <div className="person-body">
-                <h3 className="person-name">{p.name}</h3>
-                <p className="person-role">{p.role}</p>
+              <div className="mgmt-info">
+                <h3 className="mgmt-name">{p.name}</h3>
+                <span className="mgmt-role">{p.role}</span>
               </div>
             </div>
           ))}

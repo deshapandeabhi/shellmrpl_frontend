@@ -13,7 +13,7 @@ export default function ProductsPage() {
   return (
     <div className="inner-page">
       <PageHero
-        title="Products &amp; Services"
+        title="Products and Services"
         breadcrumbs={[{ label: 'Products and Services' }]}
       />
       <div className="content-wrap content-narrow">
@@ -29,11 +29,11 @@ export default function ProductsPage() {
 
         <div className="service-list">
           {[
-            'International best practices and global standards of safety, quality & operations in supplying Jet fuel',
+            'International best practices and global standards of safety, quality and operations in supplying Jet fuel',
             'Pricing transparency',
             'Shell Aviation’s global network of around 900 airports in about 36 countries',
-            'Acceptance of Shell Carnet and Shell Fuel & Fly Cards',
-            'Shell’s comprehensive portfolio which offers a range of innovative products and services, including aviation lubricants & risk marketing',
+            'Acceptance of Shell Carnet and Shell Fuel and Fly Cards',
+            'Shell’s comprehensive portfolio which offers a range of innovative products and services, including aviation lubricants and risk marketing',
           ].map((item, i) => (
             <div key={i} className="service-item">
               <span className="service-num">0{i + 1}</span>

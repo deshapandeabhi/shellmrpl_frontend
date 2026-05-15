@@ -4,7 +4,7 @@ const PageTemplate = ({ title, bgImage, content }) => {
   return (
     <section className="w-full flex-grow bg-white animate-fade-in">
       <div className="w-full h-[400px] md:h-[450px] relative mt-1">
-        <img 
+        <img loading="lazy" 
           src={bgImage || "/wp-content/uploads/2016/08/profile-bg.jpg"} 
           alt={title} 
           className="w-full h-full object-cover object-center"

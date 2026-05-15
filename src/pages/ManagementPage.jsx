@@ -34,7 +34,7 @@ export default function ManagementPage() {
                   alt={p.name}
                   className="mgmt-photo"
                   onError={e => { 
-                    e.target.style.background = 'var(--gray-200)';
+                    e.target.style.background = 'var(--shell-white)';
                   }}
                 />
               </div>

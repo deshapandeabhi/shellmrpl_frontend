@@ -71,7 +71,7 @@ export default function CSRProjectsPage() {
           ))}
         </div>
 
-        <div className="csr-archive-section glass" style={{ marginTop: '80px', padding: '60px', borderRadius: 'var(--radius-xl)' }}>
+        <div className="csr-archive-section glass" style={{ marginTop: '80px', padding: 'clamp(20px, 5vw, 60px)', borderRadius: 'var(--radius-xl)' }}>
           <h3 className="footer-h" style={{ color: 'var(--grey-900)', marginBottom: '40px' }}>Approved Project Archives</h3>
           <div className="csr-dl-grid">
             {DOWNLOADS.map((item, i) => (
@@ -85,7 +85,6 @@ export default function CSRProjectsPage() {
                 <div className="dl-icon-c"><PdfIcon /></div>
                 <div className="dl-info">
                   <span className="dl-label">{item.label}</span>
-                  <span className="dl-type">{item.url.endsWith('.docx') ? 'Word Document' : 'PDF Document'} • Approved</span>
                 </div>
               </a>
             ))}

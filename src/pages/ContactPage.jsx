@@ -2,6 +2,12 @@ import PageHero from '../components/PageHero';
 
 const CONTACTS = [
   {
+    dept: 'Executive Leadership',
+    name: 'Mr. Devendra Nath Soral',
+    role: 'Chief Executive Officer (CEO)',
+    email: 'dev.soral@shellmrpl.com',
+  },
+  {
     dept: 'Chief Finance Officer and Company Secretary',
     name: 'Chockalingam Subbiah',
     role: 'CFO and CS',
@@ -16,7 +22,7 @@ const CONTACTS = [
   {
     dept: 'HSSE and Operations Head',
     name: 'Tirumal Rao',
-    role: 'I/c HoD (S&D), Head- (Projects and ERP)',
+    role: 'I/c HoD (S and D), Head- (Projects and ERP)',
     email: 'tirumal.rao@shellmrpl.com',
   },
 ];
@@ -46,7 +52,7 @@ export default function ContactPage() {
               <div className="contact-card-body">
                 <div className="contact-name">{c.name}</div>
                 <div className="contact-role">{c.role}</div>
-                <a href={`mailto:${c.email}`} className="contact-email">{c.email}</a>
+                {c.email && <a href={`mailto:${c.email}`} className="contact-email">{c.email}</a>}
               </div>
             </div>
           ))}
@@ -66,7 +72,7 @@ export default function ContactPage() {
             <a href="mailto:smrpl-admin@shellmrpl.com" className="contact-email">
               smrpl-admin@shellmrpl.com
             </a><br />
-            <strong>Contact Person:</strong> –<br />
+            {/* <strong>Contact Person:</strong> –<br /> */}
             <strong>CIN:</strong> U51909KA2008PLC045558
           </p>
         </div>

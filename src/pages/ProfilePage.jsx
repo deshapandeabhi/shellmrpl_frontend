@@ -74,20 +74,8 @@ export default function ProfilePage() {
     );
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    const handleMouseMove = (e) => {
-      const { clientX, clientY } = e;
-      const x = (clientX / window.innerWidth - 0.5) * 20;
-      const y = (clientY / window.innerHeight - 0.5) * 20;
-      const heroContent = document.querySelector('.hero-content');
-      if (heroContent) {
-        heroContent.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
-      }
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-
     return () => {
       observer.disconnect();
-      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
@@ -97,9 +85,9 @@ export default function ProfilePage() {
       <section className="home-hero">
         <div className="hero-overlay" />
         <div className="hero-video-container">
-          <img
+          <img loading="lazy"
             src="/wp-content/uploads/2023/09/slider2.jpg"
-            className="hero-video-bg parallax-target"
+            className="hero-video-bg"
             alt="Aviation Background"
           />
         </div>
@@ -109,42 +97,6 @@ export default function ProfilePage() {
           {[...Array(12)].map((_, i) => (
             <div key={i} className={`particle particle-${i + 1}`} />
           ))}
-        </div>
-
-        {/* ── CINEMATIC FLIGHT ANIMATION ── */}
-        <div className="hero-flight-path">
-          <svg width="100%" height="100%" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0 }}>
-            <path
-              id="airplanePath"
-              d="M-200 650 C 300 500, 700 800, 1100 200 S 1400 -100, 1800 100"
-              stroke="rgba(var(--shell-white-rgb), 0.4)"
-              strokeWidth="2.5"
-              strokeDasharray="15 20"
-              style={{ animation: 'vaporTrail 20s linear infinite' }}
-            />
-          </svg>
-
-          {/* Main Airplane */}
-          <img
-            src={flightPng}
-            alt="Airplane"
-            className="animated-airplane"
-            style={{
-              offsetPath: "path('M-150 650 C 300 500, 700 800, 1100 200 S 1400 -100, 1600 100')",
-              animation: 'airplaneFly 12s cubic-bezier(0.4, 0, 0.2, 1) infinite'
-            }}
-          />
-
-          {/* Distant Airplane */}
-          <img
-            src={flightPng}
-            alt="Airplane Distant"
-            className="animated-airplane distant"
-            style={{
-              offsetPath: "path('M1500 400 C 1200 300, 800 500, 400 100 S -100 300, -200 200')",
-              animation: 'airplaneFlyDistant 16s linear infinite 4s'
-            }}
-          />
         </div>
 
         {/* ── CINEMATIC CLOUDS ── */}
@@ -166,8 +118,8 @@ export default function ProfilePage() {
               <Link to="/shell-mrpl-aviation-network" className="btn-cta-yellow">
                 Explore Network <ArrowRight />
               </Link>
-              <Link to="/about" className="btn-impact btn-impact-ghost">
-                Our Story
+              <Link to="/contact" className="btn-impact btn-impact-ghost">
+                Contact Us
               </Link>
             </div>
           </div>
@@ -250,7 +202,7 @@ export default function ProfilePage() {
             {CARDS.map((card, i) => (
               <Link to={card.link} key={i} className={`editorial-card col-span-4 reveal reveal-delay-${i + 1}`}>
                 <div className="editorial-card-bg">
-                  <img src={card.img} alt={card.title} className="editorial-card-img" />
+                  <img loading="lazy" src={card.img} alt={card.title} className="editorial-card-img" />
                 </div>
                 <div className="editorial-card-overlay" />
                 <div className="editorial-card-content">
@@ -276,7 +228,10 @@ export default function ProfilePage() {
           <div className="split-section reveal">
             <div className="split-text">
               <span className="section-eyebrow">The Partnership</span>
-              <h2 className="section-h2">World Class Standards. Local Expertise.</h2>
+              <h2 className="section-h2">
+                World Class Standards.<br />
+                Local Expertise.
+              </h2>
               <div className="split-body-content">
                 <p className="split-lead">
                   We supply Aviation Turbine Fuel (Jet A-1) to our airline customers and ensure services as per Shell Aviation’s world class operational standards.
@@ -296,7 +251,7 @@ export default function ProfilePage() {
             </div>
 
             <div className="split-image-container reveal">
-              <img
+              <img loading="lazy"
                 src="/wp-content/uploads/2016/08/profile-bg.jpg"
                 alt="Aviation Excellence"
                 className="split-img"

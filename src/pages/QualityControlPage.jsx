@@ -1,4 +1,3 @@
-import React from 'react';
 import PageHero from '../components/PageHero';
 
 const PRACTICES = [
@@ -20,7 +19,8 @@ export default function QualityControlPage() {
         <h2 className="page-h2">Quality Control</h2>
         <div className="body-text" style={{ marginBottom: 36 }}>
           <p>
-            Robust processes ensure that quality of Jet fuel is maintained as per specifications throughout its value chain. Some of the practices followed by Shell MRPL Aviation are:
+            Robust processes ensure that quality of Jet fuel is maintained as per specifications throughout its
+            Supply chain. Some of the practices followed by Shell MRPL Aviation are:
           </p>
         </div>
 

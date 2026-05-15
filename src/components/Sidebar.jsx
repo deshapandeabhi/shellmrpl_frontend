@@ -13,7 +13,7 @@ const NAV = [
     ],
   },
   {
-    label: 'Product, Services & Networks',
+    label: 'Product, Services and Networks',
     path: '/products-services',
     children: [
       { label: 'Products and Services', path: '/products-services' },
@@ -26,12 +26,12 @@ const NAV = [
     label: 'Company Parentage',
     path: '/company-parentage',
     children: [
-      { label: 'Shell', path: '/shell' },
-      { label: 'MRPL', path: '/mrpl' },
+      { label: 'Shell', path: 'https://www.shell.in' },
+      { label: 'MRPL', path: 'https://www.mrpl.co.in' },
     ],
   },
   {
-    label: 'HSSE & Quality Control',
+    label: 'HSSE and Quality Control',
     path: '/hsse',
     children: [
       { label: 'HSSE', path: '/hsse' },

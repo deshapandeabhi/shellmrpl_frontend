@@ -26,7 +26,7 @@ export default function LegalPage({ title }) {
               Shell and MRPL. All operational protocols strictly adhere to global aviation standards
               and Indian regulatory requirements.
             </p>
-            <h4 style={{ color: 'var(--shell-white)', marginBottom: '16px', fontWeight: 900 }}>2. Compliance & Standards</h4>
+            <h4 style={{ color: 'var(--shell-white)', marginBottom: '16px', fontWeight: 900 }}>2. Compliance and Standards</h4>
             <p>
               Our services are governed by the DGCA and international aviation safety regulations.
               We ensure total compliance with HSSE (Health, Safety, Security, and Environment) standards
