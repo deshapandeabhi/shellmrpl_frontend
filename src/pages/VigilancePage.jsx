@@ -1,9 +1,8 @@
-import React from 'react';
 import PageHero from '../components/PageHero';
 
 const COMPLAINTS = [
   `As per the Government of India’s resolution on “Public Interest Disclosure and Protection of Informers (PIDPI)”, the identity of the complainant is kept secret and is protected from victimization for making such complaints.`,
-  `Central Vigilance Commission (CVC) is authorized as the Designated Agency to receive written complaints under PIDPI Resolution. The complainants who want to make any complaint under PIDPI Resolution, the complaint should be in a closed /secured envelope and should be super-scribed “Complaint under Public Interest Disclosure” The complainant should give his/her name & address in the beginning or end of complaint or in an attached letter. Such complaints are opened in the confidential section and the identity of the complainant will not be revealed. The complaints which have been addressed to other /several authorities are not treated as complaint under PIDPI Resolution. If these procedures are not followed, the complaint made there under will be treated like a general complaint.`,
+  `Central Vigilance Commission (CVC) is authorized as the Designated Agency to receive written complaints under PIDPI Resolution. The complainants who want to make any complaint under PIDPI Resolution, the complaint should be in a closed /secured envelope and should be super-scribed “Complaint under Public Interest Disclosure” The complainant should give his/her name and address in the beginning or end of complaint or in an attached letter. Such complaints are opened in the confidential section and the identity of the complainant will not be revealed. The complaints which have been addressed to other /several authorities are not treated as complaint under PIDPI Resolution. If these procedures are not followed, the complaint made there under will be treated like a general complaint.`,
   `The complainant should disclose his / her identity by giving name, address and contact phone / cell number, e-mail ID. Anonymous / pseudonymous complaints will not be considered. The identity of the complainant will be protected.`,
   `Complaint may be lodged online, through email or by Dak (Post).`,
   `No correspondence shall be entertained on the subject after lodging the complaint, unless required by the office. However, if any fresh facts are available with the complainant, he / she may communicate the same.`,
@@ -28,7 +27,7 @@ export default function VigilancePage() {
         <h3 className="page-h3">About Vigilance</h3>
         <div className="body-text">
           <p>
-            Shell MRPL Aviation Fuels and Services Limited is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel & operating airport fuelling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India’s largest national oil company.
+            Shell MRPL Aviation Fuels and Services Limited is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel and operating airport fuelling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India’s largest national oil company.
           </p>
           <p>
             Board of Shell MRPL Aviation Fuels and Services Limited has decided to adopt vigilance administration in the organization as per the guidelines of Central Vigilance Commission as prevalent in parent company MRPL. The Vigilance system in Shell MRPL Aviation Fuels and Services Limited will be administered by CVO, MRPL.

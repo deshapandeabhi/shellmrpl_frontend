@@ -11,7 +11,7 @@ export default function ShellPage() {
         <h2 className="page-h2">Shell — Company Profile</h2>
         <div className="body-text">
           <p>
-            Shell is an integrated energy company that aims to meet the world’s growing demand for energy in ways that are economically, environmentally and socially responsible. Shell is a global group of energy and petrochemical companies. Its operations are divided into four businesses: Upstream, Integrated Gas and New Energies, Downstream, and Projects & Technology.
+            Shell is an integrated energy company that aims to meet the world’s growing demand for energy in ways that are economically, environmentally and socially responsible. Shell is a global group of energy and petrochemical companies. Its operations are divided into four businesses: Upstream, Integrated Gas and New Energies, Downstream, and Projects and Technology.
           </p>
           <p>
             In Upstream Shell focus on exploration for new liquids and natural gas reserves and on developing major new projects where our technology and know-how add value for resource holders.
@@ -23,7 +23,7 @@ export default function ShellPage() {
             In Downstream, Shell focus on turning crude oil into a range of refined products, which are moved and marketed around the world for domestic, industrial and transport use. In addition, Shell produce and sell petrochemicals for industrial use worldwide. Shell’s oil sands mining activities in North America are also part of the Downstream organization.
           </p>
           <p>
-            Shell’s Projects & Technology business is responsible for delivering new development projects and the research and development that leads to innovative and low-cost investments for the future.
+            Shell’s Projects and Technology business is responsible for delivering new development projects and the research and development that leads to innovative and low-cost investments for the future.
           </p>
           <h3 className="page-h3">Shell Aviation</h3>
           <p>

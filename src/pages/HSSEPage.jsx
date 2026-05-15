@@ -16,7 +16,7 @@ export default function HSSEPage() {
     <div className="inner-page">
       <PageHero
         title="HSSE"
-        breadcrumbs={[{ label: 'HSSE & Quality' }, { label: 'HSSE' }]}
+        breadcrumbs={[{ label: 'HSSE and Quality' }, { label: 'HSSE' }]}
       />
       <div className="content-wrap content-narrow">
         <h2 className="page-h2">Health, Safety, Security and Environment (HSSE)</h2>
@@ -24,7 +24,7 @@ export default function HSSEPage() {
           <p>
             Shell MRPL Aviation firmly believes in, promotes, and implements the principle of “Safety First”
             across all areas of its operations. HSSE remains under constant focus throughout the
-            organization at all levels &amp; areas, covering all spheres of activity, with a continued
+            organization at all levels and areas, covering all spheres of activity, with a continued
             commitment to introducing new initiatives that contribute to the overall wellbeing of society.
           </p>
           <p>
@@ -34,7 +34,7 @@ export default function HSSEPage() {
             various stakeholders. Employees and contractors are encouraged to report incidents, near
             misses, and potential hazards. Additionally, safety bulletins are published, learnings from the
             shareholders disseminated to the relevant stakeholders and Learning from Incidents (LFI) is
-            shared across the organization &amp; other members to enhance awareness and prevent
+            shared across the organization and other members to enhance awareness and prevent
             recurrence.
           </p>
           <p>
@@ -46,7 +46,7 @@ export default function HSSEPage() {
           <p>
             Given that road transport operations involve higher risk due to third-party behaviour and
             prevailing road transport practices in the country, special emphasis is placed on driver
-            training and behavioural improvement to strengthen &amp; upgrade safety standards in transport
+            training and behavioural improvement to strengthen and upgrade safety standards in transport
             operations.
           </p>
         </div>

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import flightPng from '../assets/flight.png';
 
 const STATS = [
   { value: '11+', label: 'Strategic Airports' },
@@ -169,7 +168,7 @@ export default function ProfilePage() {
             </div>
             <div className="cap-text">
               <div className="cap-val">50:50 Joint Venture</div>
-              <div className="cap-lab">Shell & MRPL Partnership</div>
+              <div className="cap-lab">Shell and MRPL Partnership</div>
             </div>
           </div>
           <div className="capability-item reveal reveal-delay-3">
@@ -237,7 +236,7 @@ export default function ProfilePage() {
                   We supply Aviation Turbine Fuel (Jet A-1) to our airline customers and ensure services as per Shell Aviation’s world class operational standards.
                 </p>
                 <p className="split-body">
-                  Our customers also get benefits of Shell’s extensive experience in working with airport authorities & stakeholders to improve overall airport safety standards including into-plane fueling, fuel hydrant designs, airport network planning and fuel farm systems.
+                  Our customers also get benefits of Shell’s extensive experience in working with airport authorities and stakeholders to improve overall airport safety standards including into-plane fueling, fuel hydrant designs, airport network planning and fuel farm systems.
                 </p>
               </div>
               <div className="split-actions">
