@@ -2,16 +2,16 @@ import PageHero from '../components/PageHero';
 
 const SECTIONS = [
   {
-    title: 'Requirement of CORPORATE SOCIAL RESPONSIBILITY {CSR}',
-    content: `Section 135 of the Companies Act, 2013 {in short “Act”}, read with the Companies {Corporate Social Responsibility Policy} Rules 2014 {In short “CSR Rules”}, mandates companies meeting specified net worth or turnover or net profit during any financial year to constitute a Corporate Social Responsibility Committee of the Board, formulate a Corporate Social Responsibility Policy {in short CSR Policy} including the activities specified in Schedule VII of the Act and ensure spending in each financial year, at least 2% {two per cent} of their average net profits made during the three immediately preceding financial years in pursuance of their CSR Policy.`,
+    title: 'Requirement of Corporate Social Responsibility (CSR)',
+    content: `Section 135 of the Companies Act, 2013 (in short “Act”), read with the Companies (Corporate Social Responsibility Policy) Rules 2014 (In short “CSR Rules”), mandates companies meeting specified net worth or turnover or net profit during any financial year to constitute a Corporate Social Responsibility Committee of the Board, formulate a Corporate Social Responsibility Policy (in short CSR Policy) including the activities specified in Schedule VII of the Act and ensure spending in each financial year, at least 2% (two per cent) of their average net profits made during the three immediately preceding financial years in pursuance of their CSR Policy.`,
   },
   {
     title: 'Short Title and Applicability',
-    content: `This Policy, which encompasses the Company’s philosophy to delineate its responsibility as a corporate citizen and lays down the guidelines and mechanism for undertaking socially useful programmes for welfare and sustainable development of the community at large, is titled as “ SMA CSR Policy”. This shall apply to all CSR activities i.e. projects or programs, activities undertaken or to be undertaken by the Company in terms of Section 135 of the Act and CSR Rules {in short, “CSR activities”}. These activities shall exclude those undertaken or to be undertaken by the Company in pursuance of its normal course of business.`,
+    content: `This Policy, which encompasses the Company’s philosophy to delineate its responsibility as a corporate citizen and lays down the guidelines and mechanism for undertaking socially useful programmes for welfare and sustainable development of the community at large, is titled as “ SMA CSR Policy”. This shall apply to all CSR activities i.e. projects or programs, activities undertaken or to be undertaken by the Company in terms of Section 135 of the Act and CSR Rules (in short, “CSR activities”). These activities shall exclude those undertaken or to be undertaken by the Company in pursuance of its normal course of business.`,
   },
   {
     title: 'Compliance',
-    content: `The Company shall comply with Section 135 of the Companies Act, 2013 and Companies {Corporate Social Responsibility Policy} Rules 2014, as amended and also various notifications/ clarifications, issued from time to time, and any other applicable provisions of any statute.`,
+    content: `The Company shall comply with Section 135 of the Companies Act, 2013 and Companies (Corporate Social Responsibility Policy) Rules 2014, as amended and also various notifications/ clarifications, issued from time to time, and any other applicable provisions of any statute.`,
   },
   {
     title: 'Overall Objectives',
@@ -34,7 +34,7 @@ const SECTIONS = [
   },
   {
     title: 'Formation of CSR Committee',
-    content: 'In terms of criteria mentioned in Section 135 of the Act, a Corporate Social Responsibility Committee {in short “CSR Committee”} shall be constituted by the Board. The committee shall have the following authority which can be reviewed by the Board from time to time. The focus of CSR activities shall be generally in the vicinity of the projects and operations of the Company. The CSR Committee shall have the authority to recommend to the Board for approval of any other CSR programmes or projects or activities not covered in this policy which are within purview of the Companies Act, 2013, and rules thereunder as amended from time to time.',
+    content: 'In terms of criteria mentioned in Section 135 of the Act, a Corporate Social Responsibility Committee (in short “CSR Committee”) shall be constituted by the Board. The committee shall have the following authority which can be reviewed by the Board from time to time. The focus of CSR activities shall be generally in the vicinity of the projects and operations of the Company. The CSR Committee shall have the authority to recommend to the Board for approval of any other CSR programmes or projects or activities not covered in this policy which are within purview of the Companies Act, 2013, and rules thereunder as amended from time to time.',
     list: [
       'formulate and recommend to the Board, a Corporate Social Responsibility Policy which shall indicate the activities to be undertaken by the Company',
       'recommend the amount of expenditure to be incurred on the activity',
@@ -62,12 +62,12 @@ const SECTIONS = [
     ]
   },
   {
-    title: 'MONITORING and REPORTING FRAMEWORK',
+    title: 'Monitoring and Reporting Framework',
     content: 'There shall be three levels of monitoring and review to be undertaken for CSR activities:-',
     list: [
-      'Level {1}:  Identified Local officers, at the project levels, who shall be responsible for implementation and shall give monthly reporting to Level {2}.',
-      'Level {2}:  Identified Senior Officers at the Company level who shall be responsible for reviewing the implementation, progress, expenditure monitoring, effectiveness of action plans and support needed. They shall give quarterly reporting to Level {3}.',
-      'Level {3}: CSR Committee and Board shall review minimum on an annual basis or earlier as necessary.'
+      'Level (1):  Identified Local officers, at the project levels, who shall be responsible for implementation and shall give monthly reporting to Level (2).',
+      'Level (2):  Identified Senior Officers at the Company level who shall be responsible for reviewing the implementation, progress, expenditure monitoring, effectiveness of action plans and support needed. They shall give quarterly reporting to Level (3).',
+      'Level (3): CSR Committee and Board shall review minimum on an annual basis or earlier as necessary.'
     ]
   }
 ];
@@ -80,7 +80,7 @@ export default function CSRPolicyPage() {
         breadcrumbs={[{ label: 'Investors Information', to: '/investors-information' }, { label: 'CSR Policy' }]}
       />
       <div className="content-wrap content-narrow">
-        <h2 className="page-h3">CSR POLICY<span style={{ fontWeight: 500 }}></span></h2>
+        <h2 className="page-h3">CSR Policy<span style={{ fontWeight: 500 }}></span></h2>
         <div className="body-text" style={{ marginBottom: 36 }}>
           <p>
             Shell MRPL Aviation Fuels and Services Limited (hereinafter referred as ‘the Company’) believes in the conduct of its affairs in a fair and transparent manner by adopting highest standards of professionalism, honesty, integrity and ethical behaviour and in complete compliance of laws, as amended from time to time.

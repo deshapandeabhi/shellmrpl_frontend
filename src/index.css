@@ -15,21 +15,21 @@
 
 @font-face {
   font-family: 'Futura';
-  src: url('./assets/fonts/Futura Heavy font.ttf') format('truetype');
+  src: url('./assets/fonts/futura medium bt.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Futura';
-  src: url('./assets/fonts/Futura Bold font.ttf') format('truetype');
+  src: url('./assets/fonts/Futura Heavy font.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Futura';
-  src: url('./assets/fonts/Futura Extra Black font.ttf') format('truetype');
+  src: url('./assets/fonts/Futura Bold font.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
 }
@@ -51,7 +51,7 @@
 
 @font-face {
   font-family: 'Futura Condensed';
-  src: url('./assets/fonts/Futura Bold font.ttf') format('truetype');
+  src: url('./assets/fonts/futura medium condensed bt.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -76,10 +76,10 @@ p {
 
 :root {
   /* ── PRIMARY PALETTE (First Impressions) ── */
-  --shell-yellow: #FFC600;
-  --shell-yellow-rgb: 255, 198, 0;
-  --shell-red: #DD1D21;
-  --shell-red-rgb: 221, 29, 33;
+  --shell-yellow: #ED8A00;
+  --shell-yellow-rgb: 237, 138, 0;
+  --shell-red: #D54410;
+  --shell-red-rgb: 213, 68, 16;
   --shell-white: #FFFFFF;
   --shell-white-rgb: 255, 255, 255;
 
@@ -896,7 +896,7 @@ p {
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 110px; /* clear fixed header */
 }
 
@@ -904,9 +904,9 @@ p {
 .hero-stats-strip {
   border-bottom: none !important;
   border-top: none !important;
-  padding: 40px 0 !important;
+  padding: 24px 0 !important;
   background: var(--color-shell-blue) !important;
-  margin-top: auto;
+  margin-top: 30px;
   position: relative;
   z-index: 5;
   overflow: visible !important;
@@ -1933,7 +1933,7 @@ p {
   background: var(--night-600);
   /* Night 600 — Shell supporting palette, inside-pages */
   border-radius: var(--radius-xl);
-  padding: 64px;
+  padding: 32px 40px;
   margin-bottom: 56px;
   position: relative;
   overflow: hidden;
@@ -3155,7 +3155,7 @@ p {
   }
 
   .vision-box {
-    padding: 32px 24px;
+    padding: 20px 24px;
   }
 
   .container {
@@ -3590,7 +3590,7 @@ p {
 
 /* ── BRAND CAPABILITIES STRIP ── */
 .stats-strip.glass-dark {
-  padding: 40px 0;
+  padding: 24px 0;
   background: var(--color-shell-blue);
   /* Shell Blue — Primary Palette */
 }
@@ -3928,4 +3928,94 @@ button.csr-dl-item {
   font-weight: 800;
   white-space: nowrap;
   letter-spacing: 0.01em;
+}
+
+/* ── MOBILE RESPONSIVE HERO OVERRIDES ── */
+@media (max-width: 768px) {
+  /* Home Hero container */
+  .home-hero {
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-bottom: 30px !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Reduced gap below header */
+  .hero-inner-wrap {
+    padding-top: 90px !important;
+    justify-content: flex-start !important;
+  }
+  
+  /* Softer, beautiful title with tight responsive line-height */
+  .hero-title {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+    text-shadow: 0 4px 15px rgba(var(--grey-700-rgb), 0.3) !important;
+  }
+  
+  /* Subtitle optimized for mobile */
+  .hero-subtitle {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 20px !important;
+    opacity: 0.95 !important;
+  }
+  
+  /* Compact action buttons */
+  .hero-actions {
+    gap: 10px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .hero-actions a {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+  }
+  
+  /* Tightened stats strip gap and 2x2 responsive grid */
+  .hero-stats-strip {
+    margin-top: 15px !important;
+    padding: 16px 0 !important;
+  }
+  
+  .stats-inner {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  
+  .capability-item {
+    min-width: auto !important;
+    gap: 8px !important;
+    padding: 8px !important;
+  }
+  
+  .cap-icon-box {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+  }
+  
+  .cap-icon-box svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  
+  .cap-val {
+    font-size: 11.5px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .cap-lab {
+    font-size: 9.5px !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Hide scroll indicator to save vertical space on mobile */
+  .hero-scroll-indicator {
+    display: none !important;
+  }
 }
