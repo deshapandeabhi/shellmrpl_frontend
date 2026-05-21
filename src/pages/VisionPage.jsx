@@ -78,7 +78,6 @@ export default function VisionPage() {
   return (
     <div className="inner-page">
       <PageHero
-        imageSrc="/assets/docs/gallery/36.JPG"
         title="Vision and Values"
         breadcrumbs={[{ label: 'About', to: '/about' }, { label: 'Vision and Values' }]}
       />

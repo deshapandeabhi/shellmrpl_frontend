@@ -18,7 +18,7 @@ export default function ProductsPage() {
       />
       <div className="content-wrap content-narrow">
         <h2 className="page-h2">Products and Services</h2>
-        <div className="body-text" style={{ marginBottom: 32 }}>
+        <div className="body-text" style={{ marginBottom: 32, textAlign: 'justify' }}>
           <p>
             Shell MRPL Aviation provides solutions for Aviation Turbine Fuel requirements to its customers and offers an integrated end to end partnership with Shell Aviation, the only multi-national oil company with a government license to market aviation fuels in India. Shell MRPL Aviation adds value to our partners through:
           </p>
@@ -37,7 +37,7 @@ export default function ProductsPage() {
           ].map((item, i) => (
             <div key={i} className="service-item">
               <span className="service-num">0{i + 1}</span>
-              <p className="service-text">{item}</p>
+              <p className="service-text" style={{ textAlign: 'justify' }}>{item}</p>
             </div>
           ))}
         </div>

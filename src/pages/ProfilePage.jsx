@@ -80,8 +80,7 @@ export default function ProfilePage() {
 
   return (
     <div className="site-page">
-      {/* ── IMMERSIVE CINEMATIC HERO ── */}
-      <section className="home-hero">
+      <section className="home-hero hero-with-stats">
         <div className="hero-overlay" />
         <div className="hero-video-container">
           <img loading="lazy"
@@ -104,22 +103,73 @@ export default function ProfilePage() {
           <div className="cloud cloud-2" />
         </div>
 
-        <div className="container">
-          <div className="hero-content">
-            {/* <span className="hero-eyebrow reveal" style={{ fontSize: 'clamp(20px, 2vw, 32px)', fontWeight: '900', marginBottom: '16px', display: 'block' }}>Shell MRPL Aviation Fuels and Services Limited</span> */}
-            <h1 className="hero-title reveal">
-              Fuelling India&apos;s Global Ambitions
-            </h1>
-            <p className="hero-subtitle reveal">
-              Shell MRPL Aviation Fuels and Services Limited is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel and operating airport fueling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India’s largest national oil company.
-            </p>
-            <div className="hero-actions reveal">
-              <Link to="/shell-mrpl-aviation-network" className="btn-cta-yellow">
-                Explore Network <ArrowRight />
-              </Link>
-              <Link to="/contact" className="btn-impact btn-impact-ghost">
-                Contact Us
-              </Link>
+        <div className="hero-inner-wrap">
+          <div className="container">
+            <div className="hero-content">
+              <h1 className="hero-title reveal">
+                Fuelling India&apos;s Global Ambitions
+              </h1>
+              <p className="hero-subtitle reveal">
+                Shell MRPL Aviation Fuels and Services Limited is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel and operating airport fueling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India's largest national oil company.
+              </p>
+              <div className="hero-actions reveal">
+                <Link to="/shell-mrpl-aviation-network" className="btn-cta-yellow">
+                  Explore Network <ArrowRight />
+                </Link>
+                <Link to="/contact" className="btn-impact btn-impact-ghost">
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* ── BRAND CAPABILITIES STRIP — inside hero, no yellow divider ── */}
+          <div className="stats-strip glass-dark hero-stats-strip">
+            <div className="container stats-inner">
+              <div className="capability-item reveal">
+                <div className="cap-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div className="cap-text">
+                  <div className="cap-val">11+ Strategic Airports</div>
+                  <div className="cap-lab">Pan-India Presence</div>
+                </div>
+              </div>
+              <div className="capability-item reveal reveal-delay-1">
+                <div className="cap-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+                <div className="cap-text">
+                  <div className="cap-val">Since 2008</div>
+                  <div className="cap-lab">Legacy of Trust</div>
+                </div>
+              </div>
+              <div className="capability-item reveal reveal-delay-2">
+                <div className="cap-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </div>
+                <div className="cap-text">
+                  <div className="cap-val">50:50 Joint Venture</div>
+                  <div className="cap-lab">Shell and MRPL Partnership</div>
+                </div>
+              </div>
+              <div className="capability-item reveal reveal-delay-3">
+                <div className="cap-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" />
+                  </svg>
+                </div>
+                <div className="cap-text">
+                  <div className="cap-val">Jet A-1 Global Standard</div>
+                  <div className="cap-lab">High-Performance Fuel</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -131,59 +181,6 @@ export default function ProfilePage() {
           <span className="scroll-text">Explore</span>
         </div>
       </section>
-
-      {/* ── SHELL YELLOW BRAND ACCENT BAR (satisfies ≥5% Yellow focal-point rule) ── */}
-      <div style={{ background: 'var(--shell-yellow)', height: '6px', width: '100%' }} aria-hidden="true" />
-
-      {/* ── BRAND CAPABILITIES STRIP ── */}
-      <div className="stats-strip glass-dark">
-        <div className="container stats-inner">
-          <div className="capability-item reveal">
-            <div className="cap-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
-              </svg>
-            </div>
-            <div className="cap-text">
-              <div className="cap-val">11+ Strategic Airports</div>
-              <div className="cap-lab">Pan-India Presence</div>
-            </div>
-          </div>
-          <div className="capability-item reveal reveal-delay-1">
-            <div className="cap-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" />
-              </svg>
-            </div>
-            <div className="cap-text">
-              <div className="cap-val">Since 2008</div>
-              <div className="cap-lab">Legacy of Trust</div>
-            </div>
-          </div>
-          <div className="capability-item reveal reveal-delay-2">
-            <div className="cap-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <div className="cap-text">
-              <div className="cap-val">50:50 Joint Venture</div>
-              <div className="cap-lab">Shell and MRPL Partnership</div>
-            </div>
-          </div>
-          <div className="capability-item reveal reveal-delay-3">
-            <div className="cap-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" />
-              </svg>
-            </div>
-            <div className="cap-text">
-              <div className="cap-val">Jet A-1 Global Standard</div>
-              <div className="cap-lab">High-Performance Fuel</div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* ── STRATEGIC CAPABILITIES ── */}
       <section className="section">

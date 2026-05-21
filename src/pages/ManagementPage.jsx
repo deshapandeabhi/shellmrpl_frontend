@@ -1,17 +1,16 @@
 import PageHero from '../components/PageHero';
 
 const MANAGERS = [
-  { name: 'Mr. Devendra Nath Soral', role: 'CEO',                          image: '/assets/team/Devendra_Nath_Soral.jpg' },
-  { name: 'Mr. S Chockalingam',      role: 'CFO and Company Secretary',     image: '/assets/team/S_Chockalingam.jpg' },
-  { name: 'Mr. G Srinivas Rao',      role: 'Head of Sales',                 image: '/assets/team/G_Srinivas_Rao.jpg' },
-  { name: 'Mr. K Tirumal Rao',       role: 'HoD Operations, QC and ERP',      image: '/assets/team/K_Tirumal_Rao.jpg' },
+  { name: 'Mr. Devendra Nath Soral', role: 'CEO',                               image: '/assets/team/Devendra_Nath_Soral.jpg' },
+  { name: 'Mr. S Chockalingam',      role: 'CFO and Company Secretary',          image: '/assets/team/S_Chockalingam.jpg' },
+  { name: 'Mr. G Srinivas Rao',      role: 'HOD Sales and Marketing',            image: '/assets/team/G_Srinivas_Rao.jpg' },
+  { name: 'Mr. K Tirumal Rao',       role: 'HOD Operations',                     image: '/assets/team/K_Tirumal_Rao.jpg' },
 ];
 
 export default function ManagementPage() {
   return (
     <div className="site-page">
       <PageHero
-        imageSrc="/assets/Management_Team.jpg"
         title="Leadership Team"
         breadcrumbs={[{ label: 'Management' }]}
       />

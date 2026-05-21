@@ -17,7 +17,7 @@ export default function QualityControlPage() {
       />
       <div className="content-wrap content-narrow">
         <h2 className="page-h2">Quality Control</h2>
-        <div className="body-text" style={{ marginBottom: 36 }}>
+        <div className="body-text" style={{ marginBottom: 36, textAlign: 'justify' }}>
           <p>
             Robust processes ensure that quality of Jet fuel is maintained as per specifications throughout its
             Supply chain. Some of the practices followed by Shell MRPL Aviation are:

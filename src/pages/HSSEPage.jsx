@@ -20,7 +20,7 @@ export default function HSSEPage() {
       />
       <div className="content-wrap content-narrow">
         <h2 className="page-h2">Health, Safety, Security and Environment (HSSE)</h2>
-        <div className="body-text" style={{ marginBottom: 36 }}>
+        <div className="body-text" style={{ marginBottom: 36, textAlign: 'justify' }}>
           <p>
             Shell MRPL Aviation firmly believes in, promotes, and implements the principle of “Safety First”
             across all areas of its operations. HSSE remains under constant focus throughout the

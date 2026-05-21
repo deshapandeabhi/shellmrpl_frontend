@@ -1,17 +1,9 @@
 import { useState } from 'react';
 import PageHero from '../components/PageHero';
 
-const POSITIONS = [
-  'Fire and Safety Officer',
-  'Fuel Farm Operator',
-  'Quality Control Officer',
-  'Driver – Bowser Operations',
-  'Customer Service Executive',
-];
-
 const EMPTY_FORM = {
   name: '', gender: '', dob: '', fatherName: '', address: '', city: '', state: '',
-  email: '', mobile: '', position: '',
+  email: '', countryCode: '+91', mobile: '',
   q10: '', q11: '', q12: '', q13: '', q14: '',
   workExperience: '',
 };
@@ -28,12 +20,110 @@ export default function CareersPage() {
     if (errors[field]) setErrors((errs) => ({ ...errs, [field]: null }));
   };
 
+  const handleSummaryChange = (e) => {
+    const text = e.target.value;
+    const words = text.trim().split(/\s+/).filter(Boolean);
+    if (words.length <= 100) {
+      setForm((f) => ({ ...f, workExperience: text }));
+    } else {
+      // Re-assemble back to exactly 100 words to strictly block typing further
+      const truncated = text.split(/\s+/).slice(0, 100).join(' ');
+      setForm((f) => ({ ...f, workExperience: truncated }));
+    }
+  };
+
+  const getWordCount = (text) => {
+    if (!text) return 0;
+    return text.trim().split(/\s+/).filter(Boolean).length;
+  };
+
+  const getCountryConfig = (code) => {
+    switch (code) {
+      case '+91': // India
+      case '+1':  // US/Canada
+      case '+81': // Japan
+      case '+39': // Italy
+      case '+7':  // Russia
+      case '+52': // Mexico
+        return { minLength: 10, maxLength: 10 };
+      case '+44': // UK
+      case '+49': // Germany
+      case '+86': // China
+      case '+62': // Indonesia
+      case '+55': // Brazil
+        return { minLength: 10, maxLength: 11 };
+      case '+971': // UAE
+      case '+61':  // Australia
+      case '+33':  // France
+      case '+27':  // South Africa
+      case '+31':  // Netherlands
+      case '+41':  // Switzerland
+      case '+64':  // New Zealand
+      case '+60':  // Malaysia
+      case '+66':  // Thailand
+      case '+34':  // Spain
+      case '+46':  // Sweden
+      case '+82':  // South Korea
+        return { minLength: 9, maxLength: 9 };
+      case '+65':  // Singapore
+      case '+968': // Oman
+      case '+974': // Qatar
+      case '+973': // Bahrain
+      case '+965': // Kuwait
+      case '+47':  // Norway
+        return { minLength: 8, maxLength: 8 };
+      default:
+        return { minLength: 7, maxLength: 15 };
+    }
+  };
+
+  const handleMobileChange = (e) => {
+    const rawVal = e.target.value;
+    // Allow only numeric digits
+    const digitsOnly = rawVal.replace(/\D/g, '');
+    
+    // Get maxLength for current country code
+    const config = getCountryConfig(form.countryCode);
+    const truncated = digitsOnly.slice(0, config.maxLength);
+    
+    setForm(prev => ({ ...prev, mobile: truncated }));
+    if (errors.mobile) setErrors(prev => ({ ...prev, mobile: null }));
+  };
+
+  const handleCountryCodeChange = (e) => {
+    const newCode = e.target.value;
+    const config = getCountryConfig(newCode);
+    // Truncate existing number if it exceeds new maxLength
+    const truncatedMobile = form.mobile.replace(/\D/g, '').slice(0, config.maxLength);
+    
+    setForm(prev => ({ 
+      ...prev, 
+      countryCode: newCode,
+      mobile: truncatedMobile
+    }));
+    if (errors.mobile) setErrors(prev => ({ ...prev, mobile: null }));
+  };
+
   const validate = () => {
     const e = {};
     if (!form.name.trim()) e.name = 'Full name is required';
     if (!form.email.trim()) e.email = 'Valid email is required';
-    if (!form.mobile.trim()) e.mobile = 'Mobile number is required';
-    if (!form.position) e.position = 'Please select a position';
+
+    const rawMobile = form.mobile.trim();
+    if (!rawMobile) {
+      e.mobile = 'Mobile number is required';
+    } else {
+      const digitsOnly = rawMobile.replace(/\D/g, '');
+      const config = getCountryConfig(form.countryCode);
+      if (digitsOnly.length < config.minLength) {
+        if (config.minLength === config.maxLength) {
+          e.mobile = `Mobile number must be exactly ${config.maxLength} digits for the selected country`;
+        } else {
+          e.mobile = `Mobile number must be between ${config.minLength} and ${config.maxLength} digits for the selected country`;
+        }
+      }
+    }
+
     if (!termsAccepted) e.termsAccepted = 'You must acknowledge the declaration before submitting.';
     return e;
   };
@@ -43,12 +133,20 @@ export default function CareersPage() {
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
 
+    setIsLoading(true);
     const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api/v1';
+    
+    // Combine country code and main mobile number for submission
+    const combinedForm = {
+      ...form,
+      mobile: `${form.countryCode} ${form.mobile.trim()}`
+    };
+
     try {
       const response = await fetch(`${API_BASE}/careers/apply`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+        body: JSON.stringify(combinedForm)
       });
 
       const data = await response.json();
@@ -82,7 +180,7 @@ export default function CareersPage() {
         <div className="section-header">
           <span className="section-eyebrow">Join the Leadership</span>
           <h2 className="section-h2">Opportunities at Shell MRPL Aviation</h2>
-          <p className="section-intro">
+          <p className="section-intro" style={{ textAlign: 'justify' }}>
             Be part of a world-class team that powers the future of Indian aviation.
             We look for excellence, integrity, and a passion for safety.
           </p>
@@ -143,18 +241,66 @@ export default function CareersPage() {
                   </div>
                   <div className="form-group">
                     <label className="form-label">Mobile Number *</label>
-                    <input className="form-input" type="tel" value={form.mobile} onChange={update('mobile')} placeholder="10-digit mobile number" />
+                    <div style={{ display: 'flex', gap: '8px', alignItems: 'stretch' }}>
+                      <select 
+                        className="form-select" 
+                        value={form.countryCode} 
+                        onChange={handleCountryCodeChange}
+                        style={{ 
+                          width: '160px', 
+                          flexShrink: 0, 
+                          paddingLeft: '12px', 
+                          paddingRight: '12px',
+                          height: '50px',
+                          boxSizing: 'border-box'
+                        }}
+                      >
+                        <option value="+91">+91 (India)</option>
+                        <option value="+1">+1 (US/Canada)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+971">+971 (UAE)</option>
+                        <option value="+65">+65 (Singapore)</option>
+                        <option value="+61">+61 (Australia)</option>
+                        <option value="+49">+49 (Germany)</option>
+                        <option value="+33">+33 (France)</option>
+                        <option value="+81">+81 (Japan)</option>
+                        <option value="+86">+86 (China)</option>
+                        <option value="+966">+966 (Saudi Arabia)</option>
+                        <option value="+968">+968 (Oman)</option>
+                        <option value="+974">+974 (Qatar)</option>
+                        <option value="+973">+973 (Bahrain)</option>
+                        <option value="+965">+965 (Kuwait)</option>
+                        <option value="+27">+27 (South Africa)</option>
+                        <option value="+31">+31 (Netherlands)</option>
+                        <option value="+41">+41 (Switzerland)</option>
+                        <option value="+39">+39 (Italy)</option>
+                        <option value="+7">+7 (Russia)</option>
+                        <option value="+64">+64 (New Zealand)</option>
+                        <option value="+60">+60 (Malaysia)</option>
+                        <option value="+62">+62 (Indonesia)</option>
+                        <option value="+66">+66 (Thailand)</option>
+                        <option value="+82">+82 (South Korea)</option>
+                        <option value="+55">+55 (Brazil)</option>
+                        <option value="+52">+52 (Mexico)</option>
+                        <option value="+34">+34 (Spain)</option>
+                        <option value="+46">+46 (Sweden)</option>
+                        <option value="+47">+47 (Norway)</option>
+                      </select>
+                      <input 
+                        className="form-input" 
+                        type="tel" 
+                        value={form.mobile} 
+                        onChange={handleMobileChange} 
+                        placeholder="Mobile number" 
+                        style={{ 
+                          flex: 1,
+                          height: '50px',
+                          boxSizing: 'border-box'
+                        }}
+                      />
+                    </div>
                     {errors.mobile && <p className="error-text">{errors.mobile}</p>}
                   </div>
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label">Target Position *</label>
-                  <select className="form-select" value={form.position} onChange={update('position')}>
-                    <option value="">Select a position</option>
-                    {POSITIONS.map((p) => <option key={p} value={p}>{p}</option>)}
-                  </select>
-                  {errors.position && <p className="error-text">{errors.position}</p>}
                 </div>
               </div>
 
@@ -162,7 +308,19 @@ export default function CareersPage() {
                 <h3 className="footer-h" style={{ color: 'var(--grey-900)', marginBottom: '32px' }}>Academic and Professional</h3>
                 <div className="form-group">
                   <label className="form-label">Brief Experience Summary</label>
-                  <textarea className="form-textarea" value={form.workExperience} onChange={update('workExperience')} placeholder="Tell us about your previous roles and key achievements..." rows={4} />
+                  <textarea 
+                    className="form-textarea" 
+                    value={form.workExperience} 
+                    onChange={handleSummaryChange} 
+                    placeholder="Tell us about your previous roles and key achievements (maximum 100 words)..." 
+                    rows={4} 
+                    style={{ marginBottom: '6px' }}
+                  />
+                  <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 'bold', color: getWordCount(form.workExperience) >= 100 ? 'var(--shell-red)' : 'var(--grey-600)' }}>
+                      {getWordCount(form.workExperience)} / 100 words
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -179,7 +337,7 @@ export default function CareersPage() {
                     }}
                     style={{ marginTop: '4px', width: '20px', height: '20px', accentColor: 'var(--shell-red)', flexShrink: 0 }}
                   />
-                  <span style={{ fontSize: '14px', color: 'var(--grey-700)', lineHeight: '1.5' }}>
+                  <span style={{ fontSize: '14px', color: 'var(--grey-700)', lineHeight: '1.5', textAlign: 'justify' }}>
                     I hereby declare that the information provided in this application is true and correct to the best of my knowledge. I understand that any false statements or misrepresentations may lead to the rejection of my application or termination of employment. I further consent to the collection, processing, storage, and use of my personal data for recruitment, verification, employment-related purposes, and compliance with applicable data protection laws.
                   </span>
                 </label>

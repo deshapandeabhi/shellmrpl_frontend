@@ -1,25 +1,23 @@
+import React, { useState } from 'react';
 import PageHero from '../components/PageHero';
+import { PdfModal } from './AnnualReturnPage';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api/v1';
 
+// Changes #17 & #18 — removed image cards, retain only CSR Projects panel
+// Change #16 — title on single full-width line
+// Change #19 — same modal used for Annual Returns
 const DOWNLOADS = [
-  { label: 'CSR Projects 2024-25', url: `${API_BASE}/documents/csr/CSR-Approved-Projects-for-FY-2024-25.pdf` },
+  { label: 'CSR Projects 2024-25', url: '/wp-content/uploads/2024/09/CSR-Approved-Projects-for-FY-2024-25.pdf' },
   { label: 'CSR Projects 2023-24', url: '/assets/docs/annual-returns/CSR-PROJECTS-2023-24.pdf' },
-  { label: 'CSR Projects 2022-23', url: `${API_BASE}/documents/csr/CSR-Report-22-23.pdf` },
-  { label: 'CSR Projects 2021-22', url: `${API_BASE}/documents/csr/CSR-PROJECTS-2021-22.pdf` },
-  { label: 'CSR Projects 2020-21', url: `${API_BASE}/documents/csr/CSR-PROJECTS-2020-21.pdf` },
-  { label: 'CSR Projects 2019-20', url: `${API_BASE}/documents/csr/PROJECTS-2019-20.pdf` },
-  { label: 'CSR Projects 2018-19', url: `${API_BASE}/documents/csr/PROJECTS-2018-19.pdf` },
-  { label: 'CSR Projects 2017-18', url: `${API_BASE}/documents/csr/PROJECTS-2017-18.pdf` },
-  { label: 'CSR Projects 2016-17', url: `${API_BASE}/documents/csr/PROJECTS-2016-17.pdf` },
-  { label: 'CSR Projects 2015-16', url: `${API_BASE}/documents/csr/PROJECTS-2015-16.pdf` },
-];
-
-const IMAGES = [
-  { img: '/assets/docs/gallery/science_lab.webp', cat: 'Education', title: 'Mini Science Lab' },
-  { img: '/assets/docs/gallery/infrastructure.jpg', cat: 'Sanitation', title: 'Community Infrastructure' },
-  { img: '/assets/docs/gallery/mrpl_medical.jpg', cat: 'Health', title: 'Medical Support Facilities' },
-  { img: '/assets/docs/gallery/local_engagement.avif', cat: 'Community', title: 'Local Engagement Programs' },
+  { label: 'CSR Projects 2022-23', url: '/wp-content/uploads/2023/12/CSR-Report-22-23.pdf' },
+  { label: 'CSR Projects 2021-22', url: '/wp-content/uploads/2022/06/CSR-PROJECTS-2021-22.pdf' },
+  { label: 'CSR Projects 2020-21', url: '/wp-content/uploads/2022/06/CSR-PROJECTS-2020-21.pdf' },
+  { label: 'CSR Projects 2019-20', url: '/wp-content/uploads/2021/02/PROJECTS-2019-20.pdf' },
+  { label: 'CSR Projects 2018-19', url: '/wp-content/uploads/2021/02/PROJECTS-2018-19.pdf' },
+  { label: 'CSR Projects 2017-18', url: '/wp-content/uploads/2021/02/PROJECTS-2017-18.pdf' },
+  { label: 'CSR Projects 2016-17', url: '/wp-content/uploads/2021/02/PROJECTS-2016-17.pdf' },
+  { label: 'CSR Projects 2015-16', url: '/wp-content/uploads/2021/02/PROJECTS-2015-16.pdf' },
 ];
 
 function PdfIcon() {
@@ -34,6 +32,8 @@ function PdfIcon() {
 }
 
 export default function CSRProjectsPage() {
+  const [activeDoc, setActiveDoc] = useState(null);
+
   return (
     <div className="site-page">
       <PageHero
@@ -42,55 +42,53 @@ export default function CSRProjectsPage() {
       />
 
       <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
-        <div className="section-header">
+        {/* Change #16 — full-width single-line heading */}
+        <div className="section-header" style={{ maxWidth: '100%' }}>
           <span className="section-eyebrow">CSR Initiatives</span>
-          <h2 className="section-h2">Empowering Local Communities</h2>
+          <h2 className="section-h2" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            Empowering Local Communities
+          </h2>
           <p className="section-intro">
             Through targeted interventions in education, health, and infrastructure,
             we aim to create a lasting positive legacy in the regions we serve.
           </p>
         </div>
 
-        <div className="project-highlight-grid">
-          {IMAGES.map((item, i) => (
-            <div key={i} className="project-card glass">
-              <div className="project-img-wrap">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="project-photo"
-                  onError={e => { e.target.style.background = 'var(--gray-200)'; }}
-                />
-                <span className="project-badge">{item.cat}</span>
-              </div>
-              <div className="project-body">
-                <h3 className="project-title">{item.title}</h3>
-                <p className="project-desc">Investing in the next generation and building resilient community assets.</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="csr-archive-section glass" style={{ marginTop: '80px', padding: 'clamp(20px, 5vw, 60px)', borderRadius: 'var(--radius-xl)' }}>
-          <h3 className="footer-h" style={{ color: 'var(--grey-900)', marginBottom: '40px' }}>Approved Project Archives</h3>
+        {/* Changes #17 #18 — image cards removed, only CSR Projects panel retained */}
+        <div
+          className="csr-archive-section glass"
+          style={{ marginTop: '40px', padding: 'clamp(20px, 5vw, 60px)', borderRadius: 'var(--radius-xl)' }}
+        >
+          <h3 className="footer-h" style={{ color: 'var(--grey-900)', marginBottom: '40px' }}>
+            Approved Project Archives
+          </h3>
           <div className="csr-dl-grid">
             {DOWNLOADS.map((item, i) => (
-              <a
+              /* Change #19 — modal viewer same as Annual Returns */
+              <button
                 key={i}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="csr-dl-item"
+                onClick={() => setActiveDoc(item)}
+                aria-label={`View ${item.label} (PDF)`}
               >
                 <div className="dl-icon-c"><PdfIcon /></div>
                 <div className="dl-info">
                   <span className="dl-label">{item.label}</span>
                 </div>
-              </a>
+              </button>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Change #19 — same modal as Annual Returns */}
+      {activeDoc && (
+        <PdfModal
+          url={activeDoc.url}
+          title={activeDoc.label}
+          onClose={() => setActiveDoc(null)}
+        />
+      )}
     </div>
   );
 }

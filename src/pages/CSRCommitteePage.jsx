@@ -31,7 +31,7 @@ export default function CSRCommitteePage() {
           <table className="brand-table">
             <thead>
               <tr>
-                <th>Name of the Official</th>
+                <th>Name of the Committee Member</th>
                 <th>Role in the Committee</th>
               </tr>
             </thead>

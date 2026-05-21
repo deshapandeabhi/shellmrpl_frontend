@@ -5,37 +5,42 @@ const BASE_IMG_URL = '/assets/team';
 const DIRECTORS = [
   {
     name: 'Mr. Mundkur Shyamprasad Kamath',
-    role: 'Chairman, Shell MRPL Aviation and Director, MRPL',
+    role: 'Chairman',
     image: `${BASE_IMG_URL}/Mundkur_Shyamprasad_Kamath.png`,
+    // Full-body PNG — zoom in on face via scale + top positioning
+    imgStyle: { objectFit: 'cover', objectPosition: '50% 10%', transform: 'scale(1.4)', transformOrigin: '50% 10%' },
   },
   {
     name: 'Mr. Sanjay Samuel Varkey',
-    role: 'Director, Shell MRPL Aviation Fuels and Services Limited and Shell India Markets Private Limited',
+    role: 'Director',
     image: `${BASE_IMG_URL}/Sanjay Varkey.jpg`,
+    imgStyle: { objectFit: 'cover', objectPosition: 'top center' },
   },
   {
     name: 'Mr. BH Vasudev Prasad',
-    role: 'Director, Shell MRPL Aviation Fuels and Services Limited and ED-Projects in MRPL',
+    role: 'ED-Projects, MRPL',
     image: `${BASE_IMG_URL}/BH_Vasudev_Prasad.png`,
+    // Full-body PNG — zoom in on face
+    imgStyle: { objectFit: 'cover', objectPosition: '50% 10%', transform: 'scale(1.4)', transformOrigin: '50% 10%' },
   },
   {
     name: 'Mr. Ziad Victor Soussou',
-    role: 'Director, Shell MRPL Aviation',
+    role: 'Director',
     image: `${BASE_IMG_URL}/Ziad_Victor_Soussou.jpg`,
   },
   {
     name: 'Dr. Sangeeta Sumesh',
-    role: 'Independent Director, Shell MRPL Aviation',
+    role: 'Independent Director',
     image: `${BASE_IMG_URL}/Sangeeta_Sumesh.jpg`,
   },
   {
     name: 'Dr. Ravi Kumar Rentala',
-    role: 'Independent Director, Shell MRPL Aviation and Chairman, BEC Pvt Ltd',
+    role: 'Independent Director and Chairman, BEC Pvt Ltd',
     image: `${BASE_IMG_URL}/Ravi Kumar Rentala.jpg`,
   },
   {
     name: 'Mr. Niyant Maru',
-    role: 'Independent Director, Shell MRPL Aviation',
+    role: 'Independent Director',
     image: `${BASE_IMG_URL}/Niyant Maru.jpg`,
   },
 ];
@@ -44,7 +49,6 @@ export default function BoardPage() {
   return (
     <div className="site-page">
       <PageHero
-        imageSrc="/wp-content/uploads/2016/08/board_of_director-bg.jpg"
         title="Our Leadership"
         breadcrumbs={[{ label: 'Board of Directors' }]}
       />
@@ -67,6 +71,7 @@ export default function BoardPage() {
                   src={p.image}
                   alt={p.name}
                   className="mgmt-photo"
+                  style={p.imgStyle || {}}
                   onError={e => {
                     e.target.style.background = 'var(--gray-200)';
                   }}

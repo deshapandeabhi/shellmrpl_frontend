@@ -99,16 +99,7 @@ export default function CSRPolicyPage() {
           </section>
         ))}
 
-        <div style={{ marginTop: 40, textAlign: 'center' }}>
-          <a
-            href={`${import.meta.env.VITE_API_BASE_URL || '/api/v1'}/documents/wp-content/Annual-Return-2021-22.pdf`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-blue"
-          >
-            Download Full CSR Policy (PDF)
-          </a>
-        </div>
+
       </div>
     </div>
   );

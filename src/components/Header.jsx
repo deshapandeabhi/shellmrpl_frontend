@@ -156,8 +156,6 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           align-items: center;
           padding: 15px 0;
           background: var(--shell-white);
-          /* Shell Yellow top accent — satisfies ≥5% Yellow focal-point rule */
-          border-top: 4px solid var(--shell-yellow);
         }
 
 
