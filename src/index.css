@@ -1,60 +1,57 @@
-/* ── Shell Brand Typography ── */
+/* ── Futura Brand Typography ── */
 @font-face {
-  font-family: 'Shell';
-  src: url('./assets/fonts/ShellLight.woff2') format('woff2');
+  font-family: 'Futura';
+  src: url('./assets/fonts/Futura Light font.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
-
 @font-face {
-  font-family: 'Shell';
-  src: url('./assets/fonts/ShellBook.woff2') format('woff2');
+  font-family: 'Futura';
+  src: url('./assets/fonts/Futura Book font.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-
 @font-face {
-  font-family: 'Shell';
-  src: url('./assets/fonts/ShellMedium.woff2') format('woff2');
+  font-family: 'Futura';
+  src: url('./assets/fonts/Futura Heavy font.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
-
 @font-face {
-  font-family: 'Shell';
-  src: url('./assets/fonts/ShellBold.woff2') format('woff2');
+  font-family: 'Futura';
+  src: url('./assets/fonts/Futura Bold font.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Shell';
-  src: url('./assets/fonts/ShellHeavy.woff2') format('woff2');
+  font-family: 'Futura';
+  src: url('./assets/fonts/Futura Extra Black font.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
 }
 
 /* Condensed variants */
 @font-face {
-  font-family: 'Shell Condensed';
-  src: url('./assets/fonts/ShellCondensedLight.woff2') format('woff2');
+  font-family: 'Futura Condensed';
+  src: url('./assets/fonts/Futura-CondensedLight.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Shell Condensed';
-  src: url('./assets/fonts/ShellCondensedMedium.woff2') format('woff2');
+  font-family: 'Futura Condensed';
+  src: url('./assets/fonts/futura medium condensed bt.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Shell Condensed';
-  src: url('./assets/fonts/ShellCondensedBold.woff2') format('woff2');
+  font-family: 'Futura Condensed';
+  src: url('./assets/fonts/Futura Bold font.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -150,9 +147,9 @@ p {
   --white: var(--shell-white);
 
   /* ── TYPOGRAPHY ── */
-  --font-primary: 'Shell', sans-serif;
-  --font-secondary: 'Shell', sans-serif;
-  --font-condensed: 'Shell Condensed', sans-serif;
+  --font-primary: 'Futura', sans-serif;
+  --font-secondary: 'Futura', sans-serif;
+  --font-condensed: 'Futura Condensed', sans-serif;
   --font-body: var(--font-primary);
   --font-heading: var(--font-secondary);
   --font-main: var(--font-primary);
