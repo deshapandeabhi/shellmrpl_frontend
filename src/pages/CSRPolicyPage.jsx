@@ -80,7 +80,7 @@ export default function CSRPolicyPage() {
         breadcrumbs={[{ label: 'Investors Information', to: '/investors-information' }, { label: 'CSR Policy' }]}
       />
       <div className="content-wrap content-narrow">
-        <h2 className="page-h3">CSR Policy<span style={{ fontWeight: 500 }}></span></h2>
+        <h2 className="page-h2">CSR Policy</h2>
         <div className="body-text" style={{ marginBottom: 36 }}>
           <p>
             Shell MRPL Aviation Fuels and Services Limited (hereinafter referred as ‘the Company’) believes in the conduct of its affairs in a fair and transparent manner by adopting highest standards of professionalism, honesty, integrity and ethical behaviour and in complete compliance of laws, as amended from time to time.

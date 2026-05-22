@@ -1693,6 +1693,22 @@ p {
   background: var(--shell-yellow);
 }
 
+.section-h2 {
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--gray-100);
+  position: relative;
+}
+
+.section-h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--shell-yellow);
+}
+
 .page-h3 {
   font-family: var(--font-heading);
   font-weight: 900;
