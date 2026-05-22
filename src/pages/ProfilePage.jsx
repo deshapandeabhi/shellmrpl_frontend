@@ -271,7 +271,7 @@ export default function ProfilePage() {
               <Link to="/shell-mrpl-aviation-network" className="btn-impact">
                 View Network Map
               </Link>
-              <Link to="/contact" className="btn-impact btn-impact-ghost" style={{ marginLeft: '16px' }}>
+              <Link to="/contact" className="btn-impact btn-impact-ghost">
                 Connect With Us
               </Link>
             </div>

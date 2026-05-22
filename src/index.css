@@ -3564,7 +3564,7 @@ p {
   color: var(--shell-white);
   position: relative;
   overflow: hidden;
-  text-align: left;
+  text-align: center;
 }
 
 .cta-overlay {

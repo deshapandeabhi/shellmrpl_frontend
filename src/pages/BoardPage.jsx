@@ -35,7 +35,7 @@ const DIRECTORS = [
   },
   {
     name: 'Dr. Ravi Kumar Rentala',
-    role: 'Independent Director and Chairman, BEC Pvt Ltd',
+    role: 'Independent Director and Chairman\nBEC Pvt Ltd',
     image: `${BASE_IMG_URL}/Ravi Kumar Rentala.jpg`,
   },
   {
@@ -79,7 +79,7 @@ export default function BoardPage() {
               </div>
               <div className="mgmt-info">
                 <h3 className="mgmt-name">{p.name}</h3>
-                <span className="mgmt-role">{p.role}</span>
+                <span className="mgmt-role" style={{ whiteSpace: 'pre-line' }}>{p.role}</span>
               </div>
             </div>
           ))}
