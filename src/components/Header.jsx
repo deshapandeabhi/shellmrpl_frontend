@@ -343,18 +343,11 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           .site-logo { width: 240px; }
         }
 
-        @media (max-width: 1180px) {
-          .desktop-nav { gap: 6px; }
-          .nav-link { font-size: 13px; }
-          .site-logo { width: 200px; }
-          .header-actions .btn-impact { padding: 8px 16px; font-size: 13px; }
-        }
-
-        @media (max-width: 991px) {
-          /* Trigger hamburger menu for tablet and mobile only */
+        @media (max-width: 1240px) {
+          /* Trigger hamburger menu for tablet and smaller laptop screens to prevent overflow */
           .desktop-nav, .header-actions-link, .header-actions .btn-impact { display: none; }
           .hamburger-btn { display: flex; }
-          .site-logo { width: 180px; }
+          .site-logo { width: 200px; }
         }
 
         @media (max-width: 768px) {
