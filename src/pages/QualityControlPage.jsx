@@ -20,7 +20,7 @@ export default function QualityControlPage() {
         <div className="body-text" style={{ marginBottom: 36, textAlign: 'justify' }}>
           <p>
             Robust processes ensure that quality of Jet fuel is maintained as per specifications throughout its
-            Supply chain. Some of the practices followed by Shell MRPL Aviation are:
+            Supply chain. Some of the practices followed by Shell MRPL Aviation Fuels and Services Limited are:
           </p>
         </div>
 

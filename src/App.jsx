@@ -33,7 +33,7 @@ function RouteTracker() {
       '/about': { title: 'About Us', desc: 'Learn about our strategic partnership between Shell and MRPL.' },
       '/vision-and-values': { title: 'Vision & Values', desc: 'Our core values, business principles, and commitment to integrity.' },
       '/board-of-directors': { title: 'Board of Directors', desc: 'The leadership guiding Shell MRPL Aviation Fuels and Services Limited.' },
-      '/management-team': { title: 'Management Team', desc: 'The executive management team at Shell MRPL Aviation.' },
+      '/management-team': { title: 'Management Team', desc: 'The executive management team at Shell MRPL Aviation Fuels and Services Limited.' },
       '/products-services': { title: 'Products & Services', desc: 'Aviation turbine fuel, technical services, and operational excellence.' },
       '/shell-mrpl-aviation-network': { title: 'Our Network', desc: 'Discover our operational presence across major Indian airports.' },
       '/posted-airfield-prices': { title: 'Airfield Prices', desc: 'Current posted prices for aviation fuel across our network.' },
@@ -41,14 +41,14 @@ function RouteTracker() {
       '/quality-control': { title: 'Quality Control', desc: 'Industry-leading quality assurance and product integrity.' },
       '/annual-return': { title: 'Annual Returns', desc: 'Financial and corporate compliance records and downloads.' },
       '/csr': { title: 'CSR', desc: 'Corporate Social Responsibility initiatives and community impact.' },
-      '/careers': { title: 'Careers', desc: 'Explore career opportunities and join the Shell MRPL Aviation team.' },
+      '/careers': { title: 'Careers', desc: 'Explore career opportunities and join the Shell MRPL Aviation Fuels and Services Limited team.' },
       '/contact-us': { title: 'Contact Us', desc: 'Get in touch with our departments for sales, media, or general queries.' },
       '/legal': { title: 'Legal & Privacy', desc: 'Legal policies, terms of service, and privacy guidelines.' }
     };
 
     const current = routes[pathname] || { title: 'Aviation Services', desc: 'Shell MRPL Aviation Fuels and Services Limited' };
     
-    document.title = `${current.title} | Shell MRPL Aviation`;
+    document.title = `${current.title} | Shell MRPL Aviation Fuels and Services Limited`;
     
     let metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {

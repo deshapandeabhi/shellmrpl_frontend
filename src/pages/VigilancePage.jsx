@@ -33,7 +33,7 @@ export default function VigilancePage() {
             Board of Shell MRPL Aviation Fuels and Services Limited has decided to adopt vigilance administration in the organization as per the guidelines of Central Vigilance Commission as prevalent in parent company MRPL. The Vigilance system in Shell MRPL Aviation Fuels and Services Limited will be administered by CVO, MRPL.
           </p>
           <p>
-            Shell MRPL Aviation has been instrumental in bringing change in policies like Purchase tendering process, filing the Annual Returns by the employees etc.
+            Shell MRPL Aviation Fuels and Services Limited has been instrumental in bringing change in policies like Purchase tendering process, filing the Annual Returns by the employees etc.
           </p>
           <p>
             Shell MRPL is committed for highest standards of “Business ethics and Values” along with the vision of the Company. Working with ethical values and Undoubted integrity in providing the services to the customers are the foundation of good governance. Honest Officers and Transparency in administration creates an environment for good governance and enhances the overall performance of the Organization. A watchful, alert and independent Vigilance function is essential for the success and sustenance of such good governance. Vigilance function also focus on effective systemic improvements for better transparency taking advantage of the available technology and e-governance.

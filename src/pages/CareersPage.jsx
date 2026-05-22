@@ -225,7 +225,7 @@ export default function CareersPage() {
       <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
         <div className="section-header">
           <span className="section-eyebrow">Join the Leadership</span>
-          <h2 className="section-h2">Opportunities at Shell MRPL Aviation</h2>
+          <h2 className="section-h2">Opportunities at Shell MRPL Aviation Fuels and Services Limited</h2>
           <p className="section-intro" style={{ textAlign: 'justify' }}>
             Be part of a world-class team that powers the future of Indian aviation.
             We look for excellence, integrity, and a passion for safety.

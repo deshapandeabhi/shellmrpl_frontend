@@ -68,7 +68,7 @@ export default function Footer() {
 
           <div className="footer-newsletter">
             <h4 className="footer-h">Careers</h4>
-            <p className="footer-desc" style={{ fontSize: '13px' }}>Become a part of our world-class aviation network. Explore opportunities to grow with Shell MRPL Aviation.</p>
+            <p className="footer-desc" style={{ fontSize: '13px' }}>Become a part of our world-class aviation network. Explore opportunities to grow with Shell MRPL Aviation Fuels and Services Limited.</p>
             <div className="newsletter-form" style={{ marginTop: '20px' }}>
               <Link
                 to="/careers"

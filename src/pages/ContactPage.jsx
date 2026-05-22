@@ -68,7 +68,7 @@ export default function ContactPage() {
             </div>
             <div className="contact-card-body" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '16px' }}>
               <div>
-                <div className="contact-name" style={{ fontSize: '15px' }}>Shell MRPL Aviation Fuels & Services Ltd.</div>
+                <div className="contact-name" style={{ fontSize: '15px' }}>Shell MRPL Aviation Fuels and Services Limited</div>
                 <div className="contact-role" style={{ marginTop: '6px', lineHeight: '1.6' }}>
                   #102 Prestige Sigma, Vittal Mallya Road,<br />
                   Bangalore, Karnataka – 560001, India.

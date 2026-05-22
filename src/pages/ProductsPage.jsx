@@ -20,10 +20,10 @@ export default function ProductsPage() {
         <h2 className="page-h2">Products and Services</h2>
         <div className="body-text" style={{ marginBottom: 32, textAlign: 'justify' }}>
           <p>
-            Shell MRPL Aviation provides solutions for Aviation Turbine Fuel requirements to its customers and offers an integrated end to end partnership with Shell Aviation, the only multi-national oil company with a government license to market aviation fuels in India. Shell MRPL Aviation adds value to our partners through:
+            Shell MRPL Aviation Fuels and Services Limited provides solutions for Aviation Turbine Fuel requirements to its customers and offers an integrated end to end partnership with Shell Aviation, the only multi-national oil company with a government license to market aviation fuels in India.
           </p>
           <p style={{ marginTop: '16px' }}>
-            Shell MRPL Aviation adds value to our partners through:
+            Shell MRPL Aviation Fuels and Services Limited adds value to our partners through:
           </p>
         </div>
 

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const NAV = [
   {
-    label: 'About Shell MRPL Aviation',
+    label: 'About Shell MRPL Aviation Fuels and Services Limited',
     path: '/about',
     children: [
       { label: 'Profile', path: '/' },
@@ -17,7 +17,7 @@ const NAV = [
     path: '/products-services',
     children: [
       { label: 'Products and Services', path: '/products-services' },
-      { label: 'Shell MRPL Aviation Network', path: '/shell-mrpl-aviation-network' },
+      { label: 'Shell MRPL Aviation Fuels and Services Limited Network', path: '/shell-mrpl-aviation-network' },
       // { label: 'Posted Airfield Prices', path: '/posted-airfield-prices' },
       // { label: "Shell Aviation's Global Network", path: '/shell-aviations-global-network' },
     ],
@@ -49,7 +49,7 @@ const NAV = [
       { label: 'CSR Projects', path: '/csr/projects' },
     ],
   },
-  { label: 'Working with Shell MRPL Aviation', path: '/working-with-shell-mrpl-aviation-2' },
+  { label: 'Working with Shell MRPL Aviation Fuels and Services Limited', path: '/working-with-shell-mrpl-aviation-2' },
   { label: 'Employee Login', path: '/login' },
 ];
 
