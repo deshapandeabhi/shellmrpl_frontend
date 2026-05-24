@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import indiaMap from '../assets/images/indian_map.jpg';
 import PageHero from '../components/PageHero';
 
@@ -25,8 +26,10 @@ function PinIcon() {
 }
 
 export default function NetworkPage() {
+  const [selectedApt, setSelectedApt] = useState(null);
+
   return (
-    <div className="site-page">
+    <div className="site-page" onClick={() => setSelectedApt(null)}>
       <PageHero
         title="Our Strategic Network"
         breadcrumbs={[{ label: 'Aviation Network' }]}
@@ -43,28 +46,68 @@ export default function NetworkPage() {
         </div>
 
         <div className="network-map-section reveal">
-          <div className="map-container">
+          <div className="map-container" onClick={() => setSelectedApt(null)}>
             <img loading="lazy" src={indiaMap} alt="India Network Map" className="map-image" />
             <div className="map-points-layer">
               {AIRPORTS.map((apt, i) => (
-                <div key={i} className="map-point-wrapper" style={{ left: `${apt.x}%`, top: `${apt.y}%` }}>
-                  <div className="map-point"></div>
-                  <div className="map-tooltip">
+                <div 
+                  key={i} 
+                  className={`map-point-wrapper ${selectedApt === i ? 'active' : ''}`} 
+                  style={{ left: `${apt.x}%`, top: `${apt.y}%` }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedApt(selectedApt === i ? null : i);
+                  }}
+                >
+                  <div className="map-pin-container">
+                    <svg viewBox="0 0 24 24" width="32" height="32" style={{ display: 'block' }}>
+                      <path 
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                        fill="#DD1D21"
+                        stroke="#ffffff"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                    <div className="map-pin-pulse"></div>
+                  </div>
+                  <div className="map-tooltip desktop-only-tooltip">
                     <div className="airport-name-tip">{apt.name.split(',')[0]}</div>
                     <div style={{ opacity: 0.85, fontSize: '11px', color: 'white', fontWeight: 500 }}>{apt.code}</div>
                   </div>
                 </div>
               ))}
             </div>
+
+            {/* Mobile-only Premium Bottom Floating Card */}
+            {selectedApt !== null && (
+              <div 
+                className="map-mobile-card"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="map-mobile-card-accent"></div>
+                <div className="map-mobile-card-content">
+                  <div className="map-mobile-card-name">{AIRPORTS[selectedApt].name}</div>
+                  <div className="map-mobile-card-code">{AIRPORTS[selectedApt].code}</div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
         <div className="airport-grid" style={{ marginTop: '80px' }}>
           {AIRPORTS.map((apt, i) => (
-            <div key={i} className="airport-card reveal">
-              <div className="airport-icon-c"><PinIcon /></div>
+            <div 
+              key={i} 
+              className={`airport-card reveal ${selectedApt === i ? 'active' : ''}`}
+              style={{ cursor: 'pointer', borderLeft: selectedApt === i ? '4px solid var(--shell-red)' : 'none' }}
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedApt(selectedApt === i ? null : i);
+              }}
+            >
+              <div className="airport-icon-c" style={{ color: selectedApt === i ? 'var(--shell-red)' : 'inherit' }}><PinIcon /></div>
               <div className="airport-info">
-                <div className="airport-name-text">{apt.name}</div>
+                <div className="airport-name-text" style={{ color: selectedApt === i ? 'var(--shell-red)' : 'inherit', fontWeight: selectedApt === i ? '900' : 'inherit' }}>{apt.name}</div>
                 <div className="airport-code-text">{apt.code}</div>
               </div>
             </div>

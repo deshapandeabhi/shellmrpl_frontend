@@ -6,9 +6,8 @@ const DIRECTORS = [
   {
     name: 'Mr. Mundkur Shyamprasad Kamath',
     role: 'Chairman',
-    image: `${BASE_IMG_URL}/Mundkur_Shyamprasad_Kamath.png`,
-    // Full-body PNG — zoom in on face via scale + top positioning
-    imgStyle: { objectFit: 'cover', objectPosition: '50% 10%', transform: 'scale(1.4)', transformOrigin: '50% 10%' },
+    image: `${BASE_IMG_URL}/Mundkur Shyamprasad Kamath.jpeg`,
+    imgStyle: { objectFit: 'cover', objectPosition: 'top center' },
   },
   {
     name: 'Mr. Sanjay Samuel Varkey',
@@ -18,7 +17,7 @@ const DIRECTORS = [
   },
   {
     name: 'Mr. BH Vasudev Prasad',
-    role: 'ED-Projects, MRPL',
+    role: 'Director',
     image: `${BASE_IMG_URL}/BH_Vasudev_Prasad.png`,
     // Full-body PNG — zoom in on face
     imgStyle: { objectFit: 'cover', objectPosition: '50% 10%', transform: 'scale(1.4)', transformOrigin: '50% 10%' },
@@ -63,9 +62,59 @@ export default function BoardPage() {
           </p>
         </div>
 
-        <div className="brand-grid">
-          {DIRECTORS.map((p, i) => (
-            <div key={i} className="management-card col-span-3 reveal">
+        {/* Row 1: Chairman centered */}
+        <div className="board-row-center">
+          {(() => {
+            const p = DIRECTORS[0];
+            return (
+              <div className="management-card reveal">
+                <div className="mgmt-img-wrap">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="mgmt-photo"
+                    style={p.imgStyle || {}}
+                    onError={e => {
+                      e.target.style.background = 'var(--gray-200)';
+                    }}
+                  />
+                </div>
+                <div className="mgmt-info">
+                  <h3 className="mgmt-name">{p.name}</h3>
+                  <span className="mgmt-role" style={{ whiteSpace: 'pre-line' }}>{p.role}</span>
+                </div>
+              </div>
+            );
+          })()}
+        </div>
+
+        {/* Row 2: Directors (first 3) */}
+        <div className="board-grid-3">
+          {DIRECTORS.slice(1, 4).map((p, i) => (
+            <div key={i} className="management-card reveal">
+              <div className="mgmt-img-wrap">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  className="mgmt-photo"
+                  style={p.imgStyle || {}}
+                  onError={e => {
+                    e.target.style.background = 'var(--gray-200)';
+                  }}
+                />
+              </div>
+              <div className="mgmt-info">
+                <h3 className="mgmt-name">{p.name}</h3>
+                <span className="mgmt-role" style={{ whiteSpace: 'pre-line' }}>{p.role}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Row 3: Directors (next 3) */}
+        <div className="board-grid-3">
+          {DIRECTORS.slice(4).map((p, i) => (
+            <div key={i} className="management-card reveal">
               <div className="mgmt-img-wrap">
                 <img
                   src={p.image}

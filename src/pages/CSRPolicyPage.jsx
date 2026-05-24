@@ -83,7 +83,7 @@ export default function CSRPolicyPage() {
         <h2 className="page-h2">CSR Policy</h2>
         <div className="body-text" style={{ marginBottom: 36 }}>
           <p>
-            Shell MRPL Aviation Fuels and Services Limited (hereinafter referred as ‘the Company’) believes in the conduct of its affairs in a fair and transparent manner by adopting highest standards of professionalism, honesty, integrity and ethical behaviour and in complete compliance of laws, as amended from time to time.
+            Shell MRPL Aviation (hereinafter referred as ‘the Company’) believes in the conduct of its affairs in a fair and transparent manner by adopting highest standards of professionalism, honesty, integrity and ethical behaviour and in complete compliance of laws, as amended from time to time.
           </p>
         </div>
 

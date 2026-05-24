@@ -26,7 +26,7 @@ const NAV = [
     label: 'Company Parentage',
     path: '#',
     children: [
-      { label: 'Shell', path: 'https://www.shell.in' },
+      { label: 'Shell', path: 'https://www.shell.com' },
       { label: 'MRPL', path: 'https://www.mrpl.co.in' },
     ],
   },
@@ -352,10 +352,32 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
         @media (max-width: 768px) {
           .site-header {
-            padding: 10px 20px;
-            min-height: 70px;
+            padding: 10px 16px;
+            min-height: 64px;
           }
-          .site-logo { width: 180px; }
+          .site-logo { width: 160px; }
+        }
+
+        @media (max-width: 480px) {
+          .site-header {
+            padding: 8px 12px;
+          }
+          .site-logo { width: 135px; }
+          .site-header.is-scrolled {
+            padding: 0 12px;
+            margin: 8px 12px;
+            width: calc(100vw - 24px);
+            height: 60px;
+          }
+          .hamburger-btn {
+            width: 36px;
+            height: 36px;
+            gap: 4px;
+          }
+          .ham-line {
+            width: 18px;
+            height: 2px;
+          }
         }
 
         /* Mobile Drawer Overhaul */
@@ -585,7 +607,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           <Link to="/" className="site-logo-link">
             <img
               src="/wp-content/uploads/2023/09/logo.jpg"
-              alt="Shell MRPL Aviation Fuels and Services Limited"
+              alt="Shell MRPL Aviation"
               className="site-logo"
               onContextMenu={(e) => e.preventDefault()}
               draggable="false"

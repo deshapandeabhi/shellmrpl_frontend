@@ -2,7 +2,7 @@ import PageHero from '../components/PageHero';
 
 const PRACTICES = [
   'Adherence to DGCA approved Quality control manual. All approved locations are audited by DGCA annually and by SMA Quality Control Manager semi-annually.',
-  'Adherence to more stringent safety and operational standards of Shell Aviation. This is guided by Technical Service Agreement with Shell Aviation through annual audit by them. Shell Aviation provides access to their operation and safety bulletin which are circulated and changes implemented to improve standard in line with international standard.',
+  'Adherence to more stringent safety and operational standards of Shell MRPL Aviation. This is guided by Technical Service Agreement with Shell MRPL Aviation through annual audit by them. Shell MRPL Aviation provides access to their operation and safety bulletin which are circulated and changes implemented to improve standard in line with international standard.',
   'Third party /external audits including Airlines audits, supplier audits, Operator audits carried out at required intervals and compliance ensured.',
   'Guided by international QC operations standard JIG (Joint Inspection Group). Any changes in standards are implemented.',
   'Internal Safety audits and operational audits carried out periodically by internal auditors and compliance is ensured.',
@@ -20,15 +20,15 @@ export default function QualityControlPage() {
         <div className="body-text" style={{ marginBottom: 36, textAlign: 'justify' }}>
           <p>
             Robust processes ensure that quality of Jet fuel is maintained as per specifications throughout its
-            Supply chain. Some of the practices followed by Shell MRPL Aviation Fuels and Services Limited are:
+            Supply chain. Some of the practices followed by Shell MRPL Aviation are:
           </p>
         </div>
 
-        <div className="practice-list">
+        <div className="service-list">
           {PRACTICES.map((item, i) => (
-            <div key={i} className="practice-item">
-              <div className="practice-num">{i + 1}</div>
-              <p className="practice-text">{item}</p>
+            <div key={i} className="service-item">
+              <span className="service-num">0{i + 1}</span>
+              <p className="service-text" style={{ textAlign: 'justify' }}>{item}</p>
             </div>
           ))}
         </div>

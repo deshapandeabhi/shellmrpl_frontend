@@ -1,7 +1,7 @@
 import PageHero from '../components/PageHero';
 
 const PRACTICES = [
-  'Comply with Shell Aviation Policies and Standards, those of our joint venture partner MRPL, all applicable laws, regulations, and fiscal requirements.',
+  'Comply with Shell MRPL Aviation Policies and Standards, those of our joint venture partner MRPL, all applicable laws, regulations, and fiscal requirements.',
   'Operate with an HSSE culture built upon our Core Values of Honesty, Integrity, and Respect for People.',
   'Strive for Goal Zero incidents in our operations — recognizing that no business objective is so important that it should be pursued at the sacrifice of safety.',
   'Establish and review HSSE objectives continually to minimize the environmental impact of our operations.',
@@ -22,7 +22,7 @@ export default function HSSEPage() {
         <h2 className="page-h2">Health, Safety, Security and Environment (HSSE)</h2>
         <div className="body-text" style={{ marginBottom: 36, textAlign: 'justify' }}>
           <p>
-            Shell MRPL Aviation Fuels and Services Limited firmly believes in, promotes, and implements the principle of “Safety First”
+            Shell MRPL Aviation firmly believes in, promotes, and implements the principle of “Safety First”
             across all areas of its operations. HSSE remains under constant focus throughout the
             organization at all levels and areas, covering all spheres of activity, with a continued
             commitment to introducing new initiatives that contribute to the overall wellbeing of society.

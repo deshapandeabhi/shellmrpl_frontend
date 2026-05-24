@@ -5,11 +5,11 @@ const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api/v1';
 
 // Changes #12 & #13 — modal viewer instead of new tab, no download
 const RETURNS = [
-  { label: 'Annual Return — FY 2024-25', url: '/assets/docs/annual-returns/Annual-Return-2024-25.pdf' },
-  { label: 'Annual Return — FY 2023-24', url: '/wp-content/uploads/2024/09/Annual-Return-2023-24.pdf' },
-  { label: 'Annual Return — FY 2022-23', url: '/assets/docs/annual-returns/Annual-Return-2022-23.pdf' },
-  { label: 'Annual Return — FY 2021-22', url: '/wp-content/uploads/2021/04/Annual-Return-2021-22.pdf' },
-  { label: 'Annual Return — FY 2020-21', url: '/wp-content/uploads/2021/08/Annual-Return-FY-2020-21.pdf' },
+  { label: 'FY 2024-25', url: '/assets/docs/annual-returns/Annual-Return-2024-25.pdf' },
+  { label: 'FY 2023-24', url: '/wp-content/uploads/2024/09/Annual-Return-2023-24.pdf' },
+  { label: 'FY 2022-23', url: '/assets/docs/annual-returns/Annual-Return-2022-23.pdf' },
+  { label: 'FY 2021-22', url: '/wp-content/uploads/2021/04/Annual-Return-2021-22.pdf' },
+  { label: 'FY 2020-21', url: '/wp-content/uploads/2021/08/Annual-Return-FY-2020-21.pdf' },
 ];
 
 function PdfIcon() {

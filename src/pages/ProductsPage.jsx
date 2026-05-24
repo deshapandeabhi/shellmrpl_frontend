@@ -6,7 +6,7 @@ const SERVICES = [
   'Airport fuelling facility operations and management to international standards',
   'Airport master-planning and design of fuel infrastructure systems',
   'Fuel farm management — tank farms, hydrant systems, and into-plane equipment maintenance',
-  'Shell Aviation globally provides aviation fuelling services supporting airlines across more than 35 countries',
+  'Shell MRPL Aviation globally provides aviation fuelling services supporting airlines across more than 35 countries',
 ];
 
 export default function ProductsPage() {
@@ -20,10 +20,10 @@ export default function ProductsPage() {
         <h2 className="page-h2">Products and Services</h2>
         <div className="body-text" style={{ marginBottom: 32, textAlign: 'justify' }}>
           <p>
-            Shell MRPL Aviation Fuels and Services Limited provides solutions for Aviation Turbine Fuel requirements to its customers and offers an integrated end to end partnership with Shell Aviation, the only multi-national oil company with a government license to market aviation fuels in India.
+            Shell MRPL Aviation provides solutions for Aviation Turbine Fuel requirements to its customers and offers an integrated end to end partnership with Shell MRPL Aviation, the only multi-national oil company with a government license to market aviation fuels in India.
           </p>
           <p style={{ marginTop: '16px' }}>
-            Shell MRPL Aviation Fuels and Services Limited adds value to our partners through:
+            Shell MRPL Aviation adds value to our partners through:
           </p>
         </div>
 

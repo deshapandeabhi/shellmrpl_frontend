@@ -110,7 +110,7 @@ export default function ProfilePage() {
                 Fuelling India&apos;s Global Ambitions
               </h1>
               <p className="hero-subtitle reveal">
-                Shell MRPL Aviation Fuels and Services Limited is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel and operating airport fueling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India's largest national oil company.
+                Shell MRPL Aviation is a 50:50 Joint Venture Company formed in 2008 between Shell, a global leader in marketing aviation fuel and operating airport fueling facilities and Mangalore Refinery and Petrochemicals Limited (MRPL), a subsidiary of Oil and Natural Gas Corporation Limited, India's largest national oil company.
               </p>
               <div className="hero-actions reveal">
                 <Link to="/shell-mrpl-aviation-network" className="btn-cta-yellow">
@@ -123,8 +123,8 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* ── BRAND CAPABILITIES STRIP — inside hero, no yellow divider ── */}
-          <div className="stats-strip glass-dark hero-stats-strip">
+          {/* ── BRAND CAPABILITIES STRIP — inside hero, no border ── */}
+          <div className="stats-strip hero-stats-strip">
             <div className="container stats-inner">
               <div className="capability-item reveal">
                 <div className="cap-icon-box">

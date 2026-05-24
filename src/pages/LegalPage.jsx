@@ -12,13 +12,13 @@ export default function LegalPage({ title }) {
         <div className="content-narrow">
           <h2 className="page-h2">{title}</h2>
           <p className="page-intro" style={{ marginBottom: '40px' }}>
-            Official statement regarding Shell MRPL Aviation Fuels and Services Limited's {title.toLowerCase()}.
+            Official statement regarding Shell MRPL Aviation's {title.toLowerCase()}.
           </p>
           <div className="legal-body" style={{ padding: '40px', borderRadius: '24px', border: '1px solid rgba(var(--shell-white-rgb),0.15)', background: 'var(--night-600)', color: 'rgba(var(--shell-white-rgb),0.85)', lineHeight: '1.8' }}>
             {title === 'Privacy Policy' ? (
               <>
                 <p style={{ marginBottom: '24px' }}>
-                  Shell MRPL Aviation Fuels and Services Limited respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or engage with our services.
+                  Shell MRPL Aviation respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or engage with our services.
                 </p>
                 <h4 style={{ color: 'var(--shell-white)', marginBottom: '16px', fontWeight: 900 }}>1. Information Collection</h4>
                 <p style={{ marginBottom: '24px' }}>
@@ -36,11 +36,11 @@ export default function LegalPage({ title }) {
             ) : (
               <>
                 <p style={{ marginBottom: '24px' }}>
-                  Welcome to the official website of Shell MRPL Aviation Fuels and Services Limited. By accessing or using this website, you agree to be bound by these Terms of Use and all applicable laws and regulations.
+                  Welcome to the official website of Shell MRPL Aviation. By accessing or using this website, you agree to be bound by these Terms of Use and all applicable laws and regulations.
                 </p>
                 <h4 style={{ color: 'var(--shell-white)', marginBottom: '16px', fontWeight: 900 }}>1. Intellectual Property Rights</h4>
                 <p style={{ marginBottom: '24px' }}>
-                  All content, trademarks, logos, and materials on this website are the exclusive property of Shell MRPL Aviation Fuels and Services Limited, Shell, or MRPL. Unauthorized use, reproduction, or distribution of this material is strictly prohibited.
+                  All content, trademarks, logos, and materials on this website are the exclusive property of Shell MRPL Aviation, Shell, or MRPL. Unauthorized use, reproduction, or distribution of this material is strictly prohibited.
                 </p>
                 <h4 style={{ color: 'var(--shell-white)', marginBottom: '16px', fontWeight: 900 }}>2. Limitation of Liability</h4>
                 <p style={{ marginBottom: '24px' }}>

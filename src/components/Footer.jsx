@@ -35,41 +35,43 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container">
         <div className="footer-grid">
-          <div className="footer-brand">
-            <p className="footer-desc">
-              A strategic partnership between Shell and MRPL, delivering world-class aviation fuel services
-              across India. Excellence in energy, precision in service.
-            </p>
+          <div className="footer-links-col">
+            <FL to="/about">About Us</FL>
+            <FL to="/vision-and-values">Vision and Values</FL>
           </div>
 
           <div className="footer-links-col">
-            <h4 className="footer-h">Company</h4>
-            <FL to="/about">About Us</FL>
-            <FL to="/vision-and-values">Vision and Values</FL>
             <FL to="/board-of-directors">Leadership</FL>
             <FL to="/shell-mrpl-aviation-network">Network Map</FL>
           </div>
 
           <div className="footer-links-col">
-            <h4 className="footer-h">Operations</h4>
             <FL to="/products-services">Products</FL>
-            {/* <FL to="/posted-airfield-prices">Airfield Prices</FL> */}
             <FL to="/hsse">Safety Protocols</FL>
-            <FL to="/quality-control">Quality Control</FL>
           </div>
 
           <div className="footer-links-col">
-            <h4 className="footer-h">Quick Links</h4>
-            <FL to="/careers">Careers</FL>
-            <FL to="/contact">Contact Us</FL>
+            <FL to="/quality-control">Quality Control</FL>
             <FL to="/csr/projects">CSR Projects</FL>
-            {/* <FL to="/gallery">Gallery</FL> */}
           </div>
 
-          <div className="footer-newsletter">
-            <h4 className="footer-h">Careers</h4>
-            <p className="footer-desc" style={{ fontSize: '13px' }}>Become a part of our world-class aviation network. Explore opportunities to grow with Shell MRPL Aviation Fuels and Services Limited.</p>
-            <div className="newsletter-form" style={{ marginTop: '20px' }}>
+          <div className="footer-links-col">
+            <FL to="/careers">Careers</FL>
+            <FL to="/contact">Contact Us</FL>
+          </div>
+
+          <div className="footer-links-col">
+            <p className="footer-desc" style={{ 
+              fontSize: '11px', 
+              lineHeight: '1.45', 
+              color: 'rgba(255, 255, 255, 0.7)', 
+              margin: '0 0 10px 0', 
+              maxWidth: '100%',
+              fontFamily: 'var(--font-body)'
+            }}>
+              Become a part of our world-class aviation network. Explore opportunities to grow with Shell MRPL Aviation.
+            </p>
+            <div className="newsletter-form" style={{ marginTop: '0px' }}>
               <Link
                 to="/careers"
                 className="newsletter-btn"
@@ -79,7 +81,10 @@ export default function Footer() {
                   justifyContent: 'center',
                   textDecoration: 'none',
                   width: '100%',
-                  height: '52px'
+                  height: '36px',
+                  fontSize: '12px',
+                  padding: '0 12px',
+                  borderRadius: '4px'
                 }}
               >
                 Join Us
@@ -87,7 +92,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
       </div>
 
       <div className="footer-bottom-wrapper">
@@ -96,7 +100,7 @@ export default function Footer() {
             onClick={handleMetadataTrigger}
             style={{ cursor: 'default', userSelect: 'none' }}
           >
-            © 2026 Shell MRPL Aviation Fuels and Services Limited. All Rights Reserved.
+            © 2026 Shell MRPL Aviation. All Rights Reserved.
           </p>
           <div className="footer-legal">
             <Link to="/privacy-policy">Privacy Policy</Link>
