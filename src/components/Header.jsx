@@ -163,12 +163,12 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           height: var(--header-height-compact);
           margin: 12px var(--header-padding);
           padding: 0 24px;
-          background: rgba(var(--shell-white-rgb), 0.95);
-          backdrop-filter: blur(24px) saturate(180%);
-          -webkit-backdrop-filter: blur(24px) saturate(180%);
+          background: #ffffff;
+          backdrop-filter: none;
+          -webkit-backdrop-filter: none;
           border-radius: 48px;
-          border: 1px solid rgba(var(--shell-white-rgb), 0.4);
-          box-shadow: 0 20px 40px rgba(var(--grey-700-rgb), 0.1);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
           width: calc(100vw - (var(--header-padding) * 2));
         }
 
@@ -190,6 +190,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           height: auto;
           transition: var(--t-nav);
           flex-shrink: 0;
+          mix-blend-mode: multiply; /* Makes white logo background invisible on white header */
         }
 
         /* Logo remains full size on scroll */
