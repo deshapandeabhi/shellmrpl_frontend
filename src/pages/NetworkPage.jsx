@@ -3,17 +3,17 @@ import indiaMap from '../assets/images/indian_map.jpg';
 import PageHero from '../components/PageHero';
 
 const AIRPORTS = [
-  { name: 'Kempegowda International Airport, Bengaluru', code: 'IATA: BLR | ICAO: VOBL', x: 39.5, y: 78.5 },
-  { name: 'Mangaluru International Airport', code: 'IATA: IXE | ICAO: VOML', x: 36.1, y: 79.5 },
-  { name: 'Rashtrakavi Kuvempu Airport, Shivamogga', code: 'IATA: RQY | ICAO: VOSH', x: 36.8, y: 75.5 },
-  { name: 'Rajiv Gandhi Intl Airport, Hyderabad', code: 'IATA: HYD | ICAO: VOHS', x: 43.6, y: 64.1 },
-  { name: 'Goa Dabolim International Airport', code: 'IATA: GOI | ICAO: VOGO',x: 34.4, y: 72},
-  { name: 'Manohar International Airport - Goa', code: 'IATA: GOX | ICAO: VOGA', x: 33.9, y: 70.1 },
-  { name: 'Calicut International Airport', code: 'IATA: CCJ | ICAO: VOCL', x: 38.6, y: 87.5 },
-  { name: 'Kannur International Airport', code: 'IATA: CNN | ICAO: VOKN', x: 37.5, y: 85.5 },
-  { name: 'Thiruvananthapuram International Airport', code: 'IATA: TRV | ICAO: VOTV', x: 39.0, y: 90.8 },
-  { name: 'Indira Gandhi International Airport - Delhi', code: 'IATA: DEL | ICAO: VIDP', x: 40.1, y: 30.5 },
-  { name: 'Chhatrapati Shivaji Maharaj International Airport Mumbai', code: 'IATA: BOM | ICAO: VABB', x: 33.4, y: 59.0 },
+  { name: 'Kempegowda International Airport\nBengaluru', code: 'IATA: BLR | ICAO: VOBL', x: 39.5, y: 78.5 },
+  { name: 'Mangaluru International Airport\nMangaluru', code: 'IATA: IXE | ICAO: VOML', x: 36.1, y: 79.5 },
+  { name: 'Rashtrakavi Kuvempu Airport\nShivamogga', code: 'IATA: RQY | ICAO: VOSH', x: 36.8, y: 75.5 },
+  { name: 'Rajiv Gandhi Intl Airport\nHyderabad', code: 'IATA: HYD | ICAO: VOHS', x: 43.6, y: 64.1 },
+  { name: 'Dabolim International Airport\nSouth Goa ', code: 'IATA: GOI | ICAO: VOGO',x: 34.4, y: 72},
+  { name: 'Manohar International Airport\nNorth Goa', code: 'IATA: GOX | ICAO: VOGA', x: 33.9, y: 70.1 },
+  { name: 'Calicut International Airport\nCalicut', code: 'IATA: CCJ | ICAO: VOCL', x: 38.6, y: 87.5 },
+  { name: 'Kannur International Airport\nKannur', code: 'IATA: CNN | ICAO: VOKN', x: 37.5, y: 85.5 },
+  { name: 'Thiruvananthapuram International Airport\nThiruvananthapuram', code: 'IATA: TRV | ICAO: VOTV', x: 39.0, y: 90.8 },
+  { name: 'Indira Gandhi International Airport\nDelhi', code: 'IATA: DEL | ICAO: VIDP', x: 40.1, y: 30.5 },
+  { name: 'Chhatrapati Shivaji Maharaj International Airport\nMumbai', code: 'IATA: BOM | ICAO: VABB', x: 33.4, y: 59.0 },
 ];
 
 function PinIcon() {
@@ -35,7 +35,7 @@ export default function NetworkPage() {
         breadcrumbs={[{ label: 'Aviation Network' }]}
       />
 
-      <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
+      <div className="content-wrap content-narrow" style={{ paddingTop: '80px', paddingBottom: '120px' }}>
         <div className="section-header">
           <span className="section-eyebrow">Strategic Reach</span>
           <h2 className="section-h2">Airport Locations</h2>
@@ -60,7 +60,7 @@ export default function NetworkPage() {
                   }}
                 >
                   <div className="map-pin-container">
-                    <svg viewBox="0 0 24 24" width="32" height="32" style={{ display: 'block' }}>
+                    <svg viewBox="0 0 24 24" width="22" height="22" style={{ display: 'block' }}>
                       <path 
                         d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
                         fill="#DD1D21"

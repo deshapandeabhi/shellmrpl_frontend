@@ -2014,6 +2014,7 @@ p {
   font-size: 14px;
   color: var(--grey-900) !important;
   margin-bottom: 2px;
+  white-space: pre-wrap;
 }
 
 .airport-code-text {
@@ -3313,9 +3314,8 @@ p {
 
 .map-container {
   position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 140%;
+  margin-left: -20%;
 }
 
 .map-points-layer {
@@ -3348,13 +3348,13 @@ p {
 
 .map-pin-container {
   position: relative;
-  width: 32px;
-  height: 38px;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
   transition: transform 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .map-point-wrapper.active .map-pin-container,
@@ -3431,6 +3431,7 @@ p {
   font-weight: 900;
   margin-bottom: 4px;
   font-size: 14px;
+  white-space: pre-wrap;
 }
 
 /* Mobile Bottom floating sheet card */
@@ -3451,9 +3452,9 @@ p {
 
   .map-container {
     min-width: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    margin: 0 auto;
+    max-width: 140% !important;
+    width: 140% !important;
+    margin-left: -20% !important;
   }
 
   /* Scale down pins on mobile for clean fit */
@@ -3522,6 +3523,7 @@ p {
     font-weight: 800;
     line-height: 1.2;
     text-align: left;
+    white-space: pre-wrap;
   }
 
   .map-mobile-card-code {
