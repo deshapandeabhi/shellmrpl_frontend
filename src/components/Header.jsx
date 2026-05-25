@@ -405,19 +405,20 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           max-width: 400px;
           background: var(--night-600);
           z-index: 2600;
-          transform: translateX(calc(100% + 20px));
-          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+          transform: translateX(calc(100% + 120px)); /* Moved further off-screen to clear any residual shadow during transition */
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
           padding: 32px 24px;
           display: flex;
           flex-direction: column;
           color: var(--shell-white);
           border-radius: 32px !important; /* Premium rounded look */
           border: 1px solid rgba(var(--shell-white-rgb), 0.1) !important;
-          box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4) !important;
+          box-shadow: none !important;
         }
 
         .mobile-drawer.open {
           transform: translateX(0);
+          box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4) !important;
         }
 
         .mobile-drawer-header {
