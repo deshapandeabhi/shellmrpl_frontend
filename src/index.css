@@ -76,7 +76,7 @@ p {
 
 :root {
   /* ── PRIMARY PALETTE (First Impressions) ── */
-  --shell-yellow: #ED8A00;
+  --shell-yellow: #E1DDA9;
   --shell-yellow-rgb: 237, 138, 0;
   --shell-red: #D54410;
   --shell-red-rgb: 213, 68, 16;
@@ -842,12 +842,12 @@ p {
 
 .section-eyebrow {
   display: block;
-  font-size: 13px;
-  font-weight: 900;
-  /* Shell Heavy — Mandatory for all highlights */
-  color: var(--grey-900) !important;
-
-  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #9CA3AF !important; /* Light grey — subtle label */
+  letter-spacing: 0.04em;
+  text-transform: none;
+  margin-bottom: 12px;
 }
 
 .section-h2 {
@@ -1188,13 +1188,13 @@ p {
 }
 
 .section-eyebrow {
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--grey-900) !important;
-  /* Ocean 400 for inside-page eyebrows */
-
-  margin-bottom: 16px;
   display: block;
+  font-size: 15px;
+  font-weight: 400;
+  color: #9CA3AF !important; /* Light grey — subtle label */
+  letter-spacing: 0.04em;
+  text-transform: none;
+  margin-bottom: 12px;
 }
 
 .section-h2 {
@@ -2494,8 +2494,7 @@ p {
   font-weight: 900;
   /* Shell Heavy */
   font-size: 13px;
-  color: var(--shell-white);
-
+  color: var(--shell-white) !important;
 }
 
 .contact-card-body {
@@ -3688,6 +3687,7 @@ p {
   z-index: 1;
   max-width: 800px;
   margin: 0 auto;
+  text-align: center !important;
 }
 
 .cta-title {
@@ -3696,6 +3696,7 @@ p {
   /* Shell Heavy */
   line-height: 1.5;
   margin-bottom: 24px;
+  text-align: center !important;
 }
 
 .cta-subtitle {
@@ -3703,6 +3704,7 @@ p {
   color: var(--shell-white) !important;
   margin-bottom: 32px;
   line-height: 1.5;
+  text-align: center !important;
 }
 
 .cta-actions {
