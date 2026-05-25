@@ -68,7 +68,7 @@ export default function VigilancePage() {
         </div>
 
         <h3 className="page-h3" style={{ marginTop: 60 }}>Integrity Pledge</h3>
-        <div className="vision-box" style={{ background: 'var(--color-shell-blue)', padding: '40px' }}>
+        <div className="vision-box" style={{ padding: '40px' }}>
           <p className="vision-text" style={{ fontSize: '16px', fontWeight: 500, opacity: 0.9 }}>
             I believe that corruption has been one of the major obstacles to economic, political and social progress of our country. I believe that all stakeholders such as Government, citizens and private sector need to work together to eradicate corruption.
           </p>
@@ -76,7 +76,7 @@ export default function VigilancePage() {
           <p className="vision-text" style={{ fontSize: '16px', fontWeight: 500, opacity: 0.9 }}>
             I realise that every citizen should be vigilant and commit to highest standards of honesty and integrity at all times and support the fight against corruption.
           </p>
-          <div style={{ marginTop: 24, color: 'var(--shell-white)' }}>
+          <div style={{ marginTop: 24, color: 'var(--grey-900)' }}>
             <p><strong>I, therefore, Pledge:</strong></p>
             <ul style={{ marginTop: 12, listStyle: 'disc', paddingLeft: 20 }}>
               <li>To follow probity and rule of law in all walks of life;</li>
