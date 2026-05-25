@@ -163,9 +163,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           height: var(--header-height-compact);
           margin: 0;
           padding: 0 0;
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
+          background: var(--shell-white);
           border-radius: 0;
           border-bottom: 1px solid var(--gray-100);
           box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
