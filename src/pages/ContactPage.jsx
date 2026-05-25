@@ -1,3 +1,4 @@
+import { Mail, MapPin, Phone } from 'lucide-react';
 import PageHero from '../components/PageHero';
 
 export default function ContactPage() {
@@ -16,32 +17,55 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* Single centred card */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          marginTop: '32px'
-        }}>
-          {/* Corporate Office Card */}
-          <div className="contact-card" style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: '480px' }}>
-            <div className="contact-card-head" style={{ background: 'var(--ocean-400)' }}>
-              <span className="contact-card-dept">For all Business related enquiries</span>
+        {/* 3-Column Light Layout inspired by client request */}
+        <div className="contact-white-grid">
+          
+          {/* Column 1: Corporate Office */}
+          <div className="contact-white-col">
+            <div className="contact-white-icon">
+               <MapPin size={26} strokeWidth={2.5} />
             </div>
-            <div className="contact-card-body" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '16px' }}>
-              <div>
-                <div className="contact-name" style={{ fontSize: '15px' }}>Shell MRPL Aviation</div>
-                <div className="contact-role" style={{ marginTop: '4px', lineHeight: '1.6' }}>
-                  #102 Prestige Sigma, Vittal Mallya Road,<br />
-                  Bangalore, Karnataka – 560001, India.<br />
-                  CIN: 51909KA2008PLC045558
-                </div>
-              </div>
-              <div style={{ borderTop: '1px solid var(--gray-100)', paddingTop: '12px', fontSize: '13px', color: 'var(--grey-700)', lineHeight: '1.6' }}>
-                <strong>Tel:</strong> +9180-4252 6900<br />
-                <strong>Email:</strong> <a href="mailto:contactus@shellmrpl.com" className="contact-email">contactus@shellmrpl.com</a>
+            <div>
+              <h3 className="contact-light-title">Corporate Office</h3>
+              <div className="contact-light-text">
+                <strong>Shell MRPL Aviation Fuels and Services Limited</strong><br />
+                #102 Prestige Sigma, Vittal Mallya Road,
+                Bangalore, Karnataka – 560001, India.<br />
+                <br />
+                <strong>CIN:</strong> U51909KA2008PLC045558<br />
+                <strong>Email:</strong> <a href="mailto:smrpl-admin@shellmrpl.com" className="contact-light-email">smrpl-admin@shellmrpl.com</a>
               </div>
             </div>
           </div>
+
+          {/* Column 2: Email */}
+          <div className="contact-white-col">
+            <div className="contact-white-icon">
+               <Mail size={26} strokeWidth={2.5} />
+            </div>
+            <div>
+              <h3 className="contact-light-title">Email</h3>
+              <div className="contact-light-text">
+                For all business-related enquiries, please send us an email at:<br /><br />
+                <a href="mailto:contactus@shellmrpl.com" className="contact-light-email">contactus@shellmrpl.com</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Column 3: Phone */}
+          <div className="contact-white-col">
+            <div className="contact-white-icon">
+               <Phone size={26} strokeWidth={2.5} />
+            </div>
+            <div>
+              <h3 className="contact-light-title">Phone</h3>
+              <div className="contact-light-text">
+                You can also contact our business team directly on:<br /><br />
+                Tel: +9180-4252 6900
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

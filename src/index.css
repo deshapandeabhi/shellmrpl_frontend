@@ -844,7 +844,8 @@ p {
   display: block;
   font-size: 15px;
   font-weight: 400;
-  color: #9CA3AF !important; /* Light grey — subtle label */
+  color: #9CA3AF !important;
+  /* Light grey — subtle label */
   letter-spacing: 0.04em;
   text-transform: none;
   margin-bottom: 12px;
@@ -897,7 +898,8 @@ p {
   flex-direction: column;
   flex: 1;
   justify-content: center;
-  padding-top: 110px; /* clear fixed header */
+  padding-top: 110px;
+  /* clear fixed header */
 }
 
 /* Stats strip embedded inside the hero — no border, blends into hero */
@@ -1191,7 +1193,8 @@ p {
   display: block;
   font-size: 15px;
   font-weight: 400;
-  color: #9CA3AF !important; /* Light grey — subtle label */
+  color: #9CA3AF !important;
+  /* Light grey — subtle label */
   letter-spacing: 0.04em;
   text-transform: none;
   margin-bottom: 12px;
@@ -2501,31 +2504,102 @@ p {
   padding: 16px 22px;
 }
 
-.contact-name {
-  font-family: var(--font-body);
-  font-weight: 900;
-  /* Shell Heavy */
-  font-size: 16px;
-  color: var(--text-primary);
-  margin-bottom: 2px;
-}
-
-.contact-role {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
+/* Dark Layout Contact Grids */
 .contact-email {
-  color: var(--grey-900) !important;
-  font-family: var(--font-body);
-  font-size: 13px;
-  transition: var(--t-fast);
+  color: var(--shell-yellow) !important;
+  text-decoration: none !important;
 }
 
 .contact-email:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
+}
+
+.contact-dark-title {
+  color: var(--shell-white) !important;
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: 900;
+  font-family: var(--font-heading);
+}
+
+.contact-dark-text,
+.contact-dark-text strong,
+.contact-dark-text p {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Light Layout Contact Grids */
+.contact-light-email {
+  color: var(--grey-900) !important;
+  text-decoration: underline !important;
+  font-weight: 700;
+}
+
+.contact-light-email:hover {
+  text-decoration: none !important;
+}
+
+.contact-light-title {
+  color: var(--grey-900) !important;
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: 900;
+  font-family: var(--font-heading);
+}
+
+.contact-light-text,
+.contact-light-text strong,
+.contact-light-text p {
+  color: var(--grey-700) !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Responsive Contact Grid Layout */
+.contact-white-grid {
+  background: var(--shell-white);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 16px;
+  padding: 56px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px;
+  margin-top: 32px;
+}
+
+.contact-white-col {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-white-icon {
+  background: var(--shell-yellow);
+  color: var(--grey-900);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-white-grid {
+    padding: 32px 24px;
+    gap: 32px;
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-white-col {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    align-items: center;
+  }
 }
 
 .office-card {
@@ -2740,12 +2814,14 @@ p {
 /* Ensure yellow bottom section always has grey text */
 .footer-bottom-wrapper {
   background: var(--shell-yellow);
-  padding: 16px 0;
+  padding: 6px 0;
   width: 100%;
 }
 
 .footer-bottom-wrapper * {
   color: var(--grey-900) !important;
+  line-height: 1;
+  margin: 0;
 }
 
 .footer-grid {
@@ -2791,7 +2867,7 @@ p {
 
 .footer-bottom-wrapper {
   background: var(--shell-yellow);
-  padding: 20px 0;
+  padding: 6px 0;
   width: 100%;
 }
 
@@ -2804,9 +2880,15 @@ p {
   font-weight: 500;
 }
 
+.footer-bottom p {
+  margin: 0;
+  line-height: 1;
+}
+
 .footer-legal {
   display: flex;
   gap: 32px;
+  align-items: center;
 }
 
 .footer-legal a {
@@ -3036,7 +3118,8 @@ p {
     font-size: 48px;
   }
 
-  .page-h2, .section-h2 {
+  .page-h2,
+  .section-h2 {
     font-size: 26px;
     line-height: 1.3;
   }
@@ -3121,7 +3204,8 @@ p {
     font-size: 15px;
   }
 
-  .page-h2, .section-h2 {
+  .page-h2,
+  .section-h2 {
     font-size: 22px;
     line-height: 1.3;
   }
@@ -3255,12 +3339,14 @@ p {
 .map-point-wrapper {
   position: absolute;
   z-index: 10;
-  transform: translate(-50%, -100%); /* Tip of pin sits exactly on coordinate! */
+  transform: translate(-50%, -100%);
+  /* Tip of pin sits exactly on coordinate! */
   transition: z-index 0.2s ease;
 }
 
 .map-point-wrapper.active {
-  z-index: 999; /* Pop to the very front above all other pins! */
+  z-index: 999;
+  /* Pop to the very front above all other pins! */
 }
 
 .map-pin-container {
@@ -3285,7 +3371,8 @@ p {
   left: 50%;
   width: 10px;
   height: 6px;
-  background: rgba(221, 29, 33, 0.45); /* var(--shell-red) semi-transparent shadow */
+  background: rgba(221, 29, 33, 0.45);
+  /* var(--shell-red) semi-transparent shadow */
   border-radius: 50%;
   transform: translateX(-50%) scale(1);
   transform-origin: center;
@@ -3298,14 +3385,17 @@ p {
     transform: translateX(-50%) scale(0.6);
     opacity: 1;
   }
+
   100% {
     transform: translateX(-50%) scale(2.4);
     opacity: 0;
   }
 }
+
 .map-tooltip {
   position: absolute;
-  bottom: 52px; /* Clears the Google Map pin completely with beautiful spacing */
+  bottom: 52px;
+  /* Clears the Google Map pin completely with beautiful spacing */
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   background: var(--night-600);
@@ -3358,7 +3448,8 @@ p {
 
   .network-map-section {
     padding: 12px 0;
-    overflow-x: hidden !important; /* Fully responsive, no horizontal scroll! */
+    overflow-x: hidden !important;
+    /* Fully responsive, no horizontal scroll! */
   }
 
   .map-container {
@@ -3451,6 +3542,7 @@ p {
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -3620,7 +3712,7 @@ p {
 
 .footer-bottom-wrapper {
   background: var(--shell-yellow);
-  padding: 16px 0;
+  padding: 6px 0;
   width: 100%;
 }
 
@@ -3725,7 +3817,8 @@ p {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  flex-wrap: nowrap; /* All 4 tiles always in one row */
+  flex-wrap: nowrap;
+  /* All 4 tiles always in one row */
 }
 
 .capability-item {
@@ -3733,7 +3826,8 @@ p {
   align-items: center;
   gap: 14px;
   flex: 1;
-  min-width: 0; /* Allow tiles to shrink freely — no wrapping */
+  min-width: 0;
+  /* Allow tiles to shrink freely — no wrapping */
   padding: 18px 16px;
   background: rgba(0, 0, 0, 0.18);
   border: none !important;
@@ -3757,24 +3851,29 @@ p {
     flex-wrap: nowrap !important;
     gap: 12px !important;
   }
+
   .capability-item {
     min-width: 0 !important;
     flex: 1 !important;
     padding: 14px 12px !important;
     gap: 10px !important;
   }
+
   .cap-val {
     font-size: 14px !important;
   }
+
   .cap-lab {
     font-size: 12px !important;
   }
+
   .cap-icon-box {
     width: 40px !important;
     height: 40px !important;
     min-width: 40px !important;
     border-radius: 10px !important;
   }
+
   .cap-icon-box svg {
     width: 18px !important;
     height: 18px !important;
@@ -3940,8 +4039,13 @@ select,
 }
 
 @keyframes modal-fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .pdf-modal-box {
@@ -3952,13 +4056,20 @@ select,
   flex-direction: column;
   width: min(960px, 100%);
   height: min(88vh, 860px);
-  box-shadow: 0 32px 80px rgba(0,0,0,0.45);
-  animation: modal-slide-up 0.28s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+  animation: modal-slide-up 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @keyframes modal-slide-up {
-  from { transform: translateY(40px) scale(0.97); opacity: 0; }
-  to   { transform: translateY(0)    scale(1);    opacity: 1; }
+  from {
+    transform: translateY(40px) scale(0.97);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }
 
 .pdf-modal-header {
@@ -3988,7 +4099,7 @@ select,
   height: 36px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--shell-white);
   cursor: pointer;
   flex-shrink: 0;
@@ -4025,12 +4136,15 @@ select,
     height: 90vh;
     border-radius: 12px;
   }
+
   .pdf-modal-header {
     padding: 12px 16px;
   }
+
   .pdf-modal-title {
     font-size: 13px;
   }
+
   .pdf-modal-footer {
     font-size: 11px;
     padding: 8px 16px;
@@ -4064,6 +4178,7 @@ button.csr-dl-item {
     transform: translateX(-50%) translateY(30px);
     opacity: 0;
   }
+
   to {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
@@ -4088,6 +4203,7 @@ button.csr-dl-item {
 
 /* ── MOBILE RESPONSIVE HERO OVERRIDES ── */
 @media (max-width: 768px) {
+
   /* Home Hero container */
   .home-hero {
     height: auto !important;
@@ -4095,13 +4211,13 @@ button.csr-dl-item {
     padding-bottom: 30px !important;
     padding-top: 0 !important;
   }
-  
+
   /* Reduced gap below header */
   .hero-inner-wrap {
     padding-top: 90px !important;
     justify-content: flex-start !important;
   }
-  
+
   /* Softer, beautiful title with tight responsive line-height */
   .hero-title {
     font-size: 28px !important;
@@ -4109,7 +4225,7 @@ button.csr-dl-item {
     margin-bottom: 12px !important;
     text-shadow: 0 4px 15px rgba(var(--grey-700-rgb), 0.3) !important;
   }
-  
+
   /* Subtitle optimized for mobile */
   .hero-subtitle {
     font-size: 14px !important;
@@ -4117,26 +4233,26 @@ button.csr-dl-item {
     margin-bottom: 20px !important;
     opacity: 0.95 !important;
   }
-  
+
   /* Compact action buttons */
   .hero-actions {
     gap: 10px !important;
     margin-bottom: 24px !important;
   }
-  
+
   .hero-actions a {
     width: 100% !important;
     justify-content: center !important;
     padding: 12px 20px !important;
     font-size: 14px !important;
   }
-  
+
   /* Tightened stats strip gap and 2x2 responsive grid */
   .hero-stats-strip {
     margin-top: 15px !important;
     padding: 16px 0 !important;
   }
-  
+
   /* Mobile 2x2 grid for stats tiles */
   .hero-stats-strip .stats-inner {
     display: grid !important;
@@ -4144,34 +4260,34 @@ button.csr-dl-item {
     gap: 10px !important;
     flex-wrap: wrap !important;
   }
-  
+
   .capability-item {
     min-width: auto !important;
     gap: 8px !important;
     padding: 10px 8px !important;
   }
-  
+
   .cap-icon-box {
     width: 28px !important;
     height: 28px !important;
     min-width: 28px !important;
   }
-  
+
   .cap-icon-box svg {
     width: 14px !important;
     height: 14px !important;
   }
-  
+
   .cap-val {
     font-size: 11.5px !important;
     line-height: 1.2 !important;
   }
-  
+
   .cap-lab {
     font-size: 9.5px !important;
     line-height: 1.2 !important;
   }
-  
+
   /* Hide scroll indicator to save vertical space on mobile */
   .hero-scroll-indicator {
     display: none !important;
