@@ -1,4 +1,3 @@
-import React from 'react';
 import PageHero from '../components/PageHero';
 
 const SERVICES = [
@@ -20,7 +19,7 @@ export default function ProductsPage() {
         <h2 className="page-h2">Products and Services</h2>
         <div className="body-text" style={{ marginBottom: 32, textAlign: 'justify' }}>
           <p>
-            Shell MRPL Aviation provides solutions for Aviation Turbine Fuel requirements to its customers and offers an integrated end to end partnership with Shell MRPL Aviation, the only multi-national oil company with a government license to market aviation fuels in India.
+            Shell MRPL Aviation provides solutions for Aviation Turbine Fuel requirements to its customers and offers an integrated end to end partnership with Shell MRPL Aviation.
           </p>
           <p style={{ marginTop: '16px' }}>
             Shell MRPL Aviation adds value to our partners through:
@@ -31,9 +30,9 @@ export default function ProductsPage() {
           {[
             'International best practices and global standards of safety, quality and operations in supplying Jet fuel',
             'Pricing transparency',
-            'Shell Aviation’s global network of around 900 airports in about 36 countries',
+            'Access to Shell Aviation global network in about 30 countries',
             'Acceptance of Shell Carnet and Shell Fuel and Fly Cards',
-            'Shell’s comprehensive portfolio which offers a range of innovative products and services, including aviation lubricants and risk marketing',
+            'Shell’s comprehensive portfolio which offers a range of innovative products, risk marketing and services',
           ].map((item, i) => (
             <div key={i} className="service-item">
               <span className="service-num">0{i + 1}</span>

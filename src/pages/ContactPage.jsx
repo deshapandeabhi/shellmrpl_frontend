@@ -16,55 +16,16 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* 3 Major Cards Responsive Grid Layout */}
+        {/* Single centred card */}
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '24px',
+          display: 'flex',
+          justifyContent: 'center',
           marginTop: '32px'
         }}>
-          {/* Card 1: Leadership & Finance */}
-          <div className="contact-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          {/* Corporate Office Card */}
+          <div className="contact-card" style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: '480px' }}>
             <div className="contact-card-head" style={{ background: 'var(--ocean-400)' }}>
-              <span className="contact-card-dept">Leadership & Finance</span>
-            </div>
-            <div className="contact-card-body" style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div>
-                <div className="contact-name">Mr. Devendra Nath Soral</div>
-                <div className="contact-role">Chief Officer (CEO)</div>
-                <a href="mailto:dev.soral@shellmrpl.com" className="contact-email">dev.soral@shellmrpl.com</a>
-              </div>
-              <div style={{ borderTop: '1px solid var(--gray-100)', paddingTop: '16px' }}>
-                <div className="contact-name">Chockalingam Subbiah</div>
-                <div className="contact-role">CFO & Company Secretary</div>
-                <a href="mailto:chockalingam.subbiah@shellmrpl.com" className="contact-email">chockalingam.subbiah@shellmrpl.com</a>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2: Fuel Sales & HSSE Operations */}
-          <div className="contact-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-            <div className="contact-card-head" style={{ background: 'var(--ocean-400)' }}>
-              <span className="contact-card-dept">Sales & HSSE Operations</span>
-            </div>
-            <div className="contact-card-body" style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div>
-                <div className="contact-name">G. Srinivas Rao</div>
-                <div className="contact-role">HoD Sales</div>
-                <a href="mailto:srinivas.rao@shellmrpl.com" className="contact-email">srinivas.rao@shellmrpl.com</a>
-              </div>
-              <div style={{ borderTop: '1px solid var(--gray-100)', paddingTop: '16px' }}>
-                <div className="contact-name">Tirumal Rao</div>
-                <div className="contact-role">I/c HoD (S and D), Head- (Projects and ERP)</div>
-                <a href="mailto:tirumal.rao@shellmrpl.com" className="contact-email">tirumal.rao@shellmrpl.com</a>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3: General & Corporate Office */}
-          <div className="contact-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-            <div className="contact-card-head" style={{ background: 'var(--ocean-400)' }}>
-              <span className="contact-card-dept">General & Corporate Office</span>
+              <span className="contact-card-dept">For all Business related enquiries</span>
             </div>
             <div className="contact-card-body" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '16px' }}>
               <div>
@@ -75,9 +36,9 @@ export default function ContactPage() {
                 </div>
               </div>
               <div style={{ borderTop: '1px solid var(--gray-100)', paddingTop: '12px', fontSize: '13px', color: 'var(--grey-700)', lineHeight: '1.6' }}>
-                <strong>Landline:</strong> 080-42526900<br />
-                <strong>Fax:</strong> 080-42526999<br />
-                <strong>Email:</strong> <a href="mailto:smrpl-admin@shellmrpl.com" className="contact-email">smrpl-admin@shellmrpl.com</a><br />
+                <strong>Tel:</strong> +9180-4252 6900<br />
+                {/* <strong>Fax:</strong> 080-42526999<br /> */}
+                <strong>Email:</strong> <a href="mailto:contactus@shellmrpl.com" className="contact-email">contactus@shellmrpl.com</a><br />
                 <strong>CIN:</strong> U51909KA2008PLC045558
               </div>
             </div>

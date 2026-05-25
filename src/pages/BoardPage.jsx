@@ -34,7 +34,7 @@ const DIRECTORS = [
   },
   {
     name: 'Dr. Ravi Kumar Rentala',
-    role: 'Independent Director and Chairman\nBEC Pvt Ltd',
+    role: 'Independent Director',
     image: `${BASE_IMG_URL}/Ravi Kumar Rentala.jpg`,
   },
   {
