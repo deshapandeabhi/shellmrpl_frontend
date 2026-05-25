@@ -13,7 +13,7 @@ export default function ContactPage() {
         <div className="body-text" style={{ marginBottom: 36, textAlign: 'justify' }}>
           <p>
             For all business enquiries, sales queries, or media inquiries, please contact the
-            relevant department below. We aim to respond to all enquiries within two business days.
+            relevant department below.
           </p>
         </div>
 
