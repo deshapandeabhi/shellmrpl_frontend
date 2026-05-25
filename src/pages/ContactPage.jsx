@@ -30,16 +30,15 @@ export default function ContactPage() {
             <div className="contact-card-body" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '16px' }}>
               <div>
                 <div className="contact-name" style={{ fontSize: '15px' }}>Shell MRPL Aviation</div>
-                <div className="contact-role" style={{ marginTop: '6px', lineHeight: '1.6' }}>
+                <div className="contact-role" style={{ marginTop: '4px', lineHeight: '1.6' }}>
                   #102 Prestige Sigma, Vittal Mallya Road,<br />
-                  Bangalore, Karnataka – 560001, India.
+                  Bangalore, Karnataka – 560001, India.<br />
+                  CIN: 51909KA2008PLC045558
                 </div>
               </div>
               <div style={{ borderTop: '1px solid var(--gray-100)', paddingTop: '12px', fontSize: '13px', color: 'var(--grey-700)', lineHeight: '1.6' }}>
                 <strong>Tel:</strong> +9180-4252 6900<br />
-                {/* <strong>Fax:</strong> 080-42526999<br /> */}
-                <strong>Email:</strong> <a href="mailto:contactus@shellmrpl.com" className="contact-email">contactus@shellmrpl.com</a><br />
-                <strong>CIN:</strong> U51909KA2008PLC045558
+                <strong>Email:</strong> <a href="mailto:contactus@shellmrpl.com" className="contact-email">contactus@shellmrpl.com</a>
               </div>
             </div>
           </div>

@@ -44,11 +44,11 @@ export default function VigilancePage() {
         </div>
 
         <h3 className="page-h3" style={{ marginTop: 48 }}>Complaints Handling Mechanism</h3>
-        <div style={{ marginTop: 24 }}>
+        <div className="service-list" style={{ marginTop: 24 }}>
           {COMPLAINTS.map((item, i) => (
-            <div key={i} className="vigilance-item">
-              <span className="v-dot" aria-hidden="true" />
-              <span>{item}</span>
+            <div key={i} className="service-item">
+              <span className="service-num">{String(i + 1).padStart(2, '0')}</span>
+              <p className="service-text" style={{ textAlign: 'justify' }}>{item}</p>
             </div>
           ))}
         </div>
