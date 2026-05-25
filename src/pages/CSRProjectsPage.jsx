@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PageHero from '../components/PageHero';
 import { PdfModal } from './AnnualReturnPage';
 
@@ -35,49 +35,34 @@ export default function CSRProjectsPage() {
   const [activeDoc, setActiveDoc] = useState(null);
 
   return (
-    <div className="site-page">
+    <div className="inner-page">
       <PageHero
-        title="Social Impact"
+        title="CSR Projects"
         breadcrumbs={[{ label: 'CSR Projects' }]}
       />
 
-      <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
-        {/* Change #16 — full-width single-line heading */}
-        <div className="section-header" style={{ maxWidth: '100%' }}>
-          <span className="section-eyebrow">CSR Initiatives</span>
-          <h2 className="section-h2" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-            Empowering Local Communities
-          </h2>
-          <p className="section-intro">
+      <div className="content-wrap content-narrow">
+        <h2 className="page-h2">Empowering Local Communities</h2>
+        <div className="body-text" style={{ marginBottom: 32 }}>
+          <p>
             Through targeted interventions in education, health, and infrastructure,
             we aim to create a lasting positive legacy in the regions we serve.
+            Click the links below to view our approved CSR project archives.
           </p>
         </div>
 
-        {/* Changes #17 #18 — image cards removed, only CSR Projects panel retained */}
-        <div
-          className="csr-archive-section glass"
-          style={{ marginTop: '40px', padding: 'clamp(20px, 5vw, 60px)', borderRadius: 'var(--radius-xl)' }}
-        >
-          <h3 className="footer-h" style={{ color: 'var(--grey-900)', marginBottom: '40px' }}>
-            Approved Project Archives
-          </h3>
-          <div className="csr-dl-grid">
-            {DOWNLOADS.map((item, i) => (
-              /* Change #19 — modal viewer same as Annual Returns */
-              <button
-                key={i}
-                className="csr-dl-item"
-                onClick={() => setActiveDoc(item)}
-                aria-label={`View ${item.label} (PDF)`}
-              >
-                <div className="dl-icon-c"><PdfIcon /></div>
-                <div className="dl-info">
-                  <span className="dl-label">{item.label}</span>
-                </div>
-              </button>
-            ))}
-          </div>
+        <div className="csr-dl-grid">
+          {DOWNLOADS.map((item, i) => (
+            <button
+              key={i}
+              className="btn-download"
+              aria-label={`View ${item.label} (PDF)`}
+              onClick={() => setActiveDoc(item)}
+            >
+              <PdfIcon />
+              <span>{item.label}</span>
+            </button>
+          ))}
         </div>
       </div>
 

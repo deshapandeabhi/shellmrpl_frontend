@@ -161,15 +161,15 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
         .site-header.is-scrolled {
           height: var(--header-height-compact);
-          margin: 12px var(--header-padding);
-          padding: 0 24px;
-          background: #ffffff;
-          backdrop-filter: none;
-          -webkit-backdrop-filter: none;
-          border-radius: 48px;
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-          width: calc(100vw - (var(--header-padding) * 2));
+          margin: 0;
+          padding: 0 0;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border-radius: 0;
+          border-bottom: 1px solid var(--gray-100);
+          box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
+          width: 100vw;
         }
 
         .header-inner {
@@ -214,6 +214,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           display: flex;
           align-items: center;
           gap: 4px;
+          text-decoration: none !important;
         }
 
         .nav-link:hover, .nav-link.active {
@@ -366,8 +367,8 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           .site-logo { width: 135px; }
           .site-header.is-scrolled {
             padding: 0 12px;
-            margin: 8px 12px;
-            width: calc(100vw - 24px);
+            margin: 0;
+            width: 100vw;
             height: 60px;
           }
           .hamburger-btn {
@@ -655,7 +656,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           </nav>
 
           <div className="header-actions">
-            <Link to="/careers" className="header-actions-link">Careers</Link>
+            <Link to="/careers" className="nav-link">Careers</Link>
             <Link to="/contact" className="btn-impact">
               <span>Contact Us</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

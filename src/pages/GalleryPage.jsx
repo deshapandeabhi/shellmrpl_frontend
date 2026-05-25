@@ -76,7 +76,7 @@ export default function GalleryPage() {
         breadcrumbs={[{ label: 'Gallery' }]}
       />
       
-      <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
+      <div className="content-wrap content-narrow" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
         <div className="section-header">
           <span className="section-eyebrow">The Story</span>
           <h2 className="section-h2">Operations in Motion</h2>

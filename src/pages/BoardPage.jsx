@@ -52,7 +52,7 @@ export default function BoardPage() {
         breadcrumbs={[{ label: 'Board of Directors' }]}
       />
 
-      <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
+      <div className="content-wrap content-narrow" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
         <div className="section-header">
           <span className="section-eyebrow">The Board</span>
           <h2 className="section-h2">Guiding Visionary Excellence</h2>

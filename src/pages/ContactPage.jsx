@@ -8,7 +8,7 @@ export default function ContactPage() {
         title="Contact Us"
         breadcrumbs={[{ label: 'Contact Us' }]}
       />
-      <div className="content-wrap" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 60px' }}>
+      <div className="content-wrap content-narrow" style={{ padding: '0 24px 60px' }}>
         <h2 className="page-h2" style={{ marginTop: '48px' }}>Get in Touch</h2>
         <div className="body-text" style={{ marginBottom: 36, textAlign: 'justify' }}>
           <p>

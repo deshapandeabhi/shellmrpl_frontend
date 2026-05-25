@@ -295,14 +295,11 @@ p {
   .cta-section *,
   .glass-dark *,
   .nav-dropdown-link.active,
-  .vision-box,
-  .vision-box *,
+
   .map-tooltip,
   .map-tooltip *,
   .btn-blue,
-  .btn-blue *,
-  .legal-body,
-  .legal-body * {
+  .btn-blue * {
     color: var(--shell-white) !important;
     text-align: justify;
   }
@@ -1951,23 +1948,25 @@ p {
 
 /* ── VISION HIGHLIGHT ── */
 .vision-box {
-  background: var(--night-600);
-  /* Night 600 — Shell supporting palette, inside-pages */
+  background: var(--shell-white);
   border-radius: var(--radius-xl);
-  padding: 32px 40px;
+  padding: 40px 48px;
   margin-bottom: 56px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--gray-100);
 }
 
 
 
 .vision-text {
   font-family: var(--font-secondary);
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 1.5;
-  color: var(--shell-white);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--grey-900);
+  text-align: left;
   position: relative;
   z-index: 1;
 }

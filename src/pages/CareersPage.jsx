@@ -222,7 +222,7 @@ export default function CareersPage() {
         breadcrumbs={[{ label: 'Careers' }]}
       />
 
-      <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
+      <div className="content-wrap content-narrow" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
         <div className="section-header">
           <span className="section-eyebrow">Join the Leadership</span>
           <h2 className="section-h2">Opportunities at Shell MRPL Aviation</h2>

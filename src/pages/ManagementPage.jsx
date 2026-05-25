@@ -15,7 +15,7 @@ export default function ManagementPage() {
         breadcrumbs={[{ label: 'Management' }]}
       />
       
-      <div className="container" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
+      <div className="content-wrap content-narrow" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
         <div className="section-header reveal">
           <span className="section-eyebrow">Operational Excellence</span>
           <h2 className="section-h2">The Management Team</h2>
@@ -26,7 +26,7 @@ export default function ManagementPage() {
 
         <div className="brand-grid">
           {MANAGERS.map((p, i) => (
-            <div key={i} className="management-card col-span-3 reveal">
+            <div key={i} className="management-card col-span-6 reveal">
               <div className="mgmt-img-wrap">
                 <img
                   src={p.image}

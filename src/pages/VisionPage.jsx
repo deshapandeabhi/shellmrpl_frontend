@@ -81,7 +81,7 @@ export default function VisionPage() {
         title="Vision and Values"
         breadcrumbs={[{ label: 'About', to: '/about' }, { label: 'Vision and Values' }]}
       />
-      <div className="content-wrap">
+      <div className="content-wrap content-narrow">
         <div className="content-narrow">
           <h2 className="page-h2">Our Vision</h2>
           <div className="vision-box">
