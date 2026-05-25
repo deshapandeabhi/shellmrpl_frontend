@@ -6,7 +6,7 @@ const AIRPORTS = [
   { name: 'Kempegowda International Airport\nBengaluru', code: 'IATA: BLR | ICAO: VOBL', x: 39.5, y: 78.5 },
   { name: 'Mangaluru International Airport\nMangaluru', code: 'IATA: IXE | ICAO: VOML', x: 36.1, y: 79.5 },
   { name: 'Rashtrakavi Kuvempu Airport\nShivamogga', code: 'IATA: RQY | ICAO: VOSH', x: 36.8, y: 75.5 },
-  { name: 'Rajiv Gandhi Intl Airport\nHyderabad', code: 'IATA: HYD | ICAO: VOHS', x: 43.6, y: 64.1 },
+  { name: 'Rajiv Gandhi International Airport\nHyderabad', code: 'IATA: HYD | ICAO: VOHS', x: 43.6, y: 64.1 },
   { name: 'Dabolim International Airport\nSouth Goa ', code: 'IATA: GOI | ICAO: VOGO',x: 34.4, y: 72},
   { name: 'Manohar International Airport\nNorth Goa', code: 'IATA: GOX | ICAO: VOGA', x: 33.9, y: 70.1 },
   { name: 'Calicut International Airport\nCalicut', code: 'IATA: CCJ | ICAO: VOCL', x: 38.6, y: 87.5 },
