@@ -2820,13 +2820,11 @@ p {
 
 .footer-bottom-wrapper * {
   color: var(--grey-900) !important;
-  line-height: 1;
-  margin: 0;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   margin-bottom: 24px;
 }

@@ -7,7 +7,7 @@ const AIRPORTS = [
   { name: 'Mangaluru International Airport', code: 'IATA: IXE | ICAO: VOML', x: 36.1, y: 79.5 },
   { name: 'Rashtrakavi Kuvempu Airport, Shivamogga', code: 'IATA: RQY | ICAO: VOSH', x: 36.8, y: 75.5 },
   { name: 'Rajiv Gandhi Intl Airport, Hyderabad', code: 'IATA: HYD | ICAO: VOHS', x: 43.6, y: 64.1 },
-  { name: 'Goa Dabolim International Airport', code: 'IATA: GOI | ICAO: VOGO',x: 34.4, y: 71.5},
+  { name: 'Goa Dabolim International Airport', code: 'IATA: GOI | ICAO: VOGO',x: 34.4, y: 72},
   { name: 'Manohar International Airport - Goa', code: 'IATA: GOX | ICAO: VOGA', x: 33.9, y: 70.1 },
   { name: 'Calicut International Airport', code: 'IATA: CCJ | ICAO: VOCL', x: 38.6, y: 87.5 },
   { name: 'Kannur International Airport', code: 'IATA: CNN | ICAO: VOKN', x: 37.5, y: 85.5 },
