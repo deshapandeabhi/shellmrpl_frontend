@@ -12,7 +12,7 @@ const DIRECTORS = [
     bio: 'Managing Director, Chief Executive Officer - Mangalore Refinery and Petrochemicals Limited. Distinguished professional with over 30 years in the downstream hydrocarbon industry.',
   },
   {
-    name: 'Sanjay Samuel Varkey',
+    name: 'Sanjay Varkey',
     role: 'Director',
     image: `${BASE_IMG_URL}/Sanjay Varkey.jpg`,
     imgStyle: { objectFit: 'cover', objectPosition: 'top center' },
