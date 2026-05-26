@@ -8,7 +8,8 @@ const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api/v1';
 // Change #16 — title on single full-width line
 // Change #19 — same modal used for Annual Returns
 const DOWNLOADS = [
-  { label: 'CSR Projects 2024-25', url: '/wp-content/uploads/2024/09/CSR-Approved-Projects-for-FY-2024-25.pdf' },
+  { label: 'CSR Projects 2025-26', url: '/assets/docs/annual-returns/CSR amount spent 2025-26_2.pdf' },
+  { label: 'CSR Projects 2024-25', url: '/assets/docs/annual-returns/CSR amount spent 2024-25_2.pdf' },
   { label: 'CSR Projects 2023-24', url: '/assets/docs/annual-returns/CSR-PROJECTS-2023-24.pdf' },
   { label: 'CSR Projects 2022-23', url: '/assets/docs/annual-returns/CSR-PROJECTS-2022-23.pdf' },
   { label: 'CSR Projects 2021-22', url: '/wp-content/uploads/2022/06/CSR-PROJECTS-2021-22.pdf' },

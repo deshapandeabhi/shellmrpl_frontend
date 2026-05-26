@@ -15,11 +15,12 @@ const SECTIONS = [
   },
   {
     title: 'Overall Objectives',
+    content:"To pursue the CSR objectives, the Company will endeavour to:",
     list: [
       'Undertake social responsibilities as a dependable corporate citizen functioning in the society.',
       'Collaborate with government, voluntary organizations and academic institutes in pursuit of its goals with respect to Health, Safety, Security and Environment.',
       'Interact regularly with stakeholders, review and publicise the CSR initiatives.',
-    ]
+    ],
   },
   {
     title: 'Permitted areas of CSR',
@@ -34,13 +35,14 @@ const SECTIONS = [
   },
   {
     title: 'Formation of CSR Committee',
-    content: 'In terms of criteria mentioned in Section 135 of the Act, a Corporate Social Responsibility Committee (in short “CSR Committee”) shall be constituted by the Board. The committee shall have the following authority which can be reviewed by the Board from time to time. The focus of CSR activities shall be generally in the vicinity of the projects and operations of the Company. The CSR Committee shall have the authority to recommend to the Board for approval of any other CSR programmes or projects or activities not covered in this policy which are within purview of the Companies Act, 2013, and rules thereunder as amended from time to time.',
+    content: 'In terms of criteria mentioned in Section 135 of the Act, a Corporate Social Responsibility Committee (in short “CSR Committee”) shall be constituted by the Board. The committee shall have the following authority which can be reviewed by the Board from time to time.',
     list: [
       'formulate and recommend to the Board, a Corporate Social Responsibility Policy which shall indicate the activities to be undertaken by the Company',
       'recommend the amount of expenditure to be incurred on the activity',
       'approve CSR activities identified by the Company from time to time',
       'monitor the implementation and report to the Board',
     ],
+    postContent:'The focus of CSR activities shall be generally in the vicinity of the projects and operations of the Company. The CSR Committee shall have the authority to recommend to the Board for approval of any other CSR programmes or projects or activities not covered in this policy which are within purview of the Companies Act, 2013, and rules thereunder as amended from time to time.'
   },
   {
     title: 'Funding and Allocation',
@@ -69,7 +71,11 @@ const SECTIONS = [
       'Level (2):  Identified Senior Officers at the Company level who shall be responsible for reviewing the implementation, progress, expenditure monitoring, effectiveness of action plans and support needed. They shall give quarterly reporting to Level (3).',
       'Level (3): CSR Committee and Board shall review minimum on an annual basis or earlier as necessary.'
     ]
-  }
+  },
+  {
+    title: 'Information Dissemination',
+    content: 'The Company’s engagement in this domain shall be disseminated in its Annual Reports, internal communications and through the media, wherever required'
+  },
 ];
 
 export default function CSRPolicyPage() {
@@ -83,7 +89,7 @@ export default function CSRPolicyPage() {
         <h2 className="page-h2">CSR Policy</h2>
         <div className="body-text" style={{ marginBottom: 36 }}>
           <p>
-            Shell MRPL Aviation (hereinafter referred as ‘the Company’) believes in the conduct of its affairs in a fair and transparent manner by adopting highest standards of professionalism, honesty, integrity and ethical behaviour and in complete compliance of laws, as amended from time to time.
+            Shell MRPL Aviation Fuels and Services Limited (hereinafter referred as ‘the Company’) believes in the conduct of its affairs in a fair and transparent manner by adopting highest standards of professionalism, honesty, integrity and ethical behaviour and in complete compliance of laws, as amended from time to time.
           </p>
         </div>
 
@@ -96,6 +102,7 @@ export default function CSRPolicyPage() {
                 {sec.list.map((item, j) => <li key={j}>{item}</li>)}
               </ul>
             )}
+            {sec.postContent && <p style={{ marginTop: '16px' }}>{sec.postContent}</p>}
           </section>
         ))}
 
