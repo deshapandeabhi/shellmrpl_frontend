@@ -1,8 +1,8 @@
 import PageHero from '../components/PageHero';
 
 const COMMITTEE = [
-  { name: 'Mr. Sanjay Varkey',                         role: 'Chairman' },
-  { name: 'Mr. Bappanadu Hoigegudde Vasudeva Prasad',  role: 'Member'   },
+  { name: 'Sanjay Varkey',                         role: 'Chairman' },
+  { name: 'B H Vasudeva Prasad',  role: 'Member'   },
   { name: 'Dr. Ravi Kumar Rentala',                     role: 'Member'   },
 ];
 

@@ -4,26 +4,26 @@ const BASE_IMG_URL = '/assets/team';
 
 const DIRECTORS = [
   {
-    name: 'Mr. Mundkur Shyamprasad Kamath',
+    name: 'Mundkur Shyamprasad Kamath',
     role: 'Chairman',
     image: `${BASE_IMG_URL}/Mundkur Shyamprasad Kamath.jpeg`,
     imgStyle: { objectFit: 'cover', objectPosition: 'top center' },
   },
   {
-    name: 'Mr. Sanjay Samuel Varkey',
+    name: 'Sanjay Samuel Varkey',
     role: 'Director',
     image: `${BASE_IMG_URL}/Sanjay Varkey.jpg`,
     imgStyle: { objectFit: 'cover', objectPosition: 'top center' },
   },
   {
-    name: 'Mr. BH Vasudev Prasad',
+    name: 'BH Vasudev Prasad',
     role: 'Director',
     image: `${BASE_IMG_URL}/BH_Vasudev_Prasad.png`,
     // Full-body PNG — zoom in on face
     imgStyle: { objectFit: 'cover', objectPosition: '50% 10%', transform: 'scale(1.4)', transformOrigin: '50% 10%' },
   },
   {
-    name: 'Mr. Ziad Victor Soussou',
+    name: 'Ziad Victor Soussou',
     role: 'Director',
     image: `${BASE_IMG_URL}/Ziad_Victor_Soussou.jpg`,
   },
@@ -38,7 +38,7 @@ const DIRECTORS = [
     image: `${BASE_IMG_URL}/Ravi Kumar Rentala.jpg`,
   },
   {
-    name: 'Mr. Niyant Maru',
+    name: 'Niyant Maru',
     role: 'Independent Director',
     image: `${BASE_IMG_URL}/Niyant Maru.jpg`,
   },
@@ -48,20 +48,20 @@ export default function BoardPage() {
   return (
     <div className="site-page">
       <PageHero
-        title="Our Leadership"
+        title="Board of Directors"
         breadcrumbs={[{ label: 'Board of Directors' }]}
       />
 
       <div className="content-wrap content-narrow" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
-        <div className="section-header">
+        {/* <div className="section-header">
           <span className="section-eyebrow">The Board</span>
           <h2 className="section-h2">Guiding Visionary Excellence</h2>
           <p className="section-intro">
             Our leadership team brings together decades of global aviation experience
             and local industrial expertise to drive sustainable growth.
           </p>
-        </div>
-
+        </div> */}
+ 
         {/* Row 1: Chairman centered */}
         <div className="board-row-center">
           {(() => {
