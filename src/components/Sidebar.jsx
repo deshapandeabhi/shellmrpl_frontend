@@ -44,9 +44,15 @@ const NAV = [
     children: [
       { label: 'Vigilance Mechanism', path: '/vigilance-mechanism' },
       { label: 'Annual Return', path: '/annual-return' },
-      { label: 'CSR Policy', path: '/csr' },
-      { label: 'CSR Committee', path: '/csr/committee-members' },
-      { label: 'CSR Projects', path: '/csr/projects' },
+      { 
+        label: 'CSR', 
+        path: '#',
+        children: [
+          { label: 'CSR Policy', path: '/csr' },
+          { label: 'CSR Committee', path: '/csr/committee-members' },
+          { label: 'CSR Projects', path: '/csr/projects' }
+        ]
+      },
     ],
   },
   { label: 'Working with Shell MRPL Aviation', path: '/working-with-shell-mrpl-aviation-2' },
@@ -153,6 +159,26 @@ function NavItem({ item, onClose }) {
 function ChildLink({ child, onClose }) {
   const location = useLocation();
   const isActive = location.pathname === child.path;
+  const [expanded, setExpanded] = useState(false);
+  
+  if (child.children) {
+    return (
+      <li className="sidebar-nested-item">
+        <div className="sidebar-item-header" style={{ paddingLeft: '16px' }}>
+          <span className="sidebar-child-link" style={{ cursor: 'pointer', paddingLeft: 0, background: 'transparent' }} onClick={() => setExpanded(!expanded)}>{child.label}</span>
+          <button className={`sidebar-toggle${expanded ? ' open' : ''}`} onClick={() => setExpanded(!expanded)}>
+             <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </button>
+        </div>
+        <ul className={`sidebar-children${expanded ? ' expanded' : ''}`} style={{ paddingLeft: '16px' }}>
+          {child.children.map((sub, j) => (
+             <ChildLink key={j} child={sub} onClose={onClose} />
+          ))}
+        </ul>
+      </li>
+    );
+  }
+
   return (
     <li>
       <Link
@@ -166,10 +192,23 @@ function ChildLink({ child, onClose }) {
     </li>
   );
 }
-
 function FlyoutLink({ child, onClose }) {
   const location = useLocation();
   const isActive = location.pathname === child.path;
+
+  if (child.children) {
+    return (
+      <div className="flyout-nested-group">
+        <span className="sidebar-flyout-link" style={{ fontWeight: 800, cursor: 'default' }}>{child.label}</span>
+        <div className="flyout-nested-children" style={{ paddingLeft: '12px' }}>
+          {child.children.map(sub => (
+             <FlyoutLink key={sub.path} child={sub} onClose={onClose} />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <Link
       to={child.path}

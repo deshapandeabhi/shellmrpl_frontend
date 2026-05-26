@@ -44,9 +44,15 @@ const NAV = [
     children: [
       { label: 'Vigilance Mechanism', path: '/vigilance-mechanism' },
       { label: 'Annual Return', path: '/annual-return' },
-      { label: 'CSR Policy', path: '/csr' },
-      { label: 'CSR Committee', path: '/csr/committee-members' },
-      { label: 'CSR Projects', path: '/csr/projects' },
+      { 
+        label: 'CSR', 
+        path: '#',
+        children: [
+          { label: 'CSR Policy', path: '/csr' },
+          { label: 'CSR Committee', path: '/csr/committee-members' },
+          { label: 'CSR Projects', path: '/csr/projects' }
+        ]
+      },
     ],
   },
   // { label: 'Gallery', path: '/gallery' },
@@ -62,11 +68,78 @@ const ChevronDown = ({ className }) => (
   </svg>
 );
 
+const MobileChildItem = ({ child, onClose, idx }) => {
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  if (child.children) {
+    const isSubActive = child.children.some(c => c.path === location.pathname);
+    return (
+      <li style={{ animationDelay: `${idx * 0.05}s` }}>
+        <button
+          className={`mobile-sublink ${isSubActive ? 'active' : ''} trigger`}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '100%',
+            textAlign: 'left',
+            background: 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            paddingRight: '10px'
+          }}
+          onClick={() => setOpen(!open)}
+        >
+          <span>{child.label}</span>
+          <ChevronDown className={`mobile-chevron ${open ? 'rotated' : ''}`} style={{ width: '12px', height: '12px' }} />
+        </button>
+        <div className={`mobile-submenu-wrapper ${open ? 'open' : ''}`}>
+          <ul className="mobile-nested-submenu">
+            {child.children.map((subChild, subIdx) => (
+              <MobileChildItem
+                key={subChild.path || subIdx}
+                child={subChild}
+                onClose={onClose}
+                idx={subIdx}
+              />
+            ))}
+          </ul>
+        </div>
+      </li>
+    );
+  }
+
+  return (
+    <li style={{ animationDelay: `${idx * 0.05}s` }}>
+      {child.path.startsWith('http') ? (
+        <a
+          href={child.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mobile-sublink"
+          onClick={onClose}
+        >
+          {child.label}
+        </a>
+      ) : (
+        <Link
+          to={child.path}
+          className={`mobile-sublink ${location.pathname === child.path ? 'active' : ''}`}
+          onClick={onClose}
+        >
+          {child.label}
+        </Link>
+      )}
+    </li>
+  );
+};
+
 const MobileItem = ({ item, onClose }) => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const isActive = item.children
-    ? item.children.some(c => c.path === location.pathname)
+    ? item.children.some(c => c.path === location.pathname || (c.children && c.children.some(sub => sub.path === location.pathname)))
     : location.pathname === item.path;
 
   if (!item.children) {
@@ -95,27 +168,12 @@ const MobileItem = ({ item, onClose }) => {
       <div className={`mobile-submenu-wrapper ${open ? 'open' : ''}`}>
         <ul className="mobile-submenu">
           {item.children.map((child, idx) => (
-            <li key={child.path} style={{ animationDelay: `${idx * 0.05}s` }}>
-              {child.path.startsWith('http') ? (
-                <a
-                  href={child.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mobile-sublink"
-                  onClick={onClose}
-                >
-                  {child.label}
-                </a>
-              ) : (
-                <Link
-                  to={child.path}
-                  className={`mobile-sublink ${location.pathname === child.path ? 'active' : ''}`}
-                  onClick={onClose}
-                >
-                  {child.label}
-                </Link>
-              )}
-            </li>
+            <MobileChildItem
+              key={child.path || idx}
+              child={child}
+              onClose={onClose}
+              idx={idx}
+            />
           ))}
         </ul>
       </div>
@@ -236,7 +294,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           left: 0;
           background: var(--shell-white);
           min-width: 240px;
-          border-radius: 8px;
+          border-radius: 24px !important; /* Brand standard */
           padding: 10px 0;
           box-shadow: 0 15px 35px rgba(var(--grey-700-rgb), 0.1);
           border: 1px solid var(--grey-300); /* Shell Grey 300 */
@@ -245,12 +303,56 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           transition: all 0.3s ease;
           transform: translateY(10px);
           z-index: 3000;
+          overflow: visible !important; /* Allow nested dropdowns to display without clipping */
         }
 
         .nav-item:hover .nav-dropdown {
           opacity: 1;
           visibility: visible;
           transform: translateY(0);
+        }
+
+        .nav-nested-group { position: relative; }
+        .nav-nested-dropdown {
+          position: absolute;
+          right: 100%;  /* Open to the LEFT to avoid overflowing right edge */
+          left: auto;
+          top: -10px;
+          background: var(--shell-white);
+          border: 1px solid var(--grey-300); /* Consistent border */
+          border-radius: 24px !important; /* Match brand standard */
+          box-shadow: 0 15px 35px rgba(var(--grey-700-rgb), 0.1);
+          min-width: 200px;
+          padding: 10px 0;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateX(-10px);
+          transition: all 0.3s ease;
+          overflow: visible !important;
+          z-index: 4000;
+        }
+        .nav-nested-group:hover .nav-nested-dropdown {
+          opacity: 1; visibility: visible; transform: translateX(0);
+        }
+        .mobile-nested-submenu {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          padding: 8px 0 8px 20px;
+          position: relative;
+          border-left: 1px solid rgba(255, 255, 255, 0.1);
+          margin-left: 10px;
+        }
+        .nested-label {
+          display: flex !important;
+          justify-content: space-between;
+          align-items: center !important;
+          cursor: default;
+          gap: 8px;
+        }
+        .nav-chevron-right {
+          transform: rotate(-90deg);
+          opacity: 0.5;
         }
 
         .nav-dropdown-link {
@@ -627,7 +729,16 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
                 {item.children && (
                   <div className="nav-dropdown">
                     {item.children.map((child) => (
-                      child.path.startsWith('http') ? (
+                      child.children ? (
+                        <div key={child.label} className="nav-nested-group">
+                          <span className="nav-dropdown-link nested-label">{child.label} <ChevronDown className="nav-chevron-right" /></span>
+                          <div className="nav-nested-dropdown">
+                            {child.children.map(sub => (
+                              <Link key={sub.path} to={sub.path} className="nav-dropdown-link">{sub.label}</Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : child.path.startsWith('http') ? (
                         <a
                           key={child.path}
                           href={child.path}
