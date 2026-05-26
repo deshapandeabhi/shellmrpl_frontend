@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import PageHero from '../components/PageHero';
 
 const BASE_IMG_URL = '/assets/team';
@@ -15,7 +16,7 @@ const DIRECTORS = [
     role: 'Director',
     image: `${BASE_IMG_URL}/Sanjay Varkey.jpg`,
     imgStyle: { objectFit: 'cover', objectPosition: 'top center' },
-    bio: null,
+    bio: 'Director, Shell Mobility, India - Distinguished professional with over 30+ years of experience in oil and gas industry',
   },
   {
     name: 'BH Vasudev Prasad',
@@ -44,7 +45,7 @@ const DIRECTORS = [
     bio: 'Aviation sector expert with 40 years of experience, Ex Director of Indian Oil Sky tanking, IOT Utkal Energy, First CEO of IOSL in India; Ex - Bharat Petroleum Corporation Ltd.',
   },
   {
-    name: 'Niyant Maru',
+    name: 'Niyant Rohit Maru',
     role: 'Independent Director',
     image: `${BASE_IMG_URL}/Niyant Maru.jpg`,
     bio: 'Ex CFO - VISTARA (JV between Tatas and Singapore Airlines) Retired Finance and General Management professional with over 35 years of experience (30 Plus years in Tata Group and 15 + years in Leadership position) across multiple Industries ranging from Cosmetics, Steel, Telecom, Hotels, Real Estate, Infra and Aviation.',
@@ -52,6 +53,8 @@ const DIRECTORS = [
 ];
 
 export default function BoardPage() {
+  const [activeBioIndex, setActiveBioIndex] = useState(null);
+
   return (
     <div className="site-page">
       <style>{`
@@ -74,10 +77,10 @@ export default function BoardPage() {
           -webkit-backdrop-filter: blur(12px);
           opacity: 0;
           visibility: hidden;
-          transform: translateY(15px);
-          transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-                      visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-                      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          transform: translateY(100%);
+          transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                      visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -87,8 +90,8 @@ export default function BoardPage() {
           box-sizing: border-box;
         }
 
-        /* Hover trigger */
-        .board-card-interactive:hover .board-card-overlay {
+        /* Active trigger */
+        .board-card-overlay.is-active {
           opacity: 1;
           visibility: visible;
           transform: translateY(0);
@@ -130,7 +133,30 @@ export default function BoardPage() {
           font-weight: 500;
         }
 
-        /* Read Bio visual hint link */
+        /* Close button styling */
+        .board-card-close-btn {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          background: transparent;
+          border: none;
+          color: var(--gray-500, #6B7280);
+          cursor: pointer;
+          padding: 6px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.2s, color 0.2s;
+          z-index: 12;
+        }
+
+        .board-card-close-btn:hover {
+          background-color: var(--gray-100, #F3F4F6);
+          color: var(--gray-900, #111827);
+        }
+
+        /* Read More visual hint link */
         .mgmt-bio-hint {
           display: inline-flex;
           align-items: center;
@@ -142,11 +168,12 @@ export default function BoardPage() {
           text-transform: uppercase;
           letter-spacing: 0.05em;
           opacity: 0.8;
-          transition: opacity 0.2s ease;
+          transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
         .board-card-interactive:hover .mgmt-bio-hint {
           opacity: 1;
+          transform: translateX(2px);
         }
       `}</style>
 
@@ -156,21 +183,18 @@ export default function BoardPage() {
       />
 
       <div className="content-wrap content-narrow" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
-        {/* <div className="section-header">
-          <span className="section-eyebrow">The Board</span>
-          <h2 className="section-h2">Guiding Visionary Excellence</h2>
-          <p className="section-intro">
-            Our leadership team brings together decades of global aviation experience
-            and local industrial expertise to drive sustainable growth.
-          </p>
-        </div> */}
- 
         {/* Row 1: Chairman centered */}
         <div className="board-row-center">
           {(() => {
             const p = DIRECTORS[0];
+            const idx = 0;
             return (
-              <div className={`management-card reveal ${p.bio ? 'board-card-interactive' : ''}`}>
+              <div 
+                className={`management-card reveal ${p.bio ? 'board-card-interactive' : ''}`}
+                onClick={() => {
+                  if (p.bio) setActiveBioIndex(idx);
+                }}
+              >
                 <div className="mgmt-img-wrap">
                   <img
                     src={p.image}
@@ -187,7 +211,7 @@ export default function BoardPage() {
                   <span className="mgmt-role" style={{ whiteSpace: 'pre-line' }}>{p.role}</span>
                   {p.bio && (
                     <span className="mgmt-bio-hint">
-                      Read Bio
+                      Read More
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px', verticalAlign: 'middle' }}>
                         <polyline points="9 18 15 12 9 6"></polyline>
                       </svg>
@@ -195,9 +219,28 @@ export default function BoardPage() {
                   )}
                 </div>
                 {p.bio && (
-                  <div className="board-card-overlay">
-                    <div className="board-card-overlay-inner">
-                      <span className="board-card-bio-title">Biography</span>
+                  <div 
+                    className={`board-card-overlay ${activeBioIndex === idx ? 'is-active' : ''}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveBioIndex(null);
+                    }}
+                  >
+                    <button 
+                      className="board-card-close-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveBioIndex(null);
+                      }}
+                      aria-label="Close profile"
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                    <div className="board-card-overlay-inner" onClick={(e) => e.stopPropagation()}>
+                      <span className="board-card-bio-title">Profile</span>
                       <p className="board-card-bio-text">{p.bio}</p>
                     </div>
                   </div>
@@ -209,80 +252,136 @@ export default function BoardPage() {
 
         {/* Row 2: Directors (first 3) */}
         <div className="board-grid-3">
-          {DIRECTORS.slice(1, 4).map((p, i) => (
-            <div key={i} className={`management-card reveal ${p.bio ? 'board-card-interactive' : ''}`}>
-              <div className="mgmt-img-wrap">
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  className="mgmt-photo"
-                  style={p.imgStyle || {}}
-                  onError={e => {
-                    e.target.style.background = 'var(--gray-200)';
-                  }}
-                />
-              </div>
-              <div className="mgmt-info">
-                <h3 className="mgmt-name">{p.name}</h3>
-                <span className="mgmt-role" style={{ whiteSpace: 'pre-line' }}>{p.role}</span>
+          {DIRECTORS.slice(1, 4).map((p, i) => {
+            const idx = i + 1;
+            return (
+              <div 
+                key={idx} 
+                className={`management-card reveal ${p.bio ? 'board-card-interactive' : ''}`}
+                onClick={() => {
+                  if (p.bio) setActiveBioIndex(idx);
+                }}
+              >
+                <div className="mgmt-img-wrap">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="mgmt-photo"
+                    style={p.imgStyle || {}}
+                    onError={e => {
+                      e.target.style.background = 'var(--gray-200)';
+                    }}
+                  />
+                </div>
+                <div className="mgmt-info">
+                  <h3 className="mgmt-name">{p.name}</h3>
+                  <span className="mgmt-role" style={{ whiteSpace: 'pre-line' }}>{p.role}</span>
+                  {p.bio && (
+                    <span className="mgmt-bio-hint">
+                      Read More
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px', verticalAlign: 'middle' }}>
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </span>
+                  )}
+                </div>
                 {p.bio && (
-                  <span className="mgmt-bio-hint">
-                    Read Bio
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px', verticalAlign: 'middle' }}>
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                  </span>
+                  <div 
+                    className={`board-card-overlay ${activeBioIndex === idx ? 'is-active' : ''}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveBioIndex(null);
+                    }}
+                  >
+                    <button 
+                      className="board-card-close-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveBioIndex(null);
+                      }}
+                      aria-label="Close profile"
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                    <div className="board-card-overlay-inner" onClick={(e) => e.stopPropagation()}>
+                      <span className="board-card-bio-title">Profile</span>
+                      <p className="board-card-bio-text">{p.bio}</p>
+                    </div>
+                  </div>
                 )}
               </div>
-              {p.bio && (
-                <div className="board-card-overlay">
-                  <div className="board-card-overlay-inner">
-                    <span className="board-card-bio-title">Biography</span>
-                    <p className="board-card-bio-text">{p.bio}</p>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Row 3: Directors (next 3) */}
         <div className="board-grid-3">
-          {DIRECTORS.slice(4).map((p, i) => (
-            <div key={i} className={`management-card reveal ${p.bio ? 'board-card-interactive' : ''}`}>
-              <div className="mgmt-img-wrap">
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  className="mgmt-photo"
-                  style={p.imgStyle || {}}
-                  onError={e => {
-                    e.target.style.background = 'var(--gray-200)';
-                  }}
-                />
-              </div>
-              <div className="mgmt-info">
-                <h3 className="mgmt-name">{p.name}</h3>
-                <span className="mgmt-role" style={{ whiteSpace: 'pre-line' }}>{p.role}</span>
+          {DIRECTORS.slice(4).map((p, i) => {
+            const idx = i + 4;
+            return (
+              <div 
+                key={idx} 
+                className={`management-card reveal ${p.bio ? 'board-card-interactive' : ''}`}
+                onClick={() => {
+                  if (p.bio) setActiveBioIndex(idx);
+                }}
+              >
+                <div className="mgmt-img-wrap">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="mgmt-photo"
+                    style={p.imgStyle || {}}
+                    onError={e => {
+                      e.target.style.background = 'var(--gray-200)';
+                    }}
+                  />
+                </div>
+                <div className="mgmt-info">
+                  <h3 className="mgmt-name">{p.name}</h3>
+                  <span className="mgmt-role" style={{ whiteSpace: 'pre-line' }}>{p.role}</span>
+                  {p.bio && (
+                    <span className="mgmt-bio-hint">
+                      Read More
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px', verticalAlign: 'middle' }}>
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </span>
+                  )}
+                </div>
                 {p.bio && (
-                  <span className="mgmt-bio-hint">
-                    Read Bio
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px', verticalAlign: 'middle' }}>
-                      <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                  </span>
+                  <div 
+                    className={`board-card-overlay ${activeBioIndex === idx ? 'is-active' : ''}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveBioIndex(null);
+                    }}
+                  >
+                    <button 
+                      className="board-card-close-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveBioIndex(null);
+                      }}
+                      aria-label="Close profile"
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                    <div className="board-card-overlay-inner" onClick={(e) => e.stopPropagation()}>
+                      <span className="board-card-bio-title">Profile</span>
+                      <p className="board-card-bio-text">{p.bio}</p>
+                    </div>
+                  </div>
                 )}
               </div>
-              {p.bio && (
-                <div className="board-card-overlay">
-                  <div className="board-card-overlay-inner">
-                    <span className="board-card-bio-title">Biography</span>
-                    <p className="board-card-bio-text">{p.bio}</p>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

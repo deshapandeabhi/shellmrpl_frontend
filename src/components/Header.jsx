@@ -306,6 +306,12 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           overflow: visible !important; /* Allow nested dropdowns to display without clipping */
         }
 
+        /* Shift dropdown right-aligned for Investors to prevent viewport overflow */
+        .nav-dropdown.align-right {
+          left: auto;
+          right: 0;
+        }
+
         .nav-item:hover .nav-dropdown {
           opacity: 1;
           visibility: visible;
@@ -315,8 +321,8 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
         .nav-nested-group { position: relative; }
         .nav-nested-dropdown {
           position: absolute;
-          right: 100%;  /* Open to the LEFT to avoid overflowing right edge */
-          left: auto;
+          left: 100%;  /* Open to the RIGHT by default */
+          right: auto;
           top: -10px;
           background: var(--shell-white);
           border: 1px solid var(--grey-300); /* Consistent border */
@@ -326,7 +332,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           padding: 10px 0;
           opacity: 0;
           visibility: hidden;
-          transform: translateX(-10px);
+          transform: translateX(10px);
           transition: all 0.3s ease;
           overflow: visible !important;
           z-index: 4000;
@@ -447,7 +453,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
 
         @media (max-width: 1240px) {
           /* Trigger hamburger menu for tablet and smaller laptop screens to prevent overflow */
-          .desktop-nav, .header-actions-link, .header-actions .btn-impact { display: none; }
+          .desktop-nav, .header-actions-link, .header-actions .btn-impact, .header-careers-link { display: none !important; }
           .hamburger-btn { display: flex; }
           .site-logo { width: 200px; }
         }
@@ -727,7 +733,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
                 </Link>
 
                 {item.children && (
-                  <div className="nav-dropdown">
+                  <div className={`nav-dropdown ${item.label === 'Investors' ? 'align-right' : ''}`}>
                     {item.children.map((child) => (
                       child.children ? (
                         <div key={child.label} className="nav-nested-group">
@@ -765,7 +771,7 @@ export default function Header({ mobileOpen, onHamburgerClick, onMobileClose, is
           </nav>
 
           <div className="header-actions">
-            <Link to="/careers" className="nav-link">Careers</Link>
+            <Link to="/careers" className="nav-link header-careers-link">Careers</Link>
             <Link to="/contact" className="btn-impact">
               <span>Contact Us</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
