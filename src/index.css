@@ -76,7 +76,7 @@ p {
 
 :root {
   /* ── PRIMARY PALETTE (First Impressions) ── */
-  --shell-yellow: #E1DDA9;
+  --shell-yellow: #BCD58B;
   --shell-yellow-rgb: 237, 138, 0;
   --shell-red: #D54410;
   --shell-red-rgb: 213, 68, 16;
@@ -105,13 +105,13 @@ p {
   --grey-600: #616161;
   --grey-600-rgb: 97, 97, 97;
   /* Supporting text */
-  --grey-700: #4A4A4A;
+  --grey-700: #2F3437;
   --grey-700-rgb: 74, 74, 74;
   /* Default text colour (Pantone 425C) */
   --grey-800: #343434;
   --grey-800-rgb: 52, 52, 52;
   /* Strong secondary text */
-  --grey-900: #292929;
+  --grey-900: #1F2326;
   --grey-900-rgb: 41, 41, 41;
   /* Small text only — maximum contrast */
 
@@ -121,7 +121,7 @@ p {
   --seaweed-300: #A8B11A;
   --forest-500: #008557;
   --ocean-400: #0097A9;
-  --night-600: #336094;
+  --night-600: #3B6A9C;
   --night-600-rgb: 51, 96, 148;
   --stone-300: #B6B099;
 
@@ -841,7 +841,7 @@ p {
   display: block;
   font-size: 15px;
   font-weight: 400;
-  color: #9CA3AF !important;
+  color: #7E8791 !important;
   /* Light grey — subtle label */
   letter-spacing: 0.04em;
   text-transform: none;
@@ -1190,7 +1190,7 @@ p {
   display: block;
   font-size: 15px;
   font-weight: 400;
-  color: #9CA3AF !important;
+  color: #7E8791 !important;
   /* Light grey — subtle label */
   letter-spacing: 0.04em;
   text-transform: none;
