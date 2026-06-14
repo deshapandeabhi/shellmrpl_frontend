@@ -6,30 +6,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        /* Shell Group Brand Identity Standards V2.0 (2026) */
+        /* Monochromatic Slate Theme based on #94A3B8 */
         /* Primary Palette */
-        shellYellow:  '#FFC600',
-        shellRed:     '#DD1D21',
-        shellWhite:   '#FBF8F4',
+        shellYellow:  '#CBD5E1', /* Slate 300 - lighter accent */
+        shellRed:     '#64748B', /* Slate 500 - contrasting accent */
+        shellWhite:   '#F8FAFC', /* Slate 50 - off-white */
         /* Functional Greys */
-        grey50:       '#FCFCFB',
-        grey100:      '#E0E0E0',
-        grey200:      '#C0C0C0',
-        grey300:      '#AAAAAA',
-        grey400:      '#919191',
-        grey500:      '#757575',
-        grey600:      '#616161',
-        grey700:      '#2F3437',
-        grey800:      '#343434',
-        grey900:      '#1F2326',
-        /* Nature-Inspired Secondary */
-        sunrise300:   '#ED8A00',
-        sunset500:    '#D54410',
-        seaweed300:   '#A8B11A',
-        forest500:    '#008557',
-        ocean400:     '#0097A9',
-        night600:     '#3B6A9C',
-        stone300:     '#B6B099',
+        grey50:       '#F8FAFC',
+        grey100:      '#F1F5F9',
+        grey200:      '#E2E8F0',
+        grey300:      '#CBD5E1',
+        grey400:      '#94A3B8', /* Base Color */
+        grey500:      '#64748B',
+        grey600:      '#475569',
+        grey700:      '#334155',
+        grey800:      '#1E293B',
+        grey900:      '#0F172A',
+        /* Nature-Inspired Secondary (Mapped to Slate) */
+        sunrise300:   '#94A3B8',
+        sunset500:    '#64748B',
+        seaweed300:   '#E2E8F0',
+        forest500:    '#475569',
+        ocean400:     '#475569',
+        night600:     '#0F172A',
+        stone300:     '#CBD5E1',
       },
       fontFamily: {
         shell: ['Shell', 'sans-serif'],

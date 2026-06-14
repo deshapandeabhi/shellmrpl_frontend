@@ -75,55 +75,55 @@ p {
 }
 
 :root {
-  /* ── PRIMARY PALETTE (First Impressions) ── */
-  --shell-yellow: #BCD58B;
-  --shell-yellow-rgb: 237, 138, 0;
-  --shell-red: #D54410;
-  --shell-red-rgb: 213, 68, 16;
-  --shell-white: #FFFFFF;
-  --shell-white-rgb: 255, 255, 255;
+  /* ── MONOCHROMATIC SLATE THEME (First Impressions) ── */
+  --shell-yellow: #CBD5E1;
+  --shell-yellow-rgb: 203, 213, 225;
+  --shell-red: #64748B;
+  --shell-red-rgb: 100, 116, 139;
+  --shell-white: #F8FAFC;
+  --shell-white-rgb: 248, 250, 252;
 
-  /* ── SHELL GREY — FUNCTIONAL PALETTE ── */
-  --grey-50: #F5F5F5;
-  --grey-50-rgb: 245, 245, 245;
+  /* ── SLATE GREY — FUNCTIONAL PALETTE ── */
+  --grey-50: #F8FAFC;
+  --grey-50-rgb: 248, 250, 252;
   /* Lightest background, zebra rows */
-  --grey-100: #E0E0E0;
-  --grey-100-rgb: 224, 224, 224;
+  --grey-100: #F1F5F9;
+  --grey-100-rgb: 241, 245, 249;
   /* Borders, dividers */
-  --grey-200: #C0C0C0;
-  --grey-200-rgb: 192, 192, 192;
+  --grey-200: #E2E8F0;
+  --grey-200-rgb: 226, 232, 240;
   /* Secondary borders */
-  --grey-300: #AAAAAA;
-  --grey-300-rgb: 170, 170, 170;
+  --grey-300: #CBD5E1;
+  --grey-300-rgb: 203, 213, 225;
   /* Placeholder text */
-  --grey-400: #919191;
-  --grey-400-rgb: 145, 145, 145;
+  --grey-400: #94A3B8;
+  --grey-400-rgb: 148, 163, 184;
   /* Large text only (accessibility limit) */
-  --grey-500: #757575;
-  --grey-500-rgb: 117, 117, 117;
+  --grey-500: #64748B;
+  --grey-500-rgb: 100, 116, 139;
   /* Alternative standard text on white */
-  --grey-600: #616161;
-  --grey-600-rgb: 97, 97, 97;
+  --grey-600: #475569;
+  --grey-600-rgb: 71, 85, 105;
   /* Supporting text */
-  --grey-700: #2F3437;
-  --grey-700-rgb: 74, 74, 74;
+  --grey-700: #334155;
+  --grey-700-rgb: 51, 65, 85;
   /* Default text colour (Pantone 425C) */
-  --grey-800: #343434;
-  --grey-800-rgb: 52, 52, 52;
+  --grey-800: #1E293B;
+  --grey-800-rgb: 30, 41, 59;
   /* Strong secondary text */
-  --grey-900: #1F2326;
-  --grey-900-rgb: 41, 41, 41;
+  --grey-900: #0F172A;
+  --grey-900-rgb: 15, 23, 42;
   /* Small text only — maximum contrast */
 
-  /* ── NATURE-INSPIRED SECONDARY PALETTE ── */
-  --sunrise-300: #ED8A00;
-  --sunset-500: #D54410;
-  --seaweed-300: #A8B11A;
-  --forest-500: #008557;
-  --ocean-400: #0097A9;
-  --night-600: #3B6A9C;
-  --night-600-rgb: 51, 96, 148;
-  --stone-300: #B6B099;
+  /* ── NATURE-INSPIRED SECONDARY PALETTE (Mapped to Slate) ── */
+  --sunrise-300: #94A3B8;
+  --sunset-500: #64748B;
+  --seaweed-300: #E2E8F0;
+  --forest-500: #475569;
+  --ocean-400: #475569;
+  --night-600: #0F172A;
+  --night-600-rgb: 15, 23, 42;
+  --stone-300: #CBD5E1;
 
   /* ── ALIASES (backward-compat) ── */
   --color-shell-blue: var(--night-600);
